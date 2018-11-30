@@ -1,0 +1,108 @@
+.icons-sprite
+{
+    display: none;
+}
+
+svg
+{
+    width: 48px;
+    height: 48px;
+}
+
+.hidden-input
+{
+    display: none;
+}
+
+.fill-checkbox:checked ~ .catogram .photo
+{
+    background-size: contain;
+}
+
+.flip-checkbox:checked ~ .catogram .photo
+{
+    transform: scale(-1, 1);
+}
+
+.catogram
+{
+    margin: 40px auto;
+    width: 1440px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.controls
+{
+    width: 632px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.control
+{
+    fill: #444;
+    cursor: pointer;
+}
+
+.photo
+{
+    background-repeat: no-repeat;
+    background-image: url('cat.jpg');
+    background-size: cover;
+    background-position: 50% 50%;
+    width: 632px;
+    height: 632px;
+}
+
+.filters-widget
+{
+    margin-top: 20px;
+}
+
+.filters
+{
+    display: flex;
+}
+
+.filter
+{
+    margin: 0 5px;
+}
+
+.filter .filter-name
+{
+    text-align: center;
+    font-size: 18px;
+    color: #444;
+    font-family: 'Helvetica';
+    height: 22px;
+    margin-bottom: 7px;
+}
+
+.filter .filter-demo
+{
+    width: 170px;
+    height: 169px;
+    background-image: url('cat.jpg');
+    background-size: cover;
+    background-position: 50% 50%;
+    background-blend-mode: luminosity;
+}
+
+.filter-2 .filter-demo
+{
+    filter: grayscale(.7);
+}
+
+.filter-3 .filter-demo
+{
+    background-color: rgba(112, 66, 20, .6);
+}
+
+.filter-4 .filter-demo
+{
+    filter: invert(1);
+}
