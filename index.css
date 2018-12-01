@@ -1,0 +1,220 @@
+body
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header,
+main,
+footer
+{
+    display: flex;
+    justify-content: space-around;
+    width: 632px;
+}
+
+header
+{
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.fill,
+.scale,
+.logo,
+.rotate,
+.flip
+{
+    opacity: .8;
+    height: 48px;
+    width: 48px;
+    fill: #444;
+}
+
+input[id='scale-2']:checked ~ main .photo
+{
+    width: 582px;
+    height: 582px;
+}
+
+input[id='scale-3']:checked ~ main .photo
+{
+    width: 532px;
+    height: 532px;
+}
+
+input[id='scale-4']:checked ~ main .photo
+{
+    width: 482px;
+    height: 482px;
+}
+
+input[id='fill']:checked ~ input[id='scale-default']:checked ~ main .photo
+{
+    object-fit: contain;
+}
+
+input[id='fill']:checked ~ input[id='scale-2']:checked ~ main .photo
+{
+    object-fit: contain;
+    width: 90%;
+    height: 90%;
+}
+
+input[id='fill']:checked ~ input[id='scale-3']:checked ~ main .photo
+{
+    object-fit: contain;
+    width: 80%;
+    height: 80%;
+}
+
+input[id='fill']:checked ~ input[id='scale-4']:checked ~ main .photo
+{
+    object-fit: contain;
+    width: 70%;
+    height: 70%;
+}
+
+.rotates,
+.scales
+{
+    display: none;
+}
+
+input[id='rotate-2']:checked ~ main .photo
+{
+    transform: rotate(-90deg);
+}
+
+input[id='rotate-3']:checked ~ main .photo
+{
+    transform: rotate(-180deg);
+}
+
+input[id='rotate-4']:checked ~ main .photo
+{
+    transform: rotate(-270deg);
+}
+
+input[id='rotate-default']:checked ~ .options > .rotate-2,
+input[id='rotate-2']:checked ~ .options > .rotate-3,
+input[id='rotate-3']:checked ~ .options > .rotate-4,
+input[id='rotate-4']:checked ~ .options > .rotate-default,
+input[id='scale-default']:checked ~ .options > .scale-2,
+input[id='scale-2']:checked ~ .options > .scale-3,
+input[id='scale-3']:checked ~ .options > .scale-4,
+input[id='scale-4']:checked ~ .options > .scale-default
+{
+    display: block;
+}
+
+input[id='rotate-default']:checked ~ input[id='flip']:checked ~ main .photo
+{
+    transform: scaleX(-1);
+}
+
+input[id='rotate-2']:checked ~ input[id='flip']:checked ~ main .photo
+{
+    transform: scaleY(-1) rotateZ(-90deg);
+}
+
+input[id='rotate-3']:checked ~ input[id='flip']:checked ~ main .photo
+{
+    transform: rotateX(-180deg) scaleX(1);
+}
+
+input[id='rotate-4']:checked ~ input[id='flip']:checked ~ main .photo
+{
+    transform: rotateZ(-270deg) scaleX(-1);
+}
+
+main
+{
+    display: flex;
+    height: 632px;
+}
+
+.photo
+{
+    margin: auto;
+    object-fit: fill;
+    width: 632px;
+    height: 632px;
+}
+
+footer
+{
+    width: 824.6px;
+    height: 312px;
+    display: flex;
+    align-items: center;
+}
+
+.arrow-left,
+.arrow-right
+{
+    width: 49px;
+    height: 32px;
+    background: gold;
+}
+
+.arrow-left
+{
+    margin-right: 15px;
+    transform: rotate(90deg);
+}
+
+.arrow-right
+{
+    margin-left: 15px;
+    transform: rotate(-90deg);
+}
+
+.filters
+{
+    width: 100%;
+    height: 256px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter
+{
+    margin: 2.5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter__image
+{
+    width: 170px;
+    height: 169px;
+}
+
+.filter__name
+{
+    margin-bottom: 15px;
+}
+
+input[name='filters'],
+input[name='controls'],
+input[name='rotates'],
+input[name='scales']
+{
+    display: none;
+}
+
+.radio-filter-1:checked ~ .filter-1,
+.radio-filter-2:checked ~ .filter-2,
+.radio-filter-3:checked ~ .filter-3,
+.radio-filter-4:checked ~ .filter-4
+{
+    font-weight: 700;
+}
