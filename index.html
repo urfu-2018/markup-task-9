@@ -3,10 +3,63 @@
 <head>
     <meta charset="utf-8">
     <title>Задача «Котограм»</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-<!--Ваш спрайт-->
+    <input type="radio" id="accommodation" name="control">
+    <input type="radio" id="scaling" name="control">
+    <input type="radio" id="default" name="control">
+    <input type="radio" id="rotation" name="control">
+    <input type="radio" id="horizontal-reflection" name="control">
 
+    <header class="header">
+        <label for="accommodation" class="header__control">
+            <img src="icons/fill.svg" alt="fill" title="fill">
+        </label>
+        <label for="scaling" class="header__control">
+            <img src="icons/scale.svg" alt="scale" title="scale">
+        </label>
+        <label for="default" class="header__control">
+            <img src="icons/logo.svg" alt="logo" title="logo">
+        </label>
+        <label for="rotation" class="header__control">
+            <img src="icons/rotate.svg" alt="rotate" title="rotate">
+        </label>
+        <label for="horizontal-reflection" class="header__control">
+            <img src="icons/flip.svg" alt="flip" title="flip">
+        </label>
+    </header>
+    <main class="main">
+        <img src="img/cat.jpg" alt="cat" title="cat">
+    </main>
+    <input type="radio" id="without-filter" name="filter">
+    <input type="radio" id="spb" name="filter">
+    <input type="radio" id="yalta" name="filter">
+    <input type="radio" id="ural" name="filter">
+    <footer class="footer">
+        <img class="footer_arrow" src="icons/arrow.svg" alt="arrow" title="arrow">
+
+        <div class="footer__carousel">
+            <label class="filter" for="without-filter">
+                <span class="filter__name">Без фильтра</span>
+                <img class="filter__image" src="img/cat.jpg" alt="Котэ">
+            </label>
+            <label class="filter" for="without-filter">
+                <span class="filter__name">Питер</span>
+                <img class="filter__image filter__image_spb" src="img/cat.jpg" alt="Котэ">
+            </label>
+            <label class="filter" for="without-filter">
+                <span class="filter__name">Питер</span>
+                <img class="filter__image filter__image_spb" src="img/cat.jpg" alt="Котэ">
+            </label>
+            <label class="filter" for="without-filter">
+                <span class="filter__name">Питер</span>
+                <img class="filter__image filter__image_spb" src="img/cat.jpg" alt="Котэ">
+            </label>
+        </div>
+
+        <img class="footer_arrow" src="icons/arrow.svg" alt="arrow" title="arrow">
+    </footer>
 <!--Ваша разметка-->
 </body>
 </html>
