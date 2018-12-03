@@ -1,14 +1,9 @@
-.sprite
-{
-    display: inline-block;
-    background: url(icons/sprite.svg) no-repeat;
-}
-
 .icon-fill
 {
     width: 32px;
     height: 32px;
     background-position: 0 0;
+    opacity: .8;
 }
 
 .icon-flip
@@ -16,6 +11,7 @@
     width: 42px;
     height: 32px;
     background-position: -48px 0;
+    opacity: .8;
 }
 
 .icon-logo
@@ -23,6 +19,8 @@
     width: 32px;
     height: 32px;
     background-position: -144px 0;
+    fill: url(#gradient);
+    opacity: 1;
 }
 
 .icon-rotate
@@ -30,6 +28,7 @@
     width: 32px;
     height: 32px;
     background-position: -192px 0;
+    opacity: .8;
 }
 
 .icon-scale
@@ -37,6 +36,7 @@
     width: 32px;
     height: 32px;
     background-position: -240px 0;
+    opacity: .8;
 }
 
 .icon-arrow
@@ -44,6 +44,7 @@
     width: 49px;
     height: 32px;
     background-position: -288px 0;
+    opacity: .8;
 }
 
 /* svg спрайты кончились */
@@ -65,6 +66,11 @@ label
     display: flex;
     justify-content: space-between;
     margin: 12px 0;
+}
+
+.icon
+{
+    fill: #444;
 }
 
 /* Картинка в центре
@@ -100,6 +106,71 @@ label
 .image-default
 {
     display: none;
+}
+
+/* Код для фильтров */
+
+.filters-container
+{
+    margin-top: 70px;
+    position: relative;
+}
+
+.filters
+{
+    display: grid;
+    grid-template: 206px / 170px 170px 170px 170px;
+    grid-column-gap: 5px;
+    grid-auto-rows: 0;
+    overflow: hidden;
+}
+
+.filter-item
+{
+    display: none;
+}
+
+.filter-image
+{
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+}
+
+.filter-header
+{
+    display: block;
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    margin: 0 0 15px;
+    color: #444;
+}
+
+.arrow
+{
+    position: absolute;
+    top: 99px;
+    display: none;
+}
+
+.arrow-left
+{
+    transform: rotate(90deg);
+    left: -66px;
+}
+
+.arrow-right
+{
+    transform: rotate(-90deg);
+    right: -66px;
+}
+
+.arrow-disabled
+{
+    opacity: .4;
+    cursor: default;
 }
 
 /* Код для иконок управления */
@@ -190,4 +261,74 @@ label
 .rotate-4:checked ~ .image-container .image-rotation-modified
 {
     transform: rotate(270deg);
+}
+
+.filter-1:checked ~ .filters-container .filter-item:nth-child(1),
+.filter-1:checked ~ .filters-container .filter-item:nth-child(2),
+.filter-1:checked ~ .filters-container .filter-item:nth-child(3),
+.filter-1:checked ~ .filters-container .filter-item:nth-child(4)
+{
+    display: block;
+}
+
+.filter-2:checked ~ .filters-container .filter-item:nth-child(2),
+.filter-2:checked ~ .filters-container .filter-item:nth-child(3),
+.filter-2:checked ~ .filters-container .filter-item:nth-child(4),
+.filter-2:checked ~ .filters-container .filter-item:nth-child(5)
+{
+    display: block;
+}
+
+.filter-3:checked ~ .filters-container .filter-item:nth-child(3),
+.filter-3:checked ~ .filters-container .filter-item:nth-child(4),
+.filter-3:checked ~ .filters-container .filter-item:nth-child(5),
+.filter-3:checked ~ .filters-container .filter-item:nth-child(6)
+{
+    display: block;
+}
+
+.filter-4:checked ~ .filters-container .filter-item:nth-child(4),
+.filter-4:checked ~ .filters-container .filter-item:nth-child(5),
+.filter-4:checked ~ .filters-container .filter-item:nth-child(6),
+.filter-4:checked ~ .filters-container .filter-item:nth-child(7)
+{
+    display: block;
+}
+
+.filter-5:checked ~ .filters-container .filter-item:nth-child(5),
+.filter-5:checked ~ .filters-container .filter-item:nth-child(6),
+.filter-5:checked ~ .filters-container .filter-item:nth-child(7),
+.filter-5:checked ~ .filters-container .filter-item:nth-child(8)
+{
+    display: block;
+}
+
+.filter-1:checked ~ .filters-container .arrow-left:nth-child(1),
+.filter-1:checked ~ .filters-container .arrow-right:nth-child(1)
+{
+    display: block;
+}
+
+.filter-2:checked ~ .filters-container .arrow-left:nth-child(2),
+.filter-2:checked ~ .filters-container .arrow-right:nth-child(2)
+{
+    display: block;
+}
+
+.filter-3:checked ~ .filters-container .arrow-left:nth-child(3),
+.filter-3:checked ~ .filters-container .arrow-right:nth-child(3)
+{
+    display: block;
+}
+
+.filter-4:checked ~ .filters-container .arrow-left:nth-child(4),
+.filter-4:checked ~ .filters-container .arrow-right:nth-child(4)
+{
+    display: block;
+}
+
+.filter-5:checked ~ .filters-container .arrow-left:nth-child(5),
+.filter-5:checked ~ .filters-container .arrow-right:nth-child(5)
+{
+    display: block;
 }
