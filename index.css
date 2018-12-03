@@ -80,6 +80,21 @@ label
     animation-timing-function: cubic-bezier(.5, 1.95, 1, 1.27);
 }
 
+@keyframes icon-clicked
+{
+    50%
+    {
+        opacity: 1;
+        transform: scale(1.45);
+    }
+
+    100%
+    {
+        opacity: .8;
+        transform: scale(1);
+    }
+}
+
 @keyframes icon-switch
 {
     100%
@@ -494,35 +509,19 @@ label
 .page-1:checked ~ .filters-container .filter-item:nth-child(1),
 .page-1:checked ~ .filters-container .filter-item:nth-child(2),
 .page-1:checked ~ .filters-container .filter-item:nth-child(3),
-.page-1:checked ~ .filters-container .filter-item:nth-child(4)
-{
-    display: block;
-}
-
+.page-1:checked ~ .filters-container .filter-item:nth-child(4),
 .page-2:checked ~ .filters-container .filter-item:nth-child(2),
 .page-2:checked ~ .filters-container .filter-item:nth-child(3),
 .page-2:checked ~ .filters-container .filter-item:nth-child(4),
-.page-2:checked ~ .filters-container .filter-item:nth-child(5)
-{
-    display: block;
-}
-
+.page-2:checked ~ .filters-container .filter-item:nth-child(5),
 .page-3:checked ~ .filters-container .filter-item:nth-child(3),
 .page-3:checked ~ .filters-container .filter-item:nth-child(4),
 .page-3:checked ~ .filters-container .filter-item:nth-child(5),
-.page-3:checked ~ .filters-container .filter-item:nth-child(6)
-{
-    display: block;
-}
-
+.page-3:checked ~ .filters-container .filter-item:nth-child(6),
 .page-4:checked ~ .filters-container .filter-item:nth-child(4),
 .page-4:checked ~ .filters-container .filter-item:nth-child(5),
 .page-4:checked ~ .filters-container .filter-item:nth-child(6),
-.page-4:checked ~ .filters-container .filter-item:nth-child(7)
-{
-    display: block;
-}
-
+.page-4:checked ~ .filters-container .filter-item:nth-child(7),
 .page-5:checked ~ .filters-container .filter-item:nth-child(5),
 .page-5:checked ~ .filters-container .filter-item:nth-child(6),
 .page-5:checked ~ .filters-container .filter-item:nth-child(7),
@@ -532,33 +531,30 @@ label
 }
 
 .page-1:checked ~ .filters-container .arrow-left:nth-child(1),
-.page-1:checked ~ .filters-container .arrow-right:nth-child(1)
-{
-    display: block;
-}
-
+.page-1:checked ~ .filters-container .arrow-right:nth-child(1),
 .page-2:checked ~ .filters-container .arrow-left:nth-child(2),
-.page-2:checked ~ .filters-container .arrow-right:nth-child(2)
-{
-    display: block;
-}
-
+.page-2:checked ~ .filters-container .arrow-right:nth-child(2),
 .page-3:checked ~ .filters-container .arrow-left:nth-child(3),
-.page-3:checked ~ .filters-container .arrow-right:nth-child(3)
-{
-    display: block;
-}
-
+.page-3:checked ~ .filters-container .arrow-right:nth-child(3),
 .page-4:checked ~ .filters-container .arrow-left:nth-child(4),
-.page-4:checked ~ .filters-container .arrow-right:nth-child(4)
-{
-    display: block;
-}
-
+.page-4:checked ~ .filters-container .arrow-right:nth-child(4),
 .page-5:checked ~ .filters-container .arrow-left:nth-child(5),
 .page-5:checked ~ .filters-container .arrow-right:nth-child(5)
 {
     display: block;
+}
+
+.page-2:checked ~ .filters-container .arrow-right:nth-child(2) .icon-togglable,
+.page-3:checked ~ .filters-container .arrow-right:nth-child(3) .icon-togglable,
+.page-4:checked ~ .filters-container .arrow-right:nth-child(4) .icon-togglable,
+.page-5:checked ~ .filters-container .arrow-left:nth-child(5) .icon-togglable,
+.page-4:checked ~ .filters-container .arrow-left:nth-child(4) .icon-togglable,
+.page-3:checked ~ .filters-container .arrow-left:nth-child(3) .icon-togglable,
+.page-2:checked ~ .filters-container .arrow-left:nth-child(2) .icon-togglable,
+.page-1:checked ~ .filters-container .arrow-right:nth-child(1) .icon-togglable
+{
+    animation-fill-mode: none;
+    animation-name: icon-clicked;
 }
 
 .filter-1:checked ~ .filters-container .filter-item:nth-child(1) .filter-header,
