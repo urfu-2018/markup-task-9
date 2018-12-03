@@ -177,16 +177,15 @@
                     </svg>
                 </label>
             </div>
-            <div class="preview preview_saturate">
-                <!-- контейнеры для облегчения селекторов при множественных трансформациях,
-                     используется множество обёрток для плавного transition свойства filter -->
-                <div class="preview__zoom preview__zoom_sepia">
-                    <div class="preview__rotate preview__rotate_blur">
-                        <div class="preview__reflect preview__reflect_brightness">
-                            <div class="preview__filter preview__filter_grayscale">
+            <div class="preview">
+                <!-- контейнеры для облегчения множественных трансформаций, так же они
+                     используются для плавного transition свойства filter -->
+                <div class="preview__zoom">
+                    <div class="preview__rotate">
+                        <div class="preview__reflect">
+                            <div class="preview__filter">
                                 <img src="./img/full.jpg" srcset="./img/full@2x.jpg 2x"
-                                     alt="Котейка"
-                                     class="preview__image preview__image_invert">
+                                     alt="Котейка" class="preview__image">
                             </div>
                         </div>
                     </div>

@@ -59,6 +59,16 @@ img
     vertical-align: top;
 }
 
+img::selection
+{
+    background: transparent;
+}
+
+img::-moz-selection
+{
+    background: transparent;
+}
+
 div,
 img,
 label
@@ -162,20 +172,33 @@ input[type='radio']
     opacity: 1;
 }
 
+.preview,
+.preview__zoom,
+.preview__rotate,
+.preview__reflect,
+.preview__filter
+{
+    height: 100%;
+}
+
 .preview
+{
+    overflow: hidden;
+    position: relative;
+}
+
+.preview__filter
 {
     display: flex;
     -webkit-align-items: center;
     align-items: center;
     -webkit-justify-content: center;
     justify-content: center;
-    height: 100%;
-    overflow: hidden;
-    position: relative;
 }
 
 .preview__image
 {
+    display: block;
     max-height: 100%;
 }
 
@@ -233,6 +256,7 @@ input[type='radio']
 .filter__preview
 {
     display: block;
+    overflow: hidden; /* скрываем размытие вне области элемента */
     padding-bottom: 100%;
     position: relative;
 }
@@ -321,12 +345,12 @@ input[id='reflect-horizontal']:checked ~ .wrapper .preview__reflect
     transform: scale3d(-1, 1, 1);
 }
 
-.preview_saturate,
-.preview__zoom_sepia,
-.preview__rotate_blur,
-.preview__reflect_brightness,
-.preview__filter_grayscale,
-.preview__image_invert
+.preview,
+.preview__zoom,
+.preview__rotate,
+.preview__reflect,
+.preview__filter,
+.preview__image
 {
     -webkit-transition: -webkit-filter .5s, -webkit-transform .25s ease-in-out;
     transition: filter .5s, transform .25s ease-in-out;
@@ -348,24 +372,29 @@ input[id='invert']:checked ~ .wrapper label[for='invert'] .filter__name
     font-weight: 500;
 }
 
-input[id='saturate']:checked ~ .wrapper .preview_saturate,
+input[id='saturate']:checked ~ .wrapper .preview,
 .filter__preview-image_saturate
 {
     -webkit-filter: saturate(250%);
     filter: saturate(250%);
 }
 
-input[id='sepia']:checked ~ .wrapper .preview__zoom_sepia,
+input[id='sepia']:checked ~ .wrapper .preview__zoom,
 .filter__preview-image_sepia
 {
     -webkit-filter: sepia(75%);
     filter: sepia(75%);
 }
 
-input[id='blur']:checked ~ .wrapper .preview__rotate_blur
+input[id='blur']:checked ~ .wrapper .preview__rotate
 {
     -webkit-filter: blur(2px);
     filter: blur(2px);
+}
+
+.filter[for='blur'] .filter__preview
+{
+    background-color: #727272;
 }
 
 .filter__preview-image_blur
@@ -374,21 +403,21 @@ input[id='blur']:checked ~ .wrapper .preview__rotate_blur
     filter: blur(1px);
 }
 
-input[id='brightness']:checked ~ .wrapper .preview__reflect_brightness,
+input[id='brightness']:checked ~ .wrapper .preview__reflect,
 .filter__preview-image_brightness
 {
     -webkit-filter: brightness(125%);
     filter: brightness(125%);
 }
 
-input[id='grayscale']:checked ~ .wrapper .preview__filter_grayscale,
+input[id='grayscale']:checked ~ .wrapper .preview__filter,
 .filter__preview-image_grayscale
 {
     -webkit-filter: grayscale(75%);
     filter: grayscale(75%);
 }
 
-input[id='invert']:checked ~ .wrapper .preview__image_invert,
+input[id='invert']:checked ~ .wrapper .preview__image,
 .filter__preview-image_invert
 {
     -webkit-filter: invert(100%);
