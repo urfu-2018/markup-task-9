@@ -1,0 +1,56 @@
+body
+{
+    margin: 0;
+}
+
+.svg-sptite
+{
+    display: none;
+}
+
+.general-layout
+{
+    width: 694px;
+    height: 1024px;
+    margin: auto;
+    box-sizing: border-box;
+    display: grid;
+    grid-template: 'tabs' 80px
+        'photo' 632px
+        'filters' 312px
+        / 694px;
+}
+
+.settings-tabs__wrapper
+{
+    grid-area: tabs;
+    padding: 0 31px;
+}
+
+.settings-tabs
+{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding-top: 20px;
+    height: 100%;
+}
+
+.setting-tabs__item
+{
+    width: 48px;
+    height: 48px;
+}
+
+.tab-icon
+{
+    max-width: 48px;
+    max-height: 48px;
+    fill: #444;
+    fill-opacity: .8;
+}
+
+.tab-icon:hover
+{
+    fill: #000;
+}
