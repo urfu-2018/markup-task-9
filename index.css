@@ -1,0 +1,198 @@
+.container
+{
+    width: 630px;
+    margin: auto;
+}
+
+input
+{
+    display: none;
+}
+
+.controls
+{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.mainImage
+{
+    width: 630px;
+    height: 630px;
+    overflow: hidden;
+}
+
+.mainImage img
+{
+    /*object-fit: cover;*/
+    width: 100%;
+    height: 100%;
+    /*width: 720px;*/
+    /*height: 960px;*/
+}
+
+input[id='flip__input']:checked ~ div .flipWrapper
+{
+    transform: scaleX(-1);
+}
+
+.rotate
+{
+    display: none;
+}
+
+input[id='rotate-0']:checked ~ div .rotationWrapper
+{
+    transform: rotate(0deg);
+}
+
+input[id='rotate-0']:checked ~ div .rotate-1
+{
+    display: block;
+}
+
+input[id='rotate-1']:checked ~ div .rotationWrapper
+{
+    transform: rotate(90deg);
+}
+
+input[id='rotate-1']:checked ~ div .rotate-2
+{
+    display: block;
+}
+
+input[id='rotate-2']:checked ~ div .rotationWrapper
+{
+    transform: rotate(180deg);
+}
+
+input[id='rotate-2']:checked ~ div .rotate-3
+{
+    display: block;
+}
+
+input[id='rotate-3']:checked ~ div .rotationWrapper
+{
+    transform: rotate(270deg);
+}
+
+input[id='rotate-3']:checked ~ div .rotate-0
+{
+    display: block;
+}
+
+.scale
+{
+    display: none;
+}
+
+input[id='scale-0']:checked ~ div .mainImage
+{
+    transform: scale(1);
+}
+
+input[id='scale-0']:checked ~ div .scale-1
+{
+    display: block;
+}
+
+input[id='scale-1']:checked ~ div .scaleWrapper
+{
+    transform: scale(1.5);
+    /*// translateY(105px);*/
+}
+
+input[id='scale-1']:checked ~ div .scale-2
+{
+    display: block;
+}
+
+input[id='scale-2']:checked ~ div .scaleWrapper
+{
+    transform: scale(2);
+    /*tanslate 158px*/
+}
+
+input[id='scale-2']:checked ~ div .scale-0
+{
+    display: block;
+}
+
+input[id='fill']:checked ~ div .mainImage
+{
+    overflow: visible;
+}
+
+.filters
+{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.filters img
+{
+    width: 150px;
+    height: 150px;
+}
+
+/*.filter*/
+/*{*/
+/*text-align: center;*/
+/*}*/
+
+.summer img
+{
+    filter: grayscale(1);
+}
+
+.yalta img
+{
+    filter: sepia(1);
+}
+
+.petersburg img
+{
+    filter: saturate(200%);
+}
+
+input[id='filter-petersburg']:checked ~ div .mainImage img
+{
+    animation: petersburg 1s linear forwards;
+}
+
+input[id='filter-yalta']:checked ~ div .mainImage img
+{
+    animation: yalta 1s linear forwards;
+}
+
+input[id='filter-summer']:checked ~ div .mainImage img
+{
+    animation: summer 1s linear forwards;
+}
+
+@keyframes petersburg
+{
+    100%
+    {
+        filter: saturate(200%);
+    }
+}
+
+@keyframes summer
+{
+    100%
+    {
+        filter: grayscale(1);
+    }
+}
+
+@keyframes yalta
+{
+    100%
+    {
+        filter: sepia(1);
+    }
+}

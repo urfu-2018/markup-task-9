@@ -3,10 +3,62 @@
 <head>
     <meta charset="utf-8">
     <title>Задача «Котограм»</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
 <!--Ваш спрайт-->
+<div class="container">
+    <input type="checkbox" id="fill">
+    <input type="checkbox" id="flip__input">
+    <input type="radio" name="rotate" id="rotate-0" checked="checked">
+    <input type="radio" name="rotate" id="rotate-1">
+    <input type="radio" name="rotate" id="rotate-2">
+    <input type="radio" name="rotate" id="rotate-3">
+    <input type="radio" name="scale" id="scale-0" checked="checked">
+    <input type="radio" name="scale" id="scale-1">
+    <input type="radio" name="scale" id="scale-2">
 
+    <input type="radio" name="filter" id="filter-none" checked="checked">
+    <input type="radio" name="filter" id="filter-petersburg">
+    <input type="radio" name="filter" id="filter-yalta">
+    <input type="radio" name="filter" id="filter-summer">
+    <div class="controls">
+        <div class="fill"><label for="fill"><img src="icons/fill.svg"></label></div>
+
+        <div class="scale scale-0"><label for="scale-0"><img src="icons/scale.svg"></label></div>
+        <div class="scale scale-1"><label for="scale-1"><img src="icons/scale.svg"></label></div>
+        <div class="scale scale-2"><label for="scale-2"><img src="icons/scale.svg"></label></div>
+
+        <div class="logo"><img src="icons/logo.svg"></div>
+        <div class="rotate rotate-0"><label for="rotate-0"><img src="icons/rotate.svg"></label></div>
+        <div class="rotate rotate-1"><label for="rotate-1"><img src="icons/rotate.svg"></label></div>
+        <div class="rotate rotate-2"><label for="rotate-2"><img src="icons/rotate.svg"></label></div>
+        <div class="rotate rotate-3"><label for="rotate-3"><img src="icons/rotate.svg"></label></div>
+        <div class="flip"><label for="flip__input"><img src="icons/flip.svg"></label></div>
+    </div>
+    <div>
+        <div class="mainImage">
+            <div class="flipWrapper">
+                <div class="rotationWrapper">
+                    <div class="scaleWrapper">
+                        <img src="images/cerberus.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="filters">
+        <div class="filter"><label for="filter-none"><p>Without Filter</p><img
+            src="images/cerberus.jpg"></label></div>
+        <div class="filter petersburg"><label for="filter-petersburg"><p>St. Petersburg</p><img
+            src="images/cerberus.jpg"></label></div>
+        <div class="filter yalta"><label for="filter-yalta"><p>Yalta</p><img
+            src="images/cerberus.jpg"></label></div>
+        <div class="filter summer"><label for="filter-summer"><p>Ural summer</p><img
+            src="images/cerberus.jpg"></label></div>
+    </div>
+
+</div>
 <!--Ваша разметка-->
 </body>
 </html>
