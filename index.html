@@ -64,11 +64,20 @@
     <input id="rotate-3" class="inp-control rotate-3" type="radio" name="rotate">
     <input id="rotate-4" class="inp-control rotate-4" type="radio" name="rotate">
 
+    <input id="page-1" class="inp-control page-1" type="radio" name="page" checked>
+    <input id="page-2" class="inp-control page-2" type="radio" name="page">
+    <input id="page-3" class="inp-control page-3" type="radio" name="page">
+    <input id="page-4" class="inp-control page-4" type="radio" name="page">
+    <input id="page-5" class="inp-control page-5" type="radio" name="page">
+
     <input id="filter-1" class="inp-control filter-1" type="radio" name="filter" checked>
     <input id="filter-2" class="inp-control filter-2" type="radio" name="filter">
     <input id="filter-3" class="inp-control filter-3" type="radio" name="filter">
     <input id="filter-4" class="inp-control filter-4" type="radio" name="filter">
     <input id="filter-5" class="inp-control filter-5" type="radio" name="filter">
+    <input id="filter-6" class="inp-control filter-6" type="radio" name="filter">
+    <input id="filter-7" class="inp-control filter-7" type="radio" name="filter">
+    <input id="filter-8" class="inp-control filter-8" type="radio" name="filter">
 
     <div class="icons">
         <label for="fill" class="icon">
@@ -137,7 +146,7 @@
                 (надо, чтобы на клик по логотипу показывать исходную картинку)-->
         <div class="image-wrapper image-scale-modified image-modified">
             <div class="image-wrapper image-rotation-modified">
-                <img class="cat-image image-flipped" src="shkoda.jpg" alt="shkoda">
+                <img class="cat-image image-flipped image-filtered" src="shkoda.jpg" alt="shkoda">
             </div>
         </div>
         <div class="image-wrapper image-default">
@@ -146,27 +155,27 @@
     </div>
     <div class="filters-container">
         <div class="l-arrows">
-            <label class="icon arrow arrow-left arrow-disabled">
+            <label for="page-1" class="icon arrow arrow-left arrow-disabled">
                 <svg class="icon-arrow">
                     <use xlink:href="#icon-arrow"></use>
                 </svg>
             </label>
-            <label for="filter-1" class="icon arrow arrow-left">
+            <label for="page-1" class="icon arrow arrow-left">
                 <svg class="icon-arrow">
                     <use xlink:href="#icon-arrow"></use>
                 </svg>
             </label>
-            <label for="filter-2" class="icon arrow arrow-left">
+            <label for="page-2" class="icon arrow arrow-left">
                 <svg class="icon-arrow">
                     <use xlink:href="#icon-arrow"></use>
                 </svg>
             </label>
-            <label for="filter-3" class="icon arrow arrow-left">
+            <label for="page-3" class="icon arrow arrow-left">
                 <svg class="icon-arrow">
                     <use xlink:href="#icon-arrow"></use>
                 </svg>
             </label>
-            <label for="filter-4" class="icon arrow arrow-left">
+            <label for="page-4" class="icon arrow arrow-left">
                 <svg class="icon-arrow">
                     <use xlink:href="#icon-arrow"></use>
                 </svg>
@@ -174,62 +183,62 @@
         </div>
 
         <div class="filters">
-            <label class="filter-item">
+            <label for="filter-1" class="filter-item">
                 <span class="filter-header">Без фильтра</span>
                 <img class="filter-image" src="shkoda.jpg" alt="shkoda">
             </label>
-            <label class="filter-item">
+            <label for="filter-2" class="filter-item">
                 <span class="filter-header">Питер</span>
-                <img class="filter-image" src="shkoda.jpg" alt="shkoda">
+                <img class="filter-image filter-petersburg" src="shkoda.jpg" alt="shkoda">
             </label>
-            <label class="filter-item">
+            <label for="filter-3" class="filter-item">
                 <span class="filter-header">Ялта</span>
                 <img class="filter-image" src="shkoda.jpg" alt="shkoda">
             </label>
-            <label class="filter-item">
+            <label for="filter-4" class="filter-item">
                 <span class="filter-header">Уральское лето</span>
                 <img class="filter-image" src="shkoda.jpg" alt="shkoda">
             </label>
-            <label class="filter-item">
+            <label for="filter-5" class="filter-item">
                 <span class="filter-header">Мой 1</span>
                 <img class="filter-image" src="shkoda.jpg" alt="shkoda">
             </label>
-            <label class="filter-item">
+            <label for="filter-6" class="filter-item">
                 <span class="filter-header">Мой 2</span>
                 <img class="filter-image" src="shkoda.jpg" alt="shkoda">
             </label>
-            <label class="filter-item">
+            <label for="filter-7" class="filter-item">
                 <span class="filter-header">Мой 3</span>
                 <img class="filter-image" src="shkoda.jpg" alt="shkoda">
             </label>
-            <label class="filter-item">
+            <label for="filter-8" class="filter-item">
                 <span class="filter-header">Мой 4</span>
                 <img class="filter-image" src="shkoda.jpg" alt="shkoda">
             </label>
         </div>
 
         <div class="r-arrow">
-            <label for="filter-2" class="icon arrow arrow-right">
+            <label for="page-2" class="icon arrow arrow-right">
                 <svg class="icon-arrow">
                     <use xlink:href="#icon-arrow"></use>
                 </svg>
             </label>
-            <label for="filter-3" class="icon arrow arrow-right">
+            <label for="page-3" class="icon arrow arrow-right">
                 <svg class="icon-arrow">
                     <use xlink:href="#icon-arrow"></use>
                 </svg>
             </label>
-            <label for="filter-4" class="icon arrow arrow-right">
+            <label for="page-4" class="icon arrow arrow-right">
                 <svg class="icon-arrow">
                     <use xlink:href="#icon-arrow"></use>
                 </svg>
             </label>
-            <label for="filter-5" class="icon arrow arrow-right">
+            <label for="page-5" class="icon arrow arrow-right">
                 <svg class="icon-arrow">
                     <use xlink:href="#icon-arrow"></use>
                 </svg>
             </label>
-            <label for="filter-5" class="icon arrow arrow-right arrow-disabled">
+            <label for="page-5" class="icon arrow arrow-right arrow-disabled">
                 <svg class="icon-arrow">
                     <use xlink:href="#icon-arrow"></use>
                 </svg>

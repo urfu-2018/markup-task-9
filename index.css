@@ -108,7 +108,13 @@ label
     display: none;
 }
 
-/* Код для фильтров */
+.image-filtered
+{
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+/* Код для фильтров (раскладка) */
 
 .filters-container
 {
@@ -171,6 +177,34 @@ label
 {
     opacity: .4;
     cursor: default;
+}
+
+/* Фильтры */
+
+.filter-empty
+{
+    filter: none;
+}
+
+@keyframes empty
+{
+    100%
+    {
+        filter: none;
+    }
+}
+
+.filter-petersburg
+{
+    filter: grayscale(80%);
+}
+
+@keyframes petersburg
+{
+    100%
+    {
+        filter: grayscale(80%);
+    }
 }
 
 /* Код для иконок управления */
@@ -263,72 +297,125 @@ label
     transform: rotate(270deg);
 }
 
-.filter-1:checked ~ .filters-container .filter-item:nth-child(1),
-.filter-1:checked ~ .filters-container .filter-item:nth-child(2),
-.filter-1:checked ~ .filters-container .filter-item:nth-child(3),
-.filter-1:checked ~ .filters-container .filter-item:nth-child(4)
+.page-1:checked ~ .filters-container .filter-item:nth-child(1),
+.page-1:checked ~ .filters-container .filter-item:nth-child(2),
+.page-1:checked ~ .filters-container .filter-item:nth-child(3),
+.page-1:checked ~ .filters-container .filter-item:nth-child(4)
 {
     display: block;
 }
 
-.filter-2:checked ~ .filters-container .filter-item:nth-child(2),
-.filter-2:checked ~ .filters-container .filter-item:nth-child(3),
-.filter-2:checked ~ .filters-container .filter-item:nth-child(4),
-.filter-2:checked ~ .filters-container .filter-item:nth-child(5)
+.page-2:checked ~ .filters-container .filter-item:nth-child(2),
+.page-2:checked ~ .filters-container .filter-item:nth-child(3),
+.page-2:checked ~ .filters-container .filter-item:nth-child(4),
+.page-2:checked ~ .filters-container .filter-item:nth-child(5)
 {
     display: block;
 }
 
-.filter-3:checked ~ .filters-container .filter-item:nth-child(3),
-.filter-3:checked ~ .filters-container .filter-item:nth-child(4),
-.filter-3:checked ~ .filters-container .filter-item:nth-child(5),
-.filter-3:checked ~ .filters-container .filter-item:nth-child(6)
+.page-3:checked ~ .filters-container .filter-item:nth-child(3),
+.page-3:checked ~ .filters-container .filter-item:nth-child(4),
+.page-3:checked ~ .filters-container .filter-item:nth-child(5),
+.page-3:checked ~ .filters-container .filter-item:nth-child(6)
 {
     display: block;
 }
 
-.filter-4:checked ~ .filters-container .filter-item:nth-child(4),
-.filter-4:checked ~ .filters-container .filter-item:nth-child(5),
-.filter-4:checked ~ .filters-container .filter-item:nth-child(6),
-.filter-4:checked ~ .filters-container .filter-item:nth-child(7)
+.page-4:checked ~ .filters-container .filter-item:nth-child(4),
+.page-4:checked ~ .filters-container .filter-item:nth-child(5),
+.page-4:checked ~ .filters-container .filter-item:nth-child(6),
+.page-4:checked ~ .filters-container .filter-item:nth-child(7)
 {
     display: block;
 }
 
-.filter-5:checked ~ .filters-container .filter-item:nth-child(5),
-.filter-5:checked ~ .filters-container .filter-item:nth-child(6),
-.filter-5:checked ~ .filters-container .filter-item:nth-child(7),
-.filter-5:checked ~ .filters-container .filter-item:nth-child(8)
+.page-5:checked ~ .filters-container .filter-item:nth-child(5),
+.page-5:checked ~ .filters-container .filter-item:nth-child(6),
+.page-5:checked ~ .filters-container .filter-item:nth-child(7),
+.page-5:checked ~ .filters-container .filter-item:nth-child(8)
 {
     display: block;
 }
 
-.filter-1:checked ~ .filters-container .arrow-left:nth-child(1),
-.filter-1:checked ~ .filters-container .arrow-right:nth-child(1)
+.page-1:checked ~ .filters-container .arrow-left:nth-child(1),
+.page-1:checked ~ .filters-container .arrow-right:nth-child(1)
 {
     display: block;
 }
 
-.filter-2:checked ~ .filters-container .arrow-left:nth-child(2),
-.filter-2:checked ~ .filters-container .arrow-right:nth-child(2)
+.page-2:checked ~ .filters-container .arrow-left:nth-child(2),
+.page-2:checked ~ .filters-container .arrow-right:nth-child(2)
 {
     display: block;
 }
 
-.filter-3:checked ~ .filters-container .arrow-left:nth-child(3),
-.filter-3:checked ~ .filters-container .arrow-right:nth-child(3)
+.page-3:checked ~ .filters-container .arrow-left:nth-child(3),
+.page-3:checked ~ .filters-container .arrow-right:nth-child(3)
 {
     display: block;
 }
 
-.filter-4:checked ~ .filters-container .arrow-left:nth-child(4),
-.filter-4:checked ~ .filters-container .arrow-right:nth-child(4)
+.page-4:checked ~ .filters-container .arrow-left:nth-child(4),
+.page-4:checked ~ .filters-container .arrow-right:nth-child(4)
 {
     display: block;
 }
 
-.filter-5:checked ~ .filters-container .arrow-left:nth-child(5),
-.filter-5:checked ~ .filters-container .arrow-right:nth-child(5)
+.page-5:checked ~ .filters-container .arrow-left:nth-child(5),
+.page-5:checked ~ .filters-container .arrow-right:nth-child(5)
 {
     display: block;
+}
+
+.filter-1:checked ~ .filters-container .filter-item:nth-child(1) .filter-header,
+.filter-2:checked ~ .filters-container .filter-item:nth-child(2) .filter-header,
+.filter-3:checked ~ .filters-container .filter-item:nth-child(3) .filter-header,
+.filter-4:checked ~ .filters-container .filter-item:nth-child(4) .filter-header,
+.filter-5:checked ~ .filters-container .filter-item:nth-child(5) .filter-header,
+.filter-6:checked ~ .filters-container .filter-item:nth-child(6) .filter-header,
+.filter-7:checked ~ .filters-container .filter-item:nth-child(7) .filter-header,
+.filter-8:checked ~ .filters-container .filter-item:nth-child(8) .filter-header
+{
+    font-weight: bold;
+    color: #000;
+}
+
+.filter-1:checked ~ .image-container .image-filtered
+{
+    animation-name: empty;
+}
+
+.filter-2:checked ~ .image-container .image-filtered
+{
+    animation-name: petersburg;
+}
+
+.filter-3:checked ~ .image-container .image-filtered
+{
+    animation-name: empty;
+}
+
+.filter-4:checked ~ .image-container .image-filtered
+{
+    animation-name: empty;
+}
+
+.filter-5:checked ~ .image-container .image-filtered
+{
+    animation-name: empty;
+}
+
+.filter-6:checked ~ .image-container .image-filtered
+{
+    animation-name: empty;
+}
+
+.filter-7:checked ~ .image-container .image-filtered
+{
+    animation-name: empty;
+}
+
+.filter-8:checked ~ .image-container .image-filtered
+{
+    animation-name: empty;
 }
