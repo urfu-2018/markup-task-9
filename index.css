@@ -1,0 +1,439 @@
+.main__wrapper
+{
+    margin: 0 auto;
+    height: 100%;
+    width: 823px;
+    overflow: hidden;
+}
+
+input[name^='instruments'],
+input[name^='filter'],
+input[name^='gallery']
+{
+    display: none;
+}
+
+/*Расстановка верхнего меню*/
+
+.instruments
+{
+    width: 632px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.instruments label
+{
+    width: 48px;
+    height: 48px;
+    display: none;
+    position: relative;
+}
+
+.sprite
+{
+    display: none;
+}
+
+.instruments__icon
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 336px;
+    cursor: pointer;
+}
+
+.filp
+{
+    padding-top: 5px;
+}
+
+/*Работа верхнего меню*/
+
+input[id^='logo']:checked ~ .instruments .logo-color,
+input[id^='fill']:checked ~ .instruments .fill,
+input[id^='scale']:checked ~ .instruments .scale,
+input[id^='rotate']:checked ~ .instruments .rotate,
+input[id^='filp']:checked ~ .instruments .filp
+{
+    opacity: 1;
+}
+
+input[id='fill-in']:checked ~ .image .image__photo
+{
+    height: 488px;
+    margin-top: 84px;
+    margin-bottom: 100px;
+}
+
+input[id='fill-in']:checked ~ .instruments label[for='fill-out'],
+input[id='fill-out']:checked ~ .instruments label[for='fill-in'],
+input[id='scale']:checked ~ .instruments label[for='scale-2'],
+input[id='scale-2']:checked ~ .instruments label[for='scale-3'],
+input[id='scale-3']:checked ~ .instruments label[for='scale-4'],
+input[id='scale-4']:checked ~ .instruments label[for='scale'],
+input[id='rotate']:checked ~ .instruments label[for='rotate-2'],
+input[id='rotate-2']:checked ~ .instruments label[for='rotate-3'],
+input[id='rotate-3']:checked ~ .instruments label[for='rotate-4'],
+input[id='rotate-4']:checked ~ .instruments label[for='rotate'],
+input[id='filp-in']:checked ~ .instruments label[for='filp-out'],
+input[id='filp-out']:checked ~ .instruments label[for='filp-in'],
+input[id='logo']:checked ~ .instruments label[for='logo-color'],
+input[id='logo-color']:checked ~ .instruments label[for='logo']
+{
+    display: block;
+}
+
+input[id='scale']:checked ~ .image .image__scale
+{
+    transform: scale(.8);
+}
+
+input[id='scale-2']:checked ~ .image .image__scale
+{
+    transform: scale(.6);
+}
+
+input[id='scale-3']:checked ~ .image .image__scale
+{
+    transform: scale(.4);
+}
+
+input[id='scale-4']:checked ~ .image .image__scale
+{
+    transform: scale(1);
+}
+
+input[id='rotate']:checked ~ .image .image__rotate
+{
+    transform: rotate(-90deg);
+}
+
+input[id='rotate-2']:checked ~ .image .image__rotate
+{
+    transform: rotate(-180deg);
+}
+
+input[id='rotate-3']:checked ~ .image .image__rotate
+{
+    transform: rotate(-270deg);
+}
+
+input[id='rotate-4']:checked ~ .image .image__rotate
+{
+    transform: rotate(0deg);
+}
+
+input[id='rotate-4']:checked ~ .instruments label[for='rotate'],
+input[id='scale-4']:checked ~ .instruments label[for='scale'],
+input[id='fill-out']:checked ~ .instruments label[for='fill-in'],
+input[id='filp-out']:checked ~ .instruments label[for='filp-in'],
+input[id='logo-color']:checked ~ .instruments label[for='logo']
+{
+    opacity: .5;
+}
+
+input[id='filp-in']:checked ~ .image .image__photo
+{
+    transform: scale(-1, 1);
+}
+
+/*Картинка центральная*/
+
+.image
+{
+    width: 632px;
+    height: 632px;
+    text-align: center;
+    margin: 20px auto;
+}
+
+div[class^='image']
+{
+    transition: .5s;
+}
+
+.image__photo
+{
+    z-index: 1;
+    opacity: .99;
+    width: 632px;
+    height: 632px;
+    transition: .5s;
+}
+
+input[id='logo']:checked ~ .image
+{
+    background: url('cats/cat-1-632.jpg');
+    background-size: 632px;
+}
+
+input[id='logo']:checked ~ .image .image__photo
+{
+    display: none;
+}
+
+/*Галерея - слайдер*/
+
+.gallery__wrapper
+{
+    padding-top: 20px;
+    height: 258px;
+    width: 823px;
+    display: grid;
+    grid-template-columns: 51px auto 51px;
+}
+
+.gallery__wrapper > label
+{
+    width: 48px;
+    height: 48px;
+    display: block;
+    position: relative;
+}
+
+.arrow__left
+{
+    right: 10px;
+    transform: rotate(90deg);
+}
+
+.arrow__right
+{
+    left: 10px;
+    transform: rotate(-90deg);
+}
+
+.arrow
+{
+    top: 100px;
+    position: relative;
+    opacity: .5;
+    width: 48px;
+    height: 48px;
+    background-size: 336px;
+    cursor: pointer;
+}
+
+.arrow-block
+{
+    width: 51px;
+    height: 258px;
+}
+
+.gallery__cats
+{
+    white-space: nowrap;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
+.cat-card
+{
+    transition: .5s;
+    margin: 0 5px;
+}
+
+.cat-card__title
+{
+    text-align: center;
+    margin-top: 0;
+    font-size: 20px;
+}
+
+/*фильтры*/
+
+.no-filter
+{
+    filter: none;
+}
+
+.piter
+{
+    filter: grayscale(90%);
+}
+
+.yalta
+{
+    filter: sepia(80%);
+}
+
+.ural-summer
+{
+    filter: hue-rotate(180deg);
+}
+
+.spring
+{
+    filter: saturate(350%);
+}
+
+.rentgen
+{
+    filter: invert(100%);
+}
+
+.myopia
+{
+    filter: blur(3px);
+}
+
+.cat-card__image
+{
+    background: url('cats/cat-2-170.jpg') no-repeat;
+    background-size: 170px;
+    cursor: pointer;
+    width: 170px;
+    height: 170px;
+    display: inline-block;
+}
+
+/*Работа фильтров*/
+
+input[id='no-filter']:checked ~ .gallery .title-no-filter,
+input[id='piter']:checked ~ .gallery .title-piter,
+input[id='yalta']:checked ~ .gallery .title-yalta,
+input[id='ural-summer']:checked ~ .gallery .title-ural-summer,
+input[id='spring']:checked ~ .gallery .title-spring,
+input[id='rentgen']:checked ~ .gallery .title-rentgen,
+input[id='myopia']:checked ~ .gallery .title-myopia
+{
+    font-weight: bold;
+}
+
+input[id='no-filter']:checked ~ .image .image__photo
+{
+    animation: no-filter-move .5s linear forwards;
+}
+
+input[id='piter']:checked ~ .image .image__photo
+{
+    animation: piter-move .5s linear forwards;
+}
+
+input[id='yalta']:checked ~ .image .image__photo
+{
+    animation: yalta-move .5s linear forwards;
+}
+
+input[id='ural-summer']:checked ~ .image .image__photo
+{
+    animation: ural-summer-move .5s linear forwards;
+}
+
+input[id='spring']:checked ~ .image .image__photo
+{
+    animation: spring-move .5s linear forwards;
+}
+
+input[id='rentgen']:checked ~ .image .image__photo
+{
+    animation: rentgen-move .5s linear forwards;
+}
+
+input[id='myopia']:checked ~ .image .image__photo
+{
+    animation: myopia-move .5s linear forwards;
+}
+
+@keyframes no-filter-move
+{
+    100%
+    {
+        filter: none;
+    }
+}
+
+@keyframes piter-move
+{
+    100%
+    {
+        filter: grayscale(90%);
+    }
+}
+
+@keyframes yalta-move
+{
+    100%
+    {
+        filter: sepia(80%);
+    }
+}
+
+@keyframes ural-summer-move
+{
+    100%
+    {
+        filter: hue-rotate(180deg);
+    }
+}
+
+@keyframes spring-move
+{
+    100%
+    {
+        filter: saturate(350%);
+    }
+}
+
+@keyframes rentgen-move
+{
+    100%
+    {
+        filter: invert(100%);
+    }
+}
+
+@keyframes myopia-move
+{
+    100%
+    {
+        filter: blur(3px);
+    }
+}
+
+/*Работа галереи*/
+
+label[for^='filter']
+{
+    display: none;
+}
+
+input[id='filter-4']:checked ~ .gallery .block-right label[for='filter-4'],
+input[id='filter-1']:checked ~ .gallery .block-left label[for='filter-1']
+{
+    opacity: .3;
+}
+
+input[id='filter-1']:checked ~ .gallery .block-right label[for='filter-2'],
+input[id='filter-2']:checked ~ .gallery .block-right label[for='filter-3'],
+input[id='filter-3']:checked ~ .gallery .block-right label[for='filter-4'],
+input[id='filter-4']:checked ~ .gallery .block-right label[for='filter-4'],
+input[id='filter-1']:checked ~ .gallery .block-left label[for='filter-1'],
+input[id='filter-2']:checked ~ .gallery .block-left label[for='filter-1'],
+input[id='filter-3']:checked ~ .gallery .block-left label[for='filter-2'],
+input[id='filter-4']:checked ~ .gallery .block-left label[for='filter-3']
+{
+    display: block;
+}
+
+input[id='filter-2']:checked ~ .gallery .gallery__cats .cat-card
+{
+    transform: translateX(-180px);
+}
+
+input[id='filter-3']:checked ~ .gallery .gallery__cats .cat-card
+{
+    transform: translateX(-360px);
+}
+
+input[id='filter-4']:checked ~ .gallery .gallery__cats .cat-card
+{
+    transform: translateX(-540px);
+}
