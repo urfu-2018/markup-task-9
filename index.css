@@ -1,0 +1,193 @@
+.sprite
+{
+    display: inline-block;
+    background: url(icons/sprite.svg) no-repeat;
+}
+
+.icon-fill
+{
+    width: 32px;
+    height: 32px;
+    background-position: 0 0;
+}
+
+.icon-flip
+{
+    width: 42px;
+    height: 32px;
+    background-position: -48px 0;
+}
+
+.icon-logo
+{
+    width: 32px;
+    height: 32px;
+    background-position: -144px 0;
+}
+
+.icon-rotate
+{
+    width: 32px;
+    height: 32px;
+    background-position: -192px 0;
+}
+
+.icon-scale
+{
+    width: 32px;
+    height: 32px;
+    background-position: -240px 0;
+}
+
+.icon-arrow
+{
+    width: 49px;
+    height: 32px;
+    background-position: -288px 0;
+}
+
+/* svg спрайты кончились */
+
+label
+{
+    cursor: pointer;
+}
+
+.catgram
+{
+    height: 960px;
+    width: 700px;
+    margin: auto;
+}
+
+.icons
+{
+    display: flex;
+    justify-content: space-between;
+    margin: 12px 0;
+}
+
+/* Картинка в центре
+        image-flipped - Его зеркалим
+        image-rotation-modified - Его вращаем
+        image-scale-modified - Его масштабируем
+*/
+
+.image-container
+{
+    overflow: hidden;
+}
+
+.image-wrapper
+{
+    height: 630px;
+    width: 632px;
+    margin: 0 auto;
+}
+
+.image-rotation-modified
+{
+    display: block;
+}
+
+.cat-image
+{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.image-default
+{
+    display: none;
+}
+
+/* Код для иконок управления */
+
+.inp-control,
+.scale-label,
+.rotate-label
+{
+    display: none;
+}
+
+.fill:checked ~ .image-container .image-modified,
+.fill:checked ~ .image-container .image-rotation-modified
+{
+    width: auto;
+    height: auto;
+}
+
+.flip:checked ~ .image-container .image-flipped
+{
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.logo:checked ~ .image-container .image-modified
+{
+    display: none;
+}
+
+.logo:checked ~ .image-container .image-default
+{
+    display: block;
+}
+
+.scale-1:checked ~ .icons .scale-label:nth-child(2),
+.scale-2:checked ~ .icons .scale-label:nth-child(3),
+.scale-3:checked ~ .icons .scale-label:nth-child(4),
+.scale-4:checked ~ .icons .scale-label:nth-child(1),
+.rotate-1:checked ~ .icons .rotate-label:nth-child(2),
+.rotate-2:checked ~ .icons .rotate-label:nth-child(3),
+.rotate-3:checked ~ .icons .rotate-label:nth-child(4),
+.rotate-4:checked ~ .icons .rotate-label:nth-child(1)
+{
+    display: block;
+}
+
+/* Zoom */
+
+.scale-1:checked ~ .image-container .image-scale-modified
+{
+    transform: scale(1);
+}
+
+.scale-2:checked ~ .image-container .image-scale-modified
+{
+    transform: scale(1.25);
+}
+
+.scale-3:checked ~ .image-container .image-scale-modified
+{
+    transform: scale(1.5);
+}
+
+.scale-4:checked ~ .image-container .image-scale-modified
+{
+    transform: scale(1.75);
+}
+
+/* Вращения */
+
+.rotate-1:checked ~ .image-container .image-rotation-modified
+{
+    transform: rotate(360deg);
+}
+
+.rotate-2:checked ~ .image-container .image-rotation-modified
+{
+    transform: rotate(90deg);
+}
+
+.rotate-3:checked ~ .image-container .image-rotation-modified
+{
+    transform: rotate(180deg);
+}
+
+.rotate-4:checked ~ .image-container .image-rotation-modified
+{
+    transform: rotate(270deg);
+}

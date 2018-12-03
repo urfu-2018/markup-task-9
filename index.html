@@ -3,10 +3,79 @@
 <head>
     <meta charset="utf-8">
     <title>Задача «Котограм»</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-<!--Ваш спрайт-->
+<div class="catgram">
+    <input id="fill" class="inp-control fill" type="checkbox">
+    <input id="flip" class="inp-control flip" type="checkbox">
+    <input id="logo" class="inp-control logo" type="checkbox">
 
-<!--Ваша разметка-->
+    <input id="scale-1" class="inp-control scale-1" type="radio" name="scale" checked>
+    <input id="scale-2" class="inp-control scale-2" type="radio" name="scale">
+    <input id="scale-3" class="inp-control scale-3" type="radio" name="scale">
+    <input id="scale-4" class="inp-control scale-4" type="radio" name="scale">
+
+    <input id="rotate-1" class="inp-control rotate-1" type="radio" name="rotate" checked>
+    <input id="rotate-2" class="inp-control rotate-2" type="radio" name="rotate">
+    <input id="rotate-3" class="inp-control rotate-3" type="radio" name="rotate">
+    <input id="rotate-4" class="inp-control rotate-4" type="radio" name="rotate">
+
+    <div class="icons">
+        <label for="fill" class="icon">
+            <svg class="sprite icon-fill"></svg>
+        </label>
+        <div>
+            <label for="scale-1" class="icon scale-label">
+                <svg class="sprite icon-scale"></svg>
+            </label>
+            <label for="scale-2" class="icon scale-label">
+                <svg class="sprite icon-scale"></svg>
+            </label>
+            <label for="scale-3" class="icon scale-label">
+                <svg class="sprite icon-scale"></svg>
+            </label>
+            <label for="scale-4" class="icon scale-label">
+                <svg class="sprite icon-scale"></svg>
+            </label>
+        </div>
+        <label for="logo" class="icon">
+            <svg class="sprite icon-logo"></svg>
+        </label>
+        <div>
+            <label for="rotate-1" class="icon rotate-label">
+                <svg class="sprite icon-rotate"></svg>
+            </label>
+            <label for="rotate-2" class="icon rotate-label">
+                <svg class="sprite icon-rotate"></svg>
+            </label>
+            <label for="rotate-3" class="icon rotate-label">
+                <svg class="sprite icon-rotate"></svg>
+            </label>
+            <label for="rotate-4" class="icon rotate-label">
+                <svg class="sprite icon-rotate"></svg>
+            </label>
+        </div>
+        <label for="flip" class="icon">
+            <svg class="sprite icon-flip"></svg>
+        </label>
+    </div>
+    <div class="image-container">
+        <!--Два блока
+                Первый всяко изменяется, второй - нет
+                (надо, чтобы на клик по логотипу показывать исходную картинку)-->
+        <div class="image-wrapper image-scale-modified image-modified">
+            <div class="image-wrapper image-rotation-modified">
+                <img class="cat-image image-flipped" src="shkoda.jpg">
+            </div>
+        </div>
+        <div class="image-wrapper image-default">
+            <img class="cat-image" src="shkoda.jpg">
+        </div>
+    </div>
+    <div class="filters">
+
+    </div>
+</div>
 </body>
 </html>
