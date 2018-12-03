@@ -4,6 +4,12 @@
     margin: auto;
 }
 
+.icon
+{
+    height: 48px;
+    width: 48px;
+}
+
 input
 {
     display: none;
@@ -40,6 +46,13 @@ input[id='flip__input']:checked ~ div .flipWrapper
 .rotate
 {
     display: none;
+}
+
+.svg-sprite
+{
+    max-height: 0;
+    margin: 0;
+    padding: 0;
 }
 
 input[id='rotate-0']:checked ~ div .rotationWrapper
@@ -138,11 +151,6 @@ input[id='fill']:checked ~ div .mainImage
     height: 150px;
 }
 
-/*.filter*/
-/*{*/
-/*text-align: center;*/
-/*}*/
-
 .summer img
 {
     filter: grayscale(1);
@@ -163,14 +171,34 @@ input[id='filter-petersburg']:checked ~ div .mainImage img
     animation: petersburg 1s linear forwards;
 }
 
+input[id='filter-petersburg']:checked ~ div .petersburg p
+{
+    font-weight: bold;
+}
+
 input[id='filter-yalta']:checked ~ div .mainImage img
 {
     animation: yalta 1s linear forwards;
 }
 
+input[id='filter-yalta']:checked ~ div .yalta p
+{
+    font-weight: bold;
+}
+
 input[id='filter-summer']:checked ~ div .mainImage img
 {
     animation: summer 1s linear forwards;
+}
+
+input[id='filter-summer']:checked ~ div .summer p
+{
+    font-weight: bold;
+}
+
+input[id='filter-none']:checked ~ div .none p
+{
+    font-weight: bold;
 }
 
 @keyframes petersburg
