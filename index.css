@@ -110,7 +110,7 @@ label
 
 .image-filtered
 {
-    animation-duration: 2s;
+    animation-duration: .5s;
     animation-fill-mode: forwards;
 }
 
@@ -183,7 +183,7 @@ label
 
 .filter-empty
 {
-    filter: none;
+    filter: unset;
 }
 
 @keyframes empty
@@ -196,14 +196,92 @@ label
 
 .filter-petersburg
 {
-    filter: grayscale(80%);
+    filter: grayscale(100%);
 }
 
 @keyframes petersburg
 {
     100%
     {
-        filter: grayscale(80%);
+        filter: grayscale(100%);
+    }
+}
+
+.filter-yalta
+{
+    filter: saturate(5) ;
+}
+
+@keyframes yalta
+{
+    100%
+    {
+        filter: saturate(5) ;
+    }
+}
+
+.filter-ural-summer
+{
+    filter: brightness(120%) hue-rotate(180deg) contrast(160%) ;
+}
+
+@keyframes filter-ural-summer
+{
+    100%
+    {
+        filter: brightness(120%) hue-rotate(180deg) contrast(160%) ;
+    }
+}
+
+.filter-purple
+{
+    filter: contrast(148%) hue-rotate(240deg) brightness(88%);
+}
+
+@keyframes filter-purple
+{
+    100%
+    {
+        filter: contrast(148%) hue-rotate(240deg) brightness(88%);
+    }
+}
+
+.filter-soap
+{
+    filter: blur(1px) hue-rotate(35deg) contrast(130%);
+}
+
+@keyframes filter-soap
+{
+    100%
+    {
+        filter: blur(1px) hue-rotate(35deg) contrast(130%);
+    }
+}
+
+.filter-past
+{
+    filter: sepia(1);
+}
+
+@keyframes filter-past
+{
+    100%
+    {
+        filter: sepia(1);
+    }
+}
+
+.filter-negative
+{
+    filter: contrast(110%) invert(100%);
+}
+
+@keyframes filter-negative
+{
+    100%
+    {
+        filter: contrast(110%) invert(100%);
     }
 }
 
@@ -392,30 +470,30 @@ label
 
 .filter-3:checked ~ .image-container .image-filtered
 {
-    animation-name: empty;
+    animation-name: yalta;
 }
 
 .filter-4:checked ~ .image-container .image-filtered
 {
-    animation-name: empty;
+    animation-name: filter-ural-summer;
 }
 
 .filter-5:checked ~ .image-container .image-filtered
 {
-    animation-name: empty;
+    animation-name: filter-purple;
 }
 
 .filter-6:checked ~ .image-container .image-filtered
 {
-    animation-name: empty;
+    animation-name: filter-soap;
 }
 
 .filter-7:checked ~ .image-container .image-filtered
 {
-    animation-name: empty;
+    animation-name: filter-past;
 }
 
 .filter-8:checked ~ .image-container .image-filtered
 {
-    animation-name: empty;
+    animation-name: filter-negative;
 }
