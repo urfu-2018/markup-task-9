@@ -65,7 +65,7 @@ label
 {
     display: flex;
     justify-content: space-between;
-    margin: 12px 0;
+    margin: 24px 0;
 }
 
 .icon
@@ -73,11 +73,34 @@ label
     fill: #444;
 }
 
+.icon-togglable
+{
+    animation-duration: .75s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(.5,1.95,1,1.27);
+}
+
+@keyframes icon-switch
+{
+    100%
+    {
+        opacity: 1;
+        transform: scale(1.45);
+    }
+}
+
 /* Картинка в центре
         image-flipped - Его зеркалим
         image-rotation-modified - Его вращаем
         image-scale-modified - Его масштабируем
 */
+
+.image-flipped,
+.image-rotation-modified,
+.image-scale-modified
+{
+    transition: all .35s linear;
+}
 
 .image-container
 {
@@ -319,6 +342,19 @@ label
     display: block;
 }
 
+.logo:checked ~ .icons .icon-logo,
+.fill:checked ~ .icons .icon-fill,
+.flip:checked ~ .icons .icon-flip
+{
+    animation-name: icon-switch;
+}
+
+.logo:checked ~ .icons .icon-fill,
+.logo:checked ~ .icons .icon-flip
+{
+    animation: none;
+}
+
 .scale-1:checked ~ .icons .scale-label:nth-child(2),
 .scale-2:checked ~ .icons .scale-label:nth-child(3),
 .scale-3:checked ~ .icons .scale-label:nth-child(4),
@@ -357,7 +393,7 @@ label
 
 .rotate-1:checked ~ .image-container .image-rotation-modified
 {
-    transform: rotate(360deg);
+    transform: rotate(0deg);
 }
 
 .rotate-2:checked ~ .image-container .image-rotation-modified
