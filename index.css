@@ -77,7 +77,7 @@ label
 {
     animation-duration: .75s;
     animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(.5,1.95,1,1.27);
+    animation-timing-function: cubic-bezier(.5, 1.95, 1, 1.27);
 }
 
 @keyframes icon-switch
@@ -403,34 +403,36 @@ label
     animation-name: icon-switch;
 }
 
-.logo:checked ~ .icons .icon-fill,
-.logo:checked ~ .icons .icon-flip
-{
-    animation: none;
-}
-
-.scale-1:checked ~ .icons .scale-label:nth-child(2) .icon-togglable,
-.rotate-1:checked ~ .icons .rotate-label:nth-child(2) .icon-togglable
+.scale-1:checked ~ .icons .icon-scale,
+.rotate-1:checked ~ .icons .icon-rotate
 {
     animation-name: icon-switch-x-1;
 }
 
-.scale-2:checked ~ .icons .scale-label:nth-child(3) .icon-togglable,
-.rotate-2:checked ~ .icons .rotate-label:nth-child(3) .icon-togglable
+.scale-2:checked ~ .icons .icon-scale,
+.rotate-2:checked ~ .icons .icon-rotate
 {
     animation-name: icon-switch-x-2;
 }
 
-.scale-3:checked ~ .icons .scale-label:nth-child(4) .icon-togglable,
-.rotate-3:checked ~ .icons .rotate-label:nth-child(4) .icon-togglable
+.scale-3:checked ~ .icons .icon-scale,
+.rotate-3:checked ~ .icons .icon-rotate
 {
     animation-name: icon-switch-x-3;
 }
 
-.scale-4:checked ~ .icons .scale-label:nth-child(1) .icon-togglable,
-.rotate-4:checked ~ .icons .rotate-label:nth-child(1) .icon-togglable
+.scale-4:checked ~ .icons .icon-scale,
+.rotate-4:checked ~ .icons .icon-rotate
 {
     animation-name: icon-switch-x-4;
+}
+
+.logo:checked ~ .icons .icon-fill,
+.logo:checked ~ .icons .icon-flip,
+.logo:checked ~ .icons .icon-scale,
+.logo:checked ~ .icons .icon-rotate
+{
+    animation: none;
 }
 
 .scale-1:checked ~ .icons .scale-label:nth-child(2),
