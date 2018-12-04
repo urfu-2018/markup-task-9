@@ -1,0 +1,204 @@
+main
+{
+    width: 1440px;
+    height: 1024px;
+    background-color: #ffffff;
+
+   
+}
+
+.icon-plain
+{
+    opacity: .5;
+}
+
+.page
+{
+    width: 632px;
+    height: 632px;
+    display: grid;
+    row-gap: 12px;
+    grid-template-columns: repeat(5, 50px);
+    grid-column-gap: 95px;
+    grid-template-areas: 'fill scale logo rotate flip'
+        'img img img img img'
+        'carousel carousel carousel carousel carousel';
+}
+
+.logo
+{
+    grid-area: logo;
+    fill: url(#rg);
+}
+
+.preview
+{
+    grid-area: img;
+    overflow: hidden;
+    width: 632px;
+    height: 632px;
+}
+
+.scale-rb,
+.rotate-rb,
+.fill-cb,
+.flip-cb
+{
+    display: none;
+}
+
+.fill-cb:checked ~ .preview img
+{
+    object-fit: contain;
+}
+
+.fill-cb:not(:checked) ~ .preview img
+{
+    object-fit: cover;
+}
+
+.flip-cb:checked ~ .preview .flip-wrapper
+{
+   transform: scaleX(-1);
+}
+
+.flip-cb:not(:checked) ~ .preview .flip-wrapper
+{
+    transform: scaleX(1);
+}
+
+.rotate-rb-1:checked ~ .rotate-link-1,
+.rotate-rb-1:checked ~ .rotate-link-3,
+.rotate-rb-1:checked ~ .rotate-link-4,
+.rotate-rb-1:checked ~ .rotate-img-1,
+.rotate-rb-1:checked ~ .rotate-img-3,
+.rotate-rb-1:checked ~ .rotate-img-4
+{
+    display: none;
+}
+
+.rotate-rb-2:checked ~ .rotate-link-1,
+.rotate-rb-2:checked ~ .rotate-link-2,
+.rotate-rb-2:checked ~ .rotate-link-4,
+.rotate-rb-2:checked ~ .rotate-img-1,
+.rotate-rb-2:checked ~ .rotate-img-2,
+.rotate-rb-2:checked ~ .rotate-img-4
+{
+    display: none;
+}
+
+.rotate-rb-3:checked ~ .rotate-link-1,
+.rotate-rb-3:checked ~ .rotate-link-2,
+.rotate-rb-3:checked ~ .rotate-link-3,
+.rotate-rb-3:checked ~ .rotate-img-1,
+.rotate-rb-3:checked ~ .rotate-img-2,
+.rotate-rb-3:checked ~ .rotate-img-3
+{
+    display: none;
+}
+
+.rotate-rb-4:checked ~ .rotate-link-2,
+.rotate-rb-4:checked ~ .rotate-link-3,
+.rotate-rb-4:checked ~ .rotate-link-4,
+.rotate-rb-4:checked ~ .rotate-img-2,
+.rotate-rb-4:checked ~ .rotate-img-3,
+.rotate-rb-4:checked ~ .rotate-img-4
+{
+    display: none;
+}
+
+.rotate-rb-1:checked ~ .preview .rotate-wrapper
+{
+    transform: rotate(0);
+}
+
+.rotate-rb-2:checked ~ .preview .rotate-wrapper
+{
+    transform: rotate(-90deg);
+}
+
+.rotate-rb-3:checked ~ .preview .rotate-wrapper
+{
+    transform: rotate(-180deg);
+}
+
+.rotate-rb-4:checked ~ .preview .rotate-wrapper
+{
+    transform: rotate(-270deg);
+}
+
+
+.scale-rb-1:checked ~ .scale-link-1,
+.scale-rb-1:checked ~ .scale-link-3,
+.scale-rb-1:checked ~ .scale-link-4,
+.scale-rb-1:checked ~ .scale-img-1,
+.scale-rb-1:checked ~ .scale-img-3,
+.scale-rb-1:checked ~ .scale-img-4
+{
+    display: none;
+}
+
+.scale-rb-2:checked ~ .scale-link-1,
+.scale-rb-2:checked ~ .scale-link-2,
+.scale-rb-2:checked ~ .scale-link-4,
+.scale-rb-2:checked ~ .scale-img-1,
+.scale-rb-2:checked ~ .scale-img-2,
+.scale-rb-2:checked ~ .scale-img-4
+{
+    display: none;
+}
+
+.scale-rb-3:checked ~ .scale-link-1,
+.scale-rb-3:checked ~ .scale-link-2,
+.scale-rb-3:checked ~ .scale-link-3,
+.scale-rb-3:checked ~ .scale-img-1,
+.scale-rb-3:checked ~ .scale-img-2,
+.scale-rb-3:checked ~ .scale-img-3
+{
+    display: none;
+}
+
+.scale-rb-4:checked ~ .scale-link-2,
+.scale-rb-4:checked ~ .scale-link-3,
+.scale-rb-4:checked ~ .scale-link-4,
+.scale-rb-4:checked ~ .scale-img-2,
+.scale-rb-4:checked ~ .scale-img-3,
+.scale-rb-4:checked ~ .scale-img-4
+{
+    display: none;
+}
+
+.scale-rb-1:checked ~ .preview img
+{
+    transform: scale(1);
+}
+
+.scale-rb-2:checked ~ .preview img
+{
+    transform: scale(1.3);
+}
+
+.scale-rb-3:checked ~ .preview img
+{
+    transform: scale(1.6);
+}
+
+.scale-rb-4:checked ~ .preview img
+{
+    transform: scale(2);
+}
+
+.logo:active ~ .preview img
+{
+    transform: scale(1);
+}
+
+.logo:active ~ .preview .flip-wrapper
+{
+    transform: scaleX(1);
+}
+
+.logo:active ~ .preview .rotate-wrapper
+{
+    transform: rotate(0);
+}
