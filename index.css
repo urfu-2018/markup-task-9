@@ -68,7 +68,7 @@ label
     margin: 24px 0;
 }
 
-.icon
+.icon-label
 {
     fill: #444;
 }
@@ -178,9 +178,10 @@ label
 
 .image-wrapper
 {
-    height: 630px;
+    height: 632px;
     width: 632px;
     margin: 0 auto;
+    overflow: hidden;
 }
 
 .image-rotation-modified
@@ -212,6 +213,17 @@ label
 {
     margin-top: 70px;
     position: relative;
+}
+
+.filters-container::after
+{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 
 .filters
@@ -386,6 +398,7 @@ label
     display: none;
 }
 
+.fill:checked ~ .image-container > .image-wrapper:first-child,
 .fill:checked ~ .image-container .image-modified,
 .fill:checked ~ .image-container .image-rotation-modified
 {
@@ -401,7 +414,24 @@ label
     transform: scaleX(-1);
 }
 
-.logo:checked ~ .image-container .image-modified
+/* Запретим изменять картинку, если показана исходная */
+
+.logo:checked ~ .icons .icon-label
+{
+    visibility: hidden;
+}
+
+.logo:checked ~ .icons .logo-label
+{
+    visibility: visible;
+}
+
+.logo:checked ~ .filters-container::after
+{
+    z-index: 1;
+}
+
+.logo:checked ~ .image-container > .image-wrapper
 {
     display: none;
 }
@@ -410,6 +440,8 @@ label
 {
     display: block;
 }
+
+/* ------ */
 
 .logo:checked ~ .icons .icon-logo,
 .fill:checked ~ .icons .icon-fill,
