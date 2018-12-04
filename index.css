@@ -70,6 +70,8 @@ label
 
 .icon-label
 {
+    animation-fill-mode: forwards;
+    animation-duration: .75s;
     fill: #444;
 }
 
@@ -92,6 +94,15 @@ label
     {
         opacity: .8;
         transform: scale(1);
+    }
+}
+
+@keyframes label-hiding
+{
+    100%
+    {
+        opacity: 0;
+        visibility: hidden;
     }
 }
 
@@ -418,12 +429,12 @@ label
 
 .logo:checked ~ .icons .icon-label
 {
-    visibility: hidden;
+    animation-name: label-hiding;
 }
 
 .logo:checked ~ .icons .logo-label
 {
-    visibility: visible;
+    animation: none;
 }
 
 .logo:checked ~ .filters-container::after
