@@ -56,7 +56,6 @@ input
     fill-opacity: .8;
 }
 
-.tab-icon__logo,
 .carousel-label:hover .icon-arrow,
 .tab-icon:hover
 {
@@ -247,6 +246,16 @@ input
     justify-content: center;
 }
 
+.photo_no-effects
+{
+    display: none;
+}
+
+.tab-icon__logo
+{
+    fill: url(#logo-gradient);
+}
+
 input[id='fill-cover']:checked ~ main .label__fill-standart,
 input[id='fill-standart']:checked ~ main .label__fill-cover,
 input[id='flip-reflection']:checked ~ main .label__flip-standart,
@@ -291,17 +300,17 @@ input[id='flip-reflection']:checked ~ main .cat-photo__flip-wrapper
 
 input[id='rotate-90deg']:checked ~ main .cat-photo__rotate-wrapper
 {
-    transform: rotate(90deg);
+    transform: rotate(-90deg);
 }
 
 input[id='rotate-180deg']:checked ~ main .cat-photo__rotate-wrapper
 {
-    transform: rotate(180deg);
+    transform: rotate(-180deg);
 }
 
 input[id='rotate-270deg']:checked ~ main .cat-photo__rotate-wrapper
 {
-    transform: rotate(270deg);
+    transform: rotate(-270deg);
 }
 
 input[id='scale-2']:checked ~ main .cat-photo__scale-wrapper
@@ -393,4 +402,14 @@ input[id='filter-6']:checked ~ main .cat-photo__filter-wrapper
     {
         filter: hue-rotate(270deg);
     }
+}
+
+input[id='reset']:checked ~ main .photo_no-effects
+{
+    display: block;
+}
+
+input[id='reset']:checked ~ main .tab-icon__logo
+{
+    fill: #444;
 }
