@@ -7,7 +7,12 @@
 </head>
 <body>
 <!--SVG спрайт-->
-    <svg xmlns="http://www.w3.org/2000/svg" class="svg-sptite">
+    <svg xmlns="http://www.w3.org/2000/svg" height="0" width="0">
+        <linearGradient id="logo-gradient" x1="0" y1="0" x2="1" y2="1">
+            <stop stop-color="#8a2387" offset="0%"></stop>
+            <stop stop-color="#e94057" offset="64%"></stop>
+            <stop stop-color="#f27121" offset="100%"></stop>
+        </linearGradient>
         <defs>
         <symbol id="icon-fill" viewBox="0 0 48 48">
             <path d="M8.395 8.395h30.996v30.996H8.395z"/>
@@ -19,7 +24,7 @@
             <path d="M21.398 8.05h5.205v5.175h-5.205zM21.398 0h5.205v5.175h-5.205zM21.398 16.1h5.205v5.175h-5.205zM21.398 23.575h5.205v5.175h-5.205zM21.398 31.625h5.205V36.8h-5.205z"/>
         </symbol>
         <symbol id="icon-logo" viewBox="0 0 48 48">
-            <path d="M0 0v48h48V0H0zm24.107 16.782a7.12 7.12 0 0 1 7.11 7.111 7.12 7.12 0 0 1-7.11 7.111 7.12 7.12 0 0 1-7.111-7.11 7.12 7.12 0 0 1 7.11-7.112zM6.4 5.547h7.253v4.693H6.4V5.547zM41.6 41.6H6.4V24.747h4.225c.443 7.053 6.318 12.657 13.482 12.657 7.163 0 13.039-5.604 13.481-12.657H41.6V41.6z" fill-rule="evenodd"/>
+            <path fill="url(#logo-gradient)" d="M0 0v48h48V0H0zm24.107 16.782a7.12 7.12 0 0 1 7.11 7.111 7.12 7.12 0 0 1-7.11 7.111 7.12 7.12 0 0 1-7.111-7.11 7.12 7.12 0 0 1 7.11-7.112zM6.4 5.547h7.253v4.693H6.4V5.547zM41.6 41.6H6.4V24.747h4.225c.443 7.053 6.318 12.657 13.482 12.657 7.163 0 13.039-5.604 13.481-12.657H41.6V41.6z" fill-rule="evenodd"/>
         </symbol>
         <symbol id="icon-rotate" viewBox="0 0 48 48">
             <path d="M24 48c13.234 0 24-9.765 24-21.753 0-11.99-10.766-21.749-24-21.749-.88 0-1.768.046-2.651.136V1.119c0-.452-.308-.863-.761-1.038a1.353 1.353 0 0 0-1.355.251l-8.504 7.722c-.484.438-.484 1.138 0 1.583l8.5 7.739c.362.319.886.418 1.359.243.453-.177.76-.585.76-1.035v-3.899c.88-.146 1.764-.212 2.651-.212 8.384 0 15.207 6.18 15.207 13.774 0 7.593-6.825 13.778-15.207 13.778-8.382 0-15.203-6.187-15.203-13.778 0-.616-.553-1.12-1.24-1.12H1.24c-.684 0-1.241.504-1.241 1.12C0 38.235 10.774 48 24 48z" fill-rule="evenodd"/>
@@ -31,18 +36,59 @@
         </defs>
     </svg>
 
-    <main class="general-layout">
+<!--Разметка-->
+    <input type="radio" id="fill-cover" name="fill" checked>
+    <input type="radio" id="fill-standart" name="fill">
+
+    <input type="radio" id="flip-standart" name="flip" checked>
+    <input type="radio" id="flip-reflection" name="flip">
+
+    <input type="radio" id="rotate-0deg" name="rotate" checked>
+    <input type="radio" id="rotate-90deg" name="rotate">
+    <input type="radio" id="rotate-180deg" name="rotate">
+    <input type="radio" id="rotate-270deg" name="rotate">
+
+    <input type="radio" id="scale-1" name="scale" checked>
+    <input type="radio" id="scale-2" name="scale">
+    <input type="radio" id="scale-3" name="scale">
+    <input type="radio" id="scale-4" name="scale">
+
+    <main class="general-layout">    
         <div class="settings-tabs__wrapper">
             <div class="settings-tabs">
                 <div class="setting-tabs__item tab">
-                    <svg class="tab-icon tab-icon__fill">
-                        <use xlink:href="#icon-fill"></use>
-                    </svg>
+                    <label for="fill-standart" class="tabs-label label__fill-standart">
+                        <svg class="tab-icon tab-icon__fill">
+                            <use xlink:href="#icon-fill"></use>
+                        </svg>
+                    </label>
+                    <label for="fill-cover" class="tabs-label label__fill-cover">
+                        <svg class="tab-icon tab-icon__fill">
+                            <use xlink:href="#icon-fill"></use>
+                        </svg>
+                    </label>
                 </div>
                 <div class="setting-tabs__item tab">
-                    <svg class="tab-icon tab-icon__scale">
-                        <use xlink:href="#icon-scale"></use>
-                    </svg>
+                    <label for="scale-2" class="tabs-label label__scale-2">
+                        <svg class="tab-icon tab-icon__scale">
+                            <use xlink:href="#icon-scale"></use>
+                        </svg>
+                    </label>
+                    <label for="scale-3" class="tabs-label label__scale-3">
+                        <svg class="tab-icon tab-icon__scale">
+                            <use xlink:href="#icon-scale"></use>
+                        </svg>
+                    </label>
+                    <label for="scale-4" class="tabs-label label__scale-4">
+                        <svg class="tab-icon tab-icon__scale">
+                            <use xlink:href="#icon-scale"></use>
+                        </svg>
+                    </label>
+                    <label for="scale-1" class="tabs-label label__scale-1">
+                        <svg class="tab-icon tab-icon__scale">
+                            <use xlink:href="#icon-scale"></use>
+                        </svg>
+                    </label>
                 </div>
                 <div class="setting-tabs__item tab">
                     <svg class="tab-icon tab-icon__logo">
@@ -50,15 +96,45 @@
                     </svg>
                 </div>
                 <div class="setting-tabs__item tab">
-                    <svg class="tab-icon tab-icon__rotate">
-                        <use xlink:href="#icon-rotate"></use>
-                    </svg>
+                    <label for="rotate-90deg" class="tabs-label label__rotate-90deg">
+                        <svg class="tab-icon tab-icon__rotate">
+                            <use xlink:href="#icon-rotate"></use>
+                        </svg>
+                    </label>
+                    <label for="rotate-180deg" class="tabs-label label__rotate-180deg">
+                        <svg class="tab-icon tab-icon__rotate">
+                            <use xlink:href="#icon-rotate"></use>
+                        </svg>
+                    </label>
+                    <label for="rotate-270deg" class="tabs-label label__rotate-270deg">
+                        <svg class="tab-icon tab-icon__rotate">
+                            <use xlink:href="#icon-rotate"></use>
+                        </svg>
+                    </label>
+                    <label for="rotate-0deg" class="tabs-label label__rotate-0deg">
+                        <svg class="tab-icon tab-icon__rotate">
+                            <use xlink:href="#icon-rotate"></use>
+                        </svg>
+                    </label>
                 </div>
                 <div class="setting-tabs__item tab">
-                    <svg class="tab-icon tab-icon__flip">
-                        <use xlink:href="#icon-flip"></use>
-                    </svg>
+                    <label for="flip-reflection" class="tabs-label label__flip-reflection">
+                        <svg class="tab-icon tab-icon__flip">
+                            <use xlink:href="#icon-flip"></use>
+                        </svg>
+                    </label>
+                    <label for="flip-standart" class="tabs-label label__flip-standart">
+                        <svg class="tab-icon tab-icon__flip">
+                            <use xlink:href="#icon-flip"></use>
+                        </svg>
+                    </label>
                 </div>
+            </div>
+        </div>
+        <div class="cat-photo__wrapper">
+            <div class="cat-photo">
+                <img src="./pictures/cat-photo.jpg" srcset="./pictures/cat-photo-2x.jpg"
+                    alt="cat photo" class="cat-photo__img">
             </div>
         </div>
     </main>
