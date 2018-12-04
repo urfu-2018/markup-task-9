@@ -1,36 +1,23 @@
-.icons-sprite
+.icons-sprite,
+.hidden-input
 {
     display: none;
 }
 
 svg
 {
+    fill: #444;
+    cursor: pointer;
+}
+
+.flip-label
+{
+    padding-top: 5px;
+}
+.control
+{
     width: 48px;
     height: 48px;
-}
-
-.hidden-input
-{
-    display: none;
-}
-
-.fill-checkbox:checked ~ .catogram .photo
-{
-    background-size: contain;
-}
-
-.flip-checkbox:checked ~ .catogram .photo
-{
-    transform: scale(-1, 1);
-}
-
-.catogram
-{
-    margin: 40px auto;
-    width: 1440px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .controls
@@ -41,39 +28,181 @@ svg
     margin-bottom: 12px;
 }
 
-.control
+.catogram
 {
-    fill: #444;
-    cursor: pointer;
+    margin: 20px auto 37px;
+    width: 1440px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rotate-photo-wrapper
+{
+    width: 632px;
+    height: 632px;
 }
 
 .photo
 {
-    background-repeat: no-repeat;
-    background-image: url('cat.jpg');
-    background-size: cover;
-    background-position: 50% 50%;
+    background: url('cat.jpg') 50% 50% no-repeat;
     width: 632px;
     height: 632px;
+}
+
+.arrow
+{
+    width: 49px;
+    height: 32px;
+}
+
+.prev-arrow
+{
+    transform: translate(-34px, 90px) rotate(90deg);
+}
+
+.next-arrow
+{
+    transform: translate(34px, 90px) rotate(-90deg);
+}
+
+.flip-checkbox:checked ~ .catogram .photo
+{
+    transform: scale(-1, 1);
+}
+
+.rotate-1-radio:checked ~ .catogram .rotate-1-label,
+.rotate-1-radio:checked ~ .catogram .rotate-3-label,
+.rotate-1-radio:checked ~ .catogram .rotate-4-label,
+
+.rotate-2-radio:checked ~ .catogram .rotate-1-label,
+.rotate-2-radio:checked ~ .catogram .rotate-2-label,
+.rotate-2-radio:checked ~ .catogram .rotate-4-label,
+
+.rotate-3-radio:checked ~ .catogram .rotate-1-label,
+.rotate-3-radio:checked ~ .catogram .rotate-2-label,
+.rotate-3-radio:checked ~ .catogram .rotate-3-label,
+
+.rotate-4-radio:checked ~ .catogram .rotate-2-label,
+.rotate-4-radio:checked ~ .catogram .rotate-3-label,
+.rotate-4-radio:checked ~ .catogram .rotate-4-label
+{
+    display: none;
+}
+
+.rotate-1-radio:checked ~ .catogram .rotate-photo-wrapper
+{
+    transform: rotate(0deg);
+}
+
+.rotate-2-radio:checked ~ .catogram .rotate-photo-wrapper
+{
+    transform: rotate(-90deg);
+}
+
+.rotate-3-radio:checked ~ .catogram .rotate-photo-wrapper
+{
+    transform: rotate(-180deg);
+}
+
+.rotate-4-radio:checked ~ .catogram .rotate-photo-wrapper
+{
+    transform: rotate(-270deg);
+}
+
+.scale-cover-radio:checked ~ .catogram .scale-cover-label,
+.scale-cover-radio:checked ~ .catogram .scale-2-label,
+.scale-cover-radio:checked ~ .catogram .scale-3-label,
+.scale-cover-radio:checked ~ .catogram .scale-4-label,
+
+.scale-contain-radio:checked ~ .catogram .scale-contain-label,
+.scale-contain-radio:checked ~ .catogram .scale-2-label,
+.scale-contain-radio:checked ~ .catogram .scale-3-label,
+.scale-contain-radio:checked ~ .catogram .scale-4-label,
+
+.scale-1-radio:checked ~ .catogram .scale-1-label,
+.scale-1-radio:checked ~ .catogram .scale-3-label,
+.scale-1-radio:checked ~ .catogram .scale-4-label,
+.scale-1-radio:checked ~ .catogram .scale-contain-label,
+
+.scale-2-radio:checked ~ .catogram .scale-1-label,
+.scale-2-radio:checked ~ .catogram .scale-2-label,
+.scale-2-radio:checked ~ .catogram .scale-4-label,
+.scale-2-radio:checked ~ .catogram .scale-contain-label,
+
+.scale-3-radio:checked ~ .catogram .scale-1-label,
+.scale-3-radio:checked ~ .catogram .scale-2-label,
+.scale-3-radio:checked ~ .catogram .scale-3-label,
+.scale-3-radio:checked ~ .catogram .scale-contain-label,
+
+.scale-4-radio:checked ~ .catogram .scale-2-label,
+.scale-4-radio:checked ~ .catogram .scale-3-label,
+.scale-4-radio:checked ~ .catogram .scale-4-label,
+.scale-4-radio:checked ~ .catogram .scale-contain-label
+{
+    display: none;
+}
+
+.scale-cover-radio:checked ~ .catogram .photo
+{
+    background-size: cover;
+}
+
+.scale-contain-radio:checked ~ .catogram .photo
+{
+    background-size: contain;
+}
+
+.scale-1-radio:checked ~ .catogram .photo
+{
+    background-size: 50%;
+}
+
+.scale-2-radio:checked ~ .catogram .photo
+{
+    background-size: 75%;
+}
+
+.scale-3-radio:checked ~ .catogram .photo
+{
+    background-size: 110%;
+}
+
+.scale-4-radio:checked ~ .catogram .photo
+{
+    background-size: 150%;
 }
 
 .filters-widget
 {
     margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.visible-filters
+{
+    width: 720px;
+    overflow: hidden;
 }
 
 .filters
 {
     display: flex;
+    position: relative;
+    transition-property: left;
+    transition-duration: .5s;
 }
 
 .filter
 {
     margin: 0 5px;
+    display: block;
 }
 
 .filter .filter-name
 {
+    display: block;
     text-align: center;
     font-size: 18px;
     color: #444;
@@ -84,6 +213,7 @@ svg
 
 .filter .filter-demo
 {
+    display: block;
     width: 170px;
     height: 169px;
     background-image: url('cat.jpg');
@@ -92,17 +222,113 @@ svg
     background-blend-mode: luminosity;
 }
 
-.filter-2 .filter-demo
+.filter-1-radio:checked ~ .catogram .filter-1 .filter-name,
+.filter-2-radio:checked ~ .catogram .filter-2 .filter-name,
+.filter-3-radio:checked ~ .catogram .filter-3 .filter-name,
+.filter-4-radio:checked ~ .catogram .filter-4 .filter-name,
+.filter-5-radio:checked ~ .catogram .filter-5 .filter-name,
+.filter-6-radio:checked ~ .catogram .filter-6 .filter-name
 {
-    filter: grayscale(.7);
+    color: black;
+    font-weight: bold;
 }
 
-.filter-3 .filter-demo
+.filter-2 .filter-demo,
+.filter-2-radio:checked ~ .catogram .photo
 {
-    background-color: rgba(112, 66, 20, .6);
+    filter: grayscale(100%);
 }
 
-.filter-4 .filter-demo
+.filter-3 .filter-demo,
+.filter-3-radio:checked ~ .catogram .photo
+{
+    filter: sepia(100%);
+}
+
+.filter-4 .filter-demo,
+.filter-4-radio:checked ~ .catogram .photo
 {
     filter: invert(1);
+}
+
+.filter-5 .filter-demo,
+.filter-5-radio:checked ~ .catogram .photo
+{
+    filter: saturate(30%);
+}
+
+.filter-6 .filter-demo,
+.filter-6-radio:checked ~ .catogram .photo
+{
+    filter: hue-rotate(300deg);
+}
+
+.prev-notactive-radio:checked ~ .catogram .prev-1-label,
+.prev-notactive-radio:checked ~ .catogram .prev-2-label,
+.prev-notactive-radio:checked ~ .catogram .next-notactive-label,
+.prev-notactive-radio:checked ~ .catogram .next-2-label,
+
+.prev-1-radio:checked ~ .catogram .prev-1-label,
+.prev-1-radio:checked ~ .catogram .prev-2-label,
+.prev-1-radio:checked ~ .catogram .next-2-label,
+.prev-1-radio:checked ~ .catogram .next-notactive-label,
+
+.prev-2-radio:checked ~ .catogram .prev-notactive-label,
+.prev-2-radio:checked ~ .catogram .prev-2-label,
+.prev-2-radio:checked ~ .catogram .next-1-label,
+.prev-2-radio:checked ~ .catogram .next-notactive-label,
+
+.next-notactive-radio:checked ~ .catogram .next-1-label,
+.next-notactive-radio:checked ~ .catogram .next-2-label,
+.next-notactive-radio:checked ~ .catogram .prev-1-label,
+.next-notactive-radio:checked ~ .catogram .prev-notactive-label,
+
+.next-1-radio:checked ~ .catogram .prev-notactive-label,
+.next-1-radio:checked ~ .catogram .prev-2-label,
+.next-1-radio:checked ~ .catogram .next-1-label,
+.next-1-radio:checked ~ .catogram .next-notactive-label,
+
+.next-2-radio:checked ~ .catogram .prev-notactive-label,
+.next-2-radio:checked ~ .catogram .prev-1-label,
+.next-2-radio:checked ~ .catogram .next-1-label,
+.next-2-radio:checked ~ .catogram .next-2-label
+{
+    display: none;
+}
+
+.prev-notactive-label .arrow,
+.next-notactive-label .arrow
+{
+    fill: rgba(170, 170, 170, .8);
+    cursor: auto;
+}
+
+.prev-notactive-radio:checked ~ .catogram .filters,
+.prev-1-radio:checked ~ .catogram .filters
+{
+    left: 0;
+}
+
+.prev-2-radio:checked ~ .catogram .filters,
+.next-1-radio:checked ~ .catogram .filters
+{
+    left: -180px;
+}
+
+.next-2-radio:checked ~ .catogram .filters,
+.next-notactive-radio:checked ~ .catogram .filters
+{
+    left: -360px;
+}
+
+.default-checkbox:checked ~ .catogram .rotate-photo-wrapper
+{
+    transform: none;
+}
+
+.default-checkbox:checked ~ .catogram .photo
+{
+    filter: none;
+    background-size: cover;
+    transform: none;
 }

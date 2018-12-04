@@ -8,11 +8,13 @@
 <body>
     <svg xmlns="http://www.w3.org/2000/svg" class="icons-sprite">
         <defs>
-            <linearGradient id="gradient">
-                <stop offset="5%" stop-color="red"/>
-                <stop offset="95%" stop-color="black"/>
-            </linearGradient>
-        </defs>
+        <linearGradient id="linear-gradient">
+            <stop offset="0%" stop-color="gold"/>
+            <stop offset="100%" stop-color="teal"/>
+        </linearGradient>
+        <symbol id="arrow">
+            <path d="M.5 7.401L24.428 31.33 48.357 7.4 41.569.613l-17.14 17.14L7.288.614z" fill-rule="evenodd"/>
+        </symbol>
         <symbol id="fill">
             <g>
                 <path d="M8.395 8.395h30.996v30.996H8.395z"/>
@@ -26,7 +28,7 @@
                 <path d="M21.398 8.05h5.205v5.175h-5.205zM21.398 0h5.205v5.175h-5.205zM21.398 16.1h5.205v5.175h-5.205zM21.398 23.575h5.205v5.175h-5.205zM21.398 31.625h5.205V36.8h-5.205z"/>
             </g>
         </symbol>
-        <symbol id="logo" class="logo-symbol">
+        <symbol id="logo">
             <path d="M0 0v48h48V0H0zm24.107 16.782a7.12 7.12 0 0 1 7.11 7.111 7.12 7.12 0 0 1-7.11 7.111 7.12 7.12 0 0 1-7.111-7.11 7.12 7.12 0 0 1 7.11-7.112zM6.4 5.547h7.253v4.693H6.4V5.547zM41.6 41.6H6.4V24.747h4.225c.443 7.053 6.318 12.657 13.482 12.657 7.163 0 13.039-5.604 13.481-12.657H41.6V41.6z" fill-rule="evenodd"/>
         </symbol>
         <symbol id="rotate">
@@ -38,53 +40,175 @@
                 <path d="M24 13.071h-4.375v-4.5h-6.25v4.5H9V19.5h4.375V24h6.25v-4.5H24z"/>
             </g>
         </symbol>
+        </defs>
     </svg>
-    <input type="checkbox" id="fill-checkbox" class="fill-checkbox hidden-input">
     <input type="checkbox" id="flip-checkbox" class="flip-checkbox hidden-input">
+    <input type="checkbox" id="default-checkbox" class="default-checkbox hidden-input">
+
+    <input type="radio" id="scale-cover-radio" name="scale-control" class="scale-cover-radio hidden-input"
+           checked>
+    <input type="radio" id="scale-contain-radio" name="scale-control" class="scale-contain-radio hidden-input">
+
+    <input type="radio" id="scale-1-radio" name="scale-control" class="scale-1-radio hidden-input">
+    <input type="radio" id="scale-2-radio" name="scale-control" class="scale-2-radio hidden-input">
+    <input type="radio" id="scale-3-radio" name="scale-control" class="scale-3-radio hidden-input">
+    <input type="radio" id="scale-4-radio" name="scale-control" class="scale-4-radio hidden-input">
+
+    <input type="radio" id="rotate-1-radio" name="rotate-control" class="rotate-1-radio hidden-input" checked>
+    <input type="radio" id="rotate-2-radio" name="rotate-control" class="rotate-2-radio hidden-input">
+    <input type="radio" id="rotate-3-radio" name="rotate-control" class="rotate-3-radio hidden-input">
+    <input type="radio" id="rotate-4-radio" name="rotate-control" class="rotate-4-radio hidden-input">
+
+    <input type="radio" id="filter-1-radio" name="filters-radio" class="filter-1-radio hidden-input" checked>
+    <input type="radio" id="filter-2-radio" name="filters-radio" class="filter-2-radio hidden-input">
+    <input type="radio" id="filter-3-radio" name="filters-radio" class="filter-3-radio hidden-input">
+    <input type="radio" id="filter-4-radio" name="filters-radio" class="filter-4-radio hidden-input">
+    <input type="radio" id="filter-5-radio" name="filters-radio" class="filter-5-radio hidden-input">
+    <input type="radio" id="filter-6-radio" name="filters-radio" class="filter-6-radio hidden-input">
+
+    <input type="radio" id="next-1-radio" name="arrow-radio" class="next-1-radio hidden-input">
+    <input type="radio" id="next-2-radio" name="arrow-radio" class="next-2-radio hidden-input">
+    <input type="radio" id="next-notactive-radio" name="arrow-radio" class="next-notactive-radio hidden-input">
+    <input type="radio" id="prev-1-radio" name="arrow-radio" class="prev-1-radio hidden-input">
+    <input type="radio" id="prev-2-radio" name="arrow-radio" class="prev-2-radio hidden-input">
+    <input type="radio" id="prev-notactive-radio" name="arrow-radio" class="prev-notactive-radio hidden-input" checked>
     <div class="catogram">
         <div class="controls">
-            <label for="fill-checkbox">
+            <label for="scale-cover-radio" class="scale-cover-label">
                 <svg class="control">
                     <use href="#fill"></use>
                 </svg>
             </label>
-            <svg class="control">
-                <use href="#scale"></use>
-            </svg>
-            <svg class="control">
-                <use href="#logo"></use>
-            </svg>
-            <svg class="control">
-                <use href="#rotate"></use>
-            </svg>
-            <label for="flip-checkbox">
+            <label for="scale-contain-radio" class="scale-contain-label">
+                <svg class="control">
+                    <use href="#fill"></use>
+                </svg>
+            </label>
+            <label for="scale-1-radio" class="scale-1-label">
+                <svg class="control">
+                    <use href="#scale"></use>
+                </svg>
+            </label>
+            <label for="scale-2-radio" class="scale-2-label">
+                <svg class="control">
+                    <use href="#scale"></use>
+                </svg>
+            </label>
+            <label for="scale-3-radio" class="scale-3-label">
+                <svg class="control">
+                    <use href="#scale"></use>
+                </svg>
+            </label>
+            <label for="scale-4-radio" class="scale-4-label">
+                <svg class="control">
+                    <use href="#scale"></use>
+                </svg>
+            </label>
+            <label for="default-checkbox" class="default-label">
+                <svg class="control">
+                    <use href="#logo"></use>
+                </svg>
+            </label>
+            <label for="rotate-1-radio" class="rotate-1-label">
+                <svg class="control">
+                    <use href="#rotate"></use>
+                </svg>
+            </label>
+            <label for="rotate-2-radio" class="rotate-2-label">
+                <svg class="control">
+                    <use href="#rotate"></use>
+                </svg>
+            </label>
+            <label for="rotate-3-radio" class="rotate-3-label">
+                <svg class="control">
+                    <use href="#rotate"></use>
+                </svg>
+            </label>
+            <label for="rotate-4-radio" class="rotate-4-label">
+                <svg class="control">
+                    <use href="#rotate"></use>
+                </svg>
+            </label>
+            <label for="flip-checkbox" class="flip-label">
                 <svg class="control">
                     <use href="#flip"></use>
                 </svg>
             </label>
         </div>
-        <div class="photo"></div>
+        <div class="rotate-photo-wrapper">
+            <div class="photo"></div>
+        </div>
         <div class="filters-widget">
-            <div class="prev-arrow"></div>
-            <div class="filters">
-                <div class="filter filter-1">
-                    <div class="filter-name">Без фильтров</div>
-                    <div class="filter-demo"></div>
-                </div>
-                <div class="filter filter-2">
-                    <div class="filter-name">Серенько</div>
-                    <div class="filter-demo"></div>
-                </div>
-                <div class="filter filter-3">
-                    <div class="filter-name">Сепенько</div>
-                    <div class="filter-demo"></div>
-                </div>
-                <div class="filter filter-4">
-                    <div class="filter-name">Horror</div>
-                    <div class="filter-demo"></div>
+            <label for="prev-notactive-radio" class="prev-notactive-label">
+                <svg class="arrow prev-arrow">
+                    <use href="#arrow"></use>
+                </svg>
+            </label>
+            <label for="prev-1-radio" class="prev-1-label">
+                <svg class="arrow prev-arrow">
+                    <use href="#arrow"></use>
+                </svg>
+            </label>
+            <label for="prev-2-radio" class="prev-2-label">
+                <svg class="arrow prev-arrow">
+                    <use href="#arrow"></use>
+                </svg>
+            </label>
+            <div class="visible-filters">
+                <div class="filters">
+                    <label for="filter-1-radio">
+                        <span class="filter filter-1">
+                            <span class="filter-name">Без фильтров</span>
+                            <span class="filter-demo"></span>
+                        </span>
+                    </label>
+                    <label for="filter-2-radio">
+                        <span class="filter filter-2">
+                            <span class="filter-name">Серенько</span>
+                            <span class="filter-demo"></span>
+                        </span>
+                    </label>
+                    <label for="filter-3-radio">
+                        <span class="filter filter-3">
+                            <span class="filter-name">Сепенько</span>
+                            <span class="filter-demo"></span>
+                        </span>
+                    </label>
+                    <label for="filter-4-radio">
+                        <span class="filter filter-4">
+                            <span class="filter-name">Horror</span>
+                            <span class="filter-demo"></span>
+                        </span>
+                    </label>
+                    <label for="filter-5-radio">
+                        <span class="filter filter-5">
+                            <span class="filter-name">Блекло</span>
+                            <span class="filter-demo"></span>
+                        </span>
+                    </label>
+                    <label for="filter-6-radio">
+                        <span class="filter filter-6">
+                            <span class="filter-name">Фиолетово</span>
+                            <span class="filter-demo"></span>
+                        </span>
+                    </label>
                 </div>
             </div>
-            <div class="next-arrow"></div>
+            <label for="next-notactive-radio" class="next-notactive-label">
+                <svg class="arrow next-arrow">
+                    <use href="#arrow"></use>
+                </svg>
+            </label>
+            <label for="next-1-radio" class="next-1-label">
+                <svg class="arrow next-arrow">
+                    <use href="#arrow"></use>
+                </svg>
+            </label>
+            <label for="next-2-radio" class="next-2-label">
+                <svg class="arrow next-arrow">
+                    <use href="#arrow"></use>
+                </svg>
+            </label>
         </div>
     </div>
 </body>
