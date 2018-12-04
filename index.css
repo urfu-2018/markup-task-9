@@ -1,0 +1,129 @@
+.icon {
+  width: 48px;
+  height: 48px;
+  opacity: .8;
+}
+
+.icon_logo
+{
+    fill: url(#gradient);
+    opacity: 1;
+}
+
+.kotogram-page
+{
+    width: 832px;
+    height: 1024px;
+    background-color: #fff;
+    margin: auto;
+}
+
+.editor-buttons
+{
+    box-sizing: border-box;
+    width: 632px;
+    height: 80px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+.edit-button
+{
+    fill: #444;
+}
+
+.edit-button:hover
+{
+    fill: #222;
+    cursor: pointer;
+}
+
+.photo-box
+{
+    width: 632px;
+    height: 632px;
+    margin: auto;
+    
+}
+
+.kitty-photo
+{
+    max-width: 632px;
+    max-height: 632px;
+    object-fit: cover;
+}
+
+.filters-box
+{
+    width: 832px;
+    margin-top: 40px;
+    position: relative;
+    height: 240px;
+}
+
+.prev-button
+{
+    position: absolute;
+    transform: rotate(90deg);
+    top: 100px;
+}
+
+.next-button
+{
+    position: absolute;
+    transform: rotate(-90deg);
+    top: 100px;
+    right: 0;
+}
+
+.icon-arrow-prev
+{
+    fill: #444;
+    opacity: .3;
+    width: 48px;
+    height: 31px;
+}
+
+.icon-arrow-next
+{
+    fill: #444;
+    opacity: .8;
+    width: 48px;
+    height: 31px;
+}
+
+.filter-buttons
+{
+    width: 695px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter-button
+{
+    width: 170px;
+    display: inline-block;
+}
+
+.filter-button p
+{
+    font-family: Helvetica;
+    font-size: 18px;
+    text-align: center;
+    margin: 9px 0 15px;
+}
+
+.filter-img
+{
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+}
+
+.without-filter
+{
+    font-weight: bold;
+}
