@@ -8,9 +8,10 @@
 <body>
     <svg xmlns="http://www.w3.org/2000/svg" class="icons-sprite">
         <defs>
-        <linearGradient id="linear-gradient">
-            <stop offset="0%" stop-color="gold"/>
-            <stop offset="100%" stop-color="teal"/>
+        <linearGradient id="linear-gradient" x1="100%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#2e0f59"/>
+            <stop offset="50%" stop-color="#cc2b76"/>
+            <stop offset="100%" stop-color="gold"/>
         </linearGradient>
         <symbol id="arrow">
             <path d="M.5 7.401L24.428 31.33 48.357 7.4 41.569.613l-17.14 17.14L7.288.614z" fill-rule="evenodd"/>
@@ -28,7 +29,7 @@
                 <path d="M21.398 8.05h5.205v5.175h-5.205zM21.398 0h5.205v5.175h-5.205zM21.398 16.1h5.205v5.175h-5.205zM21.398 23.575h5.205v5.175h-5.205zM21.398 31.625h5.205V36.8h-5.205z"/>
             </g>
         </symbol>
-        <symbol id="logo">
+        <symbol id="logo" fill="url(#linear-gradient)">
             <path d="M0 0v48h48V0H0zm24.107 16.782a7.12 7.12 0 0 1 7.11 7.111 7.12 7.12 0 0 1-7.11 7.111 7.12 7.12 0 0 1-7.111-7.11 7.12 7.12 0 0 1 7.11-7.112zM6.4 5.547h7.253v4.693H6.4V5.547zM41.6 41.6H6.4V24.747h4.225c.443 7.053 6.318 12.657 13.482 12.657 7.163 0 13.039-5.604 13.481-12.657H41.6V41.6z" fill-rule="evenodd"/>
         </symbol>
         <symbol id="rotate">
@@ -108,7 +109,7 @@
                 </svg>
             </label>
             <label for="default-checkbox" class="default-label">
-                <svg class="control">
+                <svg class="control logo">
                     <use href="#logo"></use>
                 </svg>
             </label>
