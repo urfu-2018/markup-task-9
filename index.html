@@ -41,26 +41,92 @@
 
 <!-- разметка -->
     <article class="catogram">
+        <input type="checkbox" class="inp-fill" id="inp-fill">
+
+        <input type="radio" name="rotation" checked class="inp-scale-1" id="inp-scale-1">
+        <input type="radio" name="rotation" class="inp-scale-2" id="inp-scale-2">
+        <input type="radio" name="rotation" class="inp-scale-3" id="inp-scale-3">
+        <input type="radio" name="rotation" class="inp-scale-4" id="inp-scale-4">
+
+        <input type="checkbox" class="inp-logo" id="inp-logo">
+
+        <input type="radio" name="scaling" checked class="inp-rotate-1" id="inp-rotate-1">
+        <input type="radio" name="scaling" class="inp-rotate-2" id="inp-rotate-2">
+        <input type="radio" name="scaling" class="inp-rotate-3" id="inp-rotate-3">
+        <input type="radio" name="scaling" class="inp-rotate-4" id="inp-rotate-4">
+
+        <input type="checkbox" class="inp-flip" id="inp-flip">
+
         <section class="photo-section">
             <div class="header">
-                <svg class="icon fill">
-                    <use xlink:href="#icon-fill"></use>
-                </svg>
-                <svg class="icon scale">
-                    <use xlink:href="#icon-scale"></use>
-                </svg>
-                <svg class="icon logo">
-                    <use xlink:href="#icon-logo"></use>
-                </svg>
-                <svg class="icon rotate">
-                    <use xlink:href="#icon-rotate"></use>
-                </svg>
-                <svg class="icon flip">
-                    <use xlink:href="#icon-flip"></use>
-                </svg>
+                <label for="inp-fill" class="inp-fill-label">
+                    <svg class="icon fill">
+                        <use xlink:href="#icon-fill"></use>
+                    </svg>
+                </label>
+
+                <label for="inp-scale-1" class="inp-scale-1-label">
+                    <svg class="icon scale">
+                        <use xlink:href="#icon-scale"></use>
+                    </svg>
+                </label>
+                <label for="inp-scale-2" class="inp-scale-2-label">
+                    <svg class="icon scale">
+                        <use xlink:href="#icon-scale"></use>
+                    </svg>
+                </label>
+                <label for="inp-scale-3" class="inp-scale-3-label">
+                    <svg class="icon scale">
+                        <use xlink:href="#icon-scale"></use>
+                    </svg>
+                </label>
+                <label for="inp-scale-4" class="inp-scale-4-label">
+                    <svg class="icon scale">
+                        <use xlink:href="#icon-scale"></use>
+                    </svg>
+                </label>
+
+                <label for="inp-logo" class="inp-logo-label">
+                    <svg class="icon logo">
+                        <use xlink:href="#icon-logo"></use>
+                    </svg>
+                </label>
+
+                <label for="inp-rotate-1" class="inp-rotate-1-label">
+                    <svg class="icon rotate">
+                        <use xlink:href="#icon-rotate"></use>
+                    </svg>
+                </label>
+                <label for="inp-rotate-2" class="inp-rotate-2-label">
+                    <svg class="icon rotate">
+                        <use xlink:href="#icon-rotate"></use>
+                    </svg>
+                </label>
+                <label for="inp-rotate-3" class="inp-rotate-3-label">
+                    <svg class="icon rotate">
+                        <use xlink:href="#icon-rotate"></use>
+                    </svg>
+                </label>
+                <label for="inp-rotate-4" class="inp-rotate-4-label">
+                    <svg class="icon rotate">
+                        <use xlink:href="#icon-rotate"></use>
+                    </svg>
+                </label>
+
+                <label for="inp-flip" class="inp-fill-label">
+                    <svg class="icon flip">
+                        <use xlink:href="#icon-flip"></use>
+                    </svg>
+                </label>
             </div>
             <div class="photo-container">
-                <img src="cat.jpg" class="photo">
+                <div class="photo-container-scale">
+                    <div class="photo-container-rotate">
+                        <div class="photo-container-flip">
+                            <img src="cat2.png" class="photo">
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         <section class="filters-section">
@@ -71,25 +137,25 @@
                 <div class="filter">
                     <span class="filter-name">Без фильтра</span>
                     <div class="filter-image-container">
-                        <img src="cat.jpg" class="filter-image">
+                        <img src="cat2.png" class="filter-image">
                     </div>
                 </div>
                 <div class="filter">
                     <span class="filter-name">Черно-белый</span>
                     <div class="filter-image-container">
-                        <img src="cat.jpg" class="filter-image">
+                        <img src="cat2.png" class="filter-image">
                     </div>
                 </div>
                 <div class="filter">
                     <span class="filter-name">Сепия</span>
                     <div class="filter-image-container">
-                        <img src="cat.jpg" class="filter-image">
+                        <img src="cat2.png" class="filter-image">
                     </div>
                 </div>
                 <div class="filter">
                     <span class="filter-name">Упорото-синий</span>
                     <div class="filter-image-container">
-                        <img src="cat.jpg" class="filter-image">
+                        <img src="cat2.png" class="filter-image">
                     </div>
                 </div>
             </div>
