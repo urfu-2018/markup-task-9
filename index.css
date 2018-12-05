@@ -1,0 +1,309 @@
+.cotogram
+{
+    display: grid;
+    grid-template: '. tools .' 80px
+        '. img .'  632px
+        '. carousel .' 312px
+        /1fr 824px 1fr;
+    font: normal 18px Helvetica;
+}
+
+input,
+.rotate-label,
+.zoom-label,
+.image-photo-back,
+.arrow-left,
+.arrow-right
+{
+    display: none;
+}
+
+.arrow-left
+{
+    transform: rotate(90deg);
+    position: relative;
+    top: 100px;
+    right: 10px;
+}
+
+.arrow-right
+{
+    transform: rotate(-90deg);
+    position: relative;
+    top: 100px;
+    left: 10px;
+}
+
+.image,
+.cat-gallery,
+.cat-cards,
+.tools-pannel
+{
+    display: flex;
+    white-space: nowrap;
+    justify-content: space-between;
+    margin: auto;
+    overflow: hidden;
+}
+
+.tools-pannel
+{
+    grid-area: tools;
+    width: 696px;
+}
+
+.icon
+{
+    width: 48px;
+    height: 48px;
+    opacity: .8;
+}
+
+.icon-logo
+{
+    fill: url(#grad);
+}
+
+.image
+{
+    grid-area: img;
+}
+
+.cat-gallery
+{
+    grid-area: carousel;
+}
+
+.cat-cards
+{
+    width: 696px;
+}
+
+.cat-card
+{
+    margin-left: 5px;
+}
+
+.cat-card__title
+{
+    text-align: center;
+}
+
+.image
+{
+    width: 632px;
+    height: 632px;
+    overflow: hidden;
+    display: flex;
+    margin: auto;
+}
+
+.image-photo,
+.image-photo-back
+{
+    height: 632px;
+    width: 632px;
+}
+
+.cat-card__img img
+{
+    width: 169px;
+    height: 170px;
+}
+
+input[id='arrow-3']:checked ~ .cat-gallery .to-right label[for='arrow-3'],
+input[id='arrow-1']:checked ~ .cat-gallery .to-left label[for='arrow-1']
+{
+    opacity: .3;
+}
+
+input[id='arrow-2']:checked ~ .cat-gallery .cat-cards .cat-card
+{
+    transform: translateX(-175px);
+}
+
+input[id='arrow-3']:checked ~ .cat-gallery .cat-cards .cat-card
+{
+    transform: translateX(-352px);
+}
+
+input[id='none-filter']:checked ~ .cat-gallery .title-none,
+input[id='piter-filter']:checked ~ .cat-gallery .title-piter,
+input[id='yalta-filter']:checked ~ .cat-gallery .title-yalta,
+input[id='summer-filter']:checked ~ .cat-gallery .title-summer,
+input[id='invert-filter']:checked ~ .cat-gallery .title-invert,
+input[id='blur-filter']:checked ~ .cat-gallery .title-blur
+{
+    font-weight: bold;
+}
+
+input[id='arrow-1']:checked ~ .cat-gallery .to-right label[for='arrow-2'],
+input[id='arrow-2']:checked ~ .cat-gallery .to-right label[for='arrow-3'],
+input[id='arrow-3']:checked ~ .cat-gallery .to-right label[for='arrow-3'],
+input[id='arrow-1']:checked ~ .cat-gallery .to-left label[for='arrow-1'],
+input[id='arrow-2']:checked ~ .cat-gallery .to-left label[for='arrow-1'],
+input[id='arrow-3']:checked ~ .cat-gallery .to-left label[for='arrow-2'],
+input[id='zoom+1']:checked ~ .tools-pannel label[for='zoom+2'],
+input[id='zoom+2']:checked ~ .tools-pannel label[for='zoom'],
+input[id='zoom']:checked ~ .tools-pannel label[for='zoom+1'],
+input[id='rotate']:checked ~ .tools-pannel label[for='rotate-90'],
+input[id='rotate-90']:checked ~ .tools-pannel label[for='rotate-180'],
+input[id='rotate-180']:checked ~ .tools-pannel label[for='rotate-270'],
+input[id='rotate-270']:checked ~ .tools-pannel label[for='rotate']
+{
+    display: block;
+}
+
+input[id='fill']:checked ~ .image .image-photo
+{
+    width: 100%;
+    height: 100%;
+}
+
+input[id='rotate-90']:checked ~ .image .image__rotate
+{
+    transform: rotate(-90deg);
+}
+
+input[id='rotate-180']:checked ~ .image .image__rotate
+{
+    transform: rotate(-180deg);
+}
+
+input[id='rotate-270']:checked ~ .image .image__rotate
+{
+    transform: rotate(-270deg);
+}
+
+input[id='zoom+2']:checked ~ .image .image__zoom
+{
+    transform: scale(1.4);
+}
+
+input[id='zoom+1']:checked ~ .image .image__zoom
+{
+    transform: scale(1.2);
+}
+
+input[id='flip']:checked ~ .image .image-photo
+{
+    transform: scale(-1,1);
+}
+
+input[id='logo']:checked ~ .image .image-photo-back
+{
+    display: block;
+}
+
+input[id='logo']:checked ~ .image .image-photo
+{
+    display: none;
+}
+
+.no-filter
+{
+    filter: none;
+}
+
+.piter
+{
+    filter: grayscale(100%);
+}
+
+.yalta
+{
+    filter: sepia(80%);
+}
+
+.summer
+{
+    filter: hue-rotate(190deg);
+}
+
+.invert
+{
+    filter: invert(100%);
+}
+
+.blur
+{
+    filter: blur(3px);
+}
+
+input[id='none-filter']:checked ~ .image .image-photo
+{
+    animation: none-animation 1s linear forwards;
+}
+
+input[id='piter-filter']:checked ~ .image .image-photo
+{
+    animation: piter-animation 1s linear forwards;
+}
+
+input[id='yalta-filter']:checked ~ .image .image-photo
+{
+    animation: yalta-animation 1s linear forwards;
+}
+
+input[id='summer-filter']:checked ~ .image .image-photo
+{
+    animation: summer-animation 1s linear forwards;
+}
+
+input[id='invert-filter']:checked ~ .image .image-photo
+{
+    animation: invert-animation 1s linear forwards;
+}
+
+input[id='blur-filter']:checked ~ .image .image-photo
+{
+    animation: blur-animation 1s linear forwards;
+}
+
+@keyframes none-animation
+{
+    100%
+    {
+        filter: none;
+    }
+}
+
+@keyframes piter-animation
+{
+    100%
+    {
+        filter: grayscale(100%);
+    }
+}
+
+@keyframes yalta-animation
+{
+    100%
+    {
+        filter: sepia(80%);
+    }
+}
+
+@keyframes summer-animation
+{
+    100%
+    {
+        filter: hue-rotate(190deg);
+    }
+}
+
+@keyframes invert-animation
+{
+    100%
+    {
+        filter: invert(100%);
+    }
+}
+
+@keyframes blur-animation
+{
+    100%
+    {
+        filter: blur(3px);
+    }
+}
