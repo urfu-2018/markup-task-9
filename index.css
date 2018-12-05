@@ -19,7 +19,6 @@ label
 {
     width: 0;
     height: 0;
-    pointer-events: none;
 }
 
 .catogram
@@ -36,34 +35,21 @@ label
     width: 634px;
     margin-bottom: 12px;
     margin-left: -2px;
-    display: inline;
+    display: flex;
+    justify-content: space-between;
 }
 
 .icon
 {
     width: 48px;
     height: 48px;
-    padding-right: 92px;
-    padding-left: 0;
     fill: #444;
     opacity: .8;
-    pointer-events: none;
 }
 
 .logo
 {
     fill: url(#icon-logo-gradient);
-}
-
-.scale,
-.rotate
-{
-    padding-right: 98px;
-}
-
-.flip
-{
-    padding-right: 0;
 }
 
 .photo-container
@@ -204,13 +190,6 @@ label
     align-items: center;
 }
 
-.left,
-.right
-{
-    padding: 0;
-    pointer-events: none;
-}
-
 .left
 {
     transform: rotate(90deg);
@@ -306,16 +285,16 @@ label
     font-weight: 700;
 }
 
-.inp-scroll-1:checked ~ .inp-scroll-2,
-.inp-scroll-1:checked ~ .inp-scroll-3,
+.inp-scroll-1:checked ~ .inp-scroll-2-label,
+.inp-scroll-1:checked ~ .inp-scroll-3-label,
 .inp-scroll-1:checked ~ .filters .filter-jakal,
 .inp-scroll-1:checked ~ .filters .filter-blur,
-.inp-scroll-2:checked ~ .inp-scroll-1,
-.inp-scroll-2:checked ~ .inp-scroll-3,
+.inp-scroll-2:checked ~ .inp-scroll-1-label,
+.inp-scroll-2:checked ~ .inp-scroll-3-label,
 .inp-scroll-2:checked ~ .filters .filter-no,
 .inp-scroll-2:checked ~ .filters .filter-blur,
-.inp-scroll-3:checked ~ .inp-scroll-1,
-.inp-scroll-3:checked ~ .inp-scroll-2,
+.inp-scroll-3:checked ~ .inp-scroll-1-label,
+.inp-scroll-3:checked ~ .inp-scroll-2-label,
 .inp-scroll-3:checked ~ .filters .filter-no,
 .inp-scroll-3:checked ~ .filters .filter-bw
 {
