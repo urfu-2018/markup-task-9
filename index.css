@@ -53,40 +53,33 @@
     display: none;
 }
 
-.option-container > label
+.option-container > .full-size-label,
+.option-container > .size-label,
+.option-container > .turn-label,
+.option-container > .horizontal-label
 {
     width: 48px;
     opacity: .5;
-    background-image: url(icons/icons.svg);
 }
 
-.option-container > label:hover
+.option-container > label
 {
     cursor: pointer;
 }
 
-.full-size-label
+.full-size-label__pic,
+.size-label__pic,
+.reset-label__pic,
+.turn-label__pic,
+.horizontal-label__pic
 {
-    background-position-y: -32px;
+    width: 48px;
     height: 48px;
 }
 
-.size-label
+.reset-label__pic
 {
-    background-position-y: 48px;
-    height: 48px;
-}
-
-.reset-label
-{
-    background-position-y: 144px;
-    height: 48px;
-}
-
-.turn-label
-{
-    background-position-y: 96px;
-    height: 48px;
+    fill: url('#logo-gradient');
 }
 
 .horizontal-label
@@ -285,10 +278,14 @@ input[id='ural-filter']:checked ~ .effects-container .ural-filter-div__text
 .left-arrow,
 .right-arrow
 {
+    align-self: center;
+}
+
+.left-arrow__pic,
+.right-arrow__pic
+{
     height: 31px;
     width: 48px;
-    background-image: url(icons/icons.svg);
-    align-self: center;
 }
 
 .left-arrow
