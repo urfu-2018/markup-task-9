@@ -1,0 +1,210 @@
+.carousel-wrapper
+{
+    width: 827px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 69px;
+}
+
+.carousel
+{
+    width: 695px;
+    overflow: hidden;
+}
+
+.carousel-list
+{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+}
+
+.carousel-item
+{
+    margin-right: 5px;
+}
+
+.filter-name
+{
+    display: block;
+    width: 170px;
+    height: 22px;
+    font-family: Helvetica;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #444;
+    margin: 0 0 15px;
+}
+
+.filter-preview
+{
+    width: 170px;
+    height: 169px;
+}
+
+.f1-preview,
+.f1:checked ~ .Catogram-Default .photo
+{
+    filter: none;
+}
+
+.f2-preview,
+.f2:checked ~ .Catogram-Default .photo
+{
+    filter: grayscale(100%);
+}
+
+.f3-preview,
+.f3:checked ~ .Catogram-Default .photo
+{
+    filter: sepia(100%);
+}
+
+.f4-preview,
+.f4:checked ~ .Catogram-Default .photo
+{
+    filter: hue-rotate(180deg);
+}
+
+.f5-preview,
+.f5:checked ~ .Catogram-Default .photo
+{
+    filter: saturate(600%);
+}
+
+.f6-preview,
+.f6:checked ~ .Catogram-Default .photo
+{
+    filter: invert(100%);
+}
+
+.f1:checked ~ .Catogram-Default .f1-name,
+.f2:checked ~ .Catogram-Default .f2-name,
+.f3:checked ~ .Catogram-Default .f3-name,
+.f4:checked ~ .Catogram-Default .f4-name,
+.f5:checked ~ .Catogram-Default .f5-name,
+.f6:checked ~ .Catogram-Default .f6-name
+{
+    font-weight: 700;
+    color: #000;
+}
+
+.arrowLabel
+{
+    height: 34px;
+    width: 51px;
+    opacity: .6;
+    background: url(icons/icons.svg);
+    background-position: -1px 0;
+    margin-top: 100px;
+}
+
+.arrowLeft
+{
+    transform: rotate(90deg);
+}
+
+.arrowRight
+{
+    transform: rotate(-90deg);
+}
+
+.arrowDisabled
+{
+    opacity: .3;
+}
+
+.arrowLabel,
+.carouselControl:checked ~ .Catogram-Default .la0,
+.carouselControl:checked ~ .Catogram-Default .ra2
+{
+    display: none;
+}
+
+.la0,
+.ra2
+{
+    display: block;
+}
+
+/* Обработка rc2 */
+
+.rc2:checked ~ .Catogram-Default .la0,
+.rc2:checked ~ .Catogram-Default .ra2
+{
+    display: none;
+}
+
+.rc2:checked ~ .Catogram-Default .la1,
+.rc2:checked ~ .Catogram-Default .ra1
+{
+    display: block;
+}
+
+.rc2:checked ~ .Catogram-Default .carousel-list
+{
+    transform: translateX(-175px);
+}
+
+/* Обработка rc1 */
+
+.rc1:checked ~ .Catogram-Default .la1,
+.rc1:checked ~ .Catogram-Default .ra1
+{
+    display: none;
+}
+
+.rc1:checked ~ .Catogram-Default .la2,
+.rc1:checked ~ .Catogram-Default .ra0
+{
+    display: block;
+}
+
+.rc1:checked ~ .Catogram-Default .carousel-list
+{
+    transform: translateX(-350px);
+}
+
+/* Обработка lc2 */
+
+.lc2:checked ~ .Catogram-Default .la2,
+.lc2:checked ~ .Catogram-Default .ra0
+{
+    display: none;
+}
+
+.lc2:checked ~ .Catogram-Default .la1,
+.lc2:checked ~ .Catogram-Default .ra1
+{
+    display: block;
+}
+
+.lc2:checked ~ .Catogram-Default .carousel-list
+{
+    transform: translateX(-175px);
+}
+
+/* Обработка lc1 */
+
+.lc1:checked ~ .Catogram-Default .la1,
+.lc1:checked ~ .Catogram-Default .ra1
+{
+    display: none;
+}
+
+.lc1:checked ~ .Catogram-Default .la0,
+.lc1:checked ~ .Catogram-Default .ra2
+{
+    display: block;
+}
+
+.lc1:checked ~ .Catogram-Default .carousel-list
+{
+    transform: translateX(0);
+}

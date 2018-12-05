@@ -3,10 +3,121 @@
 <head>
     <meta charset="utf-8">
     <title>Задача «Котограм»</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="carousel.css">
 </head>
 <body>
-<!--Ваш спрайт-->
+    <input class="editControl imageFitControl" id="imageFit" type="radio" name="scaling">
 
-<!--Ваша разметка-->
+    <input class="editControl scalingControl scalingControl-100pct" id="scaling-100pct"
+    type="radio" name="scaling" checked>
+    <input class="editControl scalingControl scalingControl-110pct" id="scaling-110pct"
+    type="radio" name="scaling">
+    <input class="editControl scalingControl scalingControl-120pct" id="scaling-120pct"
+    type="radio" name="scaling">
+    <input class="editControl scalingControl scalingControl-130pct" id="scaling-130pct"
+    type="radio" name="scaling">
+    <input class="editControl scalingControl scalingControl-140pct" id="scaling-140pct"
+    type="radio" name="scaling">
+
+    <input class="editControl rotationControl-0deg" id="rotation-0deg" type="radio" name="rotation" checked>
+    <input class="editControl rotationControl-90deg" id="rotation-90deg" type="radio" name="rotation">
+    <input class="editControl rotationControl-180deg" id="rotation-180deg" type="radio" name="rotation">
+    <input class="editControl rotationControl-270deg" id="rotation-270deg" type="radio" name="rotation">
+
+    <input class="editControl horizontalReflectionControl hrc" id="horizontalReflection"
+    type="checkbox" name="editControls">
+
+    <input class="filterControl f1" id="f1" type="radio" name="filter" checked>
+    <input class="filterControl f2" id="f2" type="radio" name="filter">
+    <input class="filterControl f3" id="f3" type="radio" name="filter">
+    <input class="filterControl f4" id="f4" type="radio" name="filter">
+    <input class="filterControl f5" id="f5" type="radio" name="filter">
+    <input class="filterControl f6" id="f6" type="radio" name="filter">
+
+    <input class="carouselControlDisable left lc0" id="left-0" type="radio" name="arrowDisabled">
+    <input class="carouselControl left lc1" id="left-1" type="radio" name="arrow">
+    <input class="carouselControl left lc2" id="left-2" type="radio" name="arrow">
+    <input class="carouselControl right rc2" id="right-2" type="radio" name="arrow">
+    <input class="carouselControl right rc1" id="right-1" type="radio" name="arrow">
+    <input class="carouselControlDisable right rc0" id="right-0" type="radio" name="arrowDisabled">
+
+    <div class="Catogram-Default">
+        <div class="menu">
+            <label class="editLabel imageFit" for="imageFit"></label>
+
+            <label class="editLabel scaling scaling-100pct" for="scaling-100pct"></label>
+            <label class="editLabel scaling scaling-110pct" for="scaling-110pct"></label>
+            <label class="editLabel scaling scaling-120pct" for="scaling-120pct"></label>
+            <label class="editLabel scaling scaling-130pct" for="scaling-130pct"></label>
+            <label class="editLabel scaling scaling-140pct" for="scaling-140pct"></label>
+
+            <a class="editLabel logo" href="index.html"></a>
+
+            <label class="editLabel rotation rotation-0deg" for="rotation-0deg"></label>
+            <label class="editLabel rotation rotation-90deg" for="rotation-90deg"></label>
+            <label class="editLabel rotation rotation-180deg" for="rotation-180deg"></label>
+            <label class="editLabel rotation rotation-270deg" for="rotation-270deg"></label>
+
+            <label class="editLabel horizontalReflection" for="horizontalReflection"></label>
+        </div>
+        <div class="photoContainer">
+            <img class="photo" src="images/photo.jpg" alt="Кошка">
+        </div>
+        <div class="carousel-wrapper">
+            <label class="arrowLabel arrowLeft arrowDisabled la0" for="left-0"></label>
+            <label class="arrowLabel arrowLeft arrowEnabled la1" for="left-1"></label>
+            <label class="arrowLabel arrowLeft arrowEnabled la2" for="left-2"></label>
+            <div class="carousel">
+                <ul class="carousel-list">
+                    <li class="carousel-item">
+                        <label for="f1">
+                            <span class="filter-name f1-name">Фильтр №1</span>
+                            <img class="filter-preview f1-preview" src="images/photo-small.jpg"
+                            alt="Предпросмотр фильтра">
+                        </label>
+                    </li>
+                    <li class="carousel-item">
+                        <label for="f2">
+                            <span class="filter-name f2-name">Фильтр №2</span>
+                            <img class="filter-preview f2-preview" src="images/photo-small.jpg"
+                            alt="Предпросмотр фильтра">
+                        </label>
+                    </li>
+                    <li class="carousel-item">
+                        <label for="f3">
+                            <span class="filter-name f3-name">Фильтр №3</span>
+                            <img class="filter-preview f3-preview" src="images/photo-small.jpg"
+                            alt="Предпросмотр фильтра">
+                        </label>
+                    </li>
+                    <li class="carousel-item">
+                        <label for="f4">
+                            <span class="filter-name f4-name">Фильтр №4</span>
+                            <img class="filter-preview f4-preview" src="images/photo-small.jpg"
+                            alt="Предпросмотр фильтра">
+                        </label>
+                    </li>
+                    <li class="carousel-item">
+                        <label for="f5">
+                            <span class="filter-name f5-name">Фильтр №5</span>
+                            <img class="filter-preview f5-preview" src="images/photo-small.jpg"
+                            alt="Предпросмотр фильтра">
+                        </label>
+                    </li>
+                    <li class="carousel-item">
+                        <label for="f6">
+                            <span class="filter-name f6-name">Фильтр №6</span>
+                            <img class="filter-preview f6-preview" src="images/photo-small.jpg"
+                            alt="Предпросмотр фильтра">
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <label class="arrowLabel arrowRight arrowEnabled ra2" for="right-2"></label>
+            <label class="arrowLabel arrowRight arrowEnabled ra1" for="right-1"></label>
+            <label class="arrowLabel arrowRight arrowDisabled ra0" for="right-0"></label>
+        </div>
+    </div>
 </body>
 </html>

@@ -1,0 +1,210 @@
+.editControl,
+.filterControl,
+.carouselControl,
+.carouselControlDisable,
+.scaling,
+.rotation
+{
+    display: none;
+}
+
+.imageFitControl:checked ~ .Catogram-Default .scaling-110pct,
+.scalingControl-100pct:checked ~ .Catogram-Default .scaling-110pct,
+.scalingControl-110pct:checked ~ .Catogram-Default .scaling-120pct,
+.scalingControl-120pct:checked ~ .Catogram-Default .scaling-130pct,
+.scalingControl-130pct:checked ~ .Catogram-Default .scaling-140pct,
+.scalingControl-140pct:checked ~ .Catogram-Default .scaling-100pct
+{
+    display: block;
+}
+
+.scalingControl-100pct:checked ~ .Catogram-Default .photo
+{
+    transform: scale(1) rotate(var(--deg));
+}
+
+.scalingControl-110pct:checked ~ .Catogram-Default .photo
+{
+    transform: scale(1.1) rotate(var(--deg));
+}
+
+.scalingControl-120pct:checked ~ .Catogram-Default .photo
+{
+    transform: scale(1.2) rotate(var(--deg));
+}
+
+.scalingControl-130pct:checked ~ .Catogram-Default .photo
+{
+    transform: scale(1.3) rotate(var(--deg));
+}
+
+.scalingControl-140pct:checked ~ .Catogram-Default .photo
+{
+    transform: scale(1.4) rotate(var(--deg));
+}
+
+.scalingControl-100pct:checked ~ .Catogram-Default
+{
+    --scale: 1;
+}
+
+.scalingControl-110pct:checked ~ .Catogram-Default
+{
+    --scale: 1.1;
+}
+
+.scalingControl-120pct:checked ~ .Catogram-Default
+{
+    --scale: 1.2;
+}
+
+.scalingControl-130pct:checked ~ .Catogram-Default
+{
+    --scale: 1.3;
+}
+
+.scalingControl-140pct:checked ~ .Catogram-Default
+{
+    --scale: 1.4;
+}
+
+.rotationControl-0deg:checked ~ .Catogram-Default .rotation-90deg,
+.rotationControl-90deg:checked ~ .Catogram-Default .rotation-180deg,
+.rotationControl-180deg:checked ~ .Catogram-Default .rotation-270deg,
+.rotationControl-270deg:checked ~ .Catogram-Default .rotation-0deg
+{
+    display: block;
+}
+
+.rotationControl-0deg:checked ~ .Catogram-Default .photo
+{
+    transform: scale(var(--scale)) rotate(0);
+}
+
+.rotationControl-90deg:checked ~ .Catogram-Default .photo
+{
+    transform: scale(var(--scale)) rotate(90deg);
+}
+
+.rotationControl-180deg:checked ~ .Catogram-Default .photo
+{
+    transform: scale(var(--scale)) rotate(180deg);
+}
+
+.rotationControl-270deg:checked ~ .Catogram-Default .photo
+{
+    transform: scale(var(--scale)) rotate(270deg);
+}
+
+.rotationControl-0deg:checked ~ .Catogram-Default
+{
+    --deg: 0deg;
+}
+
+.rotationControl-90deg:checked ~ .Catogram-Default
+{
+    --deg: 90deg;
+}
+
+.rotationControl-180deg:checked ~ .Catogram-Default
+{
+    --deg: 180deg;
+}
+
+.rotationControl-270deg:checked ~ .Catogram-Default
+{
+    --deg: 270deg;
+}
+
+.horizontalReflectionControl:checked ~ .Catogram-Default .photo
+{
+    transform: scale(calc(-1 * var(--scale)), var(--scale)) rotate(var(--deg));
+}
+
+.Catogram-Default
+{
+    width: 1440px;
+    height: 1024px;
+    background-color: #fff;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.menu
+{
+    position: relative;
+    width: 632px;
+    padding: 20px 0 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.photoContainer
+{
+    width: 632px;
+    height: 632px;
+    overflow: hidden;
+}
+
+.photo
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.editLabel:not(.logo):hover
+{
+    opacity: .8;
+}
+
+.editLabel
+{
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    opacity: .6;
+    background: url(icons/icons.svg);
+}
+
+.imageFit
+{
+    background-position: -1px -34px;
+}
+
+.scaling
+{
+    background-position: -1px -224px;
+}
+
+.logo
+{
+    background-position: -1px -124px;
+    opacity: 1;
+}
+
+.rotation
+{
+    background-position: -1px -174px;
+}
+
+.horizontalReflection
+{
+    height: 38px;
+    background-position: -1px -84px;
+}
+
+.imageFitControl:checked ~ .Catogram-Default .photo
+{
+    object-fit: contain;
+    transform: rotate(var(--deg));
+}
+
+.imageFitControl:checked ~ .hrc:checked ~ .Catogram-Default .photo
+{
+    transform: scaleX(-1) rotate(var(--deg));
+}
