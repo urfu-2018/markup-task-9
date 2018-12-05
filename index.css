@@ -1,0 +1,321 @@
+body
+{
+    display: flex;
+    justify-content: center;
+    font: normal 18px Helvetica;
+}
+
+main
+{
+    display: grid;
+    grid-template: 'controls' 80px
+    'img' 630px
+    'carousel' 300px
+        / 820px;
+}
+
+input,
+.image-background,
+.rotate-label,
+.scale-label,
+.arrow-left,
+.arrow-right
+{
+    display: none;
+}
+
+.arrow-left
+{
+    transform: rotate(90deg);
+    right: 10px;
+}
+
+.arrow-right
+{
+    transform: rotate(-90deg);
+    left: 10px;
+}
+
+.arrow-left,
+.arrow-right
+{
+    position: relative;
+    top: 100px;
+}
+
+.image,
+.carousel,
+.cards,
+.controls
+{
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    margin: auto;
+}
+
+.controls
+{
+    grid-area: controls;
+    width: 690px;
+}
+
+.icon
+{
+    width: 48px;
+    height: 48px;
+    opacity: .8;
+    cursor: pointer;
+}
+
+.image
+{
+    grid-area: img;
+}
+
+.fill-mode,
+.scale-mode,
+.rotate-mode
+{
+    transition-duration: .45s;
+}
+
+.carousel
+{
+    grid-area: carousel;
+}
+
+.cards
+{
+    width: 690px;
+}
+
+.card
+{
+    margin: 0 0 0 5px;
+    transition-duration: .6s;
+}
+
+.card__title
+{
+    text-align: center;
+}
+
+.image
+{
+    width: 630px;
+    height: 630px;
+    overflow: hidden;
+}
+
+.image-photo,
+.image-background
+{
+    height: 630px;
+    width: 630px;
+}
+
+.card__img img
+{
+    width: 170px;
+    height: 170px;
+}
+
+
+.no-filter
+{
+    filter: none;
+}
+
+.greyscale
+{
+    filter: grayscale(100%);
+}
+
+.sepia
+{
+    filter: sepia(80%);
+}
+
+.hue
+{
+    filter: hue-rotate(190deg);
+}
+
+.invert
+{
+    filter: invert(100%);
+}
+
+.blur
+{
+    filter: blur(2px);
+}
+
+
+input[id='none-filter']:checked ~ .carousel .none-title,
+input[id='greyscale-filter']:checked ~ .carousel .greyscale-title,
+input[id='sepia-filter']:checked ~ .carousel .sepia-title,
+input[id='hue-filter']:checked ~ .carousel .hue-title,
+input[id='invert-filter']:checked ~ .carousel .invert-title,
+input[id='blur-filter']:checked ~ .carousel .blur-title
+{
+    font-weight: bold;
+}
+
+input[id='arrow-1']:checked ~ .carousel .right-block label[for='arrow-2'],
+input[id='arrow-2']:checked ~ .carousel .right-block label[for='arrow-3'],
+input[id='arrow-3']:checked ~ .carousel .right-block label[for='arrow-3'],
+input[id='arrow-1']:checked ~ .carousel .left-block label[for='arrow-1'],
+input[id='arrow-2']:checked ~ .carousel .left-block label[for='arrow-1'],
+input[id='arrow-3']:checked ~ .carousel .left-block label[for='arrow-2'],
+input[id='scale-1']:checked ~ .controls label[for='scale-2'],
+input[id='scale-2']:checked ~ .controls label[for='scale-3'],
+input[id='scale-3']:checked ~ .controls label[for='scale-1'],
+input[id='rotate-1']:checked ~ .controls label[for='rotate-2'],
+input[id='rotate-2']:checked ~ .controls label[for='rotate-3'],
+input[id='rotate-3']:checked ~ .controls label[for='rotate-4'],
+input[id='rotate-4']:checked ~ .controls label[for='rotate-1']
+{
+    display: block;
+}
+
+input[id='arrow-3']:checked ~ .carousel .right-block label[for='arrow-3'],
+input[id='arrow-1']:checked ~ .carousel .left-block label[for='arrow-1']
+{
+    opacity: .3;
+}
+
+input[id='arrow-2']:checked ~ .carousel .cards .card
+{
+    transform: translateX(-175px);
+}
+
+input[id='arrow-3']:checked ~ .carousel .cards .card
+{
+    transform: translateX(-352px);
+}
+
+input[id='fill']:checked ~ .image .fill-mode .image-photo
+{
+    width: 100%;
+    height: 100%;
+}
+
+input[id='scale-2']:checked ~ .image .scale-mode
+{
+    transform: scale(1.2);
+}
+
+input[id='scale-3']:checked ~ .image .scale-mode
+{
+    transform: scale(1.4);
+}
+
+input[id='logo']:checked ~ .image .image-background
+{
+    display: block;
+}
+
+input[id='logo']:checked ~ .image .image-photo
+{
+    display: none;
+}
+
+input[id='rotate-2']:checked ~ .image .rotate-mode
+{
+    transform: rotate(90deg);
+}
+
+input[id='rotate-3']:checked ~ .image .rotate-mode
+{
+    transform: rotate(180deg);
+}
+
+input[id='rotate-4']:checked ~ .image .rotate-mode
+{
+    transform: rotate(270deg);
+}
+
+input[id='flip']:checked ~ .image .image-photo
+{
+    transform: scale(-1, 1);
+}
+
+input[id='none-filter']:checked ~ .image .image-photo
+{
+    animation: none-move .8s linear forwards;
+}
+
+input[id='greyscale-filter']:checked ~ .image .image-photo
+{
+    animation: greyscale-move .8s linear forwards;
+}
+
+input[id='sepia-filter']:checked ~ .image .image-photo
+{
+    animation: sepia-move .8s linear forwards;
+}
+
+input[id='hue-filter']:checked ~ .image .image-photo
+{
+    animation: hue-move .8s linear forwards;
+}
+
+input[id='invert-filter']:checked ~ .image .image-photo
+{
+    animation: invert-move 1s linear forwards;
+}
+
+input[id='blur-filter']:checked ~ .image .image-photo
+{
+    animation: blur-move .8s linear forwards;
+}
+
+@keyframes none-move
+{
+    100%
+    {
+        filter: none;
+    }
+}
+
+@keyframes greyscale-move
+{
+    100%
+    {
+        filter: grayscale(100%);
+    }
+}
+
+@keyframes sepia-move
+{
+    100%
+    {
+        filter: sepia(80%);
+    }
+}
+
+@keyframes hue-move
+{
+    100%
+    {
+        filter: hue-rotate(190deg);
+    }
+}
+
+@keyframes invert-move
+{
+    100%
+    {
+        filter: invert(100%);
+    }
+}
+
+@keyframes blur-move
+{
+    100%
+    {
+        filter: blur(2px);
+    }
+}
