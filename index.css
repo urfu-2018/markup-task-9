@@ -1,24 +1,28 @@
 html,
 body
 {
+    display: flex;
+
     width: 100%;
     height: 100%;
-    display: flex;
 }
 
 .Catogram-Default
 {
     position: relative;
+
     width: 1440px;
     height: 1024px;
-    background-color: #fff;
     margin: auto;
+
+    background-color: #fff;
 }
 /*________________________________CONTROLS_____________________________________________*/
 
 .controls
 {
     position: relative;
+
     width: 100%;
     height: 70px;
 }
@@ -26,10 +30,13 @@ body
 .controls__item
 {
     position: absolute;
-    margin: 10px;
+
     display: inline-block;
+
     width: 48px;
     height: 48px;
+    margin: 10px;
+
     object-fit: contain;
 }
 
@@ -51,6 +58,7 @@ body
 .flip
 {
     overflow: hidden;
+
     cursor: pointer;
 }
 
@@ -85,6 +93,7 @@ body
 .canvas
 {
     overflow: hidden;
+
     width: 632px;
     height: 632px;
     margin: 0 404px;
@@ -92,39 +101,46 @@ body
 
 .photo
 {
-    transition: .5s all linear;
-    object-fit: contain;
     width: 632px;
     height: 632px;
+
+    transition: .5s all linear;
+
+    object-fit: contain;
 }
 
 /*_______________________________FILTERS_CAROUSEL______________________________________________*/
 
 .filter__name
 {
-    width: 170px;
-    height: 22px;
     font-family: Helvetica, serif;
     font-size: 18px;
     font-weight: bold;
     font-style: normal;
     font-stretch: normal;
     line-height: normal;
-    letter-spacing: normal;
+
+    width: 170px;
+    height: 22px;
+
     text-align: center;
+    letter-spacing: normal;
+
     color: #000;
 }
 
 .carousel
 {
-    width: 690px;
-    white-space: nowrap;
-    overflow: hidden;
-    height: 220px;
-
-    margin: 70px 0 37px 373px;
     position: relative;
+
+    overflow: hidden;
+
+    width: 690px;
+    height: 220px;
+    margin: 70px 0 37px 373px;
+
     transition-duration: .5s;
+    white-space: nowrap;
 }
 
 .filter__name
@@ -135,12 +151,15 @@ body
 
 .carousel__item
 {
-    cursor: pointer;
-    width: 170px;
-    height: 169px;
-    display: inline-block;
     position: relative;
     top: 50px;
+
+    display: inline-block;
+
+    width: 170px;
+    height: 169px;
+
+    cursor: pointer;
 }
 
 .filter-preview
@@ -151,12 +170,15 @@ body
 
 .arrow
 {
+    position: absolute;
+
+    display: none;
     overflow: hidden;
+
     width: 48px;
     height: 48px;
+
     cursor: pointer;
-    position: absolute;
-    display: none;
 }
 
 .filter__preview
@@ -204,13 +226,15 @@ body
 {
     bottom: 90px;
     left: 308px;
+
     transform: rotate(90deg);
 }
 
 .right-arrow
 {
-    bottom: 93px;
     right: 315px;
+    bottom: 93px;
+
     transform: rotate(-90deg);
 }
 
@@ -256,6 +280,7 @@ body
     transition: .5s;
     transform: rotate(270deg) scale(-1, 1);
 }
+
 .rotate-input-6:checked ~ .flip-input:checked ~ .canvas > .photo
 {
     transition: .5s;
@@ -267,8 +292,6 @@ body
     transition: .5s;
     transform: rotate(90deg) scale(-1, 1);
 }
-
-
 
 .rotate
 {
@@ -284,8 +307,9 @@ body
 .rotate-input-6:checked ~ .controls > .rotate-7,
 .rotate-input-7:checked ~ .controls > .rotate-0
 {
-    transition: .5s all linear;
     display: block;
+
+    transition: .5s all linear;
 }
 
 .rotate-input-0:checked ~ .canvas > .photo_rotated
@@ -355,58 +379,65 @@ body
 
 .scale-input-1:checked ~ .canvas > .photo
 {
-    transition: .5s all linear;
-    margin: -20px 0 0 -20px;
     width: 695px;
     height: 695px;
+    margin: -20px 0 0 -20px;
+
+    transition: .5s all linear;
 }
 
 .scale-input-2:checked ~ .canvas > .photo
 {
-    transition: .5s all linear;
-    margin: -40px 0 0 -40px;
     width: 758px;
     height: 758px;
+    margin: -40px 0 0 -40px;
+
+    transition: .5s all linear;
 }
 
 .scale-input-3:checked ~ .canvas > .photo
 {
-    transition: .5s all linear;
-    margin: -60px 0 0 -60px;
     width: 821px;
     height: 821px;
+    margin: -60px 0 0 -60px;
+
+    transition: .5s all linear;
 }
 
 .scale-input-4:checked ~ .canvas > .photo
 {
-    transition: .5s all linear;
-    margin: -80px 0 0 -80px;
     width: 884px;
     height: 884px;
+    margin: -80px 0 0 -80px;
+
+    transition: .5s all linear;
 }
 
 .scale-input-5:checked ~ .canvas > .photo
 {
-    transition: .5s all linear;
-    margin: -100px 0 0 -100px;
     width: 948px;
     height: 948px;
+    margin: -100px 0 0 -100px;
+
+    transition: .5s all linear;
 }
 
 .scale-input-6:checked ~ .canvas > .photo
 {
-    transition: .5s all linear;
-    margin: -120px 0 0 -120px;
     width: 1011px;
     height: 1011px;
+    margin: -120px 0 0 -120px;
+
+    transition: .5s all linear;
 }
 
 .scale-input-7:checked ~ .canvas > .photo
 {
-    transition: .5s all linear;
-    margin: -140px 0 0 -140px;
     width: 1075px;
     height: 1075px;
+    margin: -140px 0 0 -140px;
+
+    transition: .5s all linear;
 }
 /*______________________HOVER_ALL___________________________________*/
 
@@ -424,6 +455,7 @@ body
 .logo-input:checked ~ .controls > .logo
 {
     opacity: 1;
+
     fill: url('#svg-logo_hover');
 }
 
@@ -436,6 +468,7 @@ body
 .flip-input:checked ~ .controls > .flip
 {
     transition: .5s;
+
     opacity: 1;
 }
 
@@ -444,42 +477,49 @@ body
 .filter-input-1:checked ~ .canvas > .photo_filtered
 {
     transition: .5s all linear;
+
     filter: none;
 }
 
 .filter-input-2:checked ~ .canvas > .photo_filtered
 {
     transition: .5s all linear;
+
     filter: grayscale(1);
 }
 
 .filter-input-3:checked ~ .canvas > .photo_filtered
 {
     transition: .5s all linear;
+
     filter: sepia(1);
 }
 
 .filter-input-4:checked ~ .canvas > .photo_filtered
 {
     transition: .5s all linear;
+
     filter: hue-rotate(180deg);
 }
 
 .filter-input-5:checked ~ .canvas > .photo_filtered
 {
     transition: .5s all linear;
+
     filter: invert(100%);
 }
 
 .filter-input-6:checked ~ .canvas > .photo_filtered
 {
     transition: .5s all linear;
+
     filter: saturate(300%);
 }
 
 .filter-input-7:checked ~ .canvas > .photo_filtered
 {
     transition: .5s all linear;
+
     filter: hue-rotate(90deg) saturate(300%) sepia(15%);
 }
 
@@ -556,16 +596,18 @@ body
 
 .logo-input:checked ~ .canvas > .photo_filtered
 {
-    filter: none;
-    object-fit: contain;
-    animation: none;
+    width: 632px;
+    min-width: 632px;
+    max-width: 632px;
+    height: 632px;
+    min-height: 632px;
+    max-height: 632px;
+    margin: auto;
+
     transition: .5s;
     transform: none !important;
-    max-width: 632px;
-    min-width: 632px;
-    max-height: 632px;
-    min-height: 632px;
-    width: 632px;
-    height: 632px;
-    margin: auto;
+    animation: none;
+
+    filter: none;
+    object-fit: contain;
 }
