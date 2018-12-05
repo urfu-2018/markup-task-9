@@ -29,37 +29,36 @@
             <img src="icons/flip.svg" alt="flip" title="flip">
         </label>
     </header>
-    <main class="main">
-        <img src="img/cat.jpg" alt="cat" title="cat">
-    </main>
-    <input type="radio" id="without-filter" name="filter">
+    <input type="radio" id="without-filter" name="filter" checked>
     <input type="radio" id="spb" name="filter">
     <input type="radio" id="yalta" name="filter">
     <input type="radio" id="ural" name="filter">
+    <main class="main">
+        <img src="img/cat.jpg" alt="cat" title="cat">
+    </main>
     <footer class="footer">
         <img class="footer_arrow" src="icons/arrow.svg" alt="arrow" title="arrow">
 
         <div class="footer__carousel">
-            <label class="filter" for="without-filter">
-                <span class="filter__name">Без фильтра</span>
+            <label for="without-filter" class="filter" for="without-filter">
+                <span class="filter__name filter__name_without-filter">Без фильтра</span>
                 <img class="filter__image" src="img/cat.jpg" alt="Котэ">
             </label>
-            <label class="filter" for="without-filter">
-                <span class="filter__name">Питер</span>
+            <label for="spb" class="filter">
+                <span class="filter__name filter__name_spb">Питер</span>
                 <img class="filter__image filter__image_spb" src="img/cat.jpg" alt="Котэ">
             </label>
-            <label class="filter" for="without-filter">
-                <span class="filter__name">Питер</span>
-                <img class="filter__image filter__image_spb" src="img/cat.jpg" alt="Котэ">
+            <label for="yalta" class="filter">
+                <span class="filter__name filter__name_yalta">Ялта</span>
+                <img class="filter__image filter__image_yalta" src="img/cat.jpg" alt="Котэ">
             </label>
-            <label class="filter" for="without-filter">
-                <span class="filter__name">Питер</span>
-                <img class="filter__image filter__image_spb" src="img/cat.jpg" alt="Котэ">
+            <label for="ural" class="filter">
+                <span class="filter__name filter__name_ural">Уральское лето</span>
+                <img class="filter__image filter__image_ural" src="img/cat.jpg" alt="Котэ">
             </label>
         </div>
 
         <img class="footer_arrow" src="icons/arrow.svg" alt="arrow" title="arrow">
     </footer>
-<!--Ваша разметка-->
 </body>
 </html>

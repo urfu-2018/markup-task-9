@@ -40,6 +40,7 @@ input
     width: 48px;
     height: 48px;
     margin-top: 20px;
+    margin-bottom: 84px;
 }
 
 .footer
@@ -47,7 +48,8 @@ input
     width: 800px;
     flex-direction: row;
     margin-bottom: 37px;
-    margin-top: 89px;
+    margin-top: 141px;
+    justify-content: space-between;
 }
 
 .filter
@@ -79,7 +81,70 @@ input
 
 .filter__image_spb
 {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .12);
-    background-blend-mode: color;
-    background-image: linear-gradient(to bottom, #fff, #fff);
+    filter: grayscale(1);
+}
+
+@keyframes filter__image_spb
+{
+    to
+    {
+        filter: grayscale(1);
+    }
+}
+
+input[id='spb']:checked ~ main img
+{
+    animation: filter__image_spb 1s linear forwards;
+}
+
+.filter__image_yalta
+{
+    filter: sepia(1);
+}
+
+@keyframes filter__image_yalta
+{
+    to
+    {
+        filter: sepia(1);
+    }
+}
+
+input[id='yalta']:checked ~ main img
+{
+    animation: filter__image_yalta 1s linear forwards;
+}
+
+.filter__image_ural
+{
+    filter: hue-rotate(180deg);
+}
+
+@keyframes filter__image_ural
+{
+    to
+    {
+        filter: hue-rotate(180deg);
+    }
+}
+
+input[id='ural']:checked ~ main img
+{
+    animation: filter__image_ural 1s linear forwards;
+}
+
+.filter__name
+{
+    height: 22px;
+    font-family: Helvetica;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+input[id='without-filter']:checked ~ footer .filter__name_without-filter,
+input[id='spb']:checked ~ footer .filter__name_spb,
+input[id='yalta']:checked ~ footer .filter__name_yalta,
+input[id='ural']:checked ~ footer .filter__name_ural
+{
+    font-weight: bold;
 }
