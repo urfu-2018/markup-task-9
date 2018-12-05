@@ -1,12 +1,167 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="index.css">
     <title>Задача «Котограм»</title>
 </head>
-<body>
-<!--Ваш спрайт-->
 
-<!--Ваша разметка-->
+<body>
+    <svg width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <linearGradient id="logoGradient">
+                <stop offset="5%" stop-color="#ff4500" />
+                <stop offset="50%" stop-color="#dc143c" />
+                <stop offset="95%" stop-color="#800080" />
+            </linearGradient>
+        </defs>
+    </svg>
+    <svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" width="49" height="261" viewBox="0 0 49 261">
+        <svg width="49" height="32" id="arrow" y="0">
+            <path d="M.5 7.401L24.428 31.33 48.357 7.4 41.569.613l-17.14 17.14L7.288.614z" fill-rule="evenodd" /></svg>
+        <svg width="48" height="48" id="fill" y="0">
+            <path d="M8.395 8.395h30.996v30.996H8.395z" />
+            <path d="M35.946 0v5.166h6.888v6.673H48V0zM5.166 5.166h6.673V0H0v11.839h5.166zm37.668 37.668h-6.888V48H48V35.946h-5.166zM5.166 35.946H0V48h11.839v-5.166H5.166z" /></svg>
+        <svg width="48" height="37" id="flip" y="0">
+            <path d="M0 29.9l19.084-11.788L0 6.325zM28.916 18.112L48 29.9V6.325L28.916 18.112zm15.058 4.425l-7.163-4.425 7.163-4.424v8.849zM21.398 8.05h5.205v5.175h-5.205zm0-8.05h5.205v5.175h-5.205zm0 16.1h5.205v5.175h-5.205zm0 7.475h5.205v5.175h-5.205zm0 8.05h5.205V36.8h-5.205z" /></svg>
+        <svg width="48" height="48" id="logo" y="0">
+            <path d="M0 0v48h48V0H0zm24.107 16.782a7.12 7.12 0 0 1 7.11 7.111 7.12 7.12 0 0 1-7.11 7.111 7.12 7.12 0 0 1-7.111-7.11 7.12 7.12 0 0 1 7.11-7.112zM6.4 5.547h7.253v4.693H6.4V5.547zM41.6 41.6H6.4V24.747h4.225c.443 7.053 6.318 12.657 13.482 12.657 7.163 0 13.039-5.604 13.481-12.657H41.6V41.6z"
+                fill-rule="evenodd" />
+        </svg>
+        <svg width="48" height="48" id="rotate" y="0">
+            <path d="M24 48c13.234 0 24-9.765 24-21.753 0-11.99-10.766-21.749-24-21.749-.88 0-1.768.046-2.651.136V1.119c0-.452-.308-.863-.761-1.038a1.353 1.353 0 0 0-1.355.251l-8.504 7.722c-.484.438-.484 1.138 0 1.583l8.5 7.739a1.35 1.35 0 0 0 1.359.243c.453-.177.76-.585.76-1.035v-3.899c.88-.146 1.764-.212 2.651-.212 8.384 0 15.207 6.18 15.207 13.774 0 7.593-6.825 13.778-15.207 13.778-8.382 0-15.203-6.187-15.203-13.778 0-.616-.553-1.12-1.24-1.12H1.24c-.684 0-1.241.504-1.241 1.12C0 38.235 10.774 48 24 48z"
+                fill-rule="evenodd" />
+        </svg>
+        <svg width="48" height="48" id="scale" y="0">
+            <path d="M0 0v48h48V0H0zm6.4 6.4h33.682L6.4 40.227V6.4zm34.56 32.427H25.6v-6.4h15.36v6.4z" />
+            <path d="M24 13.071h-4.375v-4.5h-6.25v4.5H9V19.5h4.375V24h6.25v-4.5H24z" /></svg>
+    </svg>
+
+    <input type="radio" name="fill" id="all-fill" class="all-fill" checked>
+    <input type="radio" name="fill" id="square-fill" class="square-fill">
+
+    <input type="radio" name="scale" id="scale-1" class="scale-1" checked>
+    <input type="radio" name="scale" id="scale-2" class="scale-2">
+    <input type="radio" name="scale" id="scale-3" class="scale-3">
+
+    <input type="radio" name="rotate" id="rotate-1" class="rotate-1" checked>
+    <input type="radio" name="rotate" id="rotate-2" class="rotate-2">
+    <input type="radio" name="rotate" id="rotate-3" class="rotate-3">
+    <input type="radio" name="rotate" id="rotate-4" class="rotate-4">
+
+    <input type="radio" name="flip" id="standard-flip" class="standard-flip" checked>
+    <input type="radio" name="flip" id="invert-flip" class="invert-flip">
+
+    <input type="radio" name="filter" id="filter-1" class="filter-1" checked>
+    <input type="radio" name="filter" id="filter-2" class="filter-2">
+    <input type="radio" name="filter" id="filter-3" class="filter-3">
+    <input type="radio" name="filter" id="filter-4" class="filter-4">
+
+    <div class="cat-gram">
+        <div class="menu">
+            <label for="square-fill">
+                <svg class="menu-icon fill-icon">
+                    <use xlink:href="#fill"></use>
+                </svg>
+            </label>
+            <label for="all-fill">
+                <svg class="menu-icon fill-icon">
+                    <use xlink:href="#fill"></use>
+                </svg>
+            </label>
+            <label for="scale-2">
+                <svg class="menu-icon scale-icon">
+                    <use xlink:href="#scale"></use>
+                </svg>
+            </label>
+            <label for="scale-3">
+                <svg class="menu-icon scale-icon">
+                    <use xlink:href="#scale"></use>
+                </svg>
+            </label>
+            <label for="scale-1">
+                <svg class="menu-icon scale-icon">
+                    <use xlink:href="#scale"></use>
+                </svg>
+            </label>
+
+            <svg class="menu-icon logo-icon">
+                <use xlink:href="#logo"></use>
+            </svg>
+
+            <label for="rotate-2">
+                <svg class="menu-icon rotate-icon">
+                    <use xlink:href="#rotate"></use>
+                </svg>
+            </label>
+            <label for="rotate-3">
+                <svg class="menu-icon rotate-icon">
+                    <use xlink:href="#rotate"></use>
+                </svg>
+            </label>
+            <label for="rotate-4">
+                <svg class="menu-icon rotate-icon">
+                    <use xlink:href="#rotate"></use>
+                </svg>
+            </label>
+            <label for="rotate-1">
+                <svg class="menu-icon rotate-icon">
+                    <use xlink:href="#rotate"></use>
+                </svg>
+            </label>
+
+            <label for="invert-flip">
+                <svg class="menu-icon flip-icon">
+                    <use xlink:href="#flip"></use>
+                </svg>
+            </label>
+            <label for="standard-flip">
+                <svg class="menu-icon flip-icon">
+                    <use xlink:href="#flip"></use>
+                </svg>
+            </label>
+        </div>
+        <div class="image">
+            <div class="rotate">
+                <div class="flip">
+                    <img class="photo" src="cat.png" alt="cat">
+                </div>
+            </div>
+        </div>
+        <div class="filters">
+            <svg class="menu-icon arrow prev">
+                <use xlink:href="#arrow"></use>
+            </svg>
+            <div class="filter without-filter">
+                <p class="filter-label">Без фильтра</p>
+                <label for="filter-1">
+                    <img class="preview" src="cat.png" alt="without filter">
+                </label>
+            </div>
+            <div class="filter piter-filter">
+                <p class="filter-label">Питер</p>
+                <label for="filter-2">
+                    <img class="preview" src="cat.png" alt="piter filter">
+                </label>
+            </div>
+            <div class="filter yalta-filter">
+                <p class="filter-label">Ялта</p>
+                <label for="filter-3">
+                    <img class="preview" src="cat.png" alt="yalta filter">
+                </label>
+            </div>
+            <div class="filter summer-filter">
+                <p class="filter-label">Уральское лето</p>
+                <label for="filter-4">
+                    <img class="preview" src="cat.png" alt="summer filter">
+                </label>
+            </div>
+            <svg class="menu-icon arrow next">
+                <use xlink:href="#arrow"></use>
+            </svg>
+        </div>
+    </div>
 </body>
+
 </html>

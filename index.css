@@ -1,0 +1,232 @@
+.cat-gram
+{
+    width: 800px;
+    margin: auto;
+}
+
+.svg-sprite
+{
+    display: none;
+}
+
+.menu
+{
+    height: 60px;
+    width: 632px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    z-index: 2;
+}
+
+.menu-icon
+{
+    fill: #444;
+    opacity: .8;
+    width: 48px;
+    height: 48px;
+}
+
+.menu-icon:hover
+{
+    fill: #292828;
+}
+
+.logo-icon
+{
+    fill: url(#logoGradient);
+}
+
+.photo
+{
+    width: 632px;
+    height: 632px;
+    display: block;
+    margin: auto;
+}
+
+.filter
+{
+    display: inline-block;
+}
+
+.arrow
+{
+    fill: #444;
+    margin-bottom: 65px;
+}
+
+.next
+{
+    transform: rotate(-90deg);
+}
+
+.prev
+{
+    transform: rotate(90deg);
+}
+
+.filters
+{
+    margin-top: 50px;
+}
+
+.preview
+{
+    width: 170px;
+    height: 169px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .12);
+}
+
+.filter-label
+{
+    width: 170px;
+    height: 22px;
+    font-family: Helvetica;
+    font-size: 18px;
+    text-align: center;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.flip,
+.rotate,
+.photo
+{
+    transition: transform .4s, filter .6s;
+}
+
+input[type='radio'],
+label[for^='scale'],
+label[for^='rotate'],
+label[for$='flip'],
+label[for$='fill']
+{
+    display: none;
+}
+
+.all-fill:checked ~ .cat-gram .photo
+{
+    height: auto;
+}
+
+.square-fill:checked ~ .cat-gram .photo
+{
+    height: 632px;
+}
+
+.all-fill:checked ~ .cat-gram [for='square-fill'],
+.square-fill:checked ~ .cat-gram [for='all-fill']
+{
+    display: block;
+}
+
+.scale-1:checked ~ .cat-gram .photo
+{
+    transform: scale(1);
+}
+
+.scale-2:checked ~ .cat-gram .photo
+{
+    transform: scale(.8);
+}
+
+.scale-3:checked ~ .cat-gram .photo
+{
+    transform: scale(.6);
+}
+
+.scale-1:checked ~ .cat-gram [for='scale-2'],
+.scale-2:checked ~ .cat-gram [for='scale-3'],
+.scale-3:checked ~ .cat-gram [for='scale-1']
+{
+    display: block;
+}
+
+.rotate-1:checked ~ .cat-gram .rotate
+{
+    transform: rotate(360deg);
+}
+
+.rotate-2:checked ~ .cat-gram .rotate
+{
+    transform: rotate(90deg) scale(.7);
+}
+
+.rotate-3:checked ~ .cat-gram .rotate
+{
+    transform: rotate(-180deg);
+}
+
+.rotate-4:checked ~ .cat-gram .rotate
+{
+    transform: rotate(-90deg) scale(.7);
+}
+
+.rotate-1:checked ~ .cat-gram [for='rotate-2'],
+.rotate-2:checked ~ .cat-gram [for='rotate-3'],
+.rotate-3:checked ~ .cat-gram [for='rotate-4'],
+.rotate-4:checked ~ .cat-gram [for='rotate-1']
+{
+    display: block;
+}
+
+.standard-flip:checked ~ .cat-gram .flip
+{
+    transform: scaleX(1);
+}
+
+.invert-flip:checked ~ .cat-gram .flip
+{
+    transform: scaleX(-1);
+}
+
+.standard-flip:checked ~ .cat-gram [for='invert-flip'],
+.invert-flip:checked ~ .cat-gram [for='standard-flip']
+{
+    display: block;
+}
+
+.piter-filter img
+{
+    filter: grayscale(70%);
+}
+
+.yalta-filter img
+{
+    filter: contrast(150%);
+}
+
+.summer-filter img
+{
+    filter: invert(110%);
+}
+
+.filter-1:checked ~ .cat-gram .photo
+{
+    filter: none;
+}
+
+.filter-2:checked ~ .cat-gram .photo
+{
+    filter: grayscale(70%);
+}
+
+.filter-3:checked ~ .cat-gram .photo
+{
+    filter: contrast(150%);
+}
+
+.filter-4:checked ~ .cat-gram .photo
+{
+    filter: invert(110%);
+}
+
+.filter-1:checked ~ .cat-gram .without-filter .filter-label,
+.filter-2:checked ~ .cat-gram .piter-filter .filter-label,
+.filter-3:checked ~ .cat-gram .yalta-filter .filter-label,
+.filter-4:checked ~ .cat-gram .summer-filter .filter-label
+{
+    font-weight: bold;
+}
