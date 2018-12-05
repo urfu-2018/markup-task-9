@@ -12,6 +12,8 @@ main
 {
     fill: #444;
     cursor: pointer;
+    width: 48px;
+    height: 48px;
 }
 
 .page
@@ -69,11 +71,18 @@ main
     height: 632px;
 }
 
+.preview__picture
+{
+    width: 632px;
+    height: 632px;
+}
+
 .flip
 {
     transform: translateY(5px);
 }
 
+.sprite,
 .scale-rb,
 .rotate-rb,
 .fill-cb,
