@@ -1,0 +1,347 @@
+html,
+body
+ {
+    height: 100%;
+}
+
+body
+ {
+    background: rgb(204, 213, 218);
+}
+
+.wrapper
+ {
+    width: 600px;
+    margin: 1.5% auto;
+    height: 95%;
+    background: white;
+}
+
+input
+ {
+    display: none;
+}
+
+.svg-sprite
+ {
+    display: none;
+}
+
+.edit
+ {
+    width: 400px;
+    margin: auto;
+}
+
+.edit__icon
+ {
+    width: 32px;
+    height: 32px;
+    margin-top: 3%;
+}
+
+.edit__label
+ {
+    opacity: .6;
+}
+
+label:hover
+ {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.edit__label:not(:first-child)
+ {
+    margin-left: 14%;
+}
+
+.image-wrapper
+ {
+    width: 400px;
+    height: 400px;
+    margin: 2% auto;
+    overflow: hidden;
+    transition-duration: 2s;
+}
+
+.rotate-wrapper,
+.flip-wrapper
+ {
+    margin: 0;
+    width: 400px;
+    height: 400px;
+    transition-duration: 1s;
+}
+
+.active-image
+ {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    transition-duration: 1s;
+}
+
+.controls[id='fill_img']:checked ~ .wrapper .active-image
+ {
+    object-fit: cover;
+}
+
+.rotate-label
+ {
+    display: none;
+}
+
+.controls[id='rotate0']:checked ~ .wrapper .edit__label[for='rotate90'],
+.controls[id='rotate90']:checked ~ .wrapper .edit__label[for='rotate180'],
+.controls[id='rotate180']:checked ~ .wrapper .edit__label[for='rotate270'],
+.controls[id='rotate270']:checked ~ .wrapper .edit__label[for='rotate0']
+ {
+    display: inline;
+}
+
+.controls[id='rotate90']:checked ~ .wrapper .rotate-wrapper
+ {
+    transform: rotate(-90deg);
+}
+
+.controls[id='rotate180']:checked ~ .wrapper .rotate-wrapper
+ {
+    transform: rotate(-180deg);
+}
+
+.controls[id='rotate270']:checked ~ .wrapper .rotate-wrapper
+ {
+    transform: rotate(-270deg);
+}
+
+.scale-label
+ {
+    display: none;
+}
+
+.controls[id='zoom50']:checked ~ .wrapper .edit__label[for='zoom100'],
+.controls[id='zoom100']:checked ~ .wrapper .edit__label[for='zoom150'],
+.controls[id='zoom150']:checked ~ .wrapper .edit__label[for='zoom200'],
+.controls[id='zoom200']:checked ~ .wrapper .edit__label[for='zoom50']
+ {
+    display: inline;
+}
+
+.controls[id='zoom50']:checked ~ .wrapper .active-image
+ {
+    transform: scale(.5);
+}
+
+.controls[id='zoom150']:checked ~ .wrapper .active-image
+ {
+    transform: scale(1.5);
+}
+
+.controls[id='zoom200']:checked ~ .wrapper .active-image
+ {
+    transform: scale(2);
+}
+
+.logo-label
+ {
+    display: none;
+}
+
+.controls[id='show']:checked ~ .wrapper .logo-label[for='hide'],
+.controls[id='hide']:checked ~ .wrapper .logo-label[for='show']
+ {
+    display: inline;
+}
+
+.controls[id='hide']:checked ~ .wrapper .active-image,
+.controls[id='hide']:checked ~ .wrapper .rotate-wrapper,
+.controls[id='hide']:checked ~ .wrapper .flip-wrapper
+ {
+    transform: scale(1) rotate(0);
+    object-fit: contain;
+}
+
+.controls[id='hide']:checked ~ .wrapper .active-image
+ {
+    filter: none !important;
+}
+
+.controls[id='reflect']:checked ~ .wrapper .flip-wrapper
+ {
+    transform: scaleX(-1);
+}
+
+.filters
+ {
+    height: 150px;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    transition-duration: 1s;
+    overflow: hidden;
+}
+
+.arrow
+ {
+    width: 32px;
+    height: 32px;
+}
+
+.arrow:hover
+ {
+    opacity: 1;
+}
+
+.arrow-back
+ {
+    transform: rotate(90deg);
+}
+
+.arrow-forward
+ {
+    transform: rotate(-90deg);
+    margin-left: 10px;
+}
+
+.filter-wrapper
+ {
+    width: 120px;
+    height: 120px;
+    margin: 2px;
+    align-self: start;
+    text-align: center;
+    transition-duration: 1s;
+}
+
+.filter-wrapper:hover
+ {
+    cursor: pointer;
+}
+
+.filter-img
+ {
+    width: 100%;
+    height: 100%;
+    margin: 2px;
+    object-fit: cover;
+}
+
+.Piter
+ {
+    filter: grayscale(1);
+}
+
+.Yalta
+ {
+    filter: sepia(.8);
+}
+
+.Ural
+ {
+    filter: hue-rotate(180deg);
+}
+
+.satur
+ {
+    filter: saturate(.2);
+}
+
+.disco
+ {
+    filter: hue-rotate(250deg) brightness(1.2) contrast(1.2);
+}
+
+.filter[id='no-filter']:checked ~ .wrapper .filter-label[for='no-filter'],
+.filter[id='Piter']:checked ~ .wrapper .filter-label[for='Piter'],
+.filter[id='Yalta']:checked ~ .wrapper .filter-label[for='Yalta'],
+.filter[id='Ural']:checked ~ .wrapper .filter-label[for='Ural'],
+.filter[id='satur']:checked ~ .wrapper .filter-label[for='satur'],
+.filter[id='disco']:checked ~ .wrapper .filter-label[for='disco']
+ {
+    font-weight: bold;
+}
+
+.filter[id='Piter']:checked ~ .wrapper .active-image
+ {
+    filter: grayscale(1);
+}
+
+.filter[id='Yalta']:checked ~ .wrapper .active-image
+ {
+    filter: sepia(.8);
+}
+
+.filter[id='Ural']:checked ~ .wrapper .active-image
+ {
+    filter: hue-rotate(180deg);
+}
+
+.filter[id='satur']:checked ~ .wrapper .active-image
+ {
+    filter: saturate(.2);
+}
+
+.filter[id='disco']:checked ~ .wrapper .active-image
+ {
+    filter: hue-rotate(250deg) brightness(1.2) contrast(1.2);
+}
+
+.slide-lbl
+ {
+    display: none;
+    opacity: .5;
+}
+
+.slide-lbl:hover
+ {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.filter-slide[id='slide1']:checked ~ .wrapper .slide-lbl[for='slide1'],
+.filter-slide[id='slide1']:checked ~ .wrapper .slide-lbl[for='slide2'],
+.filter-slide[id='slide2']:checked ~ .wrapper .slide-lbl[for='slide2b'],
+.filter-slide[id='slide2']:checked ~ .wrapper .slide-lbl[for='slide3'],
+.filter-slide[id='slide3']:checked ~ .wrapper .slide-lbl[for='slide3b'],
+.filter-slide[id='slide3']:checked ~ .wrapper .slide-lbl[for='slide3'],
+.filter-slide[id='slide2b']:checked ~ .wrapper .slide-lbl[for='slide1'],
+.filter-slide[id='slide2b']:checked ~ .wrapper .slide-lbl[for='slide2'],
+.filter-slide[id='slide3b']:checked ~ .wrapper .slide-lbl[for='slide1'],
+.filter-slide[id='slide3b']:checked ~ .wrapper .slide-lbl[for='slide3']
+ {
+    display: inline;
+}
+
+.filter-slide[id='slide1']:checked ~ .wrapper .slide-lbl[for='slide1']:hover,
+.filter-slide[id='slide3']:checked ~ .wrapper .slide-lbl[for='slide3']:hover,
+.filter-slide[id='slide2b']:checked ~ .wrapper .slide-lbl[for='slide1']:hover
+ {
+    opacity: .5;
+    cursor: auto;
+}
+
+.filter-slide[id='slide2']:checked ~ .wrapper .filter-wrapper,
+.filter-slide[id='slide3b']:checked ~ .wrapper .filter-wrapper
+ {
+    transform: translateX(-124px);
+}
+
+.filter-slide[id='slide3']:checked ~ .wrapper .filter-wrapper
+ {
+    transform: translateX(-248px);
+}
+
+.filters-section
+ {
+    display: flex;
+    width: 800px;
+    transition-duration: 1s;
+}
+
+.section-wrapper
+ {
+    overflow: hidden;
+    width: 500px;
+}
