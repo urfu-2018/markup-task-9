@@ -1,0 +1,162 @@
+.page
+{
+    font: 18px Helvetica, sans-serif;
+    margin: 0;
+}
+
+.control,
+.svg-sprite,
+.switch-scale,
+.switch-rotate
+{
+    display: none;
+}
+
+.page__app
+{
+    width: 824px;
+    margin: auto;
+}
+
+/*----------Controls----------*/
+
+.control-scale_1:checked ~ .catogram-app .switch-scale_1,
+.control-scale_1-5:checked ~ .catogram-app .switch-scale_1-5,
+.control-scale_2:checked ~ .catogram-app .switch-scale_2,
+.control-rotate-reset:checked ~ .catogram-app .switch-rotate_reset,
+.control-rotate-90:checked ~ .catogram-app .switch-rotate_90,
+.control-rotate-180:checked ~ .catogram-app .switch-rotate_180,
+.control-rotate-270:checked ~ .catogram-app .switch-rotate_270
+{
+    display: initial;
+}
+
+/*----------App Grid----------*/
+
+.catogram-app
+{
+    display: grid;
+    grid-template: 'controls' 80px
+        'image' 701px
+        'filters' 206px
+        / 100%;
+}
+
+.catogram-app__controls
+{
+    grid-area: controls;
+}
+
+.catogram-app__image-box
+{
+    grid-area: image;
+}
+
+.catogram-app__filters
+{
+    grid-area: filters;
+}
+
+/*----------Controls----------*/
+
+.controls
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.catogram-app__controls
+{
+    width: 632px;
+    margin: auto;
+}
+
+.controls__control
+{
+    cursor: pointer;
+}
+
+.controls__icon
+{
+    width: 48px;
+    height: 48px;
+}
+
+/*----------Image Box----------*/
+
+.image-box
+{
+    display: flex;
+}
+
+.catogram-app__image-box
+{
+    margin-bottom: 69px;
+}
+
+.image-box__image
+{
+    width: 632px;
+    margin: auto;
+    object-fit: cover;
+}
+
+/*----------Filters----------*/
+
+.filters
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filters__arrow-icon
+{
+    width: 48px;
+    height: 31px;
+}
+
+.filters__arrow_left
+{
+    transform: rotate(90deg);
+}
+
+.filters__arrow_right
+{
+    transform: rotate(-90deg);
+}
+
+/*----------Carousel----------*/
+
+.carousel
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.filters__carousel
+{
+    width: 694px;
+}
+
+.filter
+{
+    display: flex;
+    align-items: center;
+    flex-flow: column nowrap;
+}
+
+.carousel__filter
+{
+    margin-right: 5px;
+}
+
+.filter__name
+{
+    font: inherit;
+}
+
+.preview
+{
+    object-fit: cover;
+}
