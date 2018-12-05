@@ -69,13 +69,13 @@ label
 .icon-label
 {
     animation-fill-mode: forwards;
-    animation-duration: .75s;
+    animation-duration: .8s;
     fill: grey;
 }
 
 .icon-togglable
 {
-    animation-duration: .75s;
+    animation-duration: .8s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(.5, 1.95, 1, 1.27);
 }
@@ -500,7 +500,7 @@ label
 
 .scale-4:checked ~ .image-container .image-scale-modified
 {
-    transform: scale(1.75);
+    transform: scale(1.8);
 }
 
 .rotate-1:checked ~ .image-container .image-rotation-modified
