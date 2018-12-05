@@ -1,12 +1,270 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="utf-8">
     <title>Задача «Котограм»</title>
+    <link rel="stylesheet" href="index.css">
 </head>
-<body>
-<!--Ваш спрайт-->
 
-<!--Ваша разметка-->
+<body>
+    <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1"
+        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+            <linearGradient id="gradient" x1="101.5%" x2=".5%" y1="-.5%" y2="101.5%">
+                <stop offset="0%" stop-color="#8A2387"></stop>
+                <stop offset="63.677%" stop-color="#E94057"></stop>
+                <stop offset="100%" stop-color="#F27121"></stop>
+            </linearGradient>
+            <symbol id="icon-fill" viewBox="0 0 32 32">
+                <title>fill</title>
+                <path d="M5.597 5.597h20.664v20.664h-20.664z"></path>
+                <path d="M23.964 0v3.444h4.592v4.449h3.444v-7.893zM3.444 3.444h4.449v-3.444h-7.893v7.893h3.444zM28.556 28.556h-4.592v3.444h8.036v-8.036h-3.444zM3.444 23.964h-3.444v8.036h7.893v-3.444h-4.449z"></path>
+            </symbol>
+            <symbol id="icon-flip" viewBox="0 0 42 32">
+                <title>flip</title>
+                <path d="M0 25.859l16.505-10.195-16.505-10.194z"></path>
+                <path d="M25.008 15.664l16.505 10.195v-20.389l-16.505 10.194zM38.032 19.491l-6.195-3.827 6.195-3.826v7.653z"></path>
+                <path d="M18.506 6.962h4.502v4.476h-4.502zM18.506 0h4.502v4.476h-4.502zM18.506 13.924h4.502v4.476h-4.502zM18.506 20.389h4.502v4.476h-4.502zM18.506 27.351h4.502v4.476h-4.502z"></path>
+            </symbol>
+            <symbol id="icon-logo" viewBox="0 0 32 32">
+                <title>logo</title>
+                <path d="M0 0v32h32v-32h-32zM16.071 11.188c2.617 0.004 4.737 2.124 4.74 4.74v0c-0.003 2.617-2.123 4.737-4.74 4.741h-0c-2.617-0.003-4.737-2.123-4.741-4.74v-0c0.003-2.617 2.123-4.738 4.74-4.741h0zM4.267 3.698h4.835v3.129h-4.835v-3.129zM27.733 27.733h-23.467v-11.235h2.817c0.295 4.702 4.212 8.438 8.988 8.438s8.693-3.736 8.987-8.438h2.675v11.235z"></path>
+            </symbol>
+            <symbol id="icon-rotate" viewBox="0 0 32 32">
+                <title>rotate</title>
+                <path d="M16 32c8.823 0 16-6.51 16-14.502 0-7.993-7.177-14.499-16-14.499-0.587 0-1.179 0.031-1.767 0.091v-2.343c0-0.301-0.205-0.575-0.507-0.692-0.092-0.035-0.199-0.055-0.31-0.055-0.228 0-0.435 0.084-0.594 0.223l0.001-0.001-5.669 5.148c-0.323 0.292-0.323 0.759 0 1.055l5.667 5.159c0.241 0.213 0.591 0.279 0.906 0.162 0.302-0.118 0.507-0.39 0.507-0.69v-2.599c0.587-0.097 1.176-0.141 1.767-0.141 5.589 0 10.138 4.12 10.138 9.183s-4.55 9.185-10.138 9.185-10.135-4.125-10.135-9.185c0-0.411-0.369-0.747-0.827-0.747h-4.211c-0.456 0-0.827 0.336-0.827 0.747 0.001 7.992 7.183 14.502 16.001 14.502z"></path>
+            </symbol>
+            <symbol id="icon-scale" viewBox="0 0 32 32">
+                <title>scale</title>
+                <path d="M0 0v32h32v-32h-32zM4.267 4.267h22.455l-22.455 22.551v-22.551zM27.307 25.885h-10.24v-4.267h10.24v4.267z"></path>
+                <path d="M16 8.714h-2.917v-3h-4.167v3h-2.917v4.286h2.917v3h4.167v-3h2.917z"></path>
+            </symbol>
+            <symbol id="icon-arrow" viewBox="0 0 49 32">
+                <title>arrow</title>
+                <path d="M0.5 7.401l23.928 23.929 23.929-23.93-6.788-6.787-17.14 17.14-17.141-17.139z"></path>
+            </symbol>
+        </defs>
+    </svg>
+    <div class="catgram">
+        <input id="fill" class="inp-control fill" type="checkbox">
+        <input id="flip" class="inp-control flip" type="checkbox">
+        <input id="logo" class="inp-control logo" type="checkbox">
+        <input id="scale-1" class="inp-control scale-1" type="radio" name="scale" checked>
+        <input id="scale-2" class="inp-control scale-2" type="radio" name="scale">
+        <input id="scale-3" class="inp-control scale-3" type="radio" name="scale">
+        <input id="scale-4" class="inp-control scale-4" type="radio" name="scale">
+        <input id="rotate-1" class="inp-control rotate-1" type="radio" name="rotate" checked>
+        <input id="rotate-2" class="inp-control rotate-2" type="radio" name="rotate">
+        <input id="rotate-3" class="inp-control rotate-3" type="radio" name="rotate">
+        <input id="rotate-4" class="inp-control rotate-4" type="radio" name="rotate">
+        <input id="page-1" class="inp-control page-1" type="radio" name="page" checked>
+        <input id="page-2" class="inp-control page-2" type="radio" name="page">
+        <input id="page-3" class="inp-control page-3" type="radio" name="page">
+        <input id="page-4" class="inp-control page-4" type="radio" name="page">
+        <input id="page-5" class="inp-control page-5" type="radio" name="page">
+        <input id="filter-1" class="inp-control filter-1" type="radio" name="filter" checked>
+        <input id="filter-2" class="inp-control filter-2" type="radio" name="filter">
+        <input id="filter-3" class="inp-control filter-3" type="radio" name="filter">
+        <input id="filter-4" class="inp-control filter-4" type="radio" name="filter">
+        <input id="filter-5" class="inp-control filter-5" type="radio" name="filter">
+        <input id="filter-6" class="inp-control filter-6" type="radio" name="filter">
+        <input id="filter-7" class="inp-control filter-7" type="radio" name="filter">
+        <input id="filter-8" class="inp-control filter-8" type="radio" name="filter">
+        <div class="icons">
+            <label for="fill" class="icon-label">
+                <svg class="icon-fill icon-togglable">
+                    <use xlink:href="#icon-fill"></use>
+                </svg>
+            </label>
+            <div>
+                <label for="scale-1" class="icon-label scale-label">
+                    <svg class="icon-scale icon-togglable">
+                        <use xlink:href="#icon-scale"></use>
+                    </svg>
+                </label>
+                <label for="scale-2" class="icon-label scale-label">
+                    <svg class="icon-scale icon-togglable">
+                        <use xlink:href="#icon-scale"></use>
+                    </svg>
+                </label>
+                <label for="scale-3" class="icon-label scale-label">
+                    <svg class="icon-scale icon-togglable">
+                        <use xlink:href="#icon-scale"></use>
+                    </svg>
+                </label>
+                <label for="scale-4" class="icon-label scale-label">
+                    <svg class="icon-scale icon-togglable">
+                        <use xlink:href="#icon-scale"></use>
+                    </svg>
+                </label>
+            </div>
+            <label for="logo" class="icon-label logo-label">
+                <svg class="icon-logo icon-togglable">
+                    <use xlink:href="#icon-logo"></use>
+                </svg>
+            </label>
+            <div>
+                <label for="rotate-1" class="icon-label rotate-label">
+                    <svg class="icon-rotate icon-togglable">
+                        <use xlink:href="#icon-rotate"></use>
+                    </svg>
+                </label>
+                <label for="rotate-2" class="icon-label rotate-label">
+                    <svg class="icon-rotate icon-togglable">
+                        <use xlink:href="#icon-rotate"></use>
+                    </svg>
+                </label>
+                <label for="rotate-3" class="icon-label rotate-label">
+                    <svg class="icon-rotate icon-togglable">
+                        <use xlink:href="#icon-rotate"></use>
+                    </svg>
+                </label>
+                <label for="rotate-4" class="icon-label rotate-label">
+                    <svg class="icon-rotate icon-togglable">
+                        <use xlink:href="#icon-rotate"></use>
+                    </svg>
+                </label>
+            </div>
+            <label for="flip" class="icon-label">
+                <svg class="icon-flip icon-togglable">
+                    <use xlink:href="#icon-flip"></use>
+                </svg>
+            </label>
+        </div>
+        <div class="image-container">
+            <div class="image-wrapper">
+                <div class="image-wrapper image-scale-modified image-modified">
+                    <div class="image-wrapper image-rotation-modified">
+                        <picture>
+                            <source srcset="cat.jpg" type="image/jpeg">
+                            <img class="cat-image image-flipped image-filtered" src="cat.jpg" alt="cat">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+            <div class="image-wrapper image-default">
+                <picture>
+                    <source srcset="cat.jpg" type="image/jpeg">
+                    <img class="cat-image" src="cat.jpg" alt="cat">
+                </picture>
+            </div>
+        </div>
+        <div class="filters-container">
+            <div class="l-arrows">
+                <label for="page-1" class="icon-label arrow arrow-left arrow-disabled">
+                    <svg class="icon-arrow">
+                        <use xlink:href="#icon-arrow"></use>
+                    </svg>
+                </label>
+                <label for="page-1" class="icon-label arrow arrow-left">
+                    <svg class="icon-arrow icon-togglable">
+                        <use xlink:href="#icon-arrow"></use>
+                    </svg>
+                </label>
+                <label for="page-2" class="icon-label arrow arrow-left">
+                    <svg class="icon-arrow icon-togglable">
+                        <use xlink:href="#icon-arrow"></use>
+                    </svg>
+                </label>
+                <label for="page-3" class="icon-label arrow arrow-left">
+                    <svg class="icon-arrow icon-togglable">
+                        <use xlink:href="#icon-arrow"></use>
+                    </svg>
+                </label>
+                <label for="page-4" class="icon-label arrow arrow-left">
+                    <svg class="icon-arrow icon-togglable">
+                        <use xlink:href="#icon-arrow"></use>
+                    </svg>
+                </label>
+            </div>
+            <div class="filters">
+                <label for="filter-1" class="filter-item">
+                    <span class="filter-header">Без фильтра</span>
+                    <picture>
+                        <source srcset="cat.jpg" type="image/jpeg">
+                        <img class="filter-image filter-empty" src="cat.jpg" alt="cat">
+                    </picture>
+                </label>
+                <label for="filter-2" class="filter-item">
+                    <span class="filter-header">Питер</span>
+                    <picture>
+                        <source srcset="cat.jpg" type="image/jpeg">
+                        <img class="filter-image filter-petersburg" src="cat.jpg" alt="cat">
+                    </picture>
+                </label>
+                <label for="filter-3" class="filter-item">
+                    <span class="filter-header">Ялта</span>
+                    <picture>
+                        <source srcset="cat.jpg" type="image/jpeg">
+                        <img class="filter-image filter-yalta" src="cat.jpg" alt="cat">
+                    </picture>
+                </label>
+                <label for="filter-4" class="filter-item">
+                    <span class="filter-header">Уральское лето</span>
+                    <picture>
+                        <source srcset="cat.jpg" type="image/jpeg">
+                        <img class="filter-image filter-ural-summer" src="cat.jpg" alt="cat">
+                    </picture>
+                </label>
+                <label for="filter-5" class="filter-item">
+                    <span class="filter-header">Фиолетовые очки</span>
+                    <picture>
+                        <source srcset="cat.jpg" type="image/jpeg">
+                        <img class="filter-image filter-purple" src="cat.jpg" alt="cat">
+                    </picture>
+                </label>
+                <label for="filter-6" class="filter-item">
+                    <span class="filter-header">Глаза в мыле</span>
+                    <picture>
+                        <source srcset="cat.jpg" type="image/jpeg">
+                        <img class="filter-image filter-soap" src="cat.jpg" alt="cat">
+                    </picture>
+                </label>
+                <label for="filter-7" class="filter-item">
+                    <span class="filter-header">В семидесятые</span>
+                    <picture>
+                        <source srcset="cat.jpg" type="image/jpeg">
+                        <img class="filter-image filter-past" src="cat.jpg" alt="cat">
+                    </picture>
+                </label>
+                <label for="filter-8" class="filter-item">
+                    <span class="filter-header">Негативчик</span>
+                    <picture>
+                        <source srcset="cat.jpg" type="image/jpeg">
+                        <img class="filter-image filter-negative" src="cat.jpg" alt="cat">
+                    </picture>
+                </label>
+            </div>
+            <div class="r-arrow">
+                <label for="page-2" class="icon-label arrow arrow-right">
+                    <svg class="icon-arrow icon-togglable">
+                        <use xlink:href="#icon-arrow"></use>
+                    </svg>
+                </label>
+                <label for="page-3" class="icon-label arrow arrow-right">
+                    <svg class="icon-arrow icon-togglable">
+                        <use xlink:href="#icon-arrow"></use>
+                    </svg>
+                </label>
+                <label for="page-4" class="icon-label arrow arrow-right">
+                    <svg class="icon-arrow icon-togglable">
+                        <use xlink:href="#icon-arrow"></use>
+                    </svg>
+                </label>
+                <label for="page-5" class="icon-label arrow arrow-right">
+                    <svg class="icon-arrow icon-togglable">
+                        <use xlink:href="#icon-arrow"></use>
+                    </svg>
+                </label>
+                <label for="page-5" class="icon-label arrow arrow-right arrow-disabled">
+                    <svg class="icon-arrow">
+                        <use xlink:href="#icon-arrow"></use>
+                    </svg>
+                </label>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

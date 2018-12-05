@@ -1,0 +1,544 @@
+.icon-fill
+{
+    width: 32px;
+    height: 32px;
+    background-position: 0 0;
+    opacity: .8;
+}
+.icon-flip
+{
+    width: 42px;
+    height: 32px;
+    background-position: -48px 0;
+    opacity: .8;
+}
+.icon-logo
+{
+    width: 32px;
+    height: 32px;
+    background-position: -144px 0;
+    fill: url(#gradient);
+    opacity: 1;
+}
+.icon-rotate
+{
+    width: 32px;
+    height: 32px;
+    background-position: -192px 0;
+    opacity: .8;
+}
+.icon-scale
+{
+    width: 32px;
+    height: 32px;
+    background-position: -240px 0;
+    opacity: .8;
+}
+.icon-arrow
+{
+    width: 49px;
+    height: 32px;
+    background-position: -288px 0;
+    opacity: .8;
+}
+label
+{
+    cursor: pointer;
+}
+.catgram
+{
+    height: 960px;
+    width: 700px;
+    margin: auto;
+}
+.icons
+{
+    display: flex;
+    justify-content: space-between;
+    margin: 24px 0;
+}
+.icon-label
+{
+    animation-fill-mode: forwards;
+    animation-duration: .75s;
+    fill: #444;
+}
+.icon-togglable
+{
+    animation-duration: .75s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(.5, 1.95, 1, 1.27);
+}
+@keyframes icon-clicked
+{
+    50%
+    {
+        opacity: 1;
+        transform: scale(1.45);
+    }
+    100%
+    {
+        opacity: .8;
+        transform: scale(1);
+    }
+}
+@keyframes label-hiding
+{
+    100%
+    {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+@keyframes icon-switch
+{
+    100%
+    {
+        opacity: 1;
+        transform: scale(1.45);
+    }
+}
+@keyframes icon-switch-x-1
+{
+    100%
+    {
+        opacity: .8;
+        transform: scale(1);
+    }
+}
+@keyframes icon-switch-x-2
+{
+    0%
+    {
+        opacity: .8;
+        transform: scale(1);
+    }
+    100%
+    {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+}
+@keyframes icon-switch-x-3
+{
+    0%
+    {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+    100%
+    {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+}
+@keyframes icon-switch-x-4
+{
+    0%
+    {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+    100%
+    {
+        opacity: 1;
+        transform: scale(1.45);
+    }
+}
+.image-flipped,
+.image-rotation-modified,
+.image-scale-modified
+{
+    transition: transform .35s linear;
+}
+.image-container
+{
+    overflow: hidden;
+}
+.image-wrapper
+{
+    height: 632px;
+    width: 632px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.image-rotation-modified
+{
+    display: block;
+}
+.cat-image
+{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.image-default
+{
+    display: none;
+}
+.image-filtered
+{
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+.filters-container
+{
+    margin-top: 70px;
+    position: relative;
+}
+.filters-container::after
+{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.filters
+{
+    display: grid;
+    grid-template: 206px / 170px 170px 170px 170px;
+    grid-column-gap: 5px;
+    grid-auto-rows: 0;
+    overflow: hidden;
+}
+.filter-item
+{
+    display: none;
+}
+.filter-image
+{
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+}
+.filter-header
+{
+    display: block;
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    margin: 0 0 15px;
+    color: #444;
+}
+.arrow
+{
+    position: absolute;
+    top: 99px;
+    display: none;
+}
+.arrow-left
+{
+    transform: rotate(90deg);
+    left: -66px;
+}
+.arrow-right
+{
+    transform: rotate(-90deg);
+    right: -66px;
+}
+.arrow-disabled
+{
+    opacity: .4;
+    cursor: default;
+}
+.filter-empty
+{
+    filter: unset;
+}
+@keyframes empty
+{
+    100%
+    {
+        filter: none;
+    }
+}
+.filter-petersburg
+{
+    filter: grayscale(100%);
+}
+@keyframes petersburg
+{
+    100%
+    {
+        filter: grayscale(100%);
+    }
+}
+.filter-yalta
+{
+    filter: saturate(5) ;
+}
+@keyframes yalta
+{
+    100%
+    {
+        filter: saturate(5) ;
+    }
+}
+.filter-ural-summer
+{
+    filter: brightness(120%) hue-rotate(180deg) contrast(160%) ;
+}
+@keyframes filter-ural-summer
+{
+    100%
+    {
+        filter: brightness(120%) hue-rotate(180deg) contrast(160%) ;
+    }
+}
+.filter-purple
+{
+    filter: contrast(148%) hue-rotate(240deg) brightness(88%);
+}
+@keyframes filter-purple
+{
+    100%
+    {
+        filter: contrast(148%) hue-rotate(240deg) brightness(88%);
+    }
+}
+.filter-soap
+{
+    filter: blur(1px) hue-rotate(35deg) contrast(130%);
+}
+@keyframes filter-soap
+{
+    100%
+    {
+        filter: blur(1px) hue-rotate(35deg) contrast(130%);
+    }
+}
+.filter-past
+{
+    filter: sepia(1);
+}
+@keyframes filter-past
+{
+    100%
+    {
+        filter: sepia(1);
+    }
+}
+.filter-negative
+{
+    filter: contrast(110%) invert(100%);
+}
+@keyframes filter-negative
+{
+    100%
+    {
+        filter: contrast(110%) invert(100%);
+    }
+}
+.inp-control,
+.scale-label,
+.rotate-label
+{
+    display: none;
+}
+.fill:checked ~ .image-container > .image-wrapper:first-child,
+.fill:checked ~ .image-container .image-modified,
+.fill:checked ~ .image-container .image-rotation-modified
+{
+    width: auto;
+    height: auto;
+}
+.flip:checked ~ .image-container .image-flipped
+{
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+.logo:checked ~ .icons .icon-label
+{
+    animation-name: label-hiding;
+}
+.logo:checked ~ .icons .logo-label
+{
+    animation: none;
+}
+.logo:checked ~ .filters-container::after
+{
+    z-index: 1;
+}
+.logo:checked ~ .image-container > .image-wrapper
+{
+    display: none;
+}
+.logo:checked ~ .image-container .image-default
+{
+    display: block;
+}
+/* ------ */
+.logo:checked ~ .icons .icon-logo,
+.fill:checked ~ .icons .icon-fill,
+.flip:checked ~ .icons .icon-flip
+{
+    animation-name: icon-switch;
+}
+.scale-1:checked ~ .icons .icon-scale,
+.rotate-1:checked ~ .icons .icon-rotate
+{
+    animation-name: icon-switch-x-1;
+}
+.scale-2:checked ~ .icons .icon-scale,
+.rotate-2:checked ~ .icons .icon-rotate
+{
+    animation-name: icon-switch-x-2;
+}
+.scale-3:checked ~ .icons .icon-scale,
+.rotate-3:checked ~ .icons .icon-rotate
+{
+    animation-name: icon-switch-x-3;
+}
+.scale-4:checked ~ .icons .icon-scale,
+.rotate-4:checked ~ .icons .icon-rotate
+{
+    animation-name: icon-switch-x-4;
+}
+.logo:checked ~ .icons .icon-fill,
+.logo:checked ~ .icons .icon-flip,
+.logo:checked ~ .icons .icon-scale,
+.logo:checked ~ .icons .icon-rotate
+{
+    animation: none;
+}
+.scale-1:checked ~ .icons .scale-label:nth-child(2),
+.scale-2:checked ~ .icons .scale-label:nth-child(3),
+.scale-3:checked ~ .icons .scale-label:nth-child(4),
+.scale-4:checked ~ .icons .scale-label:nth-child(1),
+.rotate-1:checked ~ .icons .rotate-label:nth-child(2),
+.rotate-2:checked ~ .icons .rotate-label:nth-child(3),
+.rotate-3:checked ~ .icons .rotate-label:nth-child(4),
+.rotate-4:checked ~ .icons .rotate-label:nth-child(1)
+{
+    display: block;
+}
+.scale-1:checked ~ .image-container .image-scale-modified
+{
+    transform: scale(1);
+}
+.scale-2:checked ~ .image-container .image-scale-modified
+{
+    transform: scale(1.25);
+}
+.scale-3:checked ~ .image-container .image-scale-modified
+{
+    transform: scale(1.5);
+}
+.scale-4:checked ~ .image-container .image-scale-modified
+{
+    transform: scale(1.75);
+}
+.rotate-1:checked ~ .image-container .image-rotation-modified
+{
+    transform: rotate(0deg);
+}
+.rotate-2:checked ~ .image-container .image-rotation-modified
+{
+    transform: rotate(90deg);
+}
+.rotate-3:checked ~ .image-container .image-rotation-modified
+{
+    transform: rotate(180deg);
+}
+.rotate-4:checked ~ .image-container .image-rotation-modified
+{
+    transform: rotate(270deg);
+}
+.page-1:checked ~ .filters-container .filter-item:nth-child(1),
+.page-1:checked ~ .filters-container .filter-item:nth-child(2),
+.page-1:checked ~ .filters-container .filter-item:nth-child(3),
+.page-1:checked ~ .filters-container .filter-item:nth-child(4),
+.page-2:checked ~ .filters-container .filter-item:nth-child(2),
+.page-2:checked ~ .filters-container .filter-item:nth-child(3),
+.page-2:checked ~ .filters-container .filter-item:nth-child(4),
+.page-2:checked ~ .filters-container .filter-item:nth-child(5),
+.page-3:checked ~ .filters-container .filter-item:nth-child(3),
+.page-3:checked ~ .filters-container .filter-item:nth-child(4),
+.page-3:checked ~ .filters-container .filter-item:nth-child(5),
+.page-3:checked ~ .filters-container .filter-item:nth-child(6),
+.page-4:checked ~ .filters-container .filter-item:nth-child(4),
+.page-4:checked ~ .filters-container .filter-item:nth-child(5),
+.page-4:checked ~ .filters-container .filter-item:nth-child(6),
+.page-4:checked ~ .filters-container .filter-item:nth-child(7),
+.page-5:checked ~ .filters-container .filter-item:nth-child(5),
+.page-5:checked ~ .filters-container .filter-item:nth-child(6),
+.page-5:checked ~ .filters-container .filter-item:nth-child(7),
+.page-5:checked ~ .filters-container .filter-item:nth-child(8)
+{
+    display: block;
+}
+.page-1:checked ~ .filters-container .arrow-left:nth-child(1),
+.page-1:checked ~ .filters-container .arrow-right:nth-child(1),
+.page-2:checked ~ .filters-container .arrow-left:nth-child(2),
+.page-2:checked ~ .filters-container .arrow-right:nth-child(2),
+.page-3:checked ~ .filters-container .arrow-left:nth-child(3),
+.page-3:checked ~ .filters-container .arrow-right:nth-child(3),
+.page-4:checked ~ .filters-container .arrow-left:nth-child(4),
+.page-4:checked ~ .filters-container .arrow-right:nth-child(4),
+.page-5:checked ~ .filters-container .arrow-left:nth-child(5),
+.page-5:checked ~ .filters-container .arrow-right:nth-child(5)
+{
+    display: block;
+}
+.page-2:checked ~ .filters-container .arrow-right:nth-child(2) .icon-togglable,
+.page-3:checked ~ .filters-container .arrow-right:nth-child(3) .icon-togglable,
+.page-4:checked ~ .filters-container .arrow-right:nth-child(4) .icon-togglable,
+.page-5:checked ~ .filters-container .arrow-left:nth-child(5) .icon-togglable,
+.page-4:checked ~ .filters-container .arrow-left:nth-child(4) .icon-togglable,
+.page-3:checked ~ .filters-container .arrow-left:nth-child(3) .icon-togglable,
+.page-2:checked ~ .filters-container .arrow-left:nth-child(2) .icon-togglable,
+.page-1:checked ~ .filters-container .arrow-right:nth-child(1) .icon-togglable
+{
+    animation-fill-mode: none;
+    animation-name: icon-clicked;
+}
+.filter-1:checked ~ .filters-container .filter-item:nth-child(1) .filter-header,
+.filter-2:checked ~ .filters-container .filter-item:nth-child(2) .filter-header,
+.filter-3:checked ~ .filters-container .filter-item:nth-child(3) .filter-header,
+.filter-4:checked ~ .filters-container .filter-item:nth-child(4) .filter-header,
+.filter-5:checked ~ .filters-container .filter-item:nth-child(5) .filter-header,
+.filter-6:checked ~ .filters-container .filter-item:nth-child(6) .filter-header,
+.filter-7:checked ~ .filters-container .filter-item:nth-child(7) .filter-header,
+.filter-8:checked ~ .filters-container .filter-item:nth-child(8) .filter-header
+{
+    font-weight: bold;
+    color: #000;
+}
+.filter-1:checked ~ .image-container .image-filtered
+{
+    animation-name: empty;
+}
+.filter-2:checked ~ .image-container .image-filtered
+{
+    animation-name: petersburg;
+}
+.filter-3:checked ~ .image-container .image-filtered
+{
+    animation-name: yalta;
+}
+.filter-4:checked ~ .image-container .image-filtered
+{
+    animation-name: filter-ural-summer;
+}
+.filter-5:checked ~ .image-container .image-filtered
+{
+    animation-name: filter-purple;
+}
+.filter-6:checked ~ .image-container .image-filtered
+{
+    animation-name: filter-soap;
+}
+.filter-7:checked ~ .image-container .image-filtered
+{
+    animation-name: filter-past;
+}
+.filter-8:checked ~ .image-container .image-filtered
+{
+    animation-name: filter-negative;
+}
