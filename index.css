@@ -1,3 +1,5 @@
+/* stylelint-disable max-line-length */
+
 .setting-sprite,
 input
 {
@@ -269,6 +271,8 @@ input[id='shift-right-2']:checked ~ .kotogram .kotogram__filters label[for='shif
 input[id='shift-right-0']:checked ~ .kotogram .kotogram__filters .kotogram__filters-content .filter-1,
 input[id='shift-right-1']:checked ~ .kotogram .kotogram__filters .kotogram__filters-content .filter-1,
 input[id='shift-right-1']:checked ~ .kotogram .kotogram__filters .kotogram__filters-content .filter-2,
+input[id='shift-right-2']:checked ~ .kotogram .kotogram__filters .kotogram__filters-content .filter-1,
+input[id='shift-right-2']:checked ~ .kotogram .kotogram__filters .kotogram__filters-content .filter-2,
 input[id='shift-left-2']:checked ~ .kotogram .kotogram__filters .kotogram__filters-content .filter-1
 {
     display: none;
