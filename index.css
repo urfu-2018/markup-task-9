@@ -3,19 +3,20 @@ main
     width: 1440px;
     height: 1024px;
     background-color: #ffffff;
-
-   
+    font-family: Helvetica;   
 }
 
+.arrow_left,
+.arrow_right,
 .icon-plain
 {
-    opacity: .5;
+    fill: #444;
     cursor: pointer;
 }
 
 .page
 {
-    margin: auto;
+    margin: 50px auto;
     width: 632px;
     height: 632px;
     display: grid;
@@ -35,6 +36,8 @@ main
     grid-template-areas: 'left carousel right';
     width: 820px;
     margin-left: -90px;
+    margin-top: 60px;
+    height: 230px;
 }
 
 .carousel__inner
@@ -54,7 +57,7 @@ main
 .logo
 {
     grid-area: logo;
-    fill: url(#rg);
+    fill: url(#InstaGradient);
     cursor: pointer;
 }
 
@@ -308,10 +311,10 @@ main
 {
     font-family: Helvetica, sans-serif;
     color: #444;
-    font-family: Helvetica;
     font-size: 18px;
     font-weight: normal;
     text-align: center;
+    margin-bottom: 15px;
 }
 
 .filter__none:checked ~.carousel-list .filter__item.filter__none .filter__label,
@@ -332,8 +335,8 @@ main
 .arrow
 {
     margin: auto;
-    cursor: pointer;
 }
+
 
 .arrow_left
 {
@@ -345,6 +348,21 @@ main
 {
     transform: rotate(-90deg);
     grid-area: right;
+}
+
+.icon-plain:not(.logo):active
+{
+    fill: #333;
+}
+
+.arrow:not(.arrow_inactive):active
+{
+    transform: scale(.9);
+}
+
+.arrow:not(.arrow_inactive)
+{
+    cursor: pointer;
 }
 
 .arrow-rb
@@ -392,7 +410,7 @@ main
 
 .arrow_inactive
 {
-    opacity: .5;
+    fill: rgba(170, 170, 170, 0.8);
 }
 
 .arrow-rb__left-2:checked ~ .carousel-list .carousel__inner .filter__item,

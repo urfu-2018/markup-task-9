@@ -9,7 +9,7 @@
 
 <body>
 
-    <main>
+    
         <!--Мой спрайт-->
         <svg style="display:none;">
             <!-- icons here -->
@@ -53,6 +53,7 @@
 
         </svg>
         <!--Ваша разметка-->
+        <main>
         <section class="page">
             <label for="FillCb">
                 <svg class="fill icon-plain" width="48px" height="48px" xmlns="http://www.w3.org/2000/svg">
@@ -89,13 +90,11 @@
 
             <svg class="logo" width="48px" height="48px" xmlns="http://www.w3.org/2000/svg">
                 <use xlink:href="#logo"></use>
-                <radialGradient id="rg" r="150%" cx="30%" cy="107%">
-                    <stop stop-color="#fdf497" offset="0" />
-                    <stop stop-color="#fdf497" offset="0.05" />
-                    <stop stop-color="#fd5949" offset="0.45" />
-                    <stop stop-color="#d6249f" offset="0.6" />
-                    <stop stop-color="#285AEB" offset="0.9" />
-                </radialGradient>
+                <linearGradient id="InstaGradient" x1="101.5%" x2=".5%" y1="-.5%" y2="101.5%">
+                        <stop offset="0%" stop-color="#8A2387"/>
+                        <stop offset="63.677%" stop-color="#E94057"/>
+                        <stop offset="100%" stop-color="#F27121"/>
+                    </linearGradient>
             </svg>
 
             <input class="rotate-rb rotate-rb-1" id="rotate-rb-1" type="radio" name="rotate" checked>
@@ -150,13 +149,13 @@
             <input name="movement" type="radio" class="arrow-rb arrow-rb__right_inactive" id="RightInactive">
 
             <div class="carousel-list">
-                <label for="LeftInactive" class="arrow arrow_inactive left_inactive__label">
-                    <svg class="arrow_left" width="48px" height="37px" xmlns="http://www.w3.org/2000/svg">
+                <label for="LeftInactive" class="arrow left_inactive__label">
+                    <svg class="arrow_left arrow_inactive" width="48px" height="37px" xmlns="http://www.w3.org/2000/svg">
                         <use xlink:href="#DownArrow"></use>
                     </svg>
                 </label>
                 <label for="MoveLeft1" class="arrow left-1__label">
-                    <svg class="arrow arrow_left" width="48px" height="37px" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="arrow_left" width="48px" height="37px" xmlns="http://www.w3.org/2000/svg">
                         <use xlink:href="#DownArrow"></use>
                     </svg>
                 </label>
@@ -175,54 +174,54 @@
                         <use xlink:href="#DownArrow"></use>
                     </svg>
                 </label>
-                <label for="RightInactive" class="arrow arrow_inactive right_inactive__label">
-                    <svg class="arrow_right" width="48px" height="37px" xmlns="http://www.w3.org/2000/svg">
+                <label for="RightInactive" class="arrow right_inactive__label">
+                    <svg class="arrow_right  arrow_inactive" width="48px" height="37px" xmlns="http://www.w3.org/2000/svg">
                         <use xlink:href="#DownArrow"></use>
                     </svg>
                 </label>
                 <div class="carousel__inner">
                     <div class="filter__item filter__none">
-                        <div class="filter__label">Без фильтра
+                        <div class="filter__label">Без фильтра </div>
                             <label for="Id1"><img class="filter-preview"
                                     title="Кот без фильтра" alt="Кот без фильтра" src="cat.jpg">
                             </label>
-                        </div>
+                        
                     </div>
                     <div class="filter__item filter__gray">
-                        <div class="filter__label">Питер<label for="Id2">
+                        <div class="filter__label">Питер </div><label for="Id2">
                             <img class="filter-preview" title="Кот с серым фильтром"
                                 alt="Кот с серым фильтром" src="cat.jpg">
                         </label>
-                    </div>
+                   
                     </div>
                     <div class="filter__item filter__sepia">
-                        <div class="filter__label">Ялта<label for="Id3">
+                        <div class="filter__label">Ялта </div><label for="Id3">
                             <img class="filter-preview" title="Кот с фильтром сепия"
                                 alt="ДусяКот с фильтром сепия" src="cat.jpg">
                         </label>
-                    </div>
+                   
                     </div>
                     <div class="filter__item filter__blue">
-                        <div class="filter__label">Уральское лето<label for="Id4">
+                        <div class="filter__label">Уральское лето</div><label for="Id4">
                             <img class="filter-preview"
                                 title="Кот с синим фильтром" alt="Кот с синим фильтром" src="cat.jpg">
                         </label>
-                    </div>
+                 
                     </div>
 
                     <div class="filter__item filter__negate">
-                        <div class="filter__label">Интроверт<label for="Id5">
+                        <div class="filter__label">Интроверт</div><label for="Id5">
                             <img class="filter-preview" title="Кот с инвертированным фильтром"
                                 alt="Кот с инвертированным фильтром" src="cat.jpg">
                         </label>
-                    </div>
+                    
                     </div>
                     <div class="filter__item filter__blur">
-                        <label class="filter__label">Ларри<label for="Id6">
+                        <div class="filter__label">Ларри</div><label for="Id6">
                             <img class="filter-preview" title="Кот с фильтром размытия"
                                 alt="Кот с фильтром размытия" src="cat.jpg">
                         </label>
-                    </div>
+                 
                     </div>
                 </div>
             </div>
