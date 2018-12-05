@@ -114,7 +114,18 @@ label
 
 .filters
 {
+    position: relative;
+    left: 0;
+
     display: flex;
+    flex-wrap: nowrap;
+
+    transition: left .5s ease-in-out 0s;
+}
+
+.carousel-offset-radio-1:checked ~ .main .filters
+{
+    left: -179px;
 }
 
 .filter__name
@@ -130,15 +141,6 @@ label
     text-align: center;
 
     color: #444;
-}
-
-.image-filter-none:checked ~ .main .filters__none .filter__name
-{
-    font-family: 'Helvetica', sans-serif;
-    font-size: 18px;
-    font-weight: bold;
-
-    color: #000;
 }
 
 .filter__image
@@ -164,8 +166,19 @@ label
     filter: sepia(100%);
 }
 
+.filters__blur .filter__image
+{
+    filter: blur(5px);
+}
+
 .button-left,
 .button-right
+{
+    display: none;
+}
+
+.button-left svg,
+.button-right svg
 {
     width: 48px;
     height: 31px;
@@ -177,12 +190,36 @@ label
     fill: #aaa;
 }
 
-.button-left
+.carousel-offset-radio-0:checked ~ .main .button-left-1,
+.carousel-offset-radio-0:checked ~ .main .button-right-1,
+.carousel-offset-radio-1:checked ~ .main .button-left-0,
+.carousel-offset-radio-1:checked ~ .main .button-right-0
+{
+    display: block;
+}
+
+.carousel-offset-radio-0:not(:checked) ~ .main .button-left svg,
+.carousel-offset-radio-1:not(:checked) ~ .main .button-right svg
+{
+    opacity: 1;
+
+    fill: #6a6a6a;
+}
+
+.carousel-offset-radio-0:not(:checked) ~ .main .button-left:hover svg,
+.carousel-offset-radio-1:not(:checked) ~ .main .button-right:hover svg
+{
+    opacity: 1;
+
+    fill: black;
+}
+
+.button-left svg
 {
     transform: rotate(90deg) translateY(7px);
 }
 
-.button-right
+.button-right svg
 {
     transform: rotate(-90deg) translateY(7px) scaleX(-1);
 }
@@ -203,9 +240,14 @@ label
 .image-radio-filter_none:checked ~ .main .filters__none .filter__name,
 .image-radio-filter_greyscale:checked ~ .main .filters__greyscale .filter__name,
 .image-radio-filter_sepia:checked ~ .main .filters__sepia .filter__name,
-.image-radio-filter_ural:checked ~ .main .filters__ural .filter__name
+.image-radio-filter_ural:checked ~ .main .filters__ural .filter__name,
+.image-radio-filter_blur:checked ~ .main .filters__blur .filter__name
 {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 18px;
     font-weight: bold;
+
+    color: #000;
 }
 
 .image-radio-filter_greyscale:checked ~ .main .image-view
@@ -216,6 +258,11 @@ label
 .image-radio-filter_sepia:checked ~ .main .image-view
 {
     filter: sepia(100%);
+}
+
+.image-radio-filter_blur:checked ~ .main .image-view
+{
+    filter: blur(5px);
 }
 
 .filters__ural .filter__image:after,
@@ -291,6 +338,8 @@ label
     transform: none;
 
     background-size: contain;
+
+    filter: none;
 }
 
 .image-radio-fit_fill:checked ~ .main .image-controls-fit__fit,
@@ -309,4 +358,12 @@ label
 .image-radio-flip_flipX:checked ~ .main .image-controls-flip__flipX
 {
     display: block;
+}
+
+.filters-container
+{
+    overflow: hidden;
+
+    width: 716px;
+    height: 205px;
 }
