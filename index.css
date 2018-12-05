@@ -1,0 +1,317 @@
+.setting-sprite,
+input
+{
+    display: none;
+}
+
+.settings
+{
+    display: flex;
+    width: 632px;
+    justify-content: space-between;
+    margin: 20px auto 0;
+    position: relative;
+}
+
+.settings__icon
+{
+    fill: #444;
+    width: 48px;
+    height: 48px;
+    opacity: .8;
+    cursor: pointer;
+}
+
+.settings label
+{
+    width: 48px;
+    height: 48px;
+    z-index: 1;
+}
+
+.label-hide
+{
+    display: none;
+}
+
+input[id='scale-1']:checked ~ .settings label[for='scale-2'],
+input[id='scale-2']:checked ~ .settings label[for='scale-3'],
+input[id='scale-3']:checked ~ .settings label[for='scale-1'],
+input[id='rotate-0']:checked ~ .settings label[for='rotate-90'],
+input[id='rotate-90']:checked ~ .settings label[for='rotate-180'],
+input[id='rotate-180']:checked ~ .settings label[for='rotate-270'],
+input[id='rotate-270']:checked ~ .settings label[for='rotate-0']
+{
+    display: block;
+}
+
+input[id='fill']:checked ~ .settings label[for='fill'] .settings__icon,
+input[id='flip']:checked ~ .settings label[for='flip'] .settings__icon,
+input[id='scale-2']:checked ~ .settings label[for='scale-3'] .settings__icon,
+input[id='scale-3']:checked ~ .settings label[for='scale-1'] .settings__icon,
+input[id='rotate-90']:checked ~ .settings label[for='rotate-180'] .settings__icon,
+input[id='rotate-180']:checked ~ .settings label[for='rotate-270'] .settings__icon,
+input[id='rotate-270']:checked ~ .settings label[for='rotate-0'] .settings__icon
+{
+    fill: #000;
+}
+
+/* settings' impact on photo */
+
+input[id='fill']:checked ~ .kotogram .kotogram__cat-photo
+{
+    margin: 84px auto 141px;
+    width: 632px;
+    height: 488px;
+    background-size: 632px 488px;
+}
+
+input[id='scale-1']:checked ~ .kotogram .kotogram__cat-photo
+{
+    background-size: 100% 100%;
+}
+
+input[id='scale-2']:checked ~ .kotogram .kotogram__cat-photo
+{
+    background-size: 150% 150%;
+}
+
+input[id='scale-3']:checked ~ .kotogram .kotogram__cat-photo
+{
+    background-size: 200% 200%;
+}
+
+input[id='rotate-0']:checked ~ .kotogram .kotogram__cat-photo
+{
+    transform: rotate(0deg);
+}
+
+input[id='rotate-90']:checked ~ .kotogram .kotogram__cat-photo
+{
+    transform: rotate(-90deg);
+}
+
+input[id='rotate-180']:checked ~ .kotogram .kotogram__cat-photo
+{
+    transform: rotate(-180deg);
+}
+
+input[id='rotate-270']:checked ~ .kotogram .kotogram__cat-photo
+{
+    transform: rotate(-270deg);
+}
+
+input[id='rotate-0']:checked ~ input[id='flip']:checked ~ .kotogram .kotogram__cat-photo
+{
+    transform: scaleX(-1);
+}
+
+input[id='rotate-90']:checked ~ input[id='flip']:checked ~ .kotogram .kotogram__cat-photo
+{
+    transform: scaleX(-1) rotate(-90deg);
+}
+
+input[id='rotate-180']:checked ~ input[id='flip']:checked ~ .kotogram .kotogram__cat-photo
+{
+    transform: scaleX(-1) rotate(-180deg);
+}
+
+input[id='rotate-270']:checked ~ input[id='flip']:checked ~ .kotogram .kotogram__cat-photo
+{
+    transform: scaleX(-1) rotate(-270deg);
+}
+
+input[id='origin']:checked ~ .kotogram .kotogram__cat-photo
+{
+    width: 632px;
+    height: 488px;
+    background-size: 100% 100%;
+    transform: initial;
+    filter: grayscale(0%) sepia(0%) hue-rotate(0deg) invert(0) !important;
+}
+
+input[id='origin']:checked ~ input[id='flip']:checked ~ .kotogram .kotogram__cat-photo
+{
+    transform: scaleX(-1);
+}
+
+input[id='origin']:checked ~ .settings label[for='fill'],
+input[id='origin']:checked ~ .settings label[for='scale-1'],
+input[id='origin']:checked ~ .settings label[for='scale-2'],
+input[id='origin']:checked ~ .settings label[for='scale-3'],
+input[id='origin']:checked ~ .settings label[for='rotate-0'],
+input[id='origin']:checked ~ .settings label[for='rotate-90'],
+input[id='origin']:checked ~ .settings label[for='rotate-180'],
+input[id='origin']:checked ~ .settings label[for='rotate-270'],
+input[id='origin']:checked ~ .settings label[for='flip']
+{
+    display: none;
+}
+
+input[id='origin']:checked ~ .settings
+{
+    justify-content: center;
+}
+
+/* cat-photo default */
+
+.kotogram__cat-photo
+{
+    width: 632px;
+    height: 632px;
+    margin: 12px auto 69px;
+    background: url('img/cat.jpg');
+    background-size: 632px 632px;
+    display: flex;
+    justify-content: center;
+    transition: all 1s ease;
+}
+
+/* filters common */
+
+.kotogram__filters
+{
+    width: 824px;
+    height: 206px;
+    margin: 0 auto 37px;
+    display: flex;
+    position: relative;
+}
+
+.kotogram__filters-content
+{
+    position: absolute;
+    width: 695px;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    left: 65px;
+    right: 65px;
+}
+
+.filter
+{
+    margin-right: 5px;
+    display: inline-flex;
+    flex-direction: column;
+    transition: all .5s ease;
+    width: 170px;
+    height: 100%;
+}
+
+.filter__title
+{
+    width: 100%;
+    height: 22px;
+    margin: 0 0 15px;
+    text-align: center;
+    font-family: helvetica, serif;
+}
+
+.filter__example
+{
+    width: 170px;
+    height: 169px;
+    margin: 0;
+    background-image: url('img/cat.jpg');
+    background-size: 170px 169px;
+}
+
+.arrow-icon
+{
+    position: absolute;
+    top: 63px;
+    bottom: 58px;
+    width: 31px;
+    height: 48px;
+}
+
+.arrow-icon-left
+{
+    transform: rotate(90deg);
+    left: 0;
+}
+
+.arrow-icon-right
+{
+    transform: rotate(-90deg);
+    right: 0;
+}
+
+/* arrows' movement */
+
+label[for='shift-left-0'] .settings__icon,
+label[for='shift-right-2'] .settings__icon
+{
+    opacity: .2;
+    cursor: initial;
+}
+
+input[id='shift-right-0']:checked ~ .kotogram .kotogram__filters label[for='shift-left-1'],
+input[id='shift-right-0']:checked ~ .kotogram .kotogram__filters label[for='shift-right-1'],
+input[id='shift-right-1']:checked ~ .kotogram .kotogram__filters label[for='shift-left-2'],
+input[id='shift-right-1']:checked ~ .kotogram .kotogram__filters label[for='shift-right-2'],
+input[id='shift-left-2']:checked ~ .kotogram .kotogram__filters label[for='shift-right-1'],
+input[id='shift-left-2']:checked ~ .kotogram .kotogram__filters label[for='shift-left-1'],
+input[id='shift-left-1']:checked ~ .kotogram .kotogram__filters label[for='shift-right-0'],
+input[id='shift-left-1']:checked ~ .kotogram .kotogram__filters label[for='shift-left-0'],
+input[id='shift-left-0']:checked ~ .kotogram .kotogram__filters label[for='shift-right-0'],
+input[id='shift-left-0']:checked ~ .kotogram .kotogram__filters label[for='shift-left-0'],
+input[id='shift-right-2']:checked ~ .kotogram .kotogram__filters label[for='shift-left-2'],
+input[id='shift-right-2']:checked ~ .kotogram .kotogram__filters label[for='shift-right-2']
+{
+    display: block;
+}
+
+/* filter's controls */
+
+input[id='shift-right-0']:checked ~ .kotogram .kotogram__filters .kotogram__filters-content .filter-1,
+input[id='shift-right-1']:checked ~ .kotogram .kotogram__filters .kotogram__filters-content .filter-1,
+input[id='shift-right-1']:checked ~ .kotogram .kotogram__filters .kotogram__filters-content .filter-2,
+input[id='shift-left-2']:checked ~ .kotogram .kotogram__filters .kotogram__filters-content .filter-1
+{
+    display: none;
+}
+
+input[id='filter-no']:checked ~ .kotogram .kotogram__filters .kotogram__filters-content label[for='filter-no'] .filter__title,
+input[id='filter-piter']:checked ~ .kotogram .kotogram__filters .kotogram__filters-content label[for='filter-piter'] .filter__title,
+input[id='filter-yalta']:checked ~ .kotogram .kotogram__filters .kotogram__filters-content label[for='filter-yalta'] .filter__title,
+input[id='filter-ural']:checked ~ .kotogram .kotogram__filters .kotogram__filters-content label[for='filter-ural'] .filter__title,
+input[id='filter-inversion']:checked ~ .kotogram .kotogram__filters .kotogram__filters-content label[for='filter-inversion'] .filter__title,
+input[id='filter-halloween']:checked ~ .kotogram .kotogram__filters .kotogram__filters-content label[for='filter-halloween'] .filter__title
+{
+    font-weight: 600;
+}
+
+/* filters' impact on photo */
+
+.piter-img,
+input[id='filter-piter']:checked ~ .kotogram .kotogram__cat-photo
+{
+    filter: grayscale(90%) sepia(0%) hue-rotate(0deg) invert(0);
+}
+
+.yalta-img,
+input[id='filter-yalta']:checked ~ .kotogram .kotogram__cat-photo
+{
+    filter: grayscale(0%) sepia(80%) hue-rotate(0deg) invert(0);
+}
+
+.ural-img,
+input[id='filter-ural']:checked ~ .kotogram .kotogram__cat-photo
+{
+    filter: grayscale(0%) sepia(0%) hue-rotate(180deg) invert(0);
+}
+
+.inversion-img,
+input[id='filter-inversion']:checked ~ .kotogram .kotogram__cat-photo
+{
+    filter: grayscale(0%) sepia(0%) hue-rotate(0deg) invert(1);
+}
+
+.halloween-img,
+input[id='filter-halloween']:checked ~ .kotogram .kotogram__cat-photo
+{
+    filter: grayscale(0%) sepia(100%) hue-rotate(0deg) invert(100%);
+}
