@@ -10,10 +10,12 @@ main
 .icon-plain
 {
     opacity: .5;
+    cursor: pointer;
 }
 
 .page
 {
+    margin: auto;
     width: 632px;
     height: 632px;
     display: grid;
@@ -22,13 +24,38 @@ main
     grid-column-gap: 95px;
     grid-template-areas: 'fill scale logo rotate flip'
         'img img img img img'
-        'carousel carousel carousel carousel carousel';
+        'car car car car car';
+}
+
+.carousel-list
+{
+    grid-area: car;
+    display: grid;
+    grid-template-columns: auto 700px auto;
+    grid-template-areas: 'left carousel right';
+    width: 820px;
+    margin-left: -90px;
+}
+
+.carousel__inner
+{
+    overflow: hidden;
+    grid-area: carousel;
+    display: flex;
+    
+}
+
+.carousel-list .filter__item
+{
+    display: inline;
+    transition: transform 1s;
 }
 
 .logo
 {
     grid-area: logo;
     fill: url(#rg);
+    cursor: pointer;
 }
 
 .preview
@@ -37,6 +64,11 @@ main
     overflow: hidden;
     width: 632px;
     height: 632px;
+}
+
+.flip
+{
+    transform: translateY(5px);
 }
 
 .scale-rb,
@@ -188,11 +220,6 @@ main
     transform: scale(2);
 }
 
-.logo:active ~ .preview img
-{
-    transform: scale(1);
-}
-
 .logo:active ~ .preview .flip-wrapper
 {
     transform: scaleX(1);
@@ -201,4 +228,181 @@ main
 .logo:active ~ .preview .rotate-wrapper
 {
     transform: rotate(0);
+}
+
+.filter__gray:checked ~.preview img
+{
+    filter: grayscale(1);
+}
+
+.filter__sepia:checked ~.preview img
+{
+    filter: sepia(1);
+}
+
+.filter__blue:checked ~.preview img
+{
+    filter: hue-rotate(180deg);
+}
+
+.filter__negate:checked ~.preview img
+{
+    filter: invert(1);
+}
+
+.filter__blur:checked ~.preview img
+{
+    filter: blur(5px);
+}
+
+.logo:active ~ .preview img
+{
+    transform: scale(1);
+    filter: none;
+}
+
+.filter__item
+{
+    border-left: 2.5px solid transparent;
+    border-right: 2.5px solid transparent;
+}
+
+.filter__item label
+{
+    cursor: pointer;
+}
+
+.filter__item .filter-preview
+{
+    width: 170px;
+    height: 169px;
+    object-fit: cover;
+}
+
+.filter__item.filter__gray .filter-preview
+{
+    filter: grayscale(1);
+}
+
+.filter__item.filter__sepia .filter-preview
+{
+    filter: sepia(1);
+}
+
+.filter__item.filter__blue .filter-preview
+{
+    filter: hue-rotate(180deg);
+}
+
+.filter__item.filter__negate .filter-preview
+{
+    filter: invert(1);
+}
+
+.filter__item.filter__blur .filter-preview
+{
+    filter: blur(5px);
+}
+
+.filter__label
+{
+    font-family: Helvetica, sans-serif;
+    color: #444;
+    font-family: Helvetica;
+    font-size: 18px;
+    font-weight: normal;
+    text-align: center;
+}
+
+.filter__none:checked ~.carousel-list .filter__item.filter__none .filter__label,
+.filter__gray:checked ~.carousel-list .filter__item.filter__gray .filter__label,
+.filter__sepia:checked ~.carousel-list .filter__item.filter__sepia .filter__label,
+.filter__blue:checked ~.carousel-list .filter__item.filter__blue .filter__label,
+.filter__negate:checked ~.carousel-list .filter__item.filter__negate .filter__label,
+.filter__blur:checked ~.carousel-list .filter__item.filter__blur .filter__label
+{
+    font-weight: bold;
+}
+
+.filter-rb
+{
+    display: none;
+}
+
+.arrow
+{
+    margin: auto;
+    cursor: pointer;
+}
+
+.arrow_left
+{
+    transform: rotate(90deg);
+    grid-area: left;
+}
+
+.arrow_right
+{
+    transform: rotate(-90deg);
+    grid-area: right;
+}
+
+.arrow-rb
+{
+    display: none;
+}
+
+.carousel-list label
+{
+    display: inline;
+}
+
+.arrow-rb__left_inactive:checked ~ .carousel-list .left-1__label,
+.arrow-rb__left_inactive:checked ~ .carousel-list .left-2__label,
+.arrow-rb__left_inactive:checked ~ .carousel-list .right-2__label,
+.arrow-rb__left_inactive:checked ~ .carousel-list .right_inactive__label,
+
+.arrow-rb__left-1:checked ~ .carousel-list .left-1__label,
+.arrow-rb__left-1:checked ~ .carousel-list .left-2__label,
+.arrow-rb__left-1:checked ~ .carousel-list .right-2__label,
+.arrow-rb__left-1:checked ~ .carousel-list .right_inactive__label,
+
+.arrow-rb__left-2:checked ~ .carousel-list .left_inactive__label,
+.arrow-rb__left-2:checked ~ .carousel-list .left-2__label,
+.arrow-rb__left-2:checked ~ .carousel-list .right-1__label,
+.arrow-rb__left-2:checked ~ .carousel-list .right_inactive__label,
+
+.arrow-rb__right-1:checked ~ .carousel-list .left_inactive__label,
+.arrow-rb__right-1:checked ~ .carousel-list .left-2__label,
+.arrow-rb__right-1:checked ~ .carousel-list .right-1__label,
+.arrow-rb__right-1:checked ~ .carousel-list .right_inactive__label,
+
+.arrow-rb__right-2:checked ~ .carousel-list .left_inactive__label,
+.arrow-rb__right-2:checked ~ .carousel-list .left-1__label,
+.arrow-rb__right-2:checked ~ .carousel-list .right-1__label,
+.arrow-rb__right-2:checked ~ .carousel-list .right-2__label,
+
+.arrow-rb__right_inactive:checked ~ .carousel-list .left-1__label,
+.arrow-rb__right_inactive:checked ~ .carousel-list .right-1__label,
+.arrow-rb__right_inactive:checked ~ .carousel-list .right-2__label,
+.arrow-rb__right_inactive:checked ~ .carousel-list .left_inactive__label
+{
+    display: none;
+}
+
+.arrow_inactive
+{
+    opacity: .5;
+}
+
+.arrow-rb__left-2:checked ~ .carousel-list .carousel__inner .filter__item,
+.arrow-rb__right-1:checked ~ .carousel-list .carousel__inner .filter__item
+{
+    transform: translateX(-174px);
+}
+
+.arrow-rb__right_inactive:checked ~ .carousel-list .carousel__inner .filter__item,
+.arrow-rb__right-2:checked ~ .carousel-list .carousel__inner .filter__item
+{
+    transform: translateX(-350px);
 }

@@ -46,6 +46,11 @@
                 <path d="M24 13.071h-4.375v-4.5h-6.25v4.5H9V19.5h4.375V24h6.25v-4.5H24z" />
             </g>
 
+            <symbol id="DownArrow">
+                <path d="M.5 7.401L24.428 31.33 48.357 7.4 41.569.613l-17.14 17.14L7.288.614z" fill-rule="evenodd" />
+            </symbol>
+
+
         </svg>
         <!--Ваша разметка-->
         <section class="page">
@@ -128,6 +133,101 @@
             <input id="FlipCb" class="flip-cb" type="checkbox">
 
             <br>
+            <input name="filters" class="filter-rb filter__none" type="radio" id="Id1" checked>
+            <input name="filters" class="filter-rb filter__gray" type="radio" id="Id2">
+            <input name="filters" class="filter-rb filter__sepia" type="radio" id="Id3">
+            <input name="filters" class="filter-rb filter__blue" type="radio" id="Id4">
+            <input name="filters" class="filter-rb filter__negate" type="radio" id="Id5">
+            <input name="filters" class="filter-rb filter__blur" type="radio" id="Id6">
+            <br>
+
+            <input name="movement" type="radio" class="arrow-rb arrow-rb__left_inactive" id="LeftInactive"
+                checked>
+            <input name="movement" type="radio" class="arrow-rb arrow-rb__left-1" id="MoveLeft1">
+            <input name="movement" type="radio" class="arrow-rb arrow-rb__left-2" id="MoveLeft2">
+            <input name="movement" type="radio" class="arrow-rb arrow-rb__right-1" id="MoveRight1">
+            <input name="movement" type="radio" class="arrow-rb arrow-rb__right-2" id="MoveRight2">
+            <input name="movement" type="radio" class="arrow-rb arrow-rb__right_inactive" id="RightInactive">
+
+            <div class="carousel-list">
+                <label for="LeftInactive" class="arrow arrow_inactive left_inactive__label">
+                    <svg class="arrow_left" width="48px" height="37px" xmlns="http://www.w3.org/2000/svg">
+                        <use xlink:href="#DownArrow"></use>
+                    </svg>
+                </label>
+                <label for="MoveLeft1" class="arrow left-1__label">
+                    <svg class="arrow arrow_left" width="48px" height="37px" xmlns="http://www.w3.org/2000/svg">
+                        <use xlink:href="#DownArrow"></use>
+                    </svg>
+                </label>
+                <label for="MoveLeft2" class="arrow left-2__label">
+                    <svg class="arrow_left" width="48px" height="37px" xmlns="http://www.w3.org/2000/svg">
+                        <use xlink:href="#DownArrow"></use>
+                    </svg>
+                </label>
+                <label for="MoveRight1" class="arrow right-1__label">
+                    <svg class="arrow_right" width="48px" height="37px" xmlns="http://www.w3.org/2000/svg">
+                        <use xlink:href="#DownArrow"></use>
+                    </svg>
+                </label>
+                <label for="MoveRight2" class="arrow right-2__label">
+                    <svg class="arrow_right" width="48px" height="37px" xmlns="http://www.w3.org/2000/svg">
+                        <use xlink:href="#DownArrow"></use>
+                    </svg>
+                </label>
+                <label for="RightInactive" class="arrow arrow_inactive right_inactive__label">
+                    <svg class="arrow_right" width="48px" height="37px" xmlns="http://www.w3.org/2000/svg">
+                        <use xlink:href="#DownArrow"></use>
+                    </svg>
+                </label>
+                <div class="carousel__inner">
+                    <div class="filter__item filter__none">
+                        <div class="filter__label">Без фильтра
+                            <label for="Id1"><img class="filter-preview"
+                                    title="Кот без фильтра" alt="Кот без фильтра" src="cat.jpg">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filter__item filter__gray">
+                        <div class="filter__label">Питер<label for="Id2">
+                            <img class="filter-preview" title="Кот с серым фильтром"
+                                alt="Кот с серым фильтром" src="cat.jpg">
+                        </label>
+                    </div>
+                    </div>
+                    <div class="filter__item filter__sepia">
+                        <div class="filter__label">Ялта<label for="Id3">
+                            <img class="filter-preview" title="Кот с фильтром сепия"
+                                alt="ДусяКот с фильтром сепия" src="cat.jpg">
+                        </label>
+                    </div>
+                    </div>
+                    <div class="filter__item filter__blue">
+                        <div class="filter__label">Уральское лето<label for="Id4">
+                            <img class="filter-preview"
+                                title="Кот с синим фильтром" alt="Кот с синим фильтром" src="cat.jpg">
+                        </label>
+                    </div>
+                    </div>
+
+                    <div class="filter__item filter__negate">
+                        <div class="filter__label">Интроверт<label for="Id5">
+                            <img class="filter-preview" title="Кот с инвертированным фильтром"
+                                alt="Кот с инвертированным фильтром" src="cat.jpg">
+                        </label>
+                    </div>
+                    </div>
+                    <div class="filter__item filter__blur">
+                        <label class="filter__label">Ларри<label for="Id6">
+                            <img class="filter-preview" title="Кот с фильтром размытия"
+                                alt="Кот с фильтром размытия" src="cat.jpg">
+                        </label>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+
             <div class="preview">
                 <div class="flip-wrapper">
                     <div class="rotate-wrapper">
@@ -136,6 +236,7 @@
                 </div>
             </div>
         </section>
+
     </main>
 </body>
 
