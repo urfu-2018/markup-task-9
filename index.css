@@ -1,0 +1,330 @@
+body
+{
+    width: 1440px;
+    height: 1024px;
+    background-color: rgb(255, 255, 255);
+    margin: auto;
+}
+
+.catogram
+{
+    padding-top: 25px;
+    width: 632px;
+    margin: auto;
+}
+
+.hidden-box
+{
+    display: none;
+}
+
+.setting_label,
+.left-swap_label,
+.right-swap_label
+{
+    cursor: pointer;
+}
+
+.settings
+{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.setting-icon
+{
+    width: 48px;
+    height: 48px;
+    opacity: .5;
+}
+
+.logo
+{
+    opacity: 1;
+}
+
+.photo
+{
+    width: 632px;
+    height: 632px;
+    object-fit: fill;
+}
+
+.preview
+{
+    width: 170px;
+    height: 169px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .12);
+    cursor: pointer;
+}
+
+.path
+{
+    width: 30.7px;
+    height: 47.9px;
+    opacity: .8;
+    background-color: rgb(68, 68, 68);
+}
+
+.filter-preview
+{
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.filters-preview
+{
+    overflow: hidden;
+    margin-top: 25px;
+    display: inline-block;
+}
+
+.left-swap_label
+{
+    padding-bottom: 50px;
+}
+
+.filter-caption
+{
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    font-weight: normal;
+    font-size: 18px;
+    font-family: Helvetica;
+}
+
+.filter-2 .preview,
+.filter-2_radio:checked ~ .catogram .photo-card
+{
+    animation: filter-2 1s 1 linear forwards;
+}
+
+.filter-3 .preview,
+.filter-3_radio:checked ~ .catogram .photo-card
+{
+    animation: filter-3 1s 1 linear forwards;
+}
+
+.filter-4 .preview,
+.filter-4_radio:checked ~ .catogram .photo-card
+{
+    animation: filter-4 1s 1 linear forwards;
+}
+
+.filter-5 .preview,
+.filter-5_radio:checked ~ .catogram .photo-card
+{
+    animation: filter-5 1s 1 linear forwards;
+}
+
+.filter-6 .preview,
+.filter-6_radio:checked ~ .catogram .photo-card
+{
+    animation: filter-6 1s 1 linear forwards;
+}
+
+.filter-7 .preview,
+.filter-7_radio:checked ~ .catogram .photo-card
+{
+    animation: filter-7 1s 1 linear forwards;
+}
+
+.filters-navigation
+{
+    display: block;
+    position: relative;
+    text-align: center;
+}
+
+.zoom-photo-1_radio:checked ~ .catogram .settings .zoom-1_label,
+.zoom-photo-1_radio:checked ~ .catogram .settings .zoom-3_label,
+.zoom-photo-2_radio:checked ~ .catogram .settings .zoom-2_label,
+.zoom-photo-2_radio:checked ~ .catogram .settings .zoom-1_label,
+.zoom-photo-3_radio:checked ~ .catogram .settings .zoom-3_label,
+.zoom-photo-3_radio:checked ~ .catogram .settings .zoom-2_label,
+.rotate-photo-1_radio:checked ~ .catogram .settings .rotate-1_label,
+.rotate-photo-1_radio:checked ~ .catogram .settings .rotate-3_label,
+.rotate-photo-1_radio:checked ~ .catogram .settings .rotate-4_label,
+.rotate-photo-2_radio:checked ~ .catogram .settings .rotate-1_label,
+.rotate-photo-2_radio:checked ~ .catogram .settings .rotate-2_label,
+.rotate-photo-2_radio:checked ~ .catogram .settings .rotate-4_label,
+.rotate-photo-3_radio:checked ~ .catogram .settings .rotate-1_label,
+.rotate-photo-3_radio:checked ~ .catogram .settings .rotate-2_label,
+.rotate-photo-3_radio:checked ~ .catogram .settings .rotate-3_label,
+.rotate-photo-4_radio:checked ~ .catogram .settings .rotate-2_label,
+.rotate-photo-4_radio:checked ~ .catogram .settings .rotate-3_label,
+.rotate-photo-4_radio:checked ~ .catogram .settings .rotate-4_label,
+.swap-1_radio:checked ~ .filters-navigation .swap-2_label.left-swap_label,
+.swap-1_radio:checked ~ .filters-navigation .swap-3_label.left-swap_label,
+.swap-1_radio:checked ~ .filters-navigation .swap-4_label.left-swap_label,
+.swap-1_radio:checked ~ .filters-navigation .swap-1_label.right-swap_label,
+.swap-1_radio:checked ~ .filters-navigation .swap-3_label.right-swap_label,
+.swap-1_radio:checked ~ .filters-navigation .swap-4_label.right-swap_label,
+.swap-2_radio:checked ~ .filters-navigation .swap-2_label.left-swap_label,
+.swap-2_radio:checked ~ .filters-navigation .swap-3_label.left-swap_label,
+.swap-2_radio:checked ~ .filters-navigation .swap-4_label.left-swap_label,
+.swap-2_radio:checked ~ .filters-navigation .swap-1_label.right-swap_label,
+.swap-2_radio:checked ~ .filters-navigation .swap-2_label.right-swap_label,
+.swap-2_radio:checked ~ .filters-navigation .swap-4_label.right-swap_label,
+.swap-3_radio:checked ~ .filters-navigation .swap-1_label.left-swap_label,
+.swap-3_radio:checked ~ .filters-navigation .swap-3_label.left-swap_label,
+.swap-3_radio:checked ~ .filters-navigation .swap-4_label.left-swap_label,
+.swap-3_radio:checked ~ .filters-navigation .swap-1_label.right-swap_label,
+.swap-3_radio:checked ~ .filters-navigation .swap-2_label.right-swap_label,
+.swap-3_radio:checked ~ .filters-navigation .swap-3_label.right-swap_label,
+.swap-4_radio:checked ~ .filters-navigation .swap-1_label.left-swap_label,
+.swap-4_radio:checked ~ .filters-navigation .swap-2_label.left-swap_label,
+.swap-4_radio:checked ~ .filters-navigation .swap-4_label.left-swap_label,
+.swap-4_radio:checked ~ .filters-navigation .swap-1_label.right-swap_label,
+.swap-4_radio:checked ~ .filters-navigation .swap-2_label.right-swap_label,
+.swap-4_radio:checked ~ .filters-navigation .swap-3_label.right-swap_label,
+.swap-1_radio:checked ~ .filters-navigation .filters-preview .filter-5,
+.swap-1_radio:checked ~ .filters-navigation .filters-preview .filter-6,
+.swap-1_radio:checked ~ .filters-navigation .filters-preview .filter-7,
+.swap-2_radio:checked ~ .filters-navigation .filters-preview .filter-1,
+.swap-2_radio:checked ~ .filters-navigation .filters-preview .filter-6,
+.swap-2_radio:checked ~ .filters-navigation .filters-preview .filter-7,
+.swap-3_radio:checked ~ .filters-navigation .filters-preview .filter-1,
+.swap-3_radio:checked ~ .filters-navigation .filters-preview .filter-2,
+.swap-3_radio:checked ~ .filters-navigation .filters-preview .filter-7,
+.swap-4_radio:checked ~ .filters-navigation .filters-preview .filter-1,
+.swap-4_radio:checked ~ .filters-navigation .filters-preview .filter-2,
+.swap-4_radio:checked ~ .filters-navigation .filters-preview .filter-3
+{
+    display: none;
+}
+
+.filter-1_radio:checked ~ .filters-navigation .filter-1 .filter-caption,
+.filter-2_radio:checked ~ .filters-navigation .filter-2 .filter-caption,
+.filter-3_radio:checked ~ .filters-navigation .filter-3 .filter-caption,
+.filter-4_radio:checked ~ .filters-navigation .filter-4 .filter-caption,
+.filter-5_radio:checked ~ .filters-navigation .filter-5 .filter-caption,
+.filter-6_radio:checked ~ .filters-navigation .filter-6 .filter-caption,
+.filter-7_radio:checked ~ .filters-navigation .filter-7 .filter-caption
+{
+    font-weight: bold;
+}
+
+.swap-1_radio:checked ~ .filters-navigation .swap-2_label .setting-icon,
+.swap-2_radio:checked ~ .filters-navigation .swap-1_label .setting-icon,
+.swap-2_radio:checked ~ .filters-navigation .swap-3_label .setting-icon,
+.swap-3_radio:checked ~ .filters-navigation .swap-2_label .setting-icon,
+.swap-3_radio:checked ~ .filters-navigation .swap-4_label .setting-icon,
+.swap-4_radio:checked ~ .filters-navigation .swap-3_label .setting-icon
+{
+    opacity: 1;
+}
+
+.zoom-photo-2_radio:checked ~ .catogram .photo-card .zoom-photo
+{
+    transform: scale(.8);
+}
+
+.zoom-photo-3_radio:checked ~ .catogram .photo-card .zoom-photo
+{
+    transform: scale(.6);
+}
+
+.rotate-photo-2_radio:checked ~ .catogram .photo-card .rotate-photo
+{
+    transform: rotate(90deg);
+}
+
+.rotate-photo-3_radio:checked ~ .catogram .photo-card .rotate-photo
+{
+    transform: rotate(180deg);
+}
+
+.rotate-photo-4_radio:checked ~ .catogram .photo-card .rotate-photo
+{
+    transform: rotate(270deg);
+}
+
+.flip-horizontally-photo_checkbox:checked ~ .catogram .photo-card .flip-photo
+{
+    transform: scale(-1, 1);
+}
+
+.original-photo_checkbox:checked ~ .catogram .photo-card .photo
+{
+    object-fit: contain;
+}
+
+.left-swap_img
+{
+    transform: rotate(90deg);
+}
+
+.right-swap_img
+{
+    transform: rotate(-90deg);
+}
+
+.left-swap_label,
+.right-swap_label
+{
+    position: absolute;
+    top: 125px;
+}
+
+.left-swap_label
+{
+    left: 275px;
+}
+
+.right-swap_label
+{
+    right: 275px;
+}
+
+@keyframes filter-2
+{
+    100%
+    {
+        filter: grayscale(1);
+    }
+}
+
+@keyframes filter-3
+{
+    100%
+    {
+        filter: sepia(1);
+    }
+}
+
+@keyframes filter-4
+{
+    100%
+    {
+        filter: hue-rotate(180deg);
+    }
+}
+
+@keyframes filter-5
+{
+    100%
+    {
+        filter: invert(100%);
+    }
+}
+
+@keyframes filter-6
+{
+    100%
+    {
+        filter: saturate(200%);
+    }
+}
+
+@keyframes filter-7
+{
+    100%
+    {
+        filter: blur(2px);
+    }
+}

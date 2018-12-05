@@ -1,12 +1,135 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="utf-8">
-    <title>Задача «Котограм»</title>
-</head>
-<body>
-<!--Ваш спрайт-->
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <title>Задача «Котограм»</title>
+    </head>
+    <body>
+        <input type="checkbox" class="original-photo_checkbox hidden-box" id="original-photo">
+        <input type="radio" class="zoom-photo-1_radio hidden-box" name="zoom" id="zoom-1" checked>
+        <input type="radio" class="zoom-photo-2_radio hidden-box" name="zoom" id="zoom-2">
+        <input type="radio" class="zoom-photo-3_radio hidden-box" name="zoom" id="zoom-3">
+        <input type="checkbox" class="logo_checkbox hidden-box" id="logo">
+        <input type="radio" class="rotate-photo-1_radio hidden-box" name="rotate" id="rotate-1" checked>
+        <input type="radio" class="rotate-photo-2_radio hidden-box" name="rotate" id="rotate-2">
+        <input type="radio" class="rotate-photo-3_radio hidden-box" name="rotate" id="rotate-3">
+        <input type="radio" class="rotate-photo-4_radio hidden-box" name="rotate" id="rotate-4">
+        <input type="checkbox" class="flip-horizontally-photo_checkbox hidden-box" id="flip">
+        <input type="radio" class="filter-1_radio hidden-box" name="filters" id="filter-1" checked>
+        <input type="radio" class="filter-2_radio hidden-box" name="filters" id="filter-2">
+        <input type="radio" class="filter-3_radio hidden-box" name="filters" id="filter-3">
+        <input type="radio" class="filter-4_radio hidden-box" name="filters" id="filter-4">
+        <input type="radio" class="filter-5_radio hidden-box" name="filters" id="filter-5">
+        <input type="radio" class="filter-6_radio hidden-box" name="filters" id="filter-6">
+        <input type="radio" class="filter-7_radio hidden-box" name="filters" id="filter-7">
+        <input type="radio" class="swap-1_radio hidden-box" name="swap" id="swap-1" checked>
+        <input type="radio" class="swap-2_radio hidden-box" name="swap" id="swap-2">
+        <input type="radio" class="swap-3_radio hidden-box" name="swap" id="swap-3">
+        <input type="radio" class="swap-4_radio hidden-box" name="swap" id="swap-4">
 
-<!--Ваша разметка-->
-</body>
+        <main class="catogram">
+            <div class="settings">
+                <label for="original-photo" class="setting_label">
+                    <img alt="original" src="./icons/fill.svg" class="setting-icon">
+                </label>
+                <label for="zoom-1" class="zoom-1_label setting_label">
+                    <img alt="original" src="./icons/scale.svg" class="setting-icon">
+                </label>
+                <label for="zoom-2" class="zoom-2_label setting_label">
+                    <img alt="original" src="./icons/scale.svg" class="setting-icon">
+                </label>
+                <label for="zoom-3" class="zoom-3_label setting_label">
+                    <img alt="original" src="./icons/scale.svg" class="setting-icon">
+                </label>
+                <label for="logo" class="setting_label">
+                    <img alt="original" src="./icons/logo.svg" class="logo setting-icon">
+                </label>
+                <label for="rotate-1" class="rotate-1_label setting_label">
+                    <img alt="original" src="./icons/rotate.svg" class="setting-icon">
+                </label>
+                <label for="rotate-2" class="rotate-2_label setting_label">
+                    <img alt="original" src="./icons/rotate.svg" class="setting-icon">
+                </label>
+                <label for="rotate-3" class="rotate-3_label setting_label">
+                    <img alt="original" src="./icons/rotate.svg" class="setting-icon">
+                </label>
+                <label for="rotate-4" class="rotate-4_label setting_label">
+                    <img alt="original" src="./icons/rotate.svg" class="setting-icon">
+                </label>
+                <label for="flip" class="setting_label">
+                    <img alt="original" src="./icons/flip.svg" class="setting-icon">
+                </label>
+            </div>
+
+            <div class="photo-card">
+                <div class="zoom-photo">
+                    <div class="rotate-photo">
+                        <div class="flip-photo">
+                            <img alt="cat" src="./images/cap.jpg" class="photo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div class="filters-navigation">
+            <label for="swap-1" class="swap-1_label left-swap_label">
+                <img alt="arrow" src="./icons/arrow.svg" class="setting-icon left-swap_img">
+            </label>
+            <label for="swap-2" class="swap-2_label left-swap_label">
+                <img alt="arrow" src="./icons/arrow.svg" class="setting-icon left-swap_img">
+            </label>
+            <label for="swap-3" class="swap-3_label left-swap_label">
+                <img alt="arrow" src="./icons/arrow.svg" class="setting-icon left-swap_img">
+            </label>
+            <label for="swap-4" class="swap-4_label left-swap_label">
+                <img alt="arrow" src="./icons/arrow.svg" class="setting-icon left-swap_img">
+            </label>
+
+            <div class="filters-preview">
+                <label for="filter-1" class="filter-1 filter-preview">
+                    <span class="filter-caption">Обычность</span>
+                    <img alt="cat" src="./images/cap.jpg" class="preview">
+                </label>
+                <label for="filter-2" class="filter-2 filter-preview">
+                    <span class="filter-caption">Питер</span>
+                    <img alt="cat" src="./images/cap.jpg" class="preview">
+                </label>
+                <label for="filter-3" class="filter-3 filter-preview">
+                    <span class="filter-caption">Ялта</span>
+                    <img alt="cat" src="./images/cap.jpg" class="preview">
+                </label>
+                <label for="filter-4" class="filter-4 filter-preview">
+                    <span class="filter-caption">Уральское лето</span>
+                    <img alt="cat" src="./images/cap.jpg" class="preview">
+                </label>
+                <label for="filter-5" class="filter-5 filter-preview">
+                    <span class="filter-caption">Параллельный мир</span>
+                    <img alt="cat" src="./images/cap.jpg" class="preview">
+                </label>
+                <label for="filter-6" class="filter-6 filter-preview">
+                    <span class="filter-caption">На Солнце</span>
+                    <img alt="cat" src="./images/cap.jpg" class="preview">
+                </label>
+                <label for="filter-7" class="filter-7 filter-preview">
+                    <span class="filter-caption">Подскажите дорогу</span>
+                    <img alt="cat" src="./images/cap.jpg" class="preview">
+                </label>
+            </div>
+
+            <label for="swap-1" class="swap-1_label right-swap_label">
+                <img alt="arrow" src="./icons/arrow.svg" class="setting-icon right-swap_img">
+            </label>
+            <label for="swap-2" class="swap-2_label right-swap_label">
+                <img alt="arrow" src="./icons/arrow.svg" class="setting-icon right-swap_img">
+            </label>
+            <label for="swap-3" class="swap-3_label right-swap_label">
+                <img alt="arrow" src="./icons/arrow.svg" class="setting-icon right-swap_img">
+            </label>
+            <label for="swap-4" class="swap-4_label right-swap_label">
+                <img alt="arrow" src="./icons/arrow.svg" class="setting-icon right-swap_img">
+            </label>
+        </div>
+    </body>
 </html>
