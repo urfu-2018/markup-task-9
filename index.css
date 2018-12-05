@@ -1,0 +1,131 @@
+body
+{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+.svg-sprite
+{
+    width: 0;
+    height: 0;
+}
+
+.catogram
+{
+    width: 1200px;
+    height: 1000px;
+    display: grid;
+    grid-template-rows: 70% 30%;
+    justify-items: center;
+}
+
+.header
+{
+    width: 634px;
+    margin-bottom: 12px;
+    margin-left: -2px;
+    display: inline;
+}
+
+.icon
+{
+    width: 48px;
+    height: 48px;
+    padding-right: 92px;
+    padding-left: 0;
+    fill: #444;
+    opacity: .8;
+}
+
+.logo
+{
+    fill: url(#icon-logo-gradient);
+}
+
+.scale,
+.rotate
+{
+    padding-right: 98px;
+}
+
+.flip
+{
+    padding-right: 0;
+}
+
+.photo-container
+{
+    width: 632px;
+    height: 632px;
+    object-fit: scale-down;
+    overflow: hidden;
+    margin: 12px 0 69px;
+}
+
+.photo
+{
+    width: 100%;
+}
+
+/* filters */
+
+.filters-section
+{
+    width: 824px;
+    display: flex;
+    margin-top: 69px;
+    align-items: center;
+}
+
+.left,
+.right
+{
+    padding: 0;
+}
+
+.left
+{
+    transform: rotate(90deg);
+}
+
+.right
+{
+    transform: rotate(270deg);
+}
+
+.filters
+{
+    display: inline-flex;
+    padding: 0 34px;
+    width: 760px;
+}
+
+.filter
+{
+    width: 170px;
+    padding: 0 2px;
+    margin-top: -20px;
+    text-align: center;
+}
+
+.filter-name
+{
+    font: 18px Helvetica, sans-serif;
+    color: #444;
+}
+
+.filter-image-container
+{
+    margin-top: 4px;
+
+    width: 170px;
+    height: 170px;
+    object-fit: scale-down;
+    overflow: hidden;
+}
+
+.filter-image
+{
+    width: 100%;
+}
