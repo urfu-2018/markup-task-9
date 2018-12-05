@@ -87,6 +87,7 @@ body
 
 .filter-caption
 {
+    display: block;
     font-style: normal;
     font-stretch: normal;
     line-height: normal;
