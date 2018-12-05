@@ -285,23 +285,24 @@ label
     font-weight: 700;
 }
 
-.inp-scroll-1:checked ~ .inp-scroll-2-label,
-.inp-scroll-1:checked ~ .inp-scroll-3-label,
-.inp-scroll-1:checked ~ .filters .filter-jakal,
-.inp-scroll-1:checked ~ .filters .filter-blur,
-.inp-scroll-2:checked ~ .inp-scroll-1-label,
-.inp-scroll-2:checked ~ .inp-scroll-3-label,
-.inp-scroll-2:checked ~ .filters .filter-no,
-.inp-scroll-2:checked ~ .filters .filter-blur,
-.inp-scroll-3:checked ~ .inp-scroll-1-label,
-.inp-scroll-3:checked ~ .inp-scroll-2-label,
-.inp-scroll-3:checked ~ .filters .filter-no,
-.inp-scroll-3:checked ~ .filters .filter-bw
+.start:checked ~ .center,
+.start:checked ~ .end,
+.start:checked ~ .filters .filter-jakal,
+.start:checked ~ .filters .filter-blur,
+.center:checked ~ .end,
+.center:checked ~ .start,
+.center:checked ~ .filters .filter-no,
+.center:checked ~ .filters .filter-blur,
+.end:checked ~ .start,
+.end:checked ~ .center,
+.end:checked ~ .filters .filter-no,
+.end:checked ~ .filters .filter-bw
 {
     display: none;
 }
 
-.end
+.left.start,
+.right.end
 {
     opacity: .4;
 }
