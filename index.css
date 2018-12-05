@@ -243,7 +243,56 @@ input
     overflow: hidden;
 }
 
-.filter-image
+.filter-image-1,
+.filter-image-2,
+.filter-image-3,
+.filter-image-4,
+.filter-image-5,
+.filter-image-6
 {
     width: 100%;
+}
+
+.filter-image-2,
+.inp-filter-bw:checked ~ .photo-section .photo
+{
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+}
+
+.filter-image-3,
+.inp-filter-sepia:checked ~ .photo-section .photo
+{
+    -webkit-filter: sepia(1);
+    filter: sepia(1);
+}
+
+.filter-image-4,
+.inp-filter-blue:checked ~ .photo-section .photo
+{
+    -webkit-filter: hue-rotate(180deg);
+    filter: hue-rotate(180deg);
+}
+
+.inp-filter-jakal:checked ~ .photo-section .usual,
+.inp-filter-jakal:not(:checked) ~ .photo-section .jakal
+{
+    display: none;
+}
+
+.filter-image-6,
+.inp-filter-blur:checked ~ .photo-section .photo
+{
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+}
+
+.inp-filter-no:checked ~ .filters-section .filter-no,
+.inp-filter-bw:checked ~ .filters-section .filter-bw,
+.inp-filter-sepia:checked ~ .filters-section .filter-sepia,
+.inp-filter-blue:checked ~ .filters-section .filter-blue,
+.inp-filter-jakal:checked ~ .filters-section .filter-jakal,
+.inp-filter-blur:checked ~ .filters-section .filter-blur
+{
+    font-weight: 700;
 }

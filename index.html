@@ -57,6 +57,14 @@
 
         <input type="checkbox" class="inp-flip" id="inp-flip">
 
+        <input type="radio" name="filter" checked class="inp-filter-no" id="inp-filter-no">
+        <input type="radio" name="filter" class="inp-filter-bw" id="inp-filter-bw">
+        <input type="radio" name="filter" class="inp-filter-sepia" id="inp-filter-sepia">
+        <input type="radio" name="filter" class="inp-filter-blue" id="inp-filter-blue">
+        <input type="radio" name="filter" class="inp-filter-jakal" id="inp-filter-jakal">
+        <input type="radio" name="filter" class="inp-filter-blur" id="inp-filter-blur">
+
+
         <section class="photo-section">
             <div class="header">
                 <label for="inp-fill" class="inp-fill-label">
@@ -123,7 +131,8 @@
                 <div class="photo-container-scale">
                     <div class="photo-container-rotate">
                         <div class="photo-container-flip">
-                            <img src="cat2.png" class="photo">
+                            <img src="jakal.png" class="photo jakal">
+                            <img src="cat2.png" class="photo usual">
                         </div>
                     </div>
                 </div>
@@ -135,27 +144,51 @@
             </svg>
             <div class="filters">
                 <div class="filter">
-                    <span class="filter-name">Без фильтра</span>
+                    <span class="filter-name filter-no">Без фильтра</span>
                     <div class="filter-image-container">
-                        <img src="cat2.png" class="filter-image">
+                        <label for="inp-filter-no">
+                            <img src="cat2.png" class="filter-image-1">
+                        </label>
                     </div>
                 </div>
                 <div class="filter">
-                    <span class="filter-name">Черно-белый</span>
+                    <span class="filter-name filter-bw">Черно-белый</span>
                     <div class="filter-image-container">
-                        <img src="cat2.png" class="filter-image">
+                        <label for="inp-filter-bw">
+                            <img src="cat2.png" class="filter-image-2">
+                        </label>
                     </div>
                 </div>
                 <div class="filter">
-                    <span class="filter-name">Сепия</span>
+                    <span class="filter-name filter-sepia">Сепия</span>
                     <div class="filter-image-container">
-                        <img src="cat2.png" class="filter-image">
+                        <label for="inp-filter-sepia">
+                            <img src="cat2.png" class="filter-image-3">
+                        </label>
                     </div>
                 </div>
                 <div class="filter">
-                    <span class="filter-name">Упорото-синий</span>
+                    <span class="filter-name filter-blue">Упорото-синий</span>
                     <div class="filter-image-container">
-                        <img src="cat2.png" class="filter-image">
+                        <label for="inp-filter-blue">
+                            <img src="cat2.png" class="filter-image-4">
+                        </label>
+                    </div>
+                </div>
+                <div class="filter">
+                    <span class="filter-name filter-jakal">Шакализатор</span>
+                    <div class="filter-image-container">
+                        <label for="inp-filter-jakal">
+                            <img src="jakal.png" class="filter-image-5">
+                        </label>
+                    </div>
+                </div>
+                <div class="filter">
+                    <span class="filter-name filter-blur">Консоли</span>
+                    <div class="filter-image-container">
+                        <label for="inp-filter-blur">
+                            <img src="cat2.png" class="filter-image-6">
+                        </label>
                     </div>
                 </div>
             </div>
