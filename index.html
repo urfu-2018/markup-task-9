@@ -3,10 +3,86 @@
 <head>
     <meta charset="utf-8">
     <title>Задача «Котограм»</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
 <!--Ваш спрайт-->
+<svg xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <symbol id="icon-arrow" viewBox="0 0 49 32">
+            <title>arrow</title>
+            <path d="M0.5 7.401l23.928 23.929 23.929-23.93-6.788-6.787-17.14 17.14-17.141-17.139z"></path>
+        </symbol>
+        <symbol id="icon-fill" viewBox="0 0 32 32">
+            <title>fill</title>
+            <path d="M5.597 5.597h20.664v20.664h-20.664z"></path>
+            <path d="M23.964 0v3.444h4.592v4.449h3.444v-7.893zM3.444 3.444h4.449v-3.444h-7.893v7.893h3.444zM28.556 28.556h-4.592v3.444h8.036v-8.036h-3.444zM3.444 23.964h-3.444v8.036h7.893v-3.444h-4.449z"></path>
+        </symbol>
+        <symbol id="icon-flip" viewBox="0 0 42 32">
+            <title>flip</title>
+            <path d="M0 25.859l16.505-10.195-16.505-10.194z"></path>
+            <path d="M25.008 15.664l16.505 10.195v-20.389l-16.505 10.194zM38.032 19.491l-6.195-3.827 6.195-3.826v7.653z"></path>
+            <path d="M18.506 6.962h4.502v4.476h-4.502zM18.506 0h4.502v4.476h-4.502zM18.506 13.924h4.502v4.476h-4.502zM18.506 20.389h4.502v4.476h-4.502zM18.506 27.351h4.502v4.476h-4.502z"></path>
+        </symbol>
+        <symbol id="icon-logo" viewBox="0 0 32 32" fill="url(#insta-gradient)">
+            <linearGradient id="insta-gradient" gradientTransform="rotate(-45) translate(-.5)">
+                <stop offset="0%" stop-color="orange"></stop>
+                <stop offset="100%" stop-color="purple"></stop>
+            </linearGradient>
+            <title>logo</title>
+            <path d="M0 0v32h32v-32h-32zM16.071 11.188c2.617 0.004 4.737 2.124 4.74 4.74v0c-0.003 2.617-2.123 4.737-4.74 4.741h-0c-2.617-0.003-4.737-2.123-4.741-4.74v-0c0.003-2.617 2.123-4.738 4.74-4.741h0zM4.267 3.698h4.835v3.129h-4.835v-3.129zM27.733 27.733h-23.467v-11.235h2.817c0.295 4.702 4.212 8.438 8.988 8.438s8.693-3.736 8.987-8.438h2.675v11.235z"></path>
+        </symbol>
+        <symbol id="icon-rotate" viewBox="0 0 32 32">
+            <title>rotate</title>
+            <path d="M16 32c8.823 0 16-6.51 16-14.502 0-7.993-7.177-14.499-16-14.499-0.587 0-1.179 0.031-1.767 0.091v-2.343c0-0.301-0.205-0.575-0.507-0.692-0.092-0.035-0.199-0.055-0.31-0.055-0.228 0-0.435 0.084-0.594 0.223l0.001-0.001-5.669 5.148c-0.323 0.292-0.323 0.759 0 1.055l5.667 5.159c0.241 0.213 0.591 0.279 0.906 0.162 0.302-0.118 0.507-0.39 0.507-0.69v-2.599c0.587-0.097 1.176-0.141 1.767-0.141 5.589 0 10.138 4.12 10.138 9.183s-4.55 9.185-10.138 9.185-10.135-4.125-10.135-9.185c0-0.411-0.369-0.747-0.827-0.747h-4.211c-0.456 0-0.827 0.336-0.827 0.747 0.001 7.992 7.183 14.502 16.001 14.502z"></path>
+        </symbol>
+        <symbol id="icon-scale" viewBox="0 0 32 32">
+            <title>scale</title>
+            <path d="M0 0v32h32v-32h-32zM4.267 4.267h22.455l-22.455 22.551v-22.551zM27.307 25.885h-10.24v-4.267h10.24v4.267z"></path>
+            <path d="M16 8.714h-2.917v-3h-4.167v3h-2.917v4.286h2.917v3h4.167v-3h2.917z"></path>
+        </symbol>
+    </defs>
+</svg>
 
 <!--Ваша разметка-->
+<input type="checkbox" id="fill" hidden>
+<input type="radio" id="scale1x" name="scale-selector" hidden checked>
+<input type="radio" id="scale2x" name="scale-selector" hidden>
+<input type="radio" id="scale3x" name="scale-selector" hidden>
+<input type="checkbox" id="logo" hidden>
+<input type="radio" id="rotate1" name="rotate-selector" hidden checked>
+<input type="radio" id="rotate2" name="rotate-selector" hidden>
+<input type="radio" id="rotate3" name="rotate-selector" hidden>
+<input type="radio" id="rotate4" name="rotate-selector" hidden>
+<input type="checkbox" id="flip" hidden>
+
+<input type="radio" id="filter1" name="filter-selector" hidden>
+<input type="radio" id="filter2" name="filter-selector" hidden>
+<input type="radio" id="filter3" name="filter-selector" hidden>
+<input type="radio" id="filter4" name="filter-selector" hidden>
+<input type="radio" id="filter5" name="filter-selector" hidden>
+
+<main class="main border">
+    <div class="options">
+        <label for="fill"><svg class="icon"><use href="#icon-fill"></use></svg></label>
+        <label for="scale1x"><svg class="icon"><use href="#icon-scale"></use></svg></label>
+        <label for="scale2x"><svg class="icon"><use href="#icon-scale"></use></svg></label>
+        <label for="scale3x"><svg class="icon"><use href="#icon-scale"></use></svg></label>
+        <label for="logo"><svg class="icon"><use href="#icon-logo"></use></svg></label>
+        <label for="rotate1"><svg class="icon"><use href="#icon-rotate"></use></svg></label>
+        <label for="rotate2"><svg class="icon"><use href="#icon-rotate"></use></svg></label>
+        <label for="rotate3"><svg class="icon"><use href="#icon-rotate"></use></svg></label>
+        <label for="rotate4"><svg class="icon"><use href="#icon-rotate"></use></svg></label>
+        <label for="flip"><svg class="icon"><use href="#icon-flip"></use></svg></label>
+    </div>
+
+    <div class="photo">
+        <div class="photo__content"></div>
+    </div>
+
+    <div class="filters">
+
+    </div>
+</main>
 </body>
 </html>
