@@ -1,0 +1,71 @@
+img
+{
+    width: 20px;
+}
+
+input
+{
+    display: none;
+}
+
+.catogram
+{
+    margin: 0 auto;
+    width: 725px;
+    display: grid;
+    grid-template: 'a' 80px 'b' 632px 'c' 312px/ auto;
+}
+
+.control
+{
+    grid-area: a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.control_icon
+{
+    border: 1px solid red;
+    width: 48px;
+    height: 48px;
+}
+
+.result
+{
+    grid-area: b;
+    width: 632px;
+    height: 632px;
+    margin: 0 auto;
+    border: 1px solid yellow;
+}
+
+.settings
+{
+    grid-area: c;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.settings_list
+{
+    border: 1px solid green;
+    height: 312px;
+    width: 750px;
+    margin: 0;
+    padding: 0;
+
+}
+
+.settings_list li
+{
+    list-style: none;
+}
+
+.settings_switch
+{
+    width: 65px;
+    height: 170px;
+    border: 1px solid red;
+}
