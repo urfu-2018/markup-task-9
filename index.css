@@ -1,0 +1,160 @@
+html,
+body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+body
+{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+label
+{
+    cursor: pointer;
+}
+
+.image-edit-controls svg
+{
+    width: 48px;
+    height: 48px;
+}
+
+.main
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 825px;
+}
+
+.image-edit-controls
+{
+    display: flex;
+    justify-content: space-between;
+
+    width: 632px;
+    margin: 20px 0 12px;
+}
+
+.button_enabled
+{
+    text-align: right;
+
+    fill: #6a6a6a;
+}
+
+.button_enabled:hover
+{
+    fill: #333;
+}
+
+.button_disabled
+{
+    fill: #dcdcdc;
+}
+
+.button_special
+{
+    fill: url(#Gradient1);
+}
+
+.hidden-radio,
+.image-control
+{
+    display: none;
+}
+
+.image-control
+{
+    width: 48px;
+    height: 48px;
+}
+
+.image-view
+{
+    width: 632px;
+    height: 632px;
+    background-image: url('icons/cat.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+.image-radio-fit_fit:checked ~ .main .image-view
+{
+    background-size: contain;
+}
+
+.image-radio-scale_1x:checked ~ .main .image-view
+{
+    background-size: 100%;
+}
+
+.image-radio-scale_2x:checked ~ .main .image-view
+{
+    background-size: 200%;
+}
+
+.image-radio-scale_3x:checked ~ .main .image-view
+{
+    background-size: 300%;
+}
+
+.image-radio-scale_4x:checked ~ .main .image-view
+{
+    background-size: 400%;
+}
+
+.image-radio-scale_5x:checked ~ .main .image-view
+{
+    background-size: 500%;
+}
+
+.image-radio-rotation_90:checked ~ .main .image-view
+{
+    transform: rotate(90deg);
+}
+
+.image-radio-rotation_180:checked ~ .main .image-view
+{
+    transform: rotate(180deg);
+}
+
+.image-radio-rotation_270:checked ~ .main .image-view
+{
+    transform: rotate(270deg);
+}
+
+.image-radio-flip_flipX:checked ~ .main .image-view-container
+{
+    transform: scaleX(-1);
+}
+
+.image-radio-original:checked ~ .main .image-view,
+.image-radio-original:checked ~ .main .image-view-container
+{
+    background-size: contain;
+    transform: none;
+}
+
+.image-radio-fit_fill:checked ~ .main .image-controls-fit__fit,
+.image-radio-fit_fit:checked ~ .main .image-controls-fit__fill,
+.image-radio-scale_original:checked ~ .main .image-controls-scale__original,
+.image-radio-scale_1x:checked ~ .main .image-controls-scale__1x,
+.image-radio-scale_2x:checked ~ .main .image-controls-scale__2x,
+.image-radio-scale_3x:checked ~ .main .image-controls-scale__3x,
+.image-radio-scale_4x:checked ~ .main .image-controls-scale__4x,
+.image-radio-scale_5x:checked ~ .main .image-controls-scale__5x,
+.image-radio-rotation_0:checked ~ .main .image-controls-rotate__0,
+.image-radio-rotation_90:checked ~ .main .image-controls-rotate__90,
+.image-radio-rotation_180:checked ~ .main .image-controls-rotate__180,
+.image-radio-rotation_270:checked ~ .main .image-controls-rotate__270,
+.image-radio-flip_none:checked ~ .main .image-controls-flip__none,
+.image-radio-flip_flipX:checked ~ .main .image-controls-flip__flipX
+{
+    display: block;
+}
