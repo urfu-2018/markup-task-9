@@ -20,7 +20,6 @@ main
 {
     margin: 50px auto;
     width: 632px;
-    height: 632px;
     display: grid;
     grid-gap: 12px 95px;
     grid-template: 'fill scale logo rotate flip' auto
