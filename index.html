@@ -56,6 +56,10 @@
             <path d="M24 13.071h-4.375v-4.5h-6.25v4.5H9V19.5h4.375V24h6.25v-4.5H24z"></path>
         </g>
     </symbol>
+    <symbol id="arrow">
+        <path d="M.5 7.401L24.428 31.33 48.357 7.4 41.569.613l-17.14 17.14L7.288.614z"
+              fill-rule="evenodd"></path>
+    </symbol>
 </svg>
 
 <input type="radio" name="image-fit" id="image-fit_fill" class="hidden-radio image-radio-fit_fill"
@@ -90,6 +94,16 @@
        class="hidden-radio image-radio-flip_flipX">
 
 <input type="checkbox" id="original-image-view" class="hidden-radio image-radio-original">
+
+<input type="radio" name="image-filter" id="filter-none"
+       class="hidden-radio image-radio-filter_none"
+       checked>
+<input type="radio" name="image-filter" id="filter-greyscale"
+       class="hidden-radio image-radio-filter_greyscale">
+<input type="radio" name="image-filter" id="filter-sepia"
+       class="hidden-radio image-radio-filter_sepia">
+<input type="radio" name="image-filter" id="filter-ural"
+       class="hidden-radio image-radio-filter_ural">
 
 <main class="main">
     <nav class="image-edit-controls">
@@ -181,6 +195,32 @@
     </nav>
     <section class="image-view-container">
         <div class="image-view"></div>
+    </section>
+    <section class="filter-selector">
+        <svg class="button-left">
+            <use href="#arrow"></use>
+        </svg>
+        <div class="filters">
+            <label class="filter filters__none" for="filter-none">
+                <span class="filter__name">Без фильтра</span>
+                <span class="filter__image"></span>
+            </label>
+            <label class="filter filters__greyscale" for="filter-greyscale">
+                <span class="filter__name">Ялта</span>
+                <span class="filter__image"></span>
+            </label>
+            <label class="filter filters__sepia" for="filter-sepia">
+                <span class="filter__name">Питер</span>
+                <span class="filter__image"></span>
+            </label>
+            <label class="filter filters__ural" for="filter-ural">
+                <span class="filter__name">Уральское лето</span>
+                <span class="filter__image"></span>
+            </label>
+        </div>
+        <svg class="button-right">
+            <use href="#arrow"></use>
+        </svg>
     </section>
 </main>
 </body>
