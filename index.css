@@ -8,9 +8,7 @@ body
 main
 {
     display: grid;
-    grid-template: 'controls' 80px
-    'img' 630px
-    'carousel' 300px
+    grid-template: 'controls' 80px 'img' 630px 'carousel' 300px
         / 820px;
 }
 
@@ -121,7 +119,6 @@ input,
     height: 170px;
 }
 
-
 .no-filter
 {
     filter: none;
@@ -151,7 +148,6 @@ input,
 {
     filter: blur(2px);
 }
-
 
 input[id='none-filter']:checked ~ .carousel .none-title,
 input[id='greyscale-filter']:checked ~ .carousel .greyscale-title,
