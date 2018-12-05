@@ -22,12 +22,10 @@ main
     width: 632px;
     height: 632px;
     display: grid;
-    row-gap: 12px;
-    grid-template-columns: repeat(5, 50px);
-    grid-column-gap: 95px;
-    grid-template-areas: 'fill scale logo rotate flip'
-        'img img img img img'
-        'car car car car car';
+    grid-gap: 12px 95px;
+    grid-template: 'fill scale logo rotate flip' auto
+        'img img img img img' 632px
+        'car car car car car' auto / 50px 50px 50px 50px 50px;
 }
 
 .carousel
@@ -47,7 +45,6 @@ main
     overflow: hidden;
     grid-area: carousel;
     display: flex;
-    
 }
 
 .carousel .filter__item
@@ -60,15 +57,12 @@ main
 {
     grid-area: logo;
     fill: url(#InstaGradient);
-    cursor: pointer;
 }
 
 .preview
 {
     grid-area: img;
     overflow: hidden;
-    width: 632px;
-    height: 632px;
 }
 
 .preview__picture
@@ -83,6 +77,8 @@ main
 }
 
 .sprite,
+.arrow-rb,
+.filter-rb,
 .scale-rb,
 .rotate-rb,
 .fill-cb,
@@ -91,12 +87,12 @@ main
     display: none;
 }
 
-.fill-cb:checked ~ .preview img
+.fill-cb:checked ~ .preview .preview__picture
 {
     object-fit: contain;
 }
 
-.fill-cb:not(:checked) ~ .preview img
+.fill-cb:not(:checked) ~ .preview .preview__picture
 {
     object-fit: cover;
 }
@@ -116,30 +112,21 @@ main
 .rotate-rb-1:checked ~ .rotate-link-4,
 .rotate-rb-1:checked ~ .rotate-img-1,
 .rotate-rb-1:checked ~ .rotate-img-3,
-.rotate-rb-1:checked ~ .rotate-img-4
-{
-    display: none;
-}
+.rotate-rb-1:checked ~ .rotate-img-4,
 
 .rotate-rb-2:checked ~ .rotate-link-1,
 .rotate-rb-2:checked ~ .rotate-link-2,
 .rotate-rb-2:checked ~ .rotate-link-4,
 .rotate-rb-2:checked ~ .rotate-img-1,
 .rotate-rb-2:checked ~ .rotate-img-2,
-.rotate-rb-2:checked ~ .rotate-img-4
-{
-    display: none;
-}
+.rotate-rb-2:checked ~ .rotate-img-4,
 
 .rotate-rb-3:checked ~ .rotate-link-1,
 .rotate-rb-3:checked ~ .rotate-link-2,
 .rotate-rb-3:checked ~ .rotate-link-3,
 .rotate-rb-3:checked ~ .rotate-img-1,
 .rotate-rb-3:checked ~ .rotate-img-2,
-.rotate-rb-3:checked ~ .rotate-img-3
-{
-    display: none;
-}
+.rotate-rb-3:checked ~ .rotate-img-3,
 
 .rotate-rb-4:checked ~ .rotate-link-2,
 .rotate-rb-4:checked ~ .rotate-link-3,
@@ -176,30 +163,21 @@ main
 .scale-rb-1:checked ~ .scale-link-4,
 .scale-rb-1:checked ~ .scale-img-1,
 .scale-rb-1:checked ~ .scale-img-3,
-.scale-rb-1:checked ~ .scale-img-4
-{
-    display: none;
-}
+.scale-rb-1:checked ~ .scale-img-4,
 
 .scale-rb-2:checked ~ .scale-link-1,
 .scale-rb-2:checked ~ .scale-link-2,
 .scale-rb-2:checked ~ .scale-link-4,
 .scale-rb-2:checked ~ .scale-img-1,
 .scale-rb-2:checked ~ .scale-img-2,
-.scale-rb-2:checked ~ .scale-img-4
-{
-    display: none;
-}
+.scale-rb-2:checked ~ .scale-img-4,
 
 .scale-rb-3:checked ~ .scale-link-1,
 .scale-rb-3:checked ~ .scale-link-2,
 .scale-rb-3:checked ~ .scale-link-3,
 .scale-rb-3:checked ~ .scale-img-1,
 .scale-rb-3:checked ~ .scale-img-2,
-.scale-rb-3:checked ~ .scale-img-3
-{
-    display: none;
-}
+.scale-rb-3:checked ~ .scale-img-3,
 
 .scale-rb-4:checked ~ .scale-link-2,
 .scale-rb-4:checked ~ .scale-link-3,
@@ -211,22 +189,22 @@ main
     display: none;
 }
 
-.scale-rb-1:checked ~ .preview img
+.scale-rb-1:checked ~ .preview .preview__picture
 {
     transform: scale(1);
 }
 
-.scale-rb-2:checked ~ .preview img
+.scale-rb-2:checked ~ .preview .preview__picture
 {
     transform: scale(1.3);
 }
 
-.scale-rb-3:checked ~ .preview img
+.scale-rb-3:checked ~ .preview .preview__picture
 {
     transform: scale(1.6);
 }
 
-.scale-rb-4:checked ~ .preview img
+.scale-rb-4:checked ~ .preview .preview__picture
 {
     transform: scale(2);
 }
@@ -241,32 +219,32 @@ main
     transform: rotate(0);
 }
 
-.filter__gray:checked ~ .preview img
+.filter__gray:checked ~ .preview .preview__picture
 {
     filter: grayscale(1);
 }
 
-.filter__sepia:checked ~ .preview img
+.filter__sepia:checked ~ .preview .preview__picture
 {
     filter: sepia(1);
 }
 
-.filter__blue:checked ~ .preview img
+.filter__blue:checked ~ .preview .preview__picture
 {
     filter: hue-rotate(180deg);
 }
 
-.filter__negate:checked ~ .preview img
+.filter__negate:checked ~ .preview .preview__picture
 {
     filter: invert(1);
 }
 
-.filter__blur:checked ~ .preview img
+.filter__blur:checked ~ .preview .preview__picture
 {
     filter: blur(5px);
 }
 
-.logo:active ~ .preview img
+.logo:active ~ .preview .preview__picture
 {
     transform: scale(1);
     filter: none;
@@ -335,11 +313,6 @@ main
     font-weight: bold;
 }
 
-.filter-rb
-{
-    display: none;
-}
-
 .arrow
 {
     margin: auto;
@@ -362,6 +335,11 @@ main
     fill: #333;
 }
 
+.arrow_inactive
+{
+    fill: rgba(170, 170, 170, .8);
+}
+
 .arrow:not(.arrow_inactive):active
 {
     transform: scale(.9);
@@ -370,16 +348,6 @@ main
 .arrow:not(.arrow_inactive)
 {
     cursor: pointer;
-}
-
-.arrow-rb
-{
-    display: none;
-}
-
-.carousel label
-{
-    display: inline;
 }
 
 .arrow-rb__left_inactive:checked ~ .carousel .left-1__label,
@@ -413,11 +381,6 @@ main
 .arrow-rb__right_inactive:checked ~ .carousel .left_inactive__label
 {
     display: none;
-}
-
-.arrow_inactive
-{
-    fill: rgba(170, 170, 170, .8);
 }
 
 .arrow-rb__left-2:checked ~ .carousel .carousel__inner .filter__item,
