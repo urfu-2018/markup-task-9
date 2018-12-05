@@ -1,0 +1,293 @@
+body
+{
+    margin: 0;
+    padding: 0;
+}
+
+body > input[type='checkbox'],
+body > input[type='radio']
+{
+    display: none;
+}
+
+.svg-sprite
+{
+    width: 0;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+main
+{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav
+{
+    width: 632px;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0 12px;
+}
+
+.button
+{
+    width: 48px;
+    height: 48px;
+    fill: #444;
+    cursor: pointer;
+    opacity: .8;
+}
+
+.button:hover
+{
+    opacity: 1;
+}
+
+.photo-rotate-wrapper
+{
+    width: 632px;
+    height: 632px;
+    margin-bottom: 69px;
+}
+
+.photo
+{
+    width: 100%;
+    height: 100%;
+    background: url('img/cat.jpg') no-repeat 50% 50%;
+    background-size: cover;
+}
+
+.arrow
+{
+    cursor: pointer;
+    width: 49px;
+    height: 32px;
+}
+
+.arrow_active
+{
+    fill: #444;
+    opacity: .8;
+}
+
+.arrow_disabled
+{
+    opacity: .6;
+    fill: #aaa;
+    cursor: auto;
+}
+
+.viewport
+{
+    overflow: hidden;
+    width: calc(160px * 4 + 5px * 4);
+}
+
+.gallery
+{
+    display: flex;
+    position: relative;
+    left: 0;
+}
+
+.filters__left-arrow
+{
+    transform: rotate(.25turn);
+    margin-right: 34.1px;
+}
+
+.filters__right-arrow
+{
+    transform: rotate(-.25turn);
+    margin-left: 34.1px;
+}
+
+.filters
+{
+    margin: 0 auto 37px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filters > label,
+.filters > span
+{
+    display: none;
+}
+
+.input-gallery-shift-0:checked ~ main .filters .label-gallery-0,
+.input-gallery-shift-1:checked ~ main .filters .label-gallery-1,
+.input-gallery-shift-2:checked ~ main .filters .label-gallery-2
+{
+    display: block;
+}
+
+.input-gallery-shift-0:checked ~ main .filters .gallery
+{
+    left: 0;
+}
+
+.input-gallery-shift-1:checked ~ main .filters .gallery
+{
+    left: calc(-160px - 5px);
+}
+
+.input-gallery-shift-2:checked ~ main .filters .gallery
+{
+    left: calc(2 * -160px - 2 * 5px);
+}
+
+.filter__name
+{
+    font-family: 'Helvetica', Verdana, sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    text-align: center;
+    margin: 0 0 15px;
+}
+
+.filters__filter
+{
+    margin: 0 2.5px;
+}
+
+.filters__filter label
+{
+    cursor: pointer;
+}
+
+.filter__img
+{
+    display: block;
+    width: 160px;
+    height: 160px;
+    background-image: url('img/cat.jpg');
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.filter-hue-rotate .filter__img,
+.input-filter-hue-rotate:checked ~ main .photo
+{
+    filter: hue-rotate(225deg);
+}
+
+.input-filter-hue-rotate:checked ~ main .filter-hue-rotate .filter__name,
+.input-filter-original:checked ~ main .filter-original .filter__name,
+.input-filter-grayscale:checked ~ main .filter-grayscale .filter__name,
+.input-filter-invert:checked ~ main .filter-invert .filter__name,
+.input-filter-bright:checked ~ main .filter-bright .filter__name,
+.input-filter-sepia:checked ~ main .filter-sepia .filter__name
+{
+    font-weight: bold;
+}
+
+.filter-grayscale .filter__img,
+.input-filter-grayscale:checked ~ main .photo
+{
+    filter: grayscale(1);
+}
+
+.filter-bright .filter__img,
+.input-filter-bright:checked ~ main .photo
+{
+    filter: brightness(170%);
+}
+
+.filter-sepia .filter__img,
+.input-filter-sepia:checked ~ main .photo
+{
+    filter: sepia(100%);
+}
+
+.filter-invert .filter__img,
+.input-filter-invert:checked ~ main .photo
+{
+    filter: invert(100%);
+}
+
+.label_rotate
+{
+    display: none;
+}
+
+.input-rotate-0:checked ~ main nav .label-rotate-90,
+.input-rotate-90:checked ~ main nav .label-rotate-180,
+.input-rotate-180:checked ~ main nav .label-rotate-270,
+.input-rotate-270:checked ~ main nav .label-rotate-0
+{
+    display: block;
+}
+
+.input-rotate-90:checked ~ main .photo-rotate-wrapper
+{
+    transform: rotate(-90deg);
+}
+
+.input-rotate-180:checked ~ main .photo-rotate-wrapper
+{
+    transform: rotate(-180deg);
+}
+
+.input-rotate-270:checked ~ main .photo-rotate-wrapper
+{
+    transform: rotate(-270deg);
+}
+
+.input-flip:checked ~ main .photo
+{
+    transform: scale(-1, 1);
+}
+
+.show-original:checked ~ main .photo-rotate-wrapper
+{
+    transform: rotate(0deg);
+}
+
+.button-scale
+{
+    display: none;
+}
+
+.input-scale-175:checked ~ main nav .button-scale-50,
+.input-scale-50:checked ~ main nav .button-scale-75,
+.input-scale-75:checked ~ main nav .button-scale-100,
+.input-scale-100:checked ~ main nav .button-scale-175
+{
+    display: block;
+}
+
+.input-scale-50:checked ~ main .photo
+{
+    background-size: 50%;
+}
+
+.input-scale-75:checked ~ main .photo
+{
+    background-size: 75%;
+}
+
+.input-scale-175:checked ~ main .photo
+{
+    background-size: 175%;
+}
+
+.input-fill:checked ~ main .photo
+{
+    background-size: contain;
+}
+
+.show-original:checked ~ main .photo
+{
+    transform: scale(1);
+    filter: none;
+    background-size: cover;
+}
