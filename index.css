@@ -1,0 +1,298 @@
+body
+{
+    display: flex;
+    flex-direction: column;
+}
+
+main
+{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 825px;
+}
+
+.icon
+{
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    opacity: .8;
+    fill: #444;
+}
+
+.sprite
+{
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+input
+{
+    display: none;
+}
+
+.controls
+{
+    margin: auto;
+    display: flex;
+    width: 67.7%;
+    justify-content: space-around;
+}
+
+.controls label
+{
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+}
+
+.label-rotate
+{
+    display: none;
+}
+
+.label-scale
+{
+    display: none;
+}
+
+.input-rotate-1:checked ~ main .controls .label-rotate-2,
+.input-rotate-2:checked ~ main .controls .label-rotate-3,
+.input-rotate-3:checked ~ main .controls .label-rotate-4,
+.input-rotate-4:checked ~ main .controls .label-rotate-1
+{
+    display: block;
+}
+
+.input-scale-1:checked ~ main .controls .label-scale-2,
+.input-scale-2:checked ~ main .controls .label-scale-3,
+.input-scale-3:checked ~ main .controls .label-scale-1
+{
+    display: block;
+}
+
+.input-rotate-2:checked ~ main .main-photo
+{
+    transform: rotate(-90deg);
+}
+
+.input-rotate-3:checked ~ main .main-photo
+{
+    transform: rotate(-180deg);
+}
+
+.input-rotate-4:checked ~ main .main-photo
+{
+    transform: rotate(-270deg);
+}
+
+.input-scale-2:checked ~ main .main-photo .flip-photo img
+{
+    transform: scale(1.25);
+}
+
+.input-scale-3:checked ~ main .main-photo .flip-photo img
+{
+    transform: scale(1.5);
+}
+
+.main-photo
+{
+    width: 490px;
+    height: 490px;
+    overflow: hidden;
+    margin: 5px auto 30px;
+    display: flex;
+}
+
+.flip-photo
+{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.main-photo .flip-photo img
+{
+    width: 100%;
+    margin: auto;
+}
+
+.input-fill:checked ~ main .controls .label-fill .icon,
+.input-flip:checked ~ main .controls .label-flip .icon
+{
+    fill: #000;
+}
+
+.input-fill:checked ~ main .main-photo .flip-photo img
+{
+    height: 100%;
+    width: auto;
+}
+
+.input-flip:checked ~ main .main-photo .flip-photo
+{
+    transform: scale(-1,1);
+}
+
+.gallery
+{
+    margin: auto;
+    width: 735px;
+    overflow: hidden;
+}
+
+.filters
+{
+    display: flex;
+    justify-content: space-around;
+    width: 1100px;
+    position: relative;
+}
+
+.filter
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.filter__name
+{
+    text-align: center;
+    margin: 0 0 15px;
+}
+
+.filter__name label
+{
+    cursor: pointer;
+}
+
+.filter__image
+{
+    width: 170px;
+    height: 170px;
+    background: url('Байт_cr.jpg') 50% 50%;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.input-filter-not:checked ~ main .gallery .filters .filter-not,
+.input-grayscale:checked ~ main .gallery .filters .grayscale,
+.input-sepia:checked ~ main .gallery .filters .sepia,
+.input-saturate:checked ~ main .gallery .filters .saturate,
+.input-invert:checked ~ main .gallery .filters .invert,
+.input-contrast:checked ~ main .gallery .filters .contrast
+{
+    font-weight: bold;
+}
+
+.input-grayscale:checked ~ main .main-photo .flip-photo img,
+main .gallery .filters .grayscale .filter__image
+{
+    filter: grayscale(1);
+}
+
+.input-sepia:checked ~ main .main-photo .flip-photo img,
+main .gallery .filters .sepia .filter__image
+{
+    filter: sepia(1);
+}
+
+.input-saturate:checked ~ main .main-photo .flip-photo img,
+main .gallery .filters .saturate .filter__image
+{
+    filter: saturate(2);
+}
+
+.input-invert:checked ~ main .main-photo .flip-photo img,
+main .gallery .filters .invert .filter__image
+{
+    filter: invert(1);
+}
+
+.input-contrast:checked ~ main .main-photo .flip-photo img,
+main .gallery .filters .contrast .filter__image
+{
+    filter: contrast(2);
+}
+
+.arrow
+{
+    width: 49px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.left-arrow
+{
+    transform: rotate(90deg);
+}
+
+.right-arrow
+{
+    transform: rotate(-90deg);
+}
+
+.active-arrow
+{
+    opacity: .8;
+    fill: #444;
+}
+
+.not-active-arrow
+{
+    opacity: .6;
+    fill: rgba(170, 170, 170, .8);
+    cursor: auto;
+}
+
+.nav-filter
+{
+    display: flex;
+    align-items: center;
+}
+
+.nav-filter .label-gallery-1,
+.nav-filter .label-gallery-2,
+.nav-filter .label-gallery-3
+{
+    display: none;
+    cursor: pointer;
+}
+
+.input-gallery-1:checked ~ main .nav-filter .label-gallery-1,
+.input-gallery-2:checked ~ main .nav-filter .label-gallery-2,
+.input-gallery-3:checked ~ main .nav-filter .label-gallery-3
+{
+    display: block;
+}
+
+.input-gallery-2:checked ~ main .nav-filter .gallery .filters
+{
+    left: -190px;
+}
+
+.input-gallery-3:checked ~ main .nav-filter .gallery .filters
+{
+    left: -380px;
+}
+
+.input-logo:checked ~ main .main-photo
+{
+    transform: rotate(0);
+}
+
+.input-logo:checked ~ main .main-photo .flip-photo img
+{
+    filter: none;
+}
+
+.input-logo:checked ~ main .main-photo .flip-photo,
+.input-logo:checked ~ main .main-photo .flip-photo img
+{
+    width: 100%;
+    height: auto;
+    transform: scale(1);
+}
