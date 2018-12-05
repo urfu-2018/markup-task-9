@@ -1,0 +1,571 @@
+html,
+body
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.Catogram-Default
+{
+    position: relative;
+    width: 1440px;
+    height: 1024px;
+    background-color: #fff;
+    margin: auto;
+}
+/*________________________________CONTROLS_____________________________________________*/
+
+.controls
+{
+    position: relative;
+    width: 100%;
+    height: 70px;
+}
+
+.controls__item
+{
+    position: absolute;
+    margin: 10px;
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.rotate-input,
+.scale-input,
+.filters-input,
+.fill-input,
+.logo-input,
+.flip-input,
+.arrow-input
+{
+    display: none;
+}
+
+.fill,
+.scale,
+.logo,
+.rotate,
+.flip
+{
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.fill
+{
+    left: 392px;
+}
+
+.scale
+{
+    left: 539px;
+}
+
+.logo
+{
+    left: 686px;
+}
+
+.rotate
+{
+    left: 833px;
+}
+
+.flip
+{
+    top: 4px;
+    left: 980px;
+}
+
+/*______________________________________CANVAS________________________________________*/
+
+.canvas
+{
+    overflow: hidden;
+    width: 632px;
+    height: 632px;
+    margin: 0 404px;
+}
+
+.photo
+{
+    transition: .5s all linear;
+    object-fit: contain;
+    width: 632px;
+    height: 632px;
+}
+
+/*_______________________________FILTERS_CAROUSEL______________________________________________*/
+
+.filter__name
+{
+    width: 170px;
+    height: 22px;
+    font-family: Helvetica, serif;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #000;
+}
+
+.carousel
+{
+    width: 690px;
+    white-space: nowrap;
+    overflow: hidden;
+    height: 220px;
+
+    margin: 70px 0 37px 373px;
+    position: relative;
+    transition-duration: .5s;
+}
+
+.filter__name
+{
+    position: absolute;
+    top: -30px;
+}
+
+.carousel__item
+{
+    cursor: pointer;
+    width: 170px;
+    height: 169px;
+    display: inline-block;
+    position: relative;
+    top: 50px;
+}
+
+.filter-preview
+{
+    width: 170px;
+    height: 169px;
+}
+
+.arrow
+{
+    overflow: hidden;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    position: absolute;
+    display: none;
+}
+
+.filter__preview
+{
+    width: 170px;
+    height: 169px;
+}
+
+.filter-1
+{
+    filter: none;
+}
+
+.filter-2
+{
+    filter: grayscale(1);
+}
+
+.filter-3
+{
+    filter: sepia(1);
+}
+
+.filter-4
+{
+    filter: hue-rotate(180deg);
+}
+
+.filter-5
+{
+    filter: invert(100%);
+}
+
+.filter-6
+{
+    filter: saturate(300%);
+}
+
+.filter-7
+{
+    filter: hue-rotate(90deg) saturate(300%) sepia(15%);
+}
+
+.left-arrow
+{
+    bottom: 90px;
+    left: 308px;
+    transform: rotate(90deg);
+}
+
+.right-arrow
+{
+    bottom: 93px;
+    right: 315px;
+    transform: rotate(-90deg);
+}
+
+/*________________________TO_MAKE_CONTROLS_WORK____________________________*/
+
+.fill-input:checked ~ .canvas > .photo
+{
+    object-fit: fill;
+}
+
+.rotate-input-0:checked ~ .flip-input:checked ~ .canvas > .photo
+{
+    transition: .5s;
+    transform: rotate(0deg) scale(-1, 1);
+}
+
+.rotate-input-1:checked ~ .flip-input:checked ~ .canvas > .photo
+{
+    transition: .5s;
+    transform: rotate(90deg) scale(-1, 1);
+}
+
+.rotate-input-2:checked ~ .flip-input:checked ~ .canvas > .photo
+{
+    transition: .5s;
+    transform: rotate(180deg) scale(-1, 1);
+}
+
+.rotate-input-3:checked ~ .flip-input:checked ~ .canvas > .photo
+{
+    transition: .5s;
+    transform: rotate(270deg) scale(-1, 1);
+}
+
+.rotate-input-4:checked ~ .flip-input:checked ~ .canvas > .photo
+{
+    transition: .5s;
+    transform: rotate(360deg) scale(-1, 1);
+}
+
+.rotate-input-5:checked ~ .flip-input:checked ~ .canvas > .photo
+{
+    transition: .5s;
+    transform: rotate(270deg) scale(-1, 1);
+}
+.rotate-input-6:checked ~ .flip-input:checked ~ .canvas > .photo
+{
+    transition: .5s;
+    transform: rotate(180deg) scale(-1, 1);
+}
+
+.rotate-input-7:checked ~ .flip-input:checked ~ .canvas > .photo
+{
+    transition: .5s;
+    transform: rotate(90deg) scale(-1, 1);
+}
+
+
+
+.rotate
+{
+    display: none;
+}
+
+.rotate-input-0:checked ~ .controls > .rotate-1,
+.rotate-input-1:checked ~ .controls > .rotate-2,
+.rotate-input-2:checked ~ .controls > .rotate-3,
+.rotate-input-3:checked ~ .controls > .rotate-4,
+.rotate-input-4:checked ~ .controls > .rotate-5,
+.rotate-input-5:checked ~ .controls > .rotate-6,
+.rotate-input-6:checked ~ .controls > .rotate-7,
+.rotate-input-7:checked ~ .controls > .rotate-0
+{
+    transition: .5s all linear;
+    display: block;
+}
+
+.rotate-input-0:checked ~ .canvas > .photo_rotated
+{
+    transition: .5s all linear;
+    transform: none;
+}
+
+.rotate-input-1:checked ~ .canvas > .photo_rotated
+{
+    transition: .5s all linear;
+    transform: rotate(90deg);
+}
+
+.rotate-input-2:checked ~ .canvas > .photo_rotated
+{
+    transition: .5s all linear;
+    transform: rotate(180deg);
+}
+
+.rotate-input-3:checked ~ .canvas > .photo_rotated
+{
+    transition: .5s all linear;
+    transform: rotate(270deg);
+}
+
+.rotate-input-4:checked ~ .canvas > .photo_rotated
+{
+    transition: .5s all linear;
+    transform: rotate(360deg);
+}
+
+.rotate-input-5:checked ~ .canvas > .photo_rotated
+{
+    transition: .5s all linear;
+    transform: rotate(270deg);
+}
+
+.rotate-input-6:checked ~ .canvas > .photo_rotated
+{
+    transition: .5s all linear;
+    transform: rotate(180deg);
+}
+
+.rotate-input-7:checked ~ .canvas > .photo_rotated
+{
+    transition: .5s all linear;
+    transform: rotate(90deg);
+}
+
+.scale
+{
+    display: none;
+}
+
+.scale-input-0:checked ~ .controls > .scale-1,
+.scale-input-1:checked ~ .controls > .scale-2,
+.scale-input-2:checked ~ .controls > .scale-3,
+.scale-input-3:checked ~ .controls > .scale-4,
+.scale-input-4:checked ~ .controls > .scale-5,
+.scale-input-5:checked ~ .controls > .scale-6,
+.scale-input-6:checked ~ .controls > .scale-7,
+.scale-input-7:checked ~ .controls > .scale-0
+{
+    display: block;
+}
+
+.scale-input-1:checked ~ .canvas > .photo
+{
+    transition: .5s all linear;
+    margin: -20px 0 0 -20px;
+    width: 695px;
+    height: 695px;
+}
+
+.scale-input-2:checked ~ .canvas > .photo
+{
+    transition: .5s all linear;
+    margin: -40px 0 0 -40px;
+    width: 758px;
+    height: 758px;
+}
+
+.scale-input-3:checked ~ .canvas > .photo
+{
+    transition: .5s all linear;
+    margin: -60px 0 0 -60px;
+    width: 821px;
+    height: 821px;
+}
+
+.scale-input-4:checked ~ .canvas > .photo
+{
+    transition: .5s all linear;
+    margin: -80px 0 0 -80px;
+    width: 884px;
+    height: 884px;
+}
+
+.scale-input-5:checked ~ .canvas > .photo
+{
+    transition: .5s all linear;
+    margin: -100px 0 0 -100px;
+    width: 948px;
+    height: 948px;
+}
+
+.scale-input-6:checked ~ .canvas > .photo
+{
+    transition: .5s all linear;
+    margin: -120px 0 0 -120px;
+    width: 1011px;
+    height: 1011px;
+}
+
+.scale-input-7:checked ~ .canvas > .photo
+{
+    transition: .5s all linear;
+    margin: -140px 0 0 -140px;
+    width: 1075px;
+    height: 1075px;
+}
+/*______________________HOVER_ALL___________________________________*/
+
+.fill,
+.scale,
+.logo,
+.rotate,
+.flip,
+.arrow_inactive
+{
+    opacity: .5;
+}
+
+.logo:hover,
+.logo-input:checked ~ .controls > .logo
+{
+    opacity: 1;
+    fill: url('#svg-logo_hover');
+}
+
+.fill:hover,
+.scale:hover,
+.rotate:hover,
+.flip:hover,
+.fill-input:checked ~ .controls > .fill,
+.scale-input:checked ~ .controls > .scale,
+.flip-input:checked ~ .controls > .flip
+{
+    transition: .5s;
+    opacity: 1;
+}
+
+/*_______________________________FILTERS___________________________________*/
+
+.filter-input-1:checked ~ .canvas > .photo_filtered
+{
+    transition: .5s all linear;
+    filter: none;
+}
+
+.filter-input-2:checked ~ .canvas > .photo_filtered
+{
+    transition: .5s all linear;
+    filter: grayscale(1);
+}
+
+.filter-input-3:checked ~ .canvas > .photo_filtered
+{
+    transition: .5s all linear;
+    filter: sepia(1);
+}
+
+.filter-input-4:checked ~ .canvas > .photo_filtered
+{
+    transition: .5s all linear;
+    filter: hue-rotate(180deg);
+}
+
+.filter-input-5:checked ~ .canvas > .photo_filtered
+{
+    transition: .5s all linear;
+    filter: invert(100%);
+}
+
+.filter-input-6:checked ~ .canvas > .photo_filtered
+{
+    transition: .5s all linear;
+    filter: saturate(300%);
+}
+
+.filter-input-7:checked ~ .canvas > .photo_filtered
+{
+    transition: .5s all linear;
+    filter: hue-rotate(90deg) saturate(300%) sepia(15%);
+}
+
+/*____________________________CAROUSEL_______________________________*/
+
+.left-arrow-1,
+.right-arrow-1
+{
+    display: block;
+}
+
+.right-arrow-1-input:checked ~ .filters > .carousel > .carousel__item,
+.left-arrow-3-input:checked ~ .filters > .carousel > .carousel__item
+{
+    transition: .5s;
+    transform: translateX(-175px);
+}
+
+.right-arrow-2-input:checked ~ .filters > .carousel > .carousel__item,
+.left-arrow-4-input:checked ~ .filters > .carousel > .carousel__item
+{
+    transition: .5s;
+    transform: translateX(-350px);
+}
+
+.right-arrow-3-input:checked ~ .filters > .carousel > .carousel__item,
+.right-arrow-4-input:checked ~ .filters > .carousel > .carousel__item
+{
+    transition: .5s;
+    transform: translateX(-525px);
+}
+
+.right-arrow-1-input:checked ~ .filters > .left-arrow-2,
+.right-arrow-2-input:checked ~ .filters > .left-arrow-3,
+.right-arrow-4-input:checked ~ .filters > .left-arrow-3,
+.left-arrow-3-input:checked ~ .filters > .right-arrow-2,
+.left-arrow-2-input:checked ~ .filters > .right-arrow-1,
+.left-arrow-1-input:checked ~ .filters > .right-arrow-1,
+.right-arrow-1-input:checked ~ .filters > .right-arrow-2,
+.right-arrow-2-input:checked ~ .filters > .right-arrow-3,
+.right-arrow-4-input:checked ~ .filters > .right-arrow-4,
+.left-arrow-3-input:checked ~ .filters > .left-arrow-2,
+.left-arrow-2-input:checked ~ .filters > .left-arrow-1,
+.left-arrow-1-input:checked ~ .filters > .left-arrow-1,
+.right-arrow-3-input:checked ~ .filters > .left-arrow-4,
+.right-arrow-3-input:checked ~ .filters > .right-arrow-4,
+.left-arrow-4-input:checked ~ .filters > .left-arrow-3,
+.left-arrow-4-input:checked ~ .filters > .right-arrow-3,
+.right-arrow-4-input:checked ~ .filters > .left-arrow-4
+{
+    display: block;
+}
+
+.left-arrow-1-input:checked ~ .filters > .carousel > .carousel__item
+{
+    transform: none;
+}
+
+.left-arrow-2-input:checked ~ .filters > .carousel > .carousel__item
+{
+    transition: .5s;
+    transform: none;
+}
+
+.left-arrow-2-input:checked ~ .filters > .left-arrow-2,
+.left-arrow-3-input:checked ~ .filters > .left-arrow-3,
+.right-arrow-3-input:checked ~ .filters > .right-arrow-1,
+.right-arrow-4-input:checked ~ .filters > .right-arrow-1
+{
+    display: none;
+}
+
+/*________________________MAKE_LOGO_WORK_AGAIN________________________*/
+
+.logo-input:checked ~ .canvas > .photo_filtered
+{
+    filter: none;
+    object-fit: contain;
+    animation: none;
+    transition: .5s;
+    transform: none !important;
+    max-width: 632px;
+    min-width: 632px;
+    max-height: 632px;
+    min-height: 632px;
+    width: 632px;
+    height: 632px;
+    margin: auto;
+}

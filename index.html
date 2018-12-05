@@ -2,11 +2,254 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="index.css">
     <title>Задача «Котограм»</title>
 </head>
 <body>
-<!--Ваш спрайт-->
-
-<!--Ваша разметка-->
+<svg>
+    <defs>
+    <linearGradient id="svg-logo_hover" x1="101.5%" x2=".5%" y1="-.5%" y2="101.5%">
+        <stop offset="0%" stop-color="#8A2387"></stop>
+        <stop offset="63.677%" stop-color="#E94057"></stop>
+        <stop offset="100%" stop-color="#F27121"></stop>
+    </linearGradient>
+    </defs>
+    <symbol id="svg-logo">
+    <path d="M0 0v48h48V0H0zm24.107 16.782a7.12 7.12 0 0 1 7.11 7.111 7.12 7.12 0 0 1-7.11 7.111 7.12 7.12 0 0 1-7.111-7.11 7.12 7.12 0 0 1 7.11-7.112zM6.4 5.547h7.253v4.693H6.4V5.547zM41.6 41.6H6.4V24.747h4.225c.443 7.053 6.318 12.657 13.482 12.657 7.163 0 13.039-5.604 13.481-12.657H41.6V41.6z" fill-rule="evenodd"></path>
+    </symbol>
+    <symbol id="svg-arrow">
+        <path d="M.5 7.401L24.428 31.33 48.357 7.4 41.569.613l-17.14 17.14L7.288.614z" fill-rule="evenodd"></path>
+    </symbol>
+    <symbol id="svg-fill">
+        <g>
+            <path d="M8.395 8.395h30.996v30.996H8.395z"></path>
+            <path d="M35.946 0v5.166h6.888v6.673H48V0zM5.166 5.166h6.673V0H0v11.839h5.166zM42.834 42.834h-6.888V48H48V35.946h-5.166zM5.166 35.946H0V48h11.839v-5.166H5.166z"></path>
+        </g>
+    </symbol>
+    <symbol id="svg-flip">
+        <g>
+            <path d="M0 29.9l19.084-11.788L0 6.325z"></path>
+            <path d="M28.916 18.112L48 29.9V6.325L28.916 18.112zm15.058 4.425l-7.163-4.425 7.163-4.424v8.849z" fill-rule="nonzero"></path>
+            <path d="M21.398 8.05h5.205v5.175h-5.205zM21.398 0h5.205v5.175h-5.205zM21.398 16.1h5.205v5.175h-5.205zM21.398 23.575h5.205v5.175h-5.205zM21.398 31.625h5.205V36.8h-5.205z"></path>
+        </g>
+    </symbol>
+    <symbol id="svg-rotate">
+        <path d="M24 48c13.234 0 24-9.765 24-21.753 0-11.99-10.766-21.749-24-21.749-.88 0-1.768.046-2.651.136V1.119c0-.452-.308-.863-.761-1.038a1.353 1.353 0 0 0-1.355.251l-8.504 7.722c-.484.438-.484 1.138 0 1.583l8.5 7.739c.362.319.886.418 1.359.243.453-.177.76-.585.76-1.035v-3.899c.88-.146 1.764-.212 2.651-.212 8.384 0 15.207 6.18 15.207 13.774 0 7.593-6.825 13.778-15.207 13.778-8.382 0-15.203-6.187-15.203-13.778 0-.616-.553-1.12-1.24-1.12H1.24c-.684 0-1.241.504-1.241 1.12C0 38.235 10.774 48 24 48z" fill-rule="evenodd"></path>
+    </symbol>
+    <symbol id="svg-scale">
+        <g>
+            <path d="M0 0v48h48V0H0zm6.4 6.4h33.682L6.4 40.227V6.4zm34.56 32.427H25.6v-6.4h15.36v6.4z" fill-rule="nonzero"></path>
+            <path d="M24 13.071h-4.375v-4.5h-6.25v4.5H9V19.5h4.375V24h6.25v-4.5H24z"></path>
+        </g>
+    </symbol>
+</svg>
+<article class="Catogram-Default">
+<input type="checkbox" id="fill-input" class="fill-input">
+<input type="radio" name="scale" id="scale-input-0" class="scale-input scale-input-0" checked>
+<input type="radio" name="scale" id="scale-input-1" class="scale-input scale-input-1">
+<input type="radio" name="scale" id="scale-input-2" class="scale-input scale-input-2">
+<input type="radio" name="scale" id="scale-input-3" class="scale-input scale-input-3">
+<input type="radio" name="scale" id="scale-input-4" class="scale-input scale-input-4">
+<input type="radio" name="scale" id="scale-input-5" class="scale-input scale-input-5">
+<input type="radio" name="scale" id="scale-input-6" class="scale-input scale-input-6">
+<input type="radio" name="scale" id="scale-input-7" class="scale-input scale-input-7">
+<input type="checkbox" id="logo-input" class="logo-input">
+<input type="radio" name="rotate" id="rotate-input-0" class="rotate-input rotate-input-0" checked>
+<input type="radio" name="rotate" id="rotate-input-1" class="rotate-input rotate-input-1">
+<input type="radio" name="rotate" id="rotate-input-2" class="rotate-input rotate-input-2">
+<input type="radio" name="rotate" id="rotate-input-3" class="rotate-input rotate-input-3">
+<input type="radio" name="rotate" id="rotate-input-4" class="rotate-input rotate-input-4">
+<input type="radio" name="rotate" id="rotate-input-5" class="rotate-input rotate-input-5">
+<input type="radio" name="rotate" id="rotate-input-6" class="rotate-input rotate-input-6">
+<input type="radio" name="rotate" id="rotate-input-7" class="rotate-input rotate-input-7">
+<input type="checkbox" id="flip-input" class="flip-input">
+<input type="radio" id="filter-input-1" name="filters" class="filters-input filter-input-1">
+<input type="radio" id="filter-input-2" name="filters" class="filters-input filter-input-2">
+<input type="radio" id="filter-input-3" name="filters" class="filters-input filter-input-3">
+<input type="radio" id="filter-input-4" name="filters" class="filters-input filter-input-4">
+<input type="radio" id="filter-input-5" name="filters" class="filters-input filter-input-5">
+<input type="radio" id="filter-input-6" name="filters" class="filters-input filter-input-6">
+<input type="radio" id="filter-input-7" name="filters" class="filters-input filter-input-7">
+<input type="radio" id="right-arrow-1-input" name="arrow" class="right-arrow-1-input arrow-input">
+<input type="radio" id="right-arrow-2-input" name="arrow" class="right-arrow-2-input arrow-input">
+<input type="radio" id="right-arrow-3-input" name="arrow" class="right-arrow-3-input arrow-input">
+<input type="radio" id="right-arrow-4-input" name="arrow" class="right-arrow-4-input arrow-input">
+<input type="radio" id="left-arrow-1-input" name="arrow" class="left-arrow-1-input arrow-input">
+<input type="radio" id="left-arrow-2-input" name="arrow" class="left-arrow-2-input arrow-input">
+<input type="radio" id="left-arrow-3-input" name="arrow" class="left-arrow-3-input arrow-input">
+<input type="radio" id="left-arrow-4-input" name="arrow" class="left-arrow-4-input arrow-input">
+<article class="controls">
+    <label class="controls__item fill" for="fill-input">
+        <svg>
+            <use xlink:href="#svg-fill"></use>
+        </svg>
+    </label>
+    <label class="controls__item scale scale-0" for="scale-input-0">
+        <svg>
+            <use xlink:href="#svg-scale"></use>
+        </svg>
+    </label>
+    <label class="controls__item scale scale-1" for="scale-input-1">
+        <svg>
+            <use xlink:href="#svg-scale"></use>
+        </svg>
+    </label>
+    <label class="controls__item scale scale-2" for="scale-input-2">
+        <svg>
+            <use xlink:href="#svg-scale"></use>
+        </svg>
+    </label>
+    <label class="controls__item scale scale-3" for="scale-input-3">
+        <svg>
+            <use xlink:href="#svg-scale"></use>
+        </svg>
+    </label>
+    <label class="controls__item scale scale-4" for="scale-input-4">
+        <svg>
+            <use xlink:href="#svg-scale"></use>
+        </svg>
+    </label>
+    <label class="controls__item scale scale-5" for="scale-input-5">
+        <svg>
+            <use xlink:href="#svg-scale"></use>
+        </svg>
+    </label>
+    <label class="controls__item scale scale-6" for="scale-input-6">
+        <svg>
+            <use xlink:href="#svg-scale"></use>
+        </svg>
+    </label>
+    <label class="controls__item scale scale-7" for="scale-input-7">
+        <svg>
+            <use xlink:href="#svg-scale"></use>
+        </svg>
+    </label>
+    <label class="controls__item logo" for="logo-input">
+        <svg>
+            <use xlink:href="#svg-logo"></use>
+        </svg>
+    </label>
+    <label class="controls__item rotate rotate-0" for="rotate-input-0">
+        <svg>
+            <use xlink:href="#svg-rotate"></use>
+        </svg>
+    </label>
+    <label class="controls__item rotate rotate-1" for="rotate-input-1">
+        <svg>
+            <use xlink:href="#svg-rotate"></use>
+        </svg>
+    </label>
+    <label class="controls__item rotate rotate-2" for="rotate-input-2">
+        <svg>
+            <use xlink:href="#svg-rotate"></use>
+        </svg>
+    </label>
+    <label class="controls__item rotate rotate-3" for="rotate-input-3">
+        <svg>
+            <use xlink:href="#svg-rotate"></use>
+        </svg>
+    </label>
+    <label class="controls__item rotate rotate-4" for="rotate-input-4">
+        <svg>
+            <use xlink:href="#svg-rotate"></use>
+        </svg>
+    </label>
+    <label class="controls__item rotate rotate-5" for="rotate-input-5">
+        <svg>
+            <use xlink:href="#svg-rotate"></use>
+        </svg>
+    </label>
+    <label class="controls__item rotate rotate-6" for="rotate-input-6">
+        <svg>
+            <use xlink:href="#svg-rotate"></use>
+        </svg>
+    </label>
+    <label class="controls__item rotate rotate-7" for="rotate-input-7">
+        <svg>
+            <use xlink:href="#svg-rotate"></use>
+        </svg>
+    </label>
+    <label class="controls__item flip" for="flip-input">
+        <svg>
+            <use xlink:href="#svg-flip"></use>
+        </svg>
+    </label>
+</article>
+<article class="canvas">
+    <img src="_normal.jpg" alt="" title="" class="photo photo_filtered photo_rotated">
+</article>
+<article class="filters">
+    <label class="left-arrow arrow  left-arrow-1 arrow_inactive" for="left-arrow-1-input">
+        <svg>
+            <use xlink:href="#svg-arrow"></use>
+        </svg>
+    </label>
+    <label class="left-arrow arrow left-arrow-2" for="left-arrow-2-input">
+        <svg>
+            <use xlink:href="#svg-arrow"></use>
+        </svg>
+    </label>
+    <label class="left-arrow arrow left-arrow-3" for="left-arrow-3-input">
+        <svg>
+            <use xlink:href="#svg-arrow"></use>
+        </svg>
+    </label>
+    <label class="left-arrow arrow left-arrow-4" for="left-arrow-4-input">
+        <svg>
+            <use xlink:href="#svg-arrow"></use>
+        </svg>
+    </label>
+    <section class="carousel">
+        <label class="carousel__item filter" for="filter-input-1">
+            <span class="filter__name">Без фильтра</span>
+            <img class="filter__preview filter-1" src="_normal.jpg">
+        </label>
+        <label class="carousel__item filter" for="filter-input-2">
+            <span class="filter__name">Питер</span>
+            <img class="filter__preview filter-2" src="_normal.jpg">
+        </label>
+        <label class="carousel__item filter" for="filter-input-3">
+            <span class="filter__name">Ялта</span>
+            <img class="filter__preview filter-3" src="_normal.jpg">
+        </label>
+        <label class="carousel__item filter" for="filter-input-4">
+            <span class="filter__name">Уральское лето</span>
+            <img class="filter__preview filter-4" src="_normal.jpg">
+        </label>
+        <label class="carousel__item filter" for="filter-input-5">
+            <span class="filter__name">Лесновский день</span>
+            <img class="filter__preview filter-5" src="_normal.jpg">
+        </label>
+        <label class="carousel__item filter" for="filter-input-6">
+            <span class="filter__name">Закат</span>
+            <img class="filter__preview filter-6" src="_normal.jpg">
+        </label>
+        <label class="carousel__item filter" for="filter-input-7">
+            <span class="filter__name">Ядерные остатки</span>
+            <img class="filter__preview filter-7" src="_normal.jpg">
+        </label>
+    </section>
+    <label class="right-arrow arrow right-arrow-1" for="right-arrow-1-input">
+        <svg>
+            <use xlink:href="#svg-arrow"></use>
+        </svg>
+    </label>
+    <label class="right-arrow arrow right-arrow-2" for="right-arrow-2-input">
+        <svg>
+            <use xlink:href="#svg-arrow"></use>
+        </svg>
+    </label>
+    <label class="arrow right-arrow  right-arrow-3" for="right-arrow-3-input">
+        <svg>
+            <use xlink:href="#svg-arrow"></use>
+        </svg>
+    </label>
+    <label class="arrow right-arrow  right-arrow-4 arrow_inactive" for="right-arrow-4-input">
+        <svg>
+            <use xlink:href="#svg-arrow"></use>
+        </svg>
+    </label>
+</article>
+</article>
 </body>
 </html>
