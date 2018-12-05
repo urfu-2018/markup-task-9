@@ -3,10 +3,72 @@
 <head>
     <meta charset="utf-8">
     <title>Задача «Котограм»</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-<!--Ваш спрайт-->
+    <form class="option-form">
+        <input class="visible-not" type="radio" id="0-size" name="add-size-input">
+        <input class="visible-not" type="radio" id="25-size" name="add-size-input">
+        <input class="visible-not" type="radio" id="50-size" name="add-size-input">
+        <input class="visible-not" type="radio" id="75-size" name="add-size-input">
 
-<!--Ваша разметка-->
+        <input class="visible-not" type="checkbox" id="full-size-input">
+
+        <input class="visible-not" type="reset" id="reset-input">
+
+        <input class="visible-not" type="radio" id="0-turn" name="turn-input">
+        <input class="visible-not" type="radio" id="90deg-turn" name="turn-input">
+        <input class="visible-not" type="radio" id="180deg-turn" name="turn-input">
+        <input class="visible-not" type="radio" id="270deg-turn" name="turn-input">
+
+        <input class="visible-not" type="checkbox" id="horizontal-input">
+
+        <input class="visible-not" type="radio" id="no-filter" name="filter-input" checked>
+        <input class="visible-not" type="radio" id="piter-filter" name="filter-input">
+        <input class="visible-not" type="radio" id="yalta-filter" name="filter-input">
+        <input class="visible-not" type="radio" id="ural-filter" name="filter-input">
+        <header class="option-container">
+                <label for="full-size-input" class="full-size-label"></label>
+
+                <label for="0-size" class="size-label"></label>
+                <label for="25-size" class="size-label visible-not"></label>
+                <label for="50-size" class="size-label visible-not"></label>
+                <label for="75-size" class="size-label visible-not"></label>
+
+                <label for="reset-input" class="reset-label"></label>
+
+                <label for="0-turn" class="turn-label"></label>
+                <label for="90deg-turn" class="turn-label visible-not"></label>
+                <label for="180deg-turn" class="turn-label visible-not"></label>
+                <label for="270deg-turn" class="turn-label visible-not"></label>
+
+                <label for="horizontal-input" class="horizontal-label"></label>
+        </header>
+        <section class="cat-pic-container">
+            <div class="cat-pic"></div>
+        </section>
+        <div class="effects-container">
+            <div class="left-arrow"></div>
+            <div class="label-container">
+                <label for="no-filter" class="no-filter-div">
+                    <span class="no-filter-div__text">Без фильтра</span>
+                    <span class="no-filter-div__img"></span>
+                </label>
+                <label for="piter-filter" class="piter-filter-div">
+                    <span class="piter-filter-div__text">Питер</span>
+                    <span class="piter-filter-div__img"></span>
+                </label>
+                <label for="yalta-filter" class="yalta-filter-div">
+                    <span class="yalta-filter-div__text">Ялта</span>
+                    <span class="yalta-filter-div__img"></span>
+                </label>
+                <label for="ural-filter" class="ural-filter-div">
+                    <span class="ural-filter-div__text">Уральское лето</span>
+                    <span class="ural-filter-div__img"></span>
+                </label>
+            </div>
+            <div class="right-arrow"></div>
+        </div>
+    </form>
 </body>
 </html>

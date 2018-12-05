@@ -1,0 +1,306 @@
+.option-container,
+.cat-pic-container,
+.option-container
+{
+    display: flex;
+}
+
+.option-container
+{
+    margin-top: 12px;
+    margin-bottom: 12px;
+    height: 48px;
+    justify-content: space-between;
+}
+
+.option-form
+{
+    position: relative;
+}
+
+.option-form,
+.cat-pic
+{
+    width: 632px;
+    margin: auto;
+}
+
+.effects-container
+{
+    width: 825px;
+    margin: auto;
+    position: absolute;
+    left: -96px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.label-container
+{
+    width: 695px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cat-pic
+{
+    height: 632px;
+    margin-bottom: 69px;
+}
+
+.visible-not
+{
+    display: none;
+}
+
+.option-container > label
+{
+    width: 48px;
+    opacity: .5;
+    background-image: url(icons/icons.svg);
+}
+
+.option-container > label:hover
+{
+    cursor: pointer;
+}
+
+.full-size-label
+{
+    background-position-y: -32px;
+    height: 48px;
+}
+
+.size-label
+{
+    background-position-y: 48px;
+    height: 48px;
+}
+
+.reset-label
+{
+    background-position-y: 144px;
+    height: 48px;
+}
+
+.turn-label
+{
+    background-position-y: 96px;
+    height: 48px;
+}
+
+.horizontal-label
+{
+    background-position-y: 181px;
+    height: 37px;
+    align-self: center;
+}
+
+.cat-pic
+{
+    width: 632px;
+    height: 632px;
+    background-image: url(icons/cat.jpg);
+    background-position: 50%;
+    background-size: 100%;
+}
+
+input[id='full-size-input']:checked ~ .option-container .full-size-label,
+input[id='horizontal-input']:checked ~ .option-container .horizontal-label,
+input[id='0-size']:checked ~ .option-container label[for='25-size'],
+input[id='25-size']:checked ~ .option-container label[for='50-size'],
+input[id='50-size']:checked ~ .option-container label[for='75-size'],
+input[id='0-turn']:checked ~ .option-container label[for='90deg-turn'],
+input[id='90deg-turn']:checked ~ .option-container label[for='180deg-turn'],
+input[id='180deg-turn']:checked ~ .option-container label[for='270deg-turn']
+{
+    opacity: .8;
+}
+
+input[id='0-size']:checked ~ .option-container label[for='0-size'],
+input[id='25-size']:checked ~ .option-container label[for='25-size'],
+input[id='25-size']:checked ~ .option-container label[for='0-size'],
+input[id='50-size']:checked ~ .option-container label[for='50-size'],
+input[id='50-size']:checked ~ .option-container label[for='0-size'],
+input[id='75-size']:checked ~ .option-container label[for='75-size'],
+input[id='75-size']:checked ~ .option-container label[for='0-size'],
+input[id='0-turn']:checked ~ .option-container label[for='0-turn'],
+input[id='90deg-turn']:checked ~ .option-container label[for='90deg-turn'],
+input[id='90deg-turn']:checked ~ .option-container label[for='0-turn'],
+input[id='180deg-turn']:checked ~ .option-container label[for='180deg-turn'],
+input[id='180deg-turn']:checked ~ .option-container label[for='0-turn'],
+input[id='270deg-turn']:checked ~ .option-container label[for='270deg-turn'],
+input[id='270deg-turn']:checked ~ .option-container label[for='0-turn']
+{
+    display: none;
+}
+
+input[id='0-size']:checked ~ .option-container label[for='25-size'],
+input[id='25-size']:checked ~ .option-container label[for='50-size'],
+input[id='50-size']:checked ~ .option-container label[for='75-size'],
+input[id='75-size']:checked ~ .option-container label[for='0-size'],
+input[id='0-turn']:checked ~ .option-container label[for='90deg-turn'],
+input[id='90deg-turn']:checked ~ .option-container label[for='180deg-turn'],
+input[id='180deg-turn']:checked ~ .option-container label[for='270deg-turn'],
+input[id='270deg-turn']:checked ~ .option-container label[for='0-turn']
+{
+    display: block;
+}
+
+input[id='full-size-input']:checked ~ .cat-pic-container .cat-pic
+{
+    background-size: auto;
+}
+
+input[id='0-size']:checked ~ .cat-pic-container .cat-pic
+{
+    background-size: 125%;
+}
+
+input[id='25-size']:checked ~ .cat-pic-container .cat-pic
+{
+    background-size: 150%;
+}
+
+input[id='50-size']:checked ~ .cat-pic-container .cat-pic
+{
+    background-size: 175%;
+}
+
+input[id='0-turn']:checked ~ .cat-pic-container .cat-pic
+{
+    transform: rotate(90deg);
+}
+
+input[id='90deg-turn']:checked ~ .cat-pic-container .cat-pic
+{
+    transform: rotate(180deg);
+}
+
+input[id='180deg-turn']:checked ~ .cat-pic-container .cat-pic
+{
+    transform: rotate(270deg);
+}
+
+input[id='270deg-turn']:checked ~ .cat-pic-container .cat-pic
+{
+    transform: rotate(360deg);
+}
+
+input[id='horizontal-input']:checked ~ .cat-pic-container
+{
+    transform: scale(-1, 1);
+}
+
+.no-filter-div__text,
+.piter-filter-div__text,
+.yalta-filter-div__text,
+.ural-filter-div__text
+{
+    width: 170px;
+    height: 22px;
+    font-size: 18px;
+    font-family: Helvetica;
+    text-align: center;
+    margin-bottom: 15px;
+    cursor: pointer;
+    color: #444;
+    display: block;
+}
+
+.no-filter-div__img,
+.piter-filter-div__img,
+.yalta-filter-div__img,
+.ural-filter-div__img
+{
+    width: 170px;
+    height: 169px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .12);
+    background-image: url(icons/cat.jpg);
+    background-size: 100%;
+    margin-bottom: 37px;
+    cursor: pointer;
+    display: block;
+}
+
+.piter-filter-div__img
+{
+    filter: grayscale(1);
+}
+
+.yalta-filter-div__img
+{
+    filter: sepia(1);
+}
+
+.ural-filter-div__img
+{
+    filter: hue-rotate(200deg);
+}
+
+input[id='no-filter']:checked ~ .cat-pic-container .cat-pic
+{
+    filter: none;
+}
+
+input[id='no-filter']:checked ~ .effects-container .no-filter-div__text
+{
+    color: black;
+    font-weight: bold;
+}
+
+input[id='piter-filter']:checked ~ .cat-pic-container .cat-pic
+{
+    filter: grayscale(1);
+}
+
+input[id='piter-filter']:checked ~ .effects-container .piter-filter-div__text
+{
+    color: black;
+    font-weight: bold;
+}
+
+input[id='yalta-filter']:checked ~ .cat-pic-container .cat-pic
+{
+    filter: sepia(1);
+}
+
+input[id='yalta-filter']:checked ~ .effects-container .yalta-filter-div__text
+{
+    color: black;
+    font-weight: bold;
+}
+
+input[id='ural-filter']:checked ~ .cat-pic-container .cat-pic
+{
+    filter: hue-rotate(200deg);
+}
+
+input[id='ural-filter']:checked ~ .effects-container .ural-filter-div__text
+{
+    color: black;
+    font-weight: bold;
+}
+
+.left-arrow,
+.right-arrow
+{
+    height: 31px;
+    width: 48px;
+    background-image: url(icons/icons.svg);
+    align-self: center;
+}
+
+.left-arrow
+{
+    transform: rotate(90deg);
+    opacity: .5;
+    cursor: pointer;
+}
+
+.right-arrow
+{
+    transform: rotate(-90deg);
+    opacity: .8;
+    cursor: pointer;
+}
