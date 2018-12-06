@@ -61,6 +61,7 @@
     width: 100%;
     height: 100%;
     object-fit: contain;
+    transition-duration: 1s;
 }
 
 .original-photo
@@ -78,7 +79,7 @@
     content: url(icons/arrow.svg);
     transform: rotate(90deg);
     position: relative;
-    /* left: -90px; */
+    /* left: -100px; */
 }
 
 .filters__carousel::after
@@ -168,9 +169,22 @@
     display: none;
 }
 
+.logo:checked ~ .main-content__options .options__items-list
+{
+    justify-content: center;
+}
+
 .logo:checked ~ .main-content__photo .original-photo
 {
     display: block;
+}
+
+.logo:checked ~ .main-content__options .list-item__fill,
+.logo:checked ~ .main-content__options .list-item__scale,
+.logo:checked ~ .main-content__options .list-item__rotate,
+.logo:checked ~ .main-content__options .list-item__flip
+{
+    display: none;
 }
 
 .rotate_0deg:checked ~ .main-content__photo .modified-by-rotate
