@@ -78,38 +78,13 @@ main
     transform: scale(-1, 1);
 }
 
-.scale-1:checked ~ .photo .photo__picture
+.logotype
 {
-    transform: scale(1.5);
+    grid-area: logo;
+    fill: url(#KotogramGradient);
 }
 
-.scale-rb-1:checked ~ .scale-link-1,
-.scale-rb-1:checked ~ .scale-link-3,
-.scale-rb-1:checked ~ .scale-link-4,
-.scale-rb-1:checked ~ .scale-img-1,
-.scale-rb-1:checked ~ .scale-img-3,
-.scale-rb-1:checked ~ .scale-img-4,
-
-.scale-rb-2:checked ~ .scale-link-1,
-.scale-rb-2:checked ~ .scale-link-2,
-.scale-rb-2:checked ~ .scale-link-4,
-.scale-rb-2:checked ~ .scale-img-1,
-.scale-rb-2:checked ~ .scale-img-2,
-.scale-rb-2:checked ~ .scale-img-4,
-
-.scale-rb-3:checked ~ .scale-link-1,
-.scale-rb-3:checked ~ .scale-link-2,
-.scale-rb-3:checked ~ .scale-link-3,
-.scale-rb-3:checked ~ .scale-img-1,
-.scale-rb-3:checked ~ .scale-img-2,
-.scale-rb-3:checked ~ .scale-img-3,
-
-.scale-rb-4:checked ~ .scale-link-2,
-.scale-rb-4:checked ~ .scale-link-3,
-.scale-rb-4:checked ~ .scale-link-4,
-.scale-rb-4:checked ~ .scale-img-2,
-.scale-rb-4:checked ~ .scale-img-3,
-.scale-rb-4:checked ~ .scale-img-4
+.logotype:active ~ .photo .photo__picture
 {
-    display: none;
+    transform: rotate(0) scaleX(1);
 }
