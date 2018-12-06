@@ -1,0 +1,78 @@
+body
+{
+    display: flex;
+    justify-content: center;
+}
+
+main
+{
+    display: flex;
+    flex-direction: column;
+    width: 632px;
+}
+
+
+.icons
+{
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+input
+{
+    display: none;
+
+}
+.cat-photo img
+{
+    margin-top: 10px;
+    width: 632px;
+}
+
+.icon
+{
+    width: 48px;
+    height: 48px;
+    fill: rgb(112, 112, 112);
+}
+
+
+
+.switches
+{
+    display: flex;
+    justify-content: space-between;
+    width: 632px;
+}
+
+.switches label
+{
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+}
+
+
+
+.rotate-90:checked ~ main .switches .label-rotate-180,
+.rotate-180:checked ~ main .switches .label-rotate-270,
+.rotate-270:checked ~ main .switches .label-rotate-360,
+.rotate-360:checked ~ main .switches .label-rotate-90
+{
+    display: block;
+}
+
+.scale-x:checked ~ main .switches .label-scale-x2,
+.scale-x2:checked ~ main .switches .label-scale-x4,
+.scale-x4:checked ~ main .switches .label-scale-x
+{
+    display: block;
+}
+
+
+
+
+
+
+
