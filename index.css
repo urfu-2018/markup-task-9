@@ -55,7 +55,8 @@ body > input
 }
 
 .control-buttons__scale-label,
-.control-buttons__rotate-label
+.control-buttons__rotate-label,
+.control-buttons__original-button
 {
     display: none;
 }
@@ -66,7 +67,9 @@ body > input
 .rotate-0-button:checked ~ .catgram label[for='rotate-90'],
 .rotate-90-button:checked ~ .catgram label[for='rotate-180'],
 .rotate-180-button:checked ~ .catgram label[for='rotate-270'],
-.rotate-270-button:checked ~ .catgram label[for='rotate-0']
+.rotate-270-button:checked ~ .catgram label[for='rotate-0'],
+.edited-button:checked ~ .catgram label[for='no-edited'],
+.no-edited-button:checked ~ .catgram label[for='edited']
 {
     display: block;
 }
@@ -106,17 +109,17 @@ body > input
     background-size: 200%;
 }
 
-.original-button:checked ~ .catgram .editing-image__rotate
+.no-edited-button:checked ~ .catgram .editing-image__rotate
 {
     transform: rotate(0);
 }
 
-.original-button:checked ~ .catgram .editing-image__flip
+.no-edited-button:checked ~ .catgram .editing-image__flip
 {
     transform: scaleX(1);
 }
 
-.original-button:checked ~ .catgram .editing-image .editing-image__photo
+.no-edited-button:checked ~ .catgram .editing-image .editing-image__photo
 {
     filter: none;
     background-size: cover;

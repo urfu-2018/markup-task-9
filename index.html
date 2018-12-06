@@ -8,7 +8,7 @@
 <body>
 <svg xmlns="http://www.w3.org/2000/svg" class="svg-icons">
     <defs>
-        <linearGradient id="logo" x1=".25" y1="1" x2=".75" y2="0">
+        <linearGradient id="gradient-logo" x1=".25" y1="1" x2=".75" y2="0">
             <stop offset="0%"  stop-color=#feda75></stop>
             <stop offset="25%"  stop-color=#fa7e1e></stop>
             <stop offset="50%"  stop-color=#d62976></stop>
@@ -28,7 +28,7 @@
             <path d="M24 13.071h-4.375v-4.5h-6.25v4.5H9V19.5h4.375V24h6.25v-4.5H24z"></path>
         </g>
     </symbol>
-    <symbol id="origin-icon" fill="url(#logo)">
+    <symbol id="origin-icon">
         <path d="M0 0v48h48V0H0zm24.107 16.782a7.12 7.12 0 0 1 7.11 7.111 7.12 7.12 0 0 1-7.11 7.111 7.12 7.12 0 0 1-7.111-7.11 7.12 7.12 0 0 1 7.11-7.112zM6.4 5.547h7.253v4.693H6.4V5.547zM41.6 41.6H6.4V24.747h4.225c.443 7.053 6.318 12.657 13.482 12.657 7.163 0 13.039-5.604 13.481-12.657H41.6V41.6z" fill-rule="evenodd"></path>
     </symbol>
     <symbol id="rotate-icon">
@@ -44,12 +44,14 @@
 </svg>
 
 <input type="checkbox" id="fill" class="fill-button">
-<input type="checkbox" id="original" class="original-button">
 <input type="checkbox" id="flip" class="flip-button">
 
 <input type="radio" id="scale-75" name="scale" class="scale-75-button">
 <input type="radio" id="scale-100" name="scale" class="scale-100-button" checked>
 <input type="radio" id="scale-200" name="scale" class="scale-200-button">
+
+<input type="radio" id="edited" name="original" class="edited-button" checked>
+<input type="radio" id="no-edited" name="original" class="no-edited-button">
 
 <input type="radio" id="rotate-0" name="rotate" class="rotate-0-button" checked>
 <input type="radio" id="rotate-90" name="rotate" class="rotate-90-button">
@@ -83,8 +85,13 @@
                 <use href="#scale-icon"></use>
             </svg>
         </label>
-        <label for="original">
+        <label for="edited" class="control-buttons__original-button">
             <svg class="control-buttons__icon">
+                <use href="#origin-icon"></use>
+            </svg>
+        </label>
+        <label for="no-edited" class="control-buttons__original-button">
+            <svg class="control-buttons__icon" fill="url(#gradient-logo)">
                 <use href="#origin-icon"></use>
             </svg>
         </label>
