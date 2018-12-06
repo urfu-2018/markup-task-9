@@ -1,0 +1,295 @@
+body
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main
+{
+    width: 740px;
+    height: 700px;
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-areas: '. header .'
+        '. canvas .'
+        'filters filters filters';
+    text-align: center;
+}
+
+.header
+{
+    height: 50px;
+    grid-area: header;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.canvas
+{
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    grid-area: canvas;
+}
+
+.icon
+{
+    width: 40px;
+    height: 40px;
+    background-position: 0 0;
+    opacity: .7;
+}
+
+.icon:hover
+{
+    opacity: 1;
+    cursor: pointer;
+}
+
+.canvas__image
+{
+    width: 100%;
+    height: 450px;
+    object-fit: contain;
+}
+
+input[id='fill']:checked ~ .main > .canvas > picture > img
+{
+    object-fit: cover;
+}
+
+.left_pointer
+{
+    transform: rotate(90deg);
+    width: 50px;
+    height: 90px;
+    cursor: pointer;
+    grid-area: left;
+}
+
+.filters
+{
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+    height: 200px;
+    grid-area: filters;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-areas: 'left filters_list right';
+}
+
+.right_pointer
+{
+    transform: rotate(-90deg);
+    width: 50px;
+    height: 90px;
+    cursor: pointer;
+    grid-area: right;
+}
+
+.filters_list
+{
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: middle;
+    grid-area: filters_list;
+}
+
+.filter1_img,
+.filter2_img,
+.filter4_img,
+.filter5_img,
+.filter3_img,
+.filter6_img
+{
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    padding: 6px;
+}
+
+.filter-block
+{
+    text-align: center;
+    display: inline-block;
+    position: relative;
+}
+
+.filter1_img
+{
+    filter: contrast(2);
+}
+
+input[id='filter1']:checked ~ .main > .canvas > picture > img
+{
+    filter: contrast(2);
+}
+
+.filter2_img
+{
+    filter: invert(1);
+}
+
+input[id='filter2']:checked ~ .main > .canvas > picture > img
+{
+    filter: invert(1);
+}
+
+input[id='filter1']:checked ~ .main > .filters > .filters_list > .filter1,
+input[id='filter2']:checked ~ .main > .filters > .filters_list > .filter2,
+input[id='filter3']:checked ~ .main > .filters > .filters_list > .filter3,
+input[id='filter4']:checked ~ .main > .filters > .filters_list > .filter4,
+input[id='filter5']:checked ~ .main > .filters > .filters_list > .filter5,
+input[id='filter6']:checked ~ .main > .filters > .filters_list > .filter6
+{
+    font-weight: bold;
+}
+
+.filter3_img
+{
+    filter: hue-rotate(180deg);
+}
+
+input[id='filter3']:checked ~ .main > .canvas > picture > img
+{
+    filter: hue-rotate(180deg);
+}
+
+.filter5_img
+{
+    filter: grayscale(80%);
+}
+
+input[id='filter5']:checked ~ .main > .canvas > picture > img
+{
+    filter: grayscale(80%);
+}
+
+label[for='rotate1'],
+label[for='rotate2'],
+label[for='rotate3'],
+label[for='rotate4']
+{
+    display: none;
+}
+
+input[id='rotate1']:checked ~ .main > .header > label[for='rotate2'],
+input[id='rotate2']:checked ~ .main > .header > label[for='rotate3'],
+input[id='rotate3']:checked ~ .main > .header > label[for='rotate4'],
+input[id='rotate4']:checked ~ .main > .header > label[for='rotate1']
+{
+    display: block;
+}
+
+input[id='rotate1']:checked ~ .main > .canvas > picture > img
+{
+    transform: rotate(0deg);
+}
+
+input[id='rotate2']:checked ~ .main > .canvas > picture > img
+{
+    transform: rotate(90deg);
+}
+
+input[id='rotate3']:checked ~ .main > .canvas > picture > img
+{
+    transform: rotate(180deg);
+}
+
+input[id='rotate4']:checked ~ .main > .canvas > picture > img
+{
+    transform: rotate(270deg);
+}
+
+input[id='flip']:checked ~ .main > .canvas > picture > img
+{
+    transform: scaleX(-1);
+}
+
+input[id='scale1']:checked ~ .main > .header > label[for='scale2'],
+input[id='scale2']:checked ~ .main > .header > label[for='scale3'],
+input[id='scale3']:checked ~ .main > .header > label[for='scale4'],
+input[id='scale4']:checked ~ .main > .header > label[for='scale1']
+{
+    display: block;
+}
+
+label[for='scale1'],
+label[for='scale2'],
+label[for='scale3'],
+label[for='scale4']
+{
+    display: none;
+}
+
+input[id='scale1']:checked ~ .main > .canvas > picture > img
+{
+    width: 100%;
+    height: 100%;
+}
+
+input[id='scale2']:checked ~ .main > .canvas > picture > img
+{
+    width: 80%;
+    height: 80%;
+}
+
+input[id='scale3']:checked ~ .main > .canvas > picture > img
+{
+    width: 50%;
+    height: 50%;
+}
+
+input[id='scale4']:checked ~ .main > .canvas > picture > img
+{
+    width: 30%;
+    height: 30%;
+}
+
+label[for^='left'],
+label[for^='right']
+{
+    display: none;
+}
+
+input[id='right2']:checked ~ .main > .filters > label[for='right2'],
+input[id='right1']:checked ~ .main > .filters > label[for='left1'],
+input[id='left1']:checked ~ .main > .filters > label[for='left1']
+{
+    opacity: .3;
+}
+
+input[id='right1']:checked ~ .main > .filters > label[for='right2'],
+input[id='right1']:checked ~ .main > .filters > label[for='left1'],
+input[id='right2']:checked ~ .main > .filters > label[for='left2'],
+input[id='right2']:checked ~ .main > .filters > label[for='right2'],
+input[id='left1']:checked ~ .main > .filters > label[for='left1']
+{
+    display: inline-block;
+}
+
+input[id='right2']:checked ~ .main > .filters > .filters_list > .filter-block
+{
+    left: calc(-126px);
+}
+
+
+input[id='left2']:checked ~ .main > .filters > .filters_list > .filter-block
+{
+    left: calc(0);
+}
+
+input[id='logo']:checked ~ .main > .canvas > picture > img
+{
+    transform: none;
+    filter: none;
+    width: 100%;
+    height: 100%;
+}
+
+input[id='logo']:checked ~ .main > .canvas > .canvas__image
+{
+    object-fit: contain;
+}
