@@ -15,6 +15,11 @@ footer
     width: 632px;
 }
 
+.svg-sprite
+{
+    position: absolute;
+}
+
 header
 {
     height: 80px;
@@ -200,7 +205,7 @@ footer
 
 .filter
 {
-    margin: 2.5px;
+    margin: 3px;
     display: flex;
     flex-direction: column;
     justify-content: center;
