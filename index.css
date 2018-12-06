@@ -23,6 +23,7 @@ input
 
 .editing-elements
 {
+    z-index: 10;
     display: flex;
     justify-content: center;
     margin-bottom: 12px;
@@ -75,7 +76,7 @@ input
     fill: url(#linear-gradient);
 }
 
-input[id='flip']:checked ~ .photo
+input[id='flip']:checked ~ .canvas .photo
 {
     --flip: -1;
 }
@@ -98,55 +99,63 @@ input[id='scale-3']:checked ~ .editing-elements label[for='scale-0']
     display: block;
 }
 
-input[id='rotate-90']:checked ~ .photo
+input[id='rotate-90']:checked ~ .canvas
 {
     --angle: 90deg;
 }
 
-input[id='rotate-180']:checked ~ .photo
+input[id='rotate-180']:checked ~ .canvas
 {
     --angle: 180deg;
 }
 
-input[id='rotate-270']:checked ~ .photo
+input[id='rotate-270']:checked ~ .canvas
 {
     --angle: 270deg;
 }
 
-input[id='rotate-0']:checked ~ .photo
+input[id='rotate-0']:checked ~ .canvas
 {
     --angle: 0;
 }
 
-input[id='scale-1']:checked ~ .photo
+input[id='scale-1']:checked ~ .canvas
 {
     --scale: 1.1;
 }
 
-input[id='scale-2']:checked ~ .photo
+input[id='scale-2']:checked ~ .canvas
 {
     --scale: 1.2;
 }
 
-input[id='scale-3']:checked ~ .photo
+input[id='scale-3']:checked ~ .canvas
 {
     --scale: 1.3;
 }
 
-input[id='fill']:checked ~ .photo .image
+input[id='fill']:checked ~ .canvas .image
 {
     width: 632px;
 }
 
-.photo
+.canvas
 {
-    position: relative;
     width: 632px;
     height: 632px;
     margin-left: auto;
     margin-right: auto;
     overflow: hidden;
+}
+
+.photo
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
     transform: rotate3d(0, 0, 1, var(--angle)) scale3d(var(--flip), 1, 1);
+    transition-property: transform;
+    transition-duration: .4s;
 }
 
 .photo .image
@@ -156,6 +165,7 @@ input[id='fill']:checked ~ .photo .image
     left: 50%;
     transform: translate3d(-50%, -50%, 0) scale3d(var(--scale), var(--scale), 
     1);
+    transition-duration: .3s;
     width: 720px;
 }
 
@@ -177,6 +187,8 @@ input[id='fill']:checked ~ .photo .image
     position: relative;
     display: inline-flex;
     transform: translate3d(var(--translateX), 0, 0);
+    transition-property: transform;
+    transition-duration: .4s;
 }
 
 .filter
@@ -270,7 +282,7 @@ input[id='slide-2']:checked ~ .filter-carousel .flip-right
     cursor: auto;
 }
 
-.filter-carousel label
+.filter-carousel .switch-slide
 {
     display: none;
 }
@@ -290,4 +302,34 @@ input[id='slide-1']:checked ~ .filter-carousel
 input[id='slide-2']:checked ~ .filter-carousel
 {
     --translateX: -350px;
+}
+
+.photo-filter-1 img,
+input[id='filter-1']:checked ~ .canvas img
+{
+    filter: grayscale(.75);
+}
+
+.photo-filter-2 img,
+input[id='filter-2']:checked ~ .canvas img
+{
+    filter: sepia(75%);
+}
+
+.photo-filter-3 img,
+input[id='filter-3']:checked ~ .canvas img
+{
+    filter: saturate(200%);
+}
+
+.photo-filter-4 img,
+input[id='filter-4']:checked ~ .canvas img
+{
+    filter: invert(100%);
+}
+
+.photo-filter-5 img,
+input[id='filter-5']:checked ~ .canvas img
+{
+    filter: hue-rotate(270deg);
 }
