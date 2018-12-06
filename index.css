@@ -6,7 +6,14 @@ main
 
 .content
 {
-    border: 1px solid #c9c7c7;
+    margin: 50px auto;
+    width: 632px;
+    display: grid;
+    grid-gap: 12px 95px;
+    grid-template: 'fill scale logo rotate flip' auto
+        'img img img img img' 632px
+        'car car car car car' auto / 50px 50px 50px 50px 50px;
+    /* border: 1px solid #c9c7c7;
     width: 632px;
     height: 800px;
     text-align: center;
@@ -15,6 +22,17 @@ main
     right: 0;
     left: 0;
     bottom: 0;
+    display: grid;
+    grid-gap: 12px 95px;
+    grid-template: 'fill scale logo rotate flip' auto
+        'img img img img img' 632px
+        'car car car car car' auto / 50px 50px 50px 50px 50px; */
+}
+
+.photo
+{
+    grid-area: img;
+    overflow: hidden;
 }
 
 .photo__picture
@@ -22,5 +40,35 @@ main
     width: 632px;
     height: 632px;
     object-fit: cover;
+    /* margin-left: -145px;
+    margin-top: 55px; */
 }
 
+.icon-plain
+{
+    fill: #444;
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+}
+
+.sprite,
+.arrow-rb,
+.filter-rb,
+.scale-rb,
+.rotate-rb,
+.fill-cb,
+.flip-cb
+{
+    display: none;
+}
+
+.fill-cb:checked ~ .photo .photo__picture
+{
+    object-fit: contain;
+}
+
+.fill-cb:not(:checked) ~ .photo .photo__picture
+{
+    object-fit: cover;
+}
