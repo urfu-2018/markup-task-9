@@ -371,6 +371,14 @@ input[id='filter-6']:checked ~ main .cat-photo__filter-wrapper
     animation: hue-rotate-filter .8s ease-out forwards;
 }
 
+@keyframes no-filter
+{
+    100%
+    {
+        filter: none;
+    }
+}
+
 @keyframes blur-filter
 {
     100%
@@ -411,9 +419,24 @@ input[id='filter-6']:checked ~ main .cat-photo__filter-wrapper
     }
 }
 
-input[id='reset']:checked ~ main .photo_no-effects
+input[id='reset']:checked ~ main .cat-photo__scale-wrapper
 {
-    display: block;
+    transform: scale(1);
+}
+
+input[id='reset']:checked ~ main .cat-photo__rotate-wrapper
+{
+    transform: rotate(0);
+}
+
+input[id='reset']:checked ~ main .cat-photo__flip-wrapper
+{
+    transform: scale(1, 1);
+}
+
+input[id='reset']:checked ~ main .cat-photo__filter-wrapper
+{
+    animation: no-filter .5s ease-out;
 }
 
 input[id='reset']:checked ~ main .tab-icon__logo
