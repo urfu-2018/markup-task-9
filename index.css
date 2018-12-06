@@ -32,7 +32,7 @@ input
 {
     width: 632px;
     height: 632px;
-    object-fit: cover; 
+    object-fit: cover;
     overflow: hidden;
 }
 
@@ -157,6 +157,11 @@ input
     object-fit: contain;
 }
 
+.full-size-cat:checked ~ .catgrams .view-cat .wrap-button .fit-img
+{
+    background-position: -50px -1px;
+}
+
 .box-filter
 {
     margin: 86px 0 37px calc(50% - 390px);
@@ -167,33 +172,36 @@ input
     overflow: hidden;
 }
 
-.next-button
+.next-button,
+.next-1-button,
+.next-2-button
 {
     background-position-y: -50px;
     margin: 0;
-    opacity: .5;
+    display: none;
 }
 
-.beck-button
+.back-button,
+.back-1-button,
+.back-2-button
 {
     background-position-y: -50px;
     margin: 0;
     transform: scale(-1);
+    display: none;
 }
 
 .img-with-filter
 {
     width: 170px;
     height: 169px;
-    margin: 0 4px 0 4px;
+    margin: 0 4px;
     object-fit: cover;
 }
 
 .filters-set
 {
     display: flex;
-    overflow: hidden;
-    width: 760px;
     height: 190px;
 }
 
@@ -209,10 +217,12 @@ input
     margin-top: -10px;
 }
 
-.filter-cat-none:checked ~ .box-filter .filters-set .filter-0 .title-filter,
-.filter-cat-1:checked ~ .box-filter .filters-set .filter-1 .title-filter,
-.filter-cat-2:checked ~ .box-filter .filters-set .filter-2 .title-filter,
-.filter-cat-3:checked ~ .box-filter .filters-set .filter-3 .title-filter
+.filter-cat-n:checked ~ .box-filter .w-f .filters-set .filter-0 .title-filter,
+.filter-cat-1:checked ~ .box-filter .w-f .filters-set .filter-1 .title-filter,
+.filter-cat-2:checked ~ .box-filter .w-f .filters-set .filter-2 .title-filter,
+.filter-cat-3:checked ~ .box-filter .w-f .filters-set .filter-3 .title-filter,
+.filter-cat-4:checked ~ .box-filter .w-f .filters-set .filter-4 .title-filter,
+.filter-cat-5:checked ~ .box-filter .w-f .filters-set .filter-5 .title-filter
 {
     color: #000;
     font-weight: 600;
@@ -286,4 +296,180 @@ input
     {
         filter: sepia(100%);
     }
+}
+
+.filter-cat-4:checked ~ .cat-IMG .cat
+{
+    animation: saturate 1s linear forwards;
+}
+
+.filter4
+{
+    filter: saturate(600%);
+}
+
+@keyframes saturate
+{
+    from
+    {
+        filter: saturate(0);
+    }
+
+    to
+    {
+        filter: saturate(600%);
+    }
+}
+
+.filter-cat-5:checked ~ .cat-IMG .cat
+{
+    animation: invert 1s linear forwards;
+}
+
+.filter5
+{
+    filter: invert(100%);
+}
+
+@keyframes invert
+{
+    from
+    {
+        filter: invert(0);
+    }
+
+    to
+    {
+        filter: invert(100%);
+    }
+}
+
+.next-but:checked ~ .box-filter .next-button
+{
+    display: inline;
+}
+
+.next-but-1:checked ~ .box-filter .next-1-button
+{
+    display: inline;
+}
+
+.next-but-2:checked ~ .box-filter .next-2-button
+{
+    display: inline;
+    opacity: .5;
+}
+
+.next-but:checked ~ .box-filter .back-button
+{
+    display: inline;
+    opacity: .5;
+}
+
+.back-but-1:checked ~ .box-filter .back-button
+{
+    display: inline;
+    opacity: .5;
+}
+
+.next-but-1:checked ~ .box-filter .back-1-button,
+.back-but-1:checked ~ .box-filter .next-button
+{
+    display: inline;
+}
+
+.next-but-2:checked ~ .box-filter .back-2-button,
+.back-but-2:checked ~ .box-filter .next-1-button,
+.back-but-2:checked ~ .box-filter .back-1-button
+{
+    display: inline;
+}
+
+.back-but:checked ~ .box-filter .back-button
+{
+    display: inline;
+    opacity: .5;
+}
+
+.back-but:checked ~ .box-filter .next-button
+{
+    display: inline;
+}
+
+.next-but-1:checked ~ .box-filter .wrap-filter .filters-set 
+{
+    animation: translateXnext1 1s linear forwards;
+}
+
+@keyframes translateXnext1
+{
+    from
+    {
+        transform: translateX(0);
+    }
+
+    to
+    {
+        transform: translateX(-177px);
+    }
+}
+
+.back-but-1:checked ~ .box-filter .wrap-filter .filters-set 
+{
+    animation: translateXback1 1s linear forwards;
+}
+
+@keyframes translateXback1
+{
+    from
+    {
+        transform: translateX(-177px);
+    }
+
+    to
+    {
+        transform: translateX(0);
+    }
+}
+
+.next-but-2:checked ~ .box-filter .wrap-filter .filters-set 
+{
+    animation: translateXnext2 1s linear forwards;
+}
+
+@keyframes translateXnext2
+{
+    from
+    {
+        transform: translateX(-177px);
+    }
+
+    to
+    {
+        transform: translateX(-354px);
+    }
+}
+
+.back-but-2:checked ~ .box-filter .wrap-filter .filters-set 
+{
+    animation: translateXback2 1s linear forwards;
+}
+
+@keyframes translateXback2
+{
+    from
+    {
+        transform: translateX(-354px);
+    }
+
+    to
+    {
+        transform: translateX(-177px);
+    }
+}
+
+.wrap-filter
+{
+    width: 760px;
+    overflow: hidden;
 }
