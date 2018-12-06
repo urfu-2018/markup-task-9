@@ -13,20 +13,6 @@ main
     grid-template: 'fill scale logo rotate flip' auto
         'img img img img img' 632px
         'car car car car car' auto / 50px 50px 50px 50px 50px;
-    /* border: 1px solid #c9c7c7;
-    width: 632px;
-    height: 800px;
-    text-align: center;
-    margin: auto;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    display: grid;
-    grid-gap: 12px 95px;
-    grid-template: 'fill scale logo rotate flip' auto
-        'img img img img img' 632px
-        'car car car car car' auto / 50px 50px 50px 50px 50px; */
 }
 
 .photo
