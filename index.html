@@ -59,6 +59,14 @@
         <input class="visible-not" type="radio" id="piter-filter" name="filter-input">
         <input class="visible-not" type="radio" id="yalta-filter" name="filter-input">
         <input class="visible-not" type="radio" id="ural-filter" name="filter-input">
+        <input class="visible-not" type="radio" id="blur-filter" name="filter-input">
+        <input class="visible-not" type="radio" id="invert-filter" name="filter-input">
+        <input class="visible-not" type="radio" id="contrast-filter" name="filter-input">
+
+        <input class="visible-not" type="radio" id="first-slide" name="carousel-input" checked>
+        <input class="visible-not" type="radio" id="second-slide" name="carousel-input">
+        <input class="visible-not" type="radio" id="third-slide" name="carousel-input">
+        <input class="visible-not" type="radio" id="fourth-slide" name="carousel-input">
         <header class="option-container">
                 <label for="full-size-input" class="full-size-label">
                     <svg class="full-size-label__pic">
@@ -124,30 +132,75 @@
             <div class="cat-pic"></div>
         </section>
         <div class="effects-container">
-            <div class="left-arrow">
+            <div class="left-arrow no-left-arrow">
                 <svg class="left-arrow__pic">
                     <use xlink:href="#arrow-icon"></use>
                 </svg>
             </div>
+            <label for="first-slide" class="left-arrow first-left-label">
+                <svg class="left-arrow__pic">
+                    <use xlink:href="#arrow-icon"></use>
+                </svg>
+            </label>
+            <label for="second-slide" class="left-arrow second-left-label">
+                <svg class="left-arrow__pic">
+                    <use xlink:href="#arrow-icon"></use>
+                </svg>
+            </label>
+            <label for="third-slide" class="left-arrow third-left-label">
+                <svg class="left-arrow__pic">
+                    <use xlink:href="#arrow-icon"></use>
+                </svg>
+            </label>
             <div class="label-container">
-                <label for="no-filter" class="no-filter-div">
-                    <span class="no-filter-div__text">Без фильтра</span>
-                    <span class="no-filter-div__img"></span>
-                </label>
-                <label for="piter-filter" class="piter-filter-div">
-                    <span class="piter-filter-div__text">Питер</span>
-                    <span class="piter-filter-div__img"></span>
-                </label>
-                <label for="yalta-filter" class="yalta-filter-div">
-                    <span class="yalta-filter-div__text">Ялта</span>
-                    <span class="yalta-filter-div__img"></span>
-                </label>
-                <label for="ural-filter" class="ural-filter-div">
-                    <span class="ural-filter-div__text">Уральское лето</span>
-                    <span class="ural-filter-div__img"></span>
-                </label>
+                <div class="label-wrapper">
+                    <label for="no-filter" class="no-div">
+                        <span class="no-div__text">Без фильтра</span>
+                        <span class="no-div__img"></span>
+                    </label>
+                    <label for="piter-filter" class="piter-div">
+                        <span class="piter-div__text">Питер</span>
+                        <span class="piter-div__img"></span>
+                    </label>
+                    <label for="yalta-filter" class="yalta-div">
+                        <span class="yalta-div__text">Ялта</span>
+                        <span class="yalta-div__img"></span>
+                    </label>
+                    <label for="ural-filter" class="ural-div">
+                        <span class="ural-div__text">Уральское лето</span>
+                        <span class="ural-div__img"></span>
+                    </label>
+                    <label for="blur-filter" class="blur-div">
+                        <span class="blur-div__text">Размытие</span>
+                        <span class="blur-div__img"></span>
+                    </label>
+                    <label for="invert-filter" class="invert-div">
+                        <span class="invert-div__text">Инверт</span>
+                        <span class="invert-div__img"></span>
+                    </label>
+                    <label for="contrast-filter" class="contrast-div">
+                        <span class="contrast-div__text">Контраст</span>
+                        <span class="contrast-div__img"></span>
+                    </label>
+                </div>
             </div>
-            <div class="right-arrow">
+
+            <label for="second-slide" class="right-arrow second-right-label">
+                <svg class="right-arrow__pic">
+                    <use xlink:href="#arrow-icon"></use>
+                </svg>
+            </label>
+            <label for="third-slide" class="right-arrow third-right-label">
+                <svg class="right-arrow__pic">
+                    <use xlink:href="#arrow-icon"></use>
+                </svg>
+            </label>
+            <label for="fourth-slide" class="right-arrow fourth-right-label">
+                <svg class="right-arrow__pic">
+                    <use xlink:href="#arrow-icon"></use>
+                </svg>
+            </label>
+            <div class="right-arrow no-right-arrow">
                 <svg class="right-arrow__pic">
                     <use xlink:href="#arrow-icon"></use>
                 </svg>

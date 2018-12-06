@@ -38,7 +38,15 @@
 .label-container
 {
     width: 695px;
+    overflow: hidden;
+}
+
+.label-wrapper
+{
     display: flex;
+    width: 1215px;
+    transition-property: all;
+    transition-duration: .5s;
     justify-content: space-between;
 }
 
@@ -185,10 +193,24 @@ input[id='horizontal-input']:checked ~ .cat-pic-container
     transform: scale(-1, 1);
 }
 
-.no-filter-div__text,
-.piter-filter-div__text,
-.yalta-filter-div__text,
-.ural-filter-div__text
+.no-div,
+.piter-div,
+.yalta-div,
+.ural-div,
+.blur-div,
+.invert-div,
+.contrast-div
+{
+    width: 170px;
+}
+
+.no-div__text,
+.piter-div__text,
+.yalta-div__text,
+.ural-div__text,
+.blur-div__text,
+.invert-div__text,
+.contrast-div__text
 {
     width: 170px;
     height: 22px;
@@ -201,10 +223,13 @@ input[id='horizontal-input']:checked ~ .cat-pic-container
     display: block;
 }
 
-.no-filter-div__img,
-.piter-filter-div__img,
-.yalta-filter-div__img,
-.ural-filter-div__img
+.no-div__img,
+.piter-div__img,
+.yalta-div__img,
+.ural-div__img,
+.blur-div__img,
+.invert-div__img,
+.contrast-div__img
 {
     width: 170px;
     height: 169px;
@@ -216,19 +241,34 @@ input[id='horizontal-input']:checked ~ .cat-pic-container
     display: block;
 }
 
-.piter-filter-div__img
+.piter-div__img
 {
     filter: grayscale(1);
 }
 
-.yalta-filter-div__img
+.yalta-div__img
 {
     filter: sepia(1);
 }
 
-.ural-filter-div__img
+.ural-div__img
 {
     filter: hue-rotate(200deg);
+}
+
+.blur-div__img
+{
+    filter: blur(2px);
+}
+
+.invert-div__img
+{
+    filter: invert(1);
+}
+
+.contrast-div__img
+{
+    filter: contrast(2);
 }
 
 input[id='no-filter']:checked ~ .cat-pic-container .cat-pic
@@ -236,21 +276,9 @@ input[id='no-filter']:checked ~ .cat-pic-container .cat-pic
     filter: none;
 }
 
-input[id='no-filter']:checked ~ .effects-container .no-filter-div__text
-{
-    color: black;
-    font-weight: bold;
-}
-
 input[id='piter-filter']:checked ~ .cat-pic-container .cat-pic
 {
     filter: grayscale(1);
-}
-
-input[id='piter-filter']:checked ~ .effects-container .piter-filter-div__text
-{
-    color: black;
-    font-weight: bold;
 }
 
 input[id='yalta-filter']:checked ~ .cat-pic-container .cat-pic
@@ -258,18 +286,33 @@ input[id='yalta-filter']:checked ~ .cat-pic-container .cat-pic
     filter: sepia(1);
 }
 
-input[id='yalta-filter']:checked ~ .effects-container .yalta-filter-div__text
-{
-    color: black;
-    font-weight: bold;
-}
-
 input[id='ural-filter']:checked ~ .cat-pic-container .cat-pic
 {
     filter: hue-rotate(200deg);
 }
 
-input[id='ural-filter']:checked ~ .effects-container .ural-filter-div__text
+input[id='blur-filter']:checked ~ .cat-pic-container .cat-pic
+{
+    filter: blur(2px);
+}
+
+input[id='invert-filter']:checked ~ .cat-pic-container .cat-pic
+{
+    filter: invert(1);
+}
+
+input[id='contrast-filter']:checked ~ .cat-pic-container .cat-pic
+{
+    filter: contrast(2);
+}
+
+input[id='ural-filter']:checked ~ .effects-container .ural-div__text,
+input[id='yalta-filter']:checked ~ .effects-container .yalta-div__text,
+input[id='piter-filter']:checked ~ .effects-container .piter-div__text,
+input[id='no-filter']:checked ~ .effects-container .no-div__text,
+input[id='blur-filter']:checked ~ .effects-container .blur-div__text,
+input[id='invert-filter']:checked ~ .effects-container .invert-div__text,
+input[id='contrast-filter']:checked ~ .effects-container .contrast-div__text
 {
     color: black;
     font-weight: bold;
@@ -291,7 +334,7 @@ input[id='ural-filter']:checked ~ .effects-container .ural-filter-div__text
 .left-arrow
 {
     transform: rotate(90deg);
-    opacity: .5;
+    opacity: .8;
     cursor: pointer;
 }
 
@@ -300,4 +343,64 @@ input[id='ural-filter']:checked ~ .effects-container .ural-filter-div__text
     transform: rotate(-90deg);
     opacity: .8;
     cursor: pointer;
+}
+
+.no-left-arrow,
+.no-right-arrow
+{
+    opacity: .5;
+}
+
+.no-right-arrow,
+.no-left-arrow,
+.first-left-label,
+.second-left-label,
+.second-right-label,
+.third-right-label,
+.third-left-label,
+.fourth-right-label
+{
+    display: none;
+}
+
+input[id='first-slide']:checked ~ .effects-container .label-wrapper
+{
+    transform: none;
+}
+
+input[id='first-slide']:checked ~ .effects-container .no-left-arrow,
+input[id='first-slide']:checked ~ .effects-container .second-right-label,
+input[id='second-slide']:checked ~ .effects-container .first-left-label,
+input[id='second-slide']:checked ~ .effects-container .third-right-label,
+input[id='third-slide']:checked ~ .effects-container .fourth-right-label,
+input[id='third-slide']:checked ~ .effects-container .second-left-label,
+input[id='fourth-slide']:checked ~ .effects-container .no-right-arrow,
+input[id='fourth-slide']:checked ~ .effects-container .third-left-label
+{
+    display: block;
+}
+
+input[id='second-slide']:checked ~ .effects-container .label-wrapper
+{
+    transform: translatex(-173px);
+}
+
+input[id='third-slide']:checked ~ .effects-container .label-wrapper
+{
+    transform: translatex(-348px);
+}
+
+input[id='fourth-slide']:checked ~ .effects-container .label-wrapper
+{
+    transform: translatex(-523px);
+}
+
+input[id='second-slide']:checked ~ .effects-container .no-left-arrow,
+input[id='second-slide']:checked ~ .effects-container .second-right-label,
+input[id='third-slide']:checked ~ .effects-container .third-right-label,
+input[id='third-slide']:checked ~ .effects-container .first-left-label,
+input[id='fourth-slide']:checked ~ .effects-container .third-right-label,
+input[id='fourth-slide']:checked ~ .effects-container .second-left-label
+{
+    display: none;
 }
