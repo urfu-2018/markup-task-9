@@ -2,11 +2,104 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="index.css" type="text/css">
     <title>Задача «Котограм»</title>
 </head>
-<body>
-<!--Ваш спрайт-->
+<body >
 
-<!--Ваша разметка-->
+<input type="checkbox" id="rectangle">
+<input type="radio" name="scale" id="scale-1" checked>
+<input type="radio" name="scale" id="scale-2">
+<input type="radio" name="scale" id="scale-3">
+<input type="radio" name="rotate" id="rotate-0" checked>
+<input type="radio" name="rotate" id="rotate-90">
+<input type="radio" name="rotate" id="rotate-180">
+<input type="radio" name="rotate" id="rotate-270">
+<input type="checkbox" name="flip" id="flip">
+
+<input type="radio" name="filter" id="filter-1" checked>
+<input type="radio" name="filter" id="filter-2">
+<input type="radio" name="filter" id="filter-3">
+<input type="radio" name="filter" id="filter-4">
+<input type="radio" name="filter" id="filter-5">
+<input type="radio" name="filter" id="filter-6">
+
+<input type="radio" name="carouser" id="carousel-1" checked>
+<input type="radio" name="carouser" id="carousel-2">
+<input type="radio" name="carouser" id="carousel-3">
+
+<div class="main-filed">
+    <header class="header">
+        <label for="rectangle" class="rectangle-mode mode button"></label>
+        <label for="scale-2" class="scale-mode scale-mode-1 mode button"></label>
+        <label for="scale-3" class="scale-mode scale-mode-2 mode button"></label>
+        <label for="scale-1" class="scale-mode scale-mode-3 mode button"></label>
+        <span class="main-logo mode button"></span>
+        <label for="rotate-90" class="rotate-mode rotate-mode-0 mode button"></label>
+        <label for="rotate-180" class="rotate-mode rotate-mode-90 mode button"></label>
+        <label for="rotate-270" class="rotate-mode rotate-mode-180 mode button"></label>
+        <label for="rotate-0" class="rotate-mode rotate-mode-270 mode button"></label>
+        <label for="flip" class="flip-mode mode button"></label>
+    </header>
+    <main>
+        <div class="main-img">
+            <div class="rotate-action">
+                <div class="scale-action">
+                    <div class="rectangle-action">
+                        <div class="flip-action">
+                            <img class="cat-img cat-img-actions" src="cat-img.jpg" alt="котик">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel">
+            <span class="left-arrow carousel-arrow button left-arrow-1"></span>
+            <label for="carousel-1" class="left-arrow carousel-arrow button left-arrow-2"></label>
+            <label for="carousel-2" class="left-arrow carousel-arrow button left-arrow-3"></label>
+            <div class="filters-preview carousel-action">
+                <div class="filter-preview filters-preview-1">
+                    <label for="filter-1" class="filter-img button">
+                        <span class="filter-name">Без фильтра</span>
+                        <img class="filter-cat-img" src="cat-img.jpg" alt="котик">
+                    </label>
+                </div>
+                <div class="filter-preview filters-preview-2">
+                    <label for="filter-2" class="filter-img button">
+                        <span class="filter-name">Питер</span>
+                        <img class="filter-cat-img" src="cat-img.jpg" alt="котик">
+                    </label>
+                </div>
+                <div class="filter-preview filters-preview-3">
+                    <label for="filter-3" class="filter-img button">
+                        <span class="filter-name">Ялта</span>
+                        <img class="filter-cat-img" src="cat-img.jpg" alt="котик">
+                    </label>
+                </div>
+                <div class="filter-preview filters-preview-4">
+                    <label for="filter-4" class="filter-img button">
+                        <span class="filter-name">Уральское лето</span>
+                        <img class="filter-cat-img" src="cat-img.jpg" alt="котик">
+                    </label>
+                </div>
+                <div class="filter-preview filters-preview-5">
+                    <label for="filter-5" class="filter-img button">
+                        <span class="filter-name">Размытие</span>
+                        <img class="filter-cat-img" src="cat-img.jpg" alt="котик">
+                    </label>
+                </div>
+                <div class="filter-preview filters-preview-6">
+                    <label for="filter-6" class="filter-img button">
+                        <span class="filter-name">Инвертировать</span>
+                        <img class="filter-cat-img" src="cat-img.jpg" alt="котик">
+                    </label>
+                </div>
+            </div>
+            <label for="carousel-2" class="right-arrow carousel-arrow button right-arrow-1"></label>
+            <label for="carousel-3" class="right-arrow carousel-arrow button right-arrow-2"></label>
+            <span class="right-arrow carousel-arrow button right-arrow-3"></span>
+        </div>
+    </main>
+</div>
 </body>
 </html>

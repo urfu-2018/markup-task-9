@@ -1,0 +1,323 @@
+.button
+{
+    cursor: pointer;
+}
+
+.main-filed
+{
+    max-width: 1440px;
+    height: 1024px;
+    margin: 20px auto;
+}
+
+.header
+{
+    width: 632px;
+    height: 48px;
+    margin: 0 auto 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mode
+{
+    width: 48px;
+    height: 48px;
+    opacity: .7;
+    background-position: center;
+}
+
+.mode:hover
+{
+    opacity: .9;
+}
+
+.main-img
+{
+    overflow: hidden;
+    width: 632px;
+    height: 632px;
+    margin: 0 auto;
+    border: 1px solid black;
+    position: relative;
+}
+
+.rectangle-mode
+{
+    background-image: url('icons/fill.svg');
+}
+
+.scale-mode
+{
+    background-image: url('icons/scale.svg');
+}
+
+.main-logo
+{
+    background-image: url('icons/logo.svg');
+    opacity: 1;
+}
+
+.main-logo:hover
+{
+    opacity: 1;
+}
+
+.rotate-mode
+{
+    background-image: url('icons/rotate.svg');
+}
+
+.flip-mode
+{
+    background-image: url('icons/flip.svg');
+}
+
+.carousel
+{
+    width: 800px;
+    height: 200px;
+    margin: 69px auto 37px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.carousel-arrow
+{
+    width: 32px;
+    height: 48px;
+    margin-top: 83px;
+    opacity: .6;
+    background: url('icons/arrow.svg') no-repeat center;
+}
+
+.carousel-arrow:hover
+{
+    opacity: 1;
+}
+
+.left-arrow
+{
+    transform: rotate(.25turn);
+}
+
+.right-arrow
+{
+    transform: rotate(-.25turn);
+}
+
+.filters-preview
+{
+    width: calc(170px * 4 + 5px * 3);
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter-img
+{
+    display: block;
+    width: 170px;
+    height: 170px;
+}
+
+.filter-name
+{
+    text-align: center;
+    display: block;
+    margin: 1em 0;
+}
+
+.cat-img
+{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.filter-preview
+{
+    margin-right: 5px;
+}
+
+.filter-cat-img
+{
+    width: 100%;
+    height: 100%;
+}
+
+.rotate-action,
+.scale-action,
+.rectangle-action,
+.flip-action
+{
+    width: 100%;
+    height: 100%;
+    transition: filter .5s, transform .25s ease-in-out;
+}
+
+.filter-preview
+{
+    transition-duration: .5s;
+}
+
+[id='rectangle'],
+[id^='scale-'],
+[id^='rotate-'],
+[id^='filter-'],
+[id^='carousel-'],
+[id='flip']
+{
+    display: none;
+}
+
+.scale-mode,
+.rotate-mode
+{
+    display: none;
+}
+
+[id='scale-1']:checked ~ .main-filed .scale-mode-1,
+[id='scale-2']:checked ~ .main-filed .scale-mode-2,
+[id='scale-3']:checked ~ .main-filed .scale-mode-3
+{
+    display: block;
+}
+
+[id='rotate-0']:checked ~ .main-filed .rotate-mode-0,
+[id='rotate-90']:checked ~ .main-filed .rotate-mode-90,
+[id='rotate-180']:checked ~ .main-filed .rotate-mode-180,
+[id='rotate-270']:checked ~ .main-filed .rotate-mode-270
+{
+    display: block;
+}
+
+[id='rotate-0']:checked ~ .main-filed .rotate-action
+{
+    transform: rotate3d(0, 0, 1, 0deg);
+}
+
+[id='rotate-90']:checked ~ .main-filed .rotate-action
+{
+    transform: rotate(90deg);
+}
+
+[id='rotate-180']:checked ~ .main-filed .rotate-action
+{
+    transform: rotate(180deg);
+}
+
+[id='rotate-270']:checked ~ .main-filed .rotate-action
+{
+    transform: rotate(270deg);
+}
+
+[id='scale-1']:checked ~ .main-filed .scale-action
+{
+    transform: scale3d(1, 1, 1);
+}
+
+[id='scale-2']:checked ~ .main-filed .scale-action
+{
+    transform: scale3d(1.5, 1.5, 1);
+}
+
+[id='scale-3']:checked ~ .main-filed .scale-action
+{
+    transform: scale3d(2, 2, 1);
+}
+
+[id='flip']:checked ~ .main-filed .flip-mode,
+[id='flip']:checked ~ .main-filed .flip-action
+{
+    transform: scale(-1, 1);
+}
+
+[id='rectangle']:checked ~ .main-filed .cat-img
+{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+[id='filter-1']:checked ~ .main-filed .filters-preview-1 .filter-name,
+[id='filter-2']:checked ~ .main-filed .filters-preview-2 .filter-name,
+[id='filter-3']:checked ~ .main-filed .filters-preview-3 .filter-name,
+[id='filter-4']:checked ~ .main-filed .filters-preview-4 .filter-name,
+[id='filter-5']:checked ~ .main-filed .filters-preview-5 .filter-name,
+[id='filter-6']:checked ~ .main-filed .filters-preview-6 .filter-name
+{
+    font-weight: bold;
+}
+
+[id='filter-2']:checked ~ .main-filed .cat-img,
+.filters-preview-2 .filter-cat-img
+{
+    filter: grayscale(1);
+}
+
+[id='filter-3']:checked ~ .main-filed .cat-img,
+.filters-preview-3 .filter-cat-img
+{
+    filter: sepia(1);
+}
+
+[id='filter-4']:checked ~ .main-filed .cat-img,
+.filters-preview-4 .filter-cat-img
+{
+    filter: hue-rotate(150deg);
+}
+
+[id='filter-5']:checked ~ .main-filed .cat-img,
+.filters-preview-5 .filter-cat-img
+{
+    filter: blur(5px);
+}
+
+[id='filter-6']:checked ~ .main-filed .cat-img,
+.filters-preview-6 .filter-cat-img
+{
+    filter: invert(100%);
+}
+
+[id='carousel-1']:checked ~ .main-filed .filter-preview
+{
+    transform: translateX(0);
+}
+
+[id='carousel-2']:checked ~ .main-filed .filter-preview
+{
+    transform: translateX(-175px);
+}
+
+[id='carousel-3']:checked ~ .main-filed .filter-preview
+{
+    transform: translateX(calc(-175px * 2 ));
+}
+
+.carousel-arrow
+{
+    display: none;
+}
+
+[id='carousel-1']:checked ~ .main-filed .left-arrow-1,
+[id='carousel-1']:checked ~ .main-filed .right-arrow-1,
+[id='carousel-2']:checked ~ .main-filed .left-arrow-2,
+[id='carousel-2']:checked ~ .main-filed .right-arrow-2,
+[id='carousel-3']:checked ~ .main-filed .left-arrow-3,
+[id='carousel-3']:checked ~ .main-filed .right-arrow-3
+{
+    display: block;
+}
+
+[id='carousel-1']:checked ~ .main-filed .left-arrow-1,
+[id='carousel-3']:checked ~ .main-filed .right-arrow-3
+{
+    opacity: .3;
+    cursor: auto;
+}
