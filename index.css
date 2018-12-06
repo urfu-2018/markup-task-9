@@ -1,0 +1,138 @@
+.svg-sprite
+{
+    display: none;
+}
+
+.container
+{
+    width: 98vh;
+    margin: 0 auto;
+}
+
+input
+{
+    display: none;
+}
+
+.control
+{
+    margin: 0 auto;
+    height: 8vh;
+    width: 68vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon
+{
+    width: 7vh;
+    height: 7vh;
+}
+
+.icon-scale,
+.icon-rotate
+{
+    display: none;
+}
+
+.scale40:checked ~ .control > .icon-scale[for='scale60'],
+.scale60:checked ~ .control > .icon-scale[for='scale80'],
+.scale80:checked ~ .control > .icon-scale[for='scale100'],
+.scale100:checked ~ .control > .icon-scale[for='scale40']
+{
+    display: inline-block;
+}
+
+.rotate0:checked ~ .control > .icon-rotate[for='rotate90'],
+.rotate90:checked ~ .control > .icon-rotate[for='rotate180'],
+.rotate180:checked ~ .control > .icon-rotate[for='rotate270'],
+.rotate270:checked ~ .control > .icon-rotate[for='rotate0']
+{
+    display: inline-block;
+}
+
+.bigImage
+{
+    margin: 0 auto;
+    height: 68vh;
+    width: 68vh;
+    overflow: hidden;
+}
+
+.bigImage > img,
+.filters > div img
+{
+    position: relative;
+    height: 100%;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+
+.filter2:checked ~ .bigImage > img
+{
+    filter: grayscale();
+}
+
+.filter3:checked ~ .bigImage > img
+{
+    filter: sepia();
+}
+
+.filter4:checked ~ .bigImage > img
+{
+    filter: hue-rotate(180deg);
+}
+
+.filters
+{
+    height: 22vh;
+    width: 90vh;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.filters > [for^='arrow']
+{
+    align-self: center;
+}
+
+.icon-arrow-left
+{
+    transform: rotate(90deg);
+}
+
+.icon-arrow-right
+{
+    transform: rotate(-90deg);
+}
+
+.filters > div
+{
+    margin: 0;
+    width: 15vh;
+    flex-wrap: wrap;
+}
+
+.filters > div div
+{
+    width: 15vh;
+    height: 15vh;
+    overflow: hidden;
+}
+
+.catFilter2
+{
+    filter: grayscale();
+}
+
+.catFilter3
+{
+    filter: sepia();
+}
+
+.catFilter4
+{
+    filter: hue-rotate(180deg);
+}
