@@ -24,6 +24,12 @@ input
     justify-content: space-between;
 }
 
+.header svg
+{
+    height: 48px;
+    width: 48px;
+}
+
 .main
 {
     margin-top: 12px;
@@ -147,4 +153,30 @@ input[id='yalta']:checked ~ footer .filter__name_yalta,
 input[id='ural']:checked ~ footer .filter__name_ural
 {
     font-weight: bold;
+}
+
+@keyframes accommodation
+{
+    to
+    {
+        transform: scale(.6);
+    }
+}
+
+input[id='accommodation']:checked ~ main .second-layer
+{
+    animation: accommodation 1s linear forwards;
+}
+
+@keyframes rotation
+{
+    to
+    {
+        transform: rotate(.5turn);
+    }
+}
+
+input[id='rotation']:checked ~ main .first-layer
+{
+    animation: rotation 1s linear forwards;
 }
