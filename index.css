@@ -72,3 +72,44 @@ main
 {
     object-fit: cover;
 }
+
+.flip-cb:checked ~ .photo .photo__picture
+{
+    transform: scale(-1, 1);
+}
+
+.scale-1:checked ~ .photo .photo__picture
+{
+    transform: scale(1.5);
+}
+
+.scale-rb-1:checked ~ .scale-link-1,
+.scale-rb-1:checked ~ .scale-link-3,
+.scale-rb-1:checked ~ .scale-link-4,
+.scale-rb-1:checked ~ .scale-img-1,
+.scale-rb-1:checked ~ .scale-img-3,
+.scale-rb-1:checked ~ .scale-img-4,
+
+.scale-rb-2:checked ~ .scale-link-1,
+.scale-rb-2:checked ~ .scale-link-2,
+.scale-rb-2:checked ~ .scale-link-4,
+.scale-rb-2:checked ~ .scale-img-1,
+.scale-rb-2:checked ~ .scale-img-2,
+.scale-rb-2:checked ~ .scale-img-4,
+
+.scale-rb-3:checked ~ .scale-link-1,
+.scale-rb-3:checked ~ .scale-link-2,
+.scale-rb-3:checked ~ .scale-link-3,
+.scale-rb-3:checked ~ .scale-img-1,
+.scale-rb-3:checked ~ .scale-img-2,
+.scale-rb-3:checked ~ .scale-img-3,
+
+.scale-rb-4:checked ~ .scale-link-2,
+.scale-rb-4:checked ~ .scale-link-3,
+.scale-rb-4:checked ~ .scale-link-4,
+.scale-rb-4:checked ~ .scale-img-2,
+.scale-rb-4:checked ~ .scale-img-3,
+.scale-rb-4:checked ~ .scale-img-4
+{
+    display: none;
+}

@@ -42,17 +42,14 @@
             </svg>
         </label>
         <input id="fill-checkbox" class="fill-cb" type="checkbox">
-        <picture class="photo">
-            <source srcset="img/grossLuchs.jpg 2x" type="image/jpeg">
-            <source srcset="img/mittelgrossLuchs.jpeg 4x" type="image/jpeg">
-            <img class="photo__picture" src="img/mittelgrossLuchs.jpg" alt="киса-рысь">
-        </picture>
+        <!--отражение-->
+        <label for="flip-checkbox">
+            <svg class="flip icon-plain" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="#flip"></use>
+            </svg>
+        </label>
+        <input id="flip-checkbox" class="flip-cb" type="checkbox">
         <!--масштабирование-->
-        <input type="radio" id="scale-radio-1" class="scale-rb scale-1" name="scale" checked>
-        <input type="radio" id="scale-radio-2" class="scale-rb scale-2" name="scale">
-        <input type="radio" id="scale-radio-3" class="scale-rb scale-3" name="scale">
-        <input type="radio" id="scale-radio-4" class="scale-rb scale-4" name="scale">
-        <input type="radio" id="scale-radio-5" class="scale-rb scale-5" name="scale">
         <label class="scale-img-1" for="scale-radio-1">
             <svg class="scale icon-plain" xmlns="http://www.w3.org/2000/svg">
                 <use xlink:href="#scale"></use>
@@ -78,6 +75,16 @@
                 <use xlink:href="#scale"></use>
             </svg>
         </label>
+        <input type="radio" id="scale-radio-1" class="scale-rb scale-rb-1" name="scale" checked>
+        <input type="radio" id="scale-radio-2" class="scale-rb scale-rb-2" name="scale">
+        <input type="radio" id="scale-radio-3" class="scale-rb scale-rb-3" name="scale">
+        <input type="radio" id="scale-radio-4" class="scale-rb scale-rb-4" name="scale">
+        <input type="radio" id="scale-radio-5" class="scale-rb scale-rb-5" name="scale">
+        <picture class="photo">
+            <source srcset="img/grossLuchs.jpg 2x" type="image/jpeg">
+            <source srcset="img/mittelgrossLuchs.jpeg 4x" type="image/jpeg">
+            <img class="photo__picture" src="img/mittelgrossLuchs.jpg" alt="киса-рысь">
+        </picture>
     </section>
 </main>
 </body>
