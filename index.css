@@ -1,0 +1,274 @@
+.instagram
+{
+    width: 632px;
+    margin: 20px auto;
+}
+
+.sprites
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.sprites-item
+{
+    fill: #333;
+    cursor: pointer;
+}
+
+.sprites-item svg
+{
+    width: 50px;
+    height: 50px;
+}
+
+.photo
+{
+    width: 100%;
+    height: 632px;
+    margin-bottom: 64px;
+    overflow: hidden;
+}
+
+.photo-image,
+.photo-image-flipped,
+.photo-image-rotated
+{
+    width: 100%;
+    height: 100%;
+
+}
+
+.photo-image
+{
+    background: url('image.jpg') no-repeat center;
+    background-size: contain;
+}
+
+.filters
+{
+    margin: 0 auto;
+    width: 695px;
+    position: relative;
+}
+
+.filters-carusel
+{
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.filters-carusel-container
+{
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.filters-arrow
+{
+    position: absolute;
+    top: 110px;
+    cursor: pointer;
+    fill: #444;
+    width: 49px;
+    height: 32px;
+    display: none;
+}
+
+.filters-arrow-left
+{
+    left: -82px;
+    transform: rotate(90deg) scale(1.5);
+}
+
+.filters-arrow-right
+{
+    right: -82px;
+    transform: rotate(-90deg) scale(1.5);
+}
+
+.filters-item
+{
+    width: 170px;
+    height: 206px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-x: hidden;
+}
+
+.filters-item:not(:last-child)
+{
+    margin-right: 5px;
+}
+
+.filter-block-caption
+{
+    font-family: Helvetica, serif;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #444;
+}
+
+.filter-block-image
+{
+    background: url('image.jpg') no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 169px;
+}
+
+.cover:checked ~ .instagram .photo-image
+{
+    background-size: cover;
+}
+
+.flip:checked ~ .instagram .photo-image-flipped
+{
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.rotate,
+.zoom,
+.widget
+{
+    display: none;
+}
+
+.rotate-1:checked ~ .instagram .rotate-1,
+.rotate-2:checked ~ .instagram .rotate-2,
+.rotate-3:checked ~ .instagram .rotate-3,
+.rotate-4:checked ~ .instagram .rotate-4,
+.zoom-1:checked ~ .instagram .zoom-1,
+.zoom-2:checked ~ .instagram .zoom-2,
+.zoom-3:checked ~ .instagram .zoom-3,
+.position-1:checked ~ .filters .filters-arrow-right-1,
+.position-2:checked ~ .filters .filters-arrow-right-2,
+.position-3:checked ~ .filters .filters-arrow-right-2,
+.position-3:checked ~ .filters .filters-arrow-left-2,
+.position-2:checked ~ .filters .filters-arrow-left-1,
+.position-1:checked ~ .filters .filters-arrow-left-1
+{
+    display: block;
+}
+
+.rotate-1:checked ~ .instagram .photo-image-rotated
+{
+    transform: rotate(0);
+}
+
+.rotate-2:checked ~ .instagram .photo-image-rotated
+{
+    transform: rotate(-90deg);
+}
+
+.rotate-3:checked ~ .instagram .photo-image-rotated
+{
+    transform: rotate(-180deg);
+}
+
+.rotate-4:checked ~ .instagram .photo-image-rotated
+{
+    transform: rotate(-270deg);
+}
+
+.zoom-1:checked ~ .instagram .photo-image
+{
+    transform: scale(1);
+}
+
+.zoom-2:checked ~ .instagram .photo-image
+{
+    transform: scale(1.4);
+}
+
+.zoom-3:checked ~ .instagram .photo-image
+{
+    transform: scale(1.8);
+}
+
+.icons
+{
+    position: absolute;
+    left: -1000px;
+}
+
+.position-1:checked ~ .filters .filters-arrow-left,
+.position-3:checked ~ .filters .filters-arrow-right
+{
+    fill: rgba(170, 170, 170, .8);
+}
+
+.filter-1:checked ~ .filters .filters-item-1 .filter-block-caption,
+.filter-2:checked ~ .filters .filters-item-2 .filter-block-caption,
+.filter-3:checked ~ .filters .filters-item-3 .filter-block-caption,
+.filter-4:checked ~ .filters .filters-item-4 .filter-block-caption,
+.filter-5:checked ~ .filters .filters-item-5 .filter-block-caption,
+.filter-6:checked ~ .filters .filters-item-6 .filter-block-caption
+{
+    font-weight: bold;
+    color: #000;
+}
+
+.filter-block
+{
+    position: relative;
+}
+
+.filter-block-label
+{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    position: absolute;
+}
+
+.position-2:checked ~ .filters .filters-item
+{
+    left: -175px;
+}
+
+.position-3:checked ~ .filters .filters-item
+{
+    left: -350px;
+}
+
+.filter-2:checked ~ .instagram .photo-image,
+.filters-item-2
+{
+    filter: grayscale(100%);
+}
+
+.filter-3:checked ~ .instagram .photo-image,
+.filters-item-3
+{
+    filter: sepia(100%);
+}
+
+.filter-4:checked ~ .instagram .photo-image,
+.filters-item-4
+{
+    filter: hue-rotate(180deg);
+}
+
+.filter-5:checked ~ .instagram .photo-image,
+.filters-item-5
+{
+    filter: saturate(2);
+}
+
+.filter-6:checked ~ .instagram .photo-image,
+.filters-item-6
+{
+    filter: brightness(120%);
+}
