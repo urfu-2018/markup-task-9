@@ -1,0 +1,302 @@
+html,
+body
+{
+    padding: 0;
+    margin: 0;
+}
+
+.catgram
+{
+    width: 695px;
+}
+
+.options,
+.cat-box
+{
+    width: 632px;
+}
+
+.catgram,
+.options,
+.cat-box
+{
+    margin: 0 auto;
+}
+
+input,
+.scale,
+.rotate
+{
+    display: none;
+}
+
+.switch-fill:checked ~ .cat-box .photo
+{
+    height: 100%;
+    width: auto;
+}
+
+.switch-scale-1x:checked ~ .cat-box .photo
+{
+    transform: scale(1);
+}
+
+.switch-scale-15x:checked ~ .cat-box .photo
+{
+    transform: scale(1.5);
+}
+
+.switch-scale-2x:checked ~ .cat-box .photo
+{
+    transform: scale(2);
+}
+
+.switch-rotate-90:checked ~ .cat-box .photo
+{
+    transform: rotate(-90deg);
+}
+
+.switch-rotate-180:checked ~ .cat-box .photo
+{
+    transform: rotate(-180deg);
+}
+
+.switch-rotate-270:checked ~ .cat-box .photo
+{
+    transform: rotate(-270deg);
+}
+
+.switch-scale-1x:checked ~ .options .scale-15x,
+.switch-scale-15x:checked ~ .options .scale-2x,
+.switch-scale-2x:checked ~ .options .scale-1x,
+.switch-rotate-0:checked ~ .options .rotate-90,
+.switch-rotate-90:checked ~ .options .rotate-180,
+.switch-rotate-180:checked ~ .options .rotate-270,
+.switch-rotate-270:checked ~ .options .rotate-0
+{
+    display: block;
+}
+
+.switch-flip:checked ~ .cat-box .photo
+{
+    transform: scale(-1, 1);
+}
+
+.options
+{
+    height: 48px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0 10px;
+}
+
+.option
+{
+    width: 48px;
+    height: 48px;
+    opacity: .6;
+}
+
+.option:hover
+{
+    opacity: .8;
+}
+
+.switch-fill:checked ~ .options .fill,
+.switch-flip:checked ~ .options .flip,
+.switch-logo:checked ~ .options .logo
+{
+    opacity: 1;
+}
+
+.option > svg
+{
+    width: 48px;
+    height: 48px;
+    transition: 200ms;
+    transition-timing-function: ease-in-out;
+}
+
+.cat-box
+{
+    height: 632px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.photo
+{
+    width: 100%;
+    transition: all .5s linear;
+}
+
+.filters
+{
+    position: relative;
+    margin: 70px auto;
+    width: 695px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.gallary
+{
+    width: 100%;
+    overflow: hidden;
+}
+
+.gallary-tape
+{
+    width: 99999px;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.filter
+{
+    width: 170px;
+    height: 200px;
+    overflow: hidden;
+    margin-right: 5px;
+}
+
+.filter img
+{
+    height: 170px;
+    width: auto;
+}
+
+.switch-arrow
+{
+    opacity: .6;
+}
+
+.prev,
+.next
+{
+    position: absolute;
+    display: none;
+    top: 94px;
+    width: 49px;
+    height: 32px;
+}
+
+.prev
+{
+    left: -65px;
+    transform: rotate(90deg);
+}
+
+.next
+{
+    right: -65px;
+    transform: rotate(-90deg);
+}
+
+.switch-next-1:checked ~ .gallary .gallary-tape,
+.switch-prev-2:checked ~ .gallary .gallary-tape
+{
+    transform: translateX(-175px);
+}
+
+.switch-prev-3:checked ~ .gallary .gallary-tape,
+.switch-next-2:checked ~ .gallary .gallary-tape
+{
+    transform: translateX(-350px);
+}
+
+.switch-prev-4:checked ~ .gallary .gallary-tape,
+.switch-next-3:checked ~ .gallary .gallary-tape
+{
+    transform: translateX(-525px);
+}
+
+.switch-next-4:checked ~ .gallary .gallary-tape
+{
+    transform: translateX(-700px);
+}
+
+.switch-prev-1:checked ~ label.prev-1,
+.switch-prev-1:checked ~ label.next-1,
+.switch-prev-2:checked ~ label.prev-1,
+.switch-prev-2:checked ~ label.next-1,
+.switch-prev-3:checked ~ label.prev-2,
+.switch-prev-3:checked ~ label.next-2,
+.switch-prev-4:checked ~ label.prev-3,
+.switch-prev-4:checked ~ label.next-3,
+.switch-next-1:checked ~ label.prev-2,
+.switch-next-1:checked ~ label.next-2,
+.switch-next-2:checked ~ label.next-3,
+.switch-next-2:checked ~ label.prev-2,
+.switch-next-3:checked ~ label.next-4,
+.switch-next-3:checked ~ label.prev-3,
+.switch-next-4:checked ~ label.next-4,
+.switch-next-4:checked ~ label.prev-4
+{
+    display: block;
+}
+
+.switch-next-4:checked ~ label.next-4,
+.switch-prev-1:checked ~ label.prev-1
+{
+    opacity: .5;
+}
+
+.saint_petersburg,
+.filter-saint_petersburg:checked ~ .cat-box .photo
+{
+    filter: brightness(1.25) contrast(.85) grayscale(1);
+}
+
+.yalta,
+.filter-yalta:checked ~ .cat-box .photo
+{
+    filter: brightness(1) contrast(.75) saturate(.1) sepia(1);
+}
+
+.ural-summer,
+.filter-ural-summer:checked ~ .cat-box .photo
+{
+    filter: hue-rotate(220deg);
+}
+
+.bright,
+.filter-bright:checked ~ .cat-box .photo
+{
+    filter: sepia(.25) contrast(1.5) brightness(.95) hue-rotate(-15deg);
+}
+
+.warm-cat,
+.filter-warm-cat:checked ~ .cat-box .photo
+{
+    filter: sepia(.35) contrast(.8) brightness(1.25) saturate(1.4);
+}
+
+.filter-name
+{
+    height: 30px;
+    font: 14px Arial, sans-serif;
+    text-align: center;
+    display: block;
+    margin: 0;
+}
+
+.filter-none:checked ~ .filters .none .filter-name,
+.filter-saint_petersburg:checked ~ .filters .saint_petersburg .filter-name,
+.filter-yalta:checked ~ .filters .yalta .filter-name,
+.filter-ural-summer:checked ~ .filters .ural-summer .filter-name,
+.filter-bright:checked ~ .filters .bright .filter-name,
+.filter-warm-cat:checked ~ .filters .warm-cat .filter-name
+{
+    font-weight: bold;
+}
+
+.switch-logo:checked ~ .cat-box .photo
+{
+    width: 100%;
+    height: auto;
+    transform: none;
+    filter: none;
+}
