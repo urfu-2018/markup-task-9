@@ -3,10 +3,175 @@
 <head>
     <meta charset="utf-8">
     <title>Задача «Котограм»</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-<!--Ваш спрайт-->
+    <div class="container">
+        <form>
+            <input type="radio" name="fll" id="fill">
 
-<!--Ваша разметка-->
+            <input type="radio" name="scl" id="scale-0" checked>
+            <input type="radio" name="scl" id="scale-1">
+            <input type="radio" name="scl" id="scale-2">
+            <input type="radio" name="scl" id="scale-3">
+
+            <input type="radio" name="rtt" id="rotate-0" checked>
+            <input type="radio" name="rtt" id="rotate-90">
+            <input type="radio" name="rtt" id="rotate-180">
+            <input type="radio" name="rtt" id="rotate-270">
+
+            <input type="checkbox" name="image-control-flip" id="flip">
+
+            <input type="radio" name="fltr" id="filter-0" checked>
+            <input type="radio" name="fltr" id="filter-1">
+            <input type="radio" name="fltr" id="filter-2">
+            <input type="radio" name="fltr" id="filter-3">
+            <input type="radio" name="fltr" id="filter-4">
+            <input type="radio" name="fltr" id="filter-5">
+
+            <input type="radio" name="slide" id="slide-0" checked>
+            <input type="radio" name="slide" id="slide-1">
+            <input type="radio" name="slide" id="slide-2">
+
+            <input type="reset" id="discard">
+            <div class="editing-elements">
+                <label class="controls" for="fill">
+                    <svg class="icon controls_not-active">
+                        <use xlink:href='icons/sprite.svg#icon-fill'></use>
+                    </svg>
+                </label>
+                <div class="controls">
+                    <label class="control-scale" for="scale-0">
+                        <svg class="icon controls_not-active">
+                            <use xlink:href='icons/sprite.svg#icon-scale'></use>
+                        </svg>
+                    </label>
+                    <label class="control-scale" for="scale-1">
+                        <svg class="icon controls_not-active">
+                            <use xlink:href='icons/sprite.svg#icon-scale'></use>
+                        </svg>
+                    </label>
+                    <label class="control-scale" for="scale-2">
+                        <svg class="icon controls_not-active">
+                            <use xlink:href='icons/sprite.svg#icon-scale'></use>
+                        </svg>
+                    </label>
+                    <label class="control-scale" for="scale-3">
+                        <svg class="icon controls_not-active">
+                            <use xlink:href='icons/sprite.svg#icon-scale'></use>
+                        </svg>
+                    </label>
+                </div>
+                <label class="controls" for="discard">
+                    <svg class="icon logo">
+                        <linearGradient id="linear-gradient" x1="101.5%" x2=".5%" y1="-.5%" y2="101.5%">
+                            <stop offset="0%" stop-color="#8A2387"/>
+                            <stop offset="63.677%" stop-color="#E94057"/>
+                            <stop offset="100%" stop-color="#F27121"/>
+                        </linearGradient>
+                        <use xlink:href='icons/sprite.svg#icon-logo'></use>
+                    </svg>
+                </label>
+                <div class="controls">
+                    <label class="control-rotate" for="rotate-0">
+                        <svg class="icon controls_not-active">
+                            <use xlink:href='icons/sprite.svg#icon-rotate'></use>
+                        </svg>
+                    </label>
+                    <label class="control-rotate" for="rotate-90">
+                        <svg class="icon controls_not-active">
+                            <use xlink:href='icons/sprite.svg#icon-rotate'></use>
+                        </svg>
+                    </label>
+                    <label class="control-rotate" for="rotate-180">
+                        <svg class="icon controls_not-active">
+                            <use xlink:href='icons/sprite.svg#icon-rotate'></use>
+                        </svg>
+                    </label>
+                    <label class="control-rotate" for="rotate-270">
+                        <svg class="icon controls_not-active">
+                            <use xlink:href='icons/sprite.svg#icon-rotate'></use>
+                        </svg>
+                    </label>
+                </div>
+                <label class="controls" for="flip">
+                    <svg class="icon controls_not-active">
+                        <use xlink:href='icons/sprite.svg#icon-flip'></use>
+                    </svg>
+                </label>
+            </div>
+            <div class="photo">
+                <img class="image" src="img/cat.jpg" alt="cat">
+            </div>
+            <div class="filter-carousel">
+                <label class="switch-slide flip-left control-slide-0" for="slide-0">
+                    <svg class="filter-carousel__flip controls_not-active">
+                        <use xlink:href='icons/sprite.svg#icon-arrow'></use>
+                    </svg>
+                </label>
+                <label class="switch-slide flip-left" for="slide-1">
+                    <svg class="filter-carousel__flip controls_not-active">
+                        <use xlink:href='icons/sprite.svg#icon-arrow'></use>
+                    </svg>
+                </label>
+                <div class="carousel">
+                    <div class="filters">
+                        <div class="filter">
+                            <label class="radio-filter" for="filter-0"></label>
+                            <p>Без фильтра</p>
+                            <div class="image-filter">
+                                <img class="image" src="img/cat.jpg" alt="filter-0">
+                            </div>
+                        </div>
+                        <div class="filter">
+                            <label class="radio-filter" for="filter-1"></label>
+                            <p>Без фильтра1</p>
+                            <div class="image-filter">
+                                <img class="image" src="img/cat.jpg" alt="filter-0">
+                            </div>
+                        </div>
+                        <div class="filter">
+                            <label class="radio-filter" for="filter-2"></label>
+                            <p>Без фильтра2</p>
+                            <div class="image-filter">
+                                <img class="image" src="img/cat.jpg" alt="filter-0">
+                            </div>
+                        </div>
+                        <div class="filter">
+                            <label class="radio-filter" for="filter-3"></label>
+                            <p>Без фильтра3</p>
+                            <div class="image-filter">
+                                <img class="image" src="img/cat.jpg" alt="filter-0">
+                            </div>
+                        </div>
+                        <div class="filter">
+                            <label class="radio-filter" for="filter-4"></label>
+                            <p>Без фильтра4</p>
+                            <div class="image-filter">
+                                <img class="image" src="img/cat.jpg" alt="filter-0">
+                            </div>
+                        </div>
+                        <div class="filter">
+                            <label class="radio-filter" for="filter-5"></label>
+                            <p>Без фильтра5</p>
+                            <div class="image-filter">
+                                <img class="image" src="img/cat.jpg" alt="filter-0">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <label class="switch-slide flip-right control-slide-0" for="slide-1">
+                    <svg class="filter-carousel__flip controls_not-active">
+                        <use xlink:href='icons/sprite.svg#icon-arrow'></use>
+                    </svg>
+                </label>
+                <label class="switch-slide flip-right" for="slide-2">
+                    <svg class="filter-carousel__flip controls_not-active">
+                        <use xlink:href='icons/sprite.svg#icon-arrow'></use>
+                    </svg>
+                </label>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
