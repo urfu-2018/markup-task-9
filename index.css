@@ -11,6 +11,12 @@ input
     display: none;
 }
 
+.svg-symbols
+{
+    height: 0;
+    width: 0;
+}
+
 .header,
 .main,
 .footer
@@ -33,12 +39,13 @@ input
 .main
 {
     margin-top: 12px;
+    justify-content: center;
 }
 
 .main img
 {
-    width: 632px;
-    height: 632px;
+    width: 550px;
+    height: 475px;
 }
 
 .header__control
@@ -46,16 +53,15 @@ input
     width: 48px;
     height: 48px;
     margin-top: 20px;
-    margin-bottom: 84px;
+    margin-bottom: 104px;
 }
 
 .footer
 {
-    width: 800px;
+    width: 810px;
     flex-direction: row;
     margin-bottom: 37px;
     margin-top: 141px;
-    justify-content: space-between;
 }
 
 .filter
@@ -71,18 +77,13 @@ input
 {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .filter__image
 {
     width: 170px;
     height: 169px;
-}
-
-.footer_arrow
-{
-    width: 30px;
-    height: 47px;
 }
 
 .filter__image_spb
@@ -155,28 +156,235 @@ input[id='ural']:checked ~ footer .filter__name_ural
     font-weight: bold;
 }
 
-@keyframes accommodation
+@keyframes rotation90
 {
     to
     {
-        transform: scale(.6);
+        transform: rotate(90deg);
     }
 }
 
-input[id='accommodation']:checked ~ main .second-layer
+input[id='rotation90']:checked ~ main .first-layer
 {
-    animation: accommodation 1s linear forwards;
+    animation: rotation90 1s linear forwards;
 }
 
-@keyframes rotation
+@keyframes rotation180
+{
+    from
+    {
+        transform: rotate(90deg);
+    }
+
+    to
+    {
+        transform: rotate(180deg);
+    }
+}
+
+input[id='rotation180']:checked ~ main .first-layer
+{
+    animation: rotation180 1s linear forwards;
+}
+
+@keyframes rotation270
+{
+    from
+    {
+        transform: rotate(180deg);
+    }
+
+    to
+    {
+        transform: rotate(270deg);
+    }
+}
+
+input[id='rotation270']:checked ~ main .first-layer
+{
+    animation: rotation270 1s linear forwards;
+}
+
+@keyframes rotation360
+{
+    from
+    {
+        transform: rotate(270deg);
+    }
+
+    to
+    {
+        transform: rotate(360deg);
+    }
+}
+
+input[id='rotation360']:checked ~ main .first-layer
+{
+    animation: rotation360 1s linear forwards;
+}
+
+.default-hide
+{
+    display: none;
+}
+
+input[id='rotation360']:checked ~ header .rotation90,
+input[id='rotation90']:checked ~ header .rotation180,
+input[id='rotation180']:checked ~ header .rotation270,
+input[id='rotation270']:checked ~ header .rotation360
+{
+    display: block;
+}
+
+input[id='hr']:checked ~ header .hr-default,
+input[id='hr-default']:checked ~ header .hr
+{
+    display: block;
+}
+
+@keyframes hr
 {
     to
     {
-        transform: rotate(.5turn);
+        transform: scale(-1,1);
     }
 }
 
-input[id='rotation']:checked ~ main .first-layer
+input[id='hr']:checked ~ main .second-layer
 {
-    animation: rotation 1s linear forwards;
+    animation: hr 1s linear forwards;
+}
+
+@keyframes hr-default
+{
+    from
+    {
+        transform: scale(-1,1);
+    }
+
+    to
+    {
+        transform: scale(1);
+    }
+}
+
+input[id='hr-default']:checked ~ main .second-layer
+{
+    animation: hr-default 1s linear forwards;
+}
+
+input[id='scaling']:checked ~ header .scaling12,
+input[id='scaling12']:checked ~ header .scaling14,
+input[id='scaling14']:checked ~ header .scaling12r,
+input[id='scaling12r']:checked ~ header .scaling
+{
+    display: block;
+}
+
+@keyframes scaling
+{
+    from
+    {
+        transform: scale(1.2);
+    }
+
+    to
+    {
+        transform: scale(1);
+    }
+}
+
+input[id='scaling']:checked ~ main .third-layer
+{
+    animation: scaling 1s linear forwards;
+}
+
+@keyframes scaling12
+{
+    from
+    {
+        transform: scale(1);
+    }
+
+    to
+    {
+        transform: scale(1.2);
+    }
+}
+
+input[id='scaling12']:checked ~ main .third-layer
+{
+    animation: scaling12 1s linear forwards;
+}
+
+@keyframes scaling14
+{
+    from
+    {
+        transform: scale(1.2);
+    }
+
+    to
+    {
+        transform: scale(1.4);
+    }
+}
+
+input[id='scaling14']:checked ~ main .third-layer
+{
+    animation: scaling14 1s linear forwards;
+}
+
+@keyframes scaling12r
+{
+    from
+    {
+        transform: scale(1.4);
+    }
+
+    to
+    {
+        transform: scale(1.2);
+    }
+}
+
+input[id='scaling12r']:checked ~ main .third-layer
+{
+    animation: scaling12r 1s linear forwards;
+}
+
+input[id='default']:checked ~ header .free,
+input[id='free']:checked ~ header .default
+{
+    display: block;
+}
+
+input[id='default']:checked ~ main .third-layer,
+input[id='default']:checked ~ main .second-layer,
+input[id='default']:checked ~ main .first-layer
+{
+    animation: none;
+}
+
+input[id='square']:checked ~ main img
+{
+    width: 450px;
+    height: 450px;
+}
+
+.arrow
+{
+    margin-top: 20px;
+    height: 48px;
+    width: 48px;
+}
+
+.arrow_left
+{
+    transform: rotate(90deg);
+}
+
+.arrow_right
+{
+    transform: rotate(270deg);
 }

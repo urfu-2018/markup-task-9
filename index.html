@@ -6,19 +6,17 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <input type="radio" id="accommodation" name="control">
-    <input type="radio" id="scaling" name="control">
-    <input type="radio" id="default" name="control">
-    <input type="radio" id="rotation" name="control">
-    <input type="radio" id="horizontal-reflection" name="control">
-
-    <svg style="display:none;" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-         viewBox="0 0 336 48"><defs><linearGradient id="a" x1="-127.14" y1="413.28" x2="-128.15" y2="412.26"
-         gradientTransform="matrix(48 0 0 -48 6439 19837)" gradientUnits="userSpaceOnUse">
-        <stop offset="0" stop-color="#8a2387"/>
-        <stop offset=".64" stop-color="#e94057"/>
-        <stop offset="1" stop-color="#f27121"/>
-    </linearGradient></defs>
+    <svg class="svg-symbols" data-name="layer" xmlns="http://www.w3.org/2000/svg"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         viewBox="0 0 336 48">
+        <defs>
+        <linearGradient id="a" x1="-127.14" y1="413.28" x2="-128.15" y2="412.26"
+             gradientTransform="matrix(48 0 0 -48 6439 19837)" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#8a2387"/>
+            <stop offset=".64" stop-color="#e94057"/>
+            <stop offset="1" stop-color="#f27121"/>
+        </linearGradient>
+        </defs>
         <path d="M0 0v48h48V0zm6.4 6.4h33.7L6.4 40.2zM41 38.8H25.6v-6.4H41z"/>
         <path d="M24 13.1h-4.4V8.6h-6.3v4.5H9v6.4h4.4V24h6.3v-4.5H24z"/>
         <path d="M56.4 8.4h31v31h-31z"/>
@@ -44,59 +42,129 @@
             <path d="M56.4 8.4h31v31h-31z"/>
             <path d="M83.9 0v5.2h6.9v6.7H96V0zM53.2 5.2h6.7V0H48v11.8h5.2zm37.6 37.6h-6.9V48H96V35.9h-5.2zm-37.6-6.9
         H48V48h11.8v-5.2h-6.7v-6.9z"/>
-            </path>
         </symbol>
         <symbol id="scaling_svg" viewBox="0 0 48 48">
             <path d="M0 0v48h48V0zm6.4 6.4h33.7L6.4 40.2zM41 38.8H25.6v-6.4H41z"/>
             <path d="M24 13.1h-4.4V8.6h-6.3v4.5H9v6.4h4.4V24h6.3v-4.5H24z"/>
-            </path>
         </symbol>
         <symbol id="default_svg" viewBox="96 0 48 48">
             <path d="M96 0v48h48V0zm24.1 16.8a7.1 7.1 0 1 1-7.1 7.1 7.13 7.13 0 0 1 7.1-7.1zM102.4 5.5h7.3v4.7h-7.3zm
         35.2 36.1h-35.2V24.7h4.2a13.53 13.53 0 0 0 27 0h4z"/>
-            </path>
         </symbol>
         <symbol id="rotation_svg" viewBox="144 0 48 48">
             <path d="M168 48c13.2 0 24-9.8 24-21.8S181.2 4.5 168 4.5a24.37 24.37 0 0 0-2.7.1V1.1a1 1 0 0 0-.8-1 1.24
         1.24 0 0 0-1.4.3l-8.5 7.7a1 1 0 0 0 0 1.6l8.5 7.7a1.4 1.4 0 0 0 1.4.2 1.15 1.15 0 0 0 .8-1v-3.9a24.52
         24.52 0 0 1 2.7-.2c8.4 0 15.2 6.2 15.2 13.8s-6.8 13.8-15.2 13.8-15.2-6.2-15.2-13.8a1.2
         1.2 0 0 0-1.2-1.1h-6.3a1.13 1.13 0 0 0-1.2 1.1C144 38.2 154.8 48 168 48z"/>
-            </path>
         </symbol>
         <symbol id="horizontal-reflection_svg" viewBox="192 0 48 48">
             <path d="M192 35.5l19.1-11.8L192 11.9z"/>
             <path d="M220.9 23.7L240 35.5V11.9zm15.1 4.4l-7.2-4.4 7.2-4.4z"/>
             <path d="M213.4 13.7h5.2v5.2h-5.2zm0-8.1h5.2v5.2h-5.2zm0 16.1h5.2v5.2h-5.2zm0
         7.5h5.2v5.2h-5.2zm0 8h5.2v5.2h-5.2z"/>
-            </path>
+        </symbol>
+        <symbol id="beauty-default_svg" viewBox="288 0 48 48">
+            <path fill="#f4faf8" d="M288 0h48v48h-48z"/>
+            <path d="M288 0v48h48V0zm24.11 16.78a7.11 7.11 0 1 1-7.11 7.11 7.13 7.13 0 0 1 7.11-7.11zM294.4
+        5.55h7.25v4.69h-7.25zm35.2 36.05h-35.2V24.75h4.23a13.51 13.51 0 0 0 27 0h4z" fill="url(#a)"/>
+        </symbol>
+        <symbol id="arrow" viewBox="240 0 48 48">
+            <path d="M240 15.4l24 24.1 24-24.2-6.8-6.8L264 25.8 246.8 8.5z"/>
         </symbol>
     </svg>
+    <input type="radio" id="rotation90" name="rotation-control">
+    <input type="radio" id="rotation180" name="rotation-control">
+    <input type="radio" id="rotation270" name="rotation-control">
+    <input type="radio" id="rotation360" name="rotation-control" checked>
+
+    <input type="radio" id="hr" name="reflection-control">
+    <input type="radio" id="hr-default" name="reflection-control" checked>
+
+    <input type="radio" id="scaling12" name="scaling-control">
+    <input type="radio" id="scaling14" name="scaling-control">
+    <input type="radio" id="scaling12r" name="scaling-control">
+    <input type="radio" id="scaling" name="scaling-control" checked>
+
+    <input type="radio" id="default" name="image-control">
+    <input type="radio" id="free" name="image-control" checked>
+
+
+    <input type="checkbox" id="square" name="square-control">
+
     <header class="header">
-        <label for="accommodation" class="header__control">
+        <label for="square" class="header__control">
             <svg>
                 <use xlink:href="#accommodation_svg"></use>
             </svg>
         </label>
-        <label for="scaling" class="header__control">
-            <svg>
-                <use xlink:href="#scaling_svg"></use>
-            </svg>
-        </label>
-        <label for="default" class="header__control">
-            <svg>
-                <use xlink:href="#default_svg"></use>
-            </svg>
-        </label>
-        <label for="rotation" class="header__control">
-            <svg>
-                <use xlink:href="#rotation_svg"></use>
-            </svg>
-        </label>
-        <label for="horizontal-reflection" class="header__control">
-            <svg>
-                <use xlink:href="#horizontal-reflection_svg"></use>
-            </svg>
-        </label>
+        <section class="header__control">
+            <label for="scaling12" class="header__control">
+                <svg class="scaling12 default-hide">
+                    <use xlink:href="#scaling_svg"></use>
+                </svg>
+            </label>
+            <label for="scaling14" class="header__control">
+                <svg class="scaling14 default-hide">
+                    <use xlink:href="#scaling_svg"></use>
+                </svg>
+            </label>
+            <label for="scaling12r" class="header__control">
+                <svg class="scaling12r default-hide">
+                    <use xlink:href="#scaling_svg"></use>
+                </svg>
+            </label>
+            <label for="scaling" class="header__control">
+                <svg class="scaling default-hide">
+                    <use xlink:href="#scaling_svg"></use>
+                </svg>
+            </label>
+        </section>
+        <section class="header__control">
+            <label for="default" class="header__control">
+                <svg class="default default-hide">
+                    <use xlink:href="#default_svg"></use>
+                </svg>
+            </label>
+            <label for="free" class="header__control">
+                <svg class="free default-hide">
+                    <use xlink:href="#beauty-default_svg"></use>
+                </svg>
+            </label>
+        </section>
+        <section class="header__control">
+            <label for="rotation90">
+                <svg class="rotation90 default-hide">
+                    <use xlink:href="#rotation_svg"></use>
+                </svg>
+            </label>
+            <label for="rotation180">
+                <svg class="rotation180 default-hide">
+                    <use xlink:href="#rotation_svg"></use>
+                </svg>
+            </label>
+            <label for="rotation270">
+                <svg class="rotation270 default-hide">
+                    <use xlink:href="#rotation_svg"></use>
+                </svg>
+            </label>
+            <label for="rotation360">
+                <svg class="rotation360 default-hide">
+                    <use xlink:href="#rotation_svg"></use>
+                </svg>
+            </label>
+        </section>
+        <section class="header__control">
+            <label for="hr" class="header__control">
+                <svg class="hr default-hide">
+                    <use xlink:href="#horizontal-reflection_svg"></use>
+                </svg>
+            </label>
+            <label for="hr-default" class="header__control">
+                <svg class="hr-default default-hide">
+                    <use xlink:href="#horizontal-reflection_svg"></use>
+                </svg>
+            </label>
+        </section>
     </header>
     <input type="radio" id="without-filter" name="filter" checked>
     <input type="radio" id="spb" name="filter">
@@ -105,14 +173,17 @@
     <main class="main">
         <section class="first-layer">
             <section class="second-layer">
-                <img src="img/cat.jpg" alt="cat" title="cat">
+                <section class="third-layer">
+                    <img src="img/cat.jpg" alt="cat" title="cat">
+                </section>
             </section>
         </section>
     </main>
     <footer class="footer">
-        <img class="footer_arrow" src="icons/arrow.svg" alt="arrow" title="arrow">
-
         <div class="footer__carousel">
+            <svg class="arrow arrow_left">
+                <use xlink:href="#arrow"></use>
+            </svg>
             <label for="without-filter" class="filter" for="without-filter">
                 <span class="filter__name filter__name_without-filter">Без фильтра</span>
                 <img class="filter__image" src="img/cat.jpg" alt="Котэ">
@@ -129,9 +200,10 @@
                 <span class="filter__name filter__name_ural">Уральское лето</span>
                 <img class="filter__image filter__image_ural" src="img/cat.jpg" alt="Котэ">
             </label>
+            <svg class="arrow arrow_right">
+                <use xlink:href="#arrow"></use>
+            </svg>
         </div>
-
-        <img class="footer_arrow" src="icons/arrow.svg" alt="arrow" title="arrow">
     </footer>
 </body>
 </html>
