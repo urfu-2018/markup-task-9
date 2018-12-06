@@ -1,0 +1,188 @@
+@font-face
+{
+    font-family: 'Bitter';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Bitter Regular'), local('Bitter-Regular'), url(https://fonts.gstatic.com/s/bitter/v13/rax8HiqOu8IVPmn7f4xp.woff2) format('woff2');
+}
+
+.catgram
+{
+    margin: auto;
+    width: 500px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, .4);
+}
+
+.svg-icons
+{
+    height: 0;
+    width: 0;
+}
+
+body > input
+{
+    display: none;
+}
+
+.control-buttons
+{
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 7px;
+}
+
+.control-buttons__icon
+{
+    width: 48px;
+    height: 48px;
+    opacity: .7;
+    cursor: pointer;
+}
+
+.control-buttons__icon:hover
+{
+    opacity: .9;
+}
+
+.editing-image .editing-image__photo
+{
+    width: 500px;
+    height: 500px;
+    background: url(kot.jpg) center no-repeat content-box;
+    background-size: cover;
+}
+
+.control-buttons__scale-label,
+.control-buttons__rotate-label
+{
+    display: none;
+}
+
+.scale-75-button:checked ~ .catgram label[for='scale-100'],
+.scale-100-button:checked ~ .catgram label[for='scale-200'],
+.scale-200-button:checked ~ .catgram label[for='scale-75'],
+.rotate-0-button:checked ~ .catgram label[for='rotate-90'],
+.rotate-90-button:checked ~ .catgram label[for='rotate-180'],
+.rotate-180-button:checked ~ .catgram label[for='rotate-270'],
+.rotate-270-button:checked ~ .catgram label[for='rotate-0']
+{
+    display: block;
+}
+
+.fill-button:checked ~ .catgram .editing-image__photo
+{
+    background-size: contain;
+}
+
+.flip-button:checked ~ .catgram .editing-image__flip
+{
+    transform: scaleX(-1);
+}
+
+.rotate-90-button:checked ~ .catgram .editing-image__rotate
+{
+    transform: rotate(90deg);
+}
+
+.rotate-180-button:checked ~ .catgram .editing-image__rotate
+{
+    transform: rotate(180deg);
+}
+
+.rotate-270-button:checked ~ .catgram .editing-image__rotate
+{
+    transform: rotate(270deg);
+}
+
+.scale-75-button:checked ~ .catgram .editing-image__photo
+{
+    background-size: 75%;
+}
+
+.scale-200-button:checked ~ .catgram .editing-image__photo
+{
+    background-size: 200%;
+}
+
+.original-button:checked ~ .catgram .editing-image__rotate
+{
+    transform: rotate(0);
+}
+
+.original-button:checked ~ .catgram .editing-image__flip
+{
+    transform: scaleX(1);
+}
+
+.original-button:checked ~ .catgram .editing-image .editing-image__photo
+{
+    filter: none;
+    background-size: cover;
+}
+
+.filters
+{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 7px 7px;
+}
+
+.filter__name
+{
+    text-align: center;
+    text-transform: lowercase;
+    font-family: Bitter, serif;
+    font-size: 16px;
+    font-weight: normal;
+    cursor: default;
+}
+
+.filter__label
+{
+    display: block;
+    width: 115px;
+    height: 115px;
+    background: url(kot.jpg) center no-repeat content-box;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.normal-filter:checked ~ .catgram .filters__normal .filter__name,
+.grayscale-filter:checked ~ .catgram .filters__grayscale .filter__name,
+.sepia-filter:checked ~ .catgram .filters__sepia .filter__name,
+.invert-filter:checked ~ .catgram .filters__invert .filter__name
+{
+    font-weight: bold;
+}
+
+.filters__grayscale .filter__label
+{
+    filter: grayscale(1);
+}
+
+.grayscale-filter:checked ~ .catgram .editing-image__photo
+{
+    filter: grayscale(1);
+}
+
+.filters__sepia .filter__label
+{
+    filter: sepia(1);
+}
+
+.sepia-filter:checked ~ .catgram .editing-image__photo
+{
+    filter: sepia(1);
+}
+
+.filters__invert .filter__label
+{
+    filter: invert(1);
+}
+
+.invert-filter:checked ~ .catgram .editing-image__photo
+{
+    filter: invert(1);
+}
