@@ -1,0 +1,482 @@
+body
+{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.Catogram-Default
+{
+    margin: auto;
+    width: 1440px;
+    height: 1024px;
+    background-color: #fff;
+    display: grid;
+    grid-template: '. . .' 20px
+        '. sprites .' 48px
+        '. . .' 12px
+        '. cat_image .' 632px
+        '. . .' 69px
+        'arrow-left filters arrow-right' 206px
+        '. . .' 37px
+        / 1fr 695px 1fr;
+}
+
+.Filters
+{
+    grid-area: filters;
+    height: 206px;
+    width: 695px;
+}
+
+.Sprites
+{
+    grid-area: sprites;
+    height: 48px;
+    display: grid;
+    grid-template: 'fill scale logo rotate flip' 1fr / auto;
+    grid-gap: 113px;
+}
+
+.Fill,
+.Scalings svg,
+.Rotatings svg,
+.Flip,
+.ArL svg,
+.ArR svg
+{
+    opacity: .8;
+    fill: #444;
+}
+
+.Fill
+{
+    grid-area: fill;
+    background: no-repeat 0 38px;
+    cursor: pointer;
+}
+
+input[id='fill']:checked ~ main .imgM
+{
+    object-fit: contain;
+}
+
+.Scalings
+{
+    grid-area: scale;
+}
+
+.Scalings svg
+{
+    cursor: pointer;
+}
+
+.Logo
+{
+    grid-area: logo;
+    object-fit: contain;
+    fill: url(#rg);
+    cursor: pointer;
+}
+
+.Rotatings
+{
+    grid-area: rotate;
+}
+
+.Rotatings svg
+{
+    cursor: pointer;
+}
+
+/* Совместим две анимации при 90% скейлинге */
+
+.RadioSc90\%:checked ~ .RadioRt90:checked ~ main .imgM
+{
+    transform: scale(.9) rotate(90deg);
+}
+
+.RadioSc90\%:checked ~ .RadioRt180:checked ~ main .imgM
+{
+    transform: scale(.9) rotate(180deg);
+}
+
+.RadioSc90\%:checked ~ .RadioRt270:checked ~ main .imgM
+{
+    transform: scale(.9) rotate(270deg);
+}
+
+.RadioSc90\%:checked ~ .RadioRtOr:checked ~ main .imgM
+{
+    transform: scale(.9) rotate(360deg);
+}
+
+/* Теперь без увеличения масштаба*/
+
+.RadioScOr:checked ~ .RadioRt90:checked ~ main .imgM
+{
+    transform: scale(1) rotate(90deg);
+}
+
+.RadioScOr:checked ~ .RadioRt180:checked ~ main .imgM
+{
+    transform: scale(1) rotate(180deg);
+}
+
+.RadioScOr:checked ~ .RadioRt270:checked ~ main .imgM
+{
+    transform: scale(1) rotate(270deg);
+}
+
+.RadioScOr:checked ~ .RadioRtOr:checked ~ main .imgM
+{
+    transform: scale(1) rotate(360deg);
+}
+
+/* Теперь при 110% увеличении */
+
+.RadioSc110\%:checked ~ .RadioRt90:checked ~ main .imgM
+{
+    transform: scale(1.1) rotate(90deg);
+}
+
+.RadioSc110\%:checked ~ .RadioRt180:checked ~ main .imgM
+{
+    transform: scale(1.1) rotate(180deg);
+}
+
+.RadioSc110\%:checked ~ .RadioRt270:checked ~ main .imgM
+{
+    transform: scale(1.1) rotate(270deg);
+}
+
+.RadioSc110\%:checked ~ .RadioRtOr:checked ~ main .imgM
+{
+    transform: scale(1.1) rotate(360deg);
+}
+
+/* Теперь при 120% */
+
+.RadioSc120\%:checked ~ .RadioRt90:checked ~ main .imgM
+{
+    transform: scale(1.2) rotate(90deg);
+}
+
+.RadioSc120\%:checked ~ .RadioRt180:checked ~ main .imgM
+{
+    transform: scale(1.2) rotate(180deg);
+}
+
+.RadioSc120\%:checked ~ .RadioRt270:checked ~ main .imgM
+{
+    transform: scale(1.2) rotate(270deg);
+}
+
+.RadioSc120\%:checked ~ .RadioRtOr:checked ~ main .imgM
+{
+    transform: scale(1.2) rotate(360deg);
+}
+
+/* !!! Теперь всё то же самое, но с инвертированием !!! */
+
+.RadioSc90\%:checked ~ .RadioRt90:checked ~ .RadioInv:checked ~ main .imgM
+{
+    transform: scale(.9, -.9) rotate(90deg);
+}
+
+.RadioSc90\%:checked ~ .RadioRt180:checked ~ .RadioInv:checked ~ main .imgM
+{
+    transform: scale(-.9, .9) rotate(180deg);
+}
+
+.RadioSc90\%:checked ~ .RadioRt270:checked ~ .RadioInv:checked ~ main .imgM
+{
+    transform: scale(.9, -.9) rotate(270deg);
+}
+
+.RadioSc90\%:checked ~ .RadioRtOr:checked ~ .RadioInv:checked ~ main .imgM
+{
+    transform: scale(-.9, .9) rotate(360deg);
+}
+
+/* Теперь без увеличения масштаба*/
+
+.RadioScOr:checked ~ .RadioRt90:checked ~ .RadioInv:checked ~ main .imgM
+{
+    transform: scale(1, -1) rotate(90deg);
+}
+
+.RadioScOr:checked ~ .RadioRt180:checked ~ .RadioInv:checked ~ main .imgM
+{
+    transform: scale(-1, 1) rotate(180deg);
+}
+
+.RadioScOr:checked ~ .RadioRt270:checked ~ .RadioInv:checked ~ main .imgM
+{
+    transform: scale(1, -1) rotate(270deg);
+}
+
+.RadioScOr:checked ~ .RadioRtOr:checked ~ .RadioInv:checked ~ main .imgM
+{
+    transform: scale(-1, 1) rotate(360deg);
+}
+
+/* Теперь при 110% увеличении */
+
+.RadioSc110\%:checked ~ .RadioRt90:checked ~ .RadioInv:checked ~ main .imgM
+{
+    transform: scale(1.1, -1.1) rotate(90deg);
+}
+
+.RadioSc110\%:checked ~ .RadioRt180:checked ~ .RadioInv:checked ~ main .imgM
+{
+    transform: scale(-1.1, 1.1) rotate(180deg);
+}
+
+.RadioSc110\%:checked ~ .RadioRt270:checked ~ .RadioInv:checked ~ main .imgM
+{
+    transform: scale(1.1, -1.1) rotate(270deg);
+}
+
+.RadioSc110\%:checked ~ .RadioRtOr:checked ~ .RadioInv:checked ~ main .imgM
+{
+    transform: scale(-1.1, 1.1) rotate(360deg);
+}
+
+/* Теперь при 120% */
+
+.RadioSc120\%:checked ~ .RadioRt90:checked ~ .RadioInv:checked ~ main .imgM
+{
+    transform: scale(1.2, -1.2) rotate(90deg);
+}
+
+.RadioSc120\%:checked ~ .RadioRt180:checked ~ .RadioInv:checked ~ main .imgM
+{
+    transform: scale(-1.2, 1.2) rotate(180deg);
+}
+
+.RadioSc120\%:checked ~ .RadioRt270:checked ~ .RadioInv:checked ~ main .imgM
+{
+    transform: scale(1.2, -1.2) rotate(270deg);
+}
+
+.RadioSc120\%:checked ~ .RadioRtOr:checked ~ .RadioInv:checked ~ main .imgM
+{
+    transform: scale(-1.2, 1.2) rotate(360deg);
+}
+
+/* Всё */
+
+.Flip
+{
+    grid-area: flip;
+    display: flex;
+    align-self: center;
+    cursor: pointer;
+}
+
+input[name='forming'],
+input[name='rotating'],
+input[name='scaling'],
+input[name='filtering'],
+.Scale_90\%,
+.Scale_origin,
+.Scale_110\%,
+.Scale_120\%,
+.Rotate_origin,
+.Rotate_90deg,
+.Rotate_180deg,
+.Rotate_270deg
+{
+    display: none;
+}
+
+input[id='scale-90\%']:checked ~ main .Sprites .Scale_origin,
+input[id='scale-origin']:checked ~ main .Sprites .Scale_110\%,
+input[id='scale-110\%']:checked ~ main .Sprites .Scale_120\%,
+input[id='scale-120\%']:checked ~ main .Sprites .Scale_90\%,
+input[id='rotate-origin']:checked ~ main .Sprites .Rotate_90deg,
+input[id='rotate-90deg']:checked ~ main .Sprites .Rotate_180deg,
+input[id='rotate-180deg']:checked ~ main .Sprites .Rotate_270deg,
+input[id='rotate-270deg']:checked ~ main .Sprites .Rotate_origin
+{
+    display: block;
+}
+
+.Photo-container
+{
+    grid-area: cat_image;
+    width: 632px;
+    height: 632px;
+    overflow: hidden;
+    justify-self: center;
+}
+
+.Photo-container > img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: none;
+}
+
+.Filters
+{
+    display: grid;
+    grid-template: 'no-filter Piter Yalta UralSummer';
+    grid-gap: 5px;
+}
+
+.Filters img
+{
+    margin-top: 15px;
+    width: 170px;
+    height: 169px;
+    object-fit: contain;
+}
+
+.Filters
+{
+    text-align: center;
+    font-family: Helvetica, serif;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+}
+
+.Filters span,
+.Filters img
+{
+    cursor: pointer;
+}
+
+.Filters__no-filter
+{
+    grid-area: no-filter;
+}
+
+.Filters__no-filter img
+{
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .12);
+}
+
+.Filters__Piter
+{
+    grid-area: Piter;
+}
+
+.Filters__Piter img
+{
+    filter: grayscale(1);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .12);
+}
+
+.Filters__Yalta
+{
+    grid-area: Yalta;
+}
+
+.Filters__Yalta img
+{
+    filter: saturate(2);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .12);
+}
+
+.Filters__UralSummer
+{
+    grid-area: UralSummer;
+}
+
+.Filters__UralSummer img
+{
+    filter: hue-rotate(180deg);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .12);
+}
+
+input[id='no-filter']:checked ~ main > .Filters > .Filters__no-filter,
+input[id='Piter-filter']:checked ~ main > .Filters > .Filters__Piter,
+input[id='Yalta-filter']:checked ~ main > .Filters > .Filters__Yalta,
+input[id='UralSummer-filter']:checked ~ main > .Filters > .Filters__UralSummer
+{
+    font-weight: bold;
+}
+
+input[id='no-filter']:checked ~ main > .Photo-container > img
+{
+    filter: none;
+}
+
+input[id='Piter-filter']:checked ~ main > .Photo-container > img
+{
+    filter: grayscale(1);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .12);
+}
+
+input[id='Yalta-filter']:checked ~ main > .Photo-container > img
+{
+    filter: saturate(2);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .12);
+}
+
+input[id='UralSummer-filter']:checked ~ main > .Photo-container > img
+{
+    filter: hue-rotate(180deg);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .12);
+}
+
+.ArR label,
+.ArL label
+{
+    width: 50px;
+    height: 4px;
+    align-self: center;
+    display: none;
+    cursor: pointer;
+}
+
+.ArL
+{
+    grid-area: arrow-left;
+    display: flex;
+    margin-left: auto;
+}
+
+.ArL svg
+{
+    transform: rotate(90deg);
+    align-self: center;
+}
+
+.ArR
+{
+    grid-area: arrow-right;
+    display: flex;
+    margin-right: auto;
+}
+
+.ArR svg
+{
+    transform: rotate(-90deg);
+    align-self: center;
+}
+
+input[id='no-filter']:checked ~ main .ArL label[for='no-filter'],
+input[id='UralSummer-filter']:checked ~ main .ArR label[for='UralSummer-filter']
+{
+    display: block;
+    opacity: .6;
+    fill: rgba(170, 170, 170, .8);
+}
+
+input[id='no-filter']:checked ~ main .ArR label[for='Piter-filter'],
+input[id='Piter-filter']:checked ~ main .ArL label[for='no-filter'],
+input[id='Piter-filter']:checked ~ main .ArR label[for='Yalta-filter'],
+input[id='Yalta-filter']:checked ~ main .ArL label[for='Piter-filter'],
+input[id='Yalta-filter']:checked ~ main .ArR label[for='UralSummer-filter'],
+input[id='UralSummer-filter']:checked ~ main .ArL label[for='Yalta-filter']
+{
+    display: block;
+}
