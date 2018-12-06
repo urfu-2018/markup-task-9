@@ -1,3 +1,151 @@
+/* General */
+
+html,
+head
+{
+    margin: 0;
+}
+
+.svg-definition
+{
+    position: fixed;
+    visibility: hidden;
+}
+
+.selector
+{
+    display: none;
+}
+
+.main
+{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    height: 600px;
+    box-shadow: 0 0 5px 1px grey;
+}
+
+/* Controls */
+
+.label-no-scale,
+.label-scale-bigger,
+.label-scale-biggest,
+.label-no-rotate,
+.label-rotate-90,
+.label-rotate-180,
+.label-rotate-270
+{
+    display: none;
+}
+
+.selector-no-scale:checked ~ .main .label-scale-bigger,
+.selector-scale-bigger:checked ~ .main .label-scale-biggest,
+.selector-scale-biggest:checked ~ .main .label-no-scale,
+.selector-no-rotate:checked ~ .main .label-rotate-90,
+.selector-rotate-90:checked ~ .main .label-rotate-180,
+.selector-rotate-180:checked ~ .main .label-rotate-270,
+.selector-rotate-270:checked ~ .main .label-no-rotate
+{
+    display: block;
+}
+
+.controls
+{
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 5px 40px;
+}
+
+.svg-icon
+{
+    width: 48px;
+    height: 48px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.label-flip svg
+{
+    margin-top: 5px;
+}
+
+/* Main image area */
+
+.main-image-area
+{
+    margin: auto;
+    height: 100%;
+    width: 450px;
+    overflow: hidden;
+}
+
+.main-image,
+.main-image-initial
+{
+    width: 450px;
+    height: 300px;
+}
+
+.main-image-scale,
+.main-image-flip,
+.main-image-rotate,
+.main-image
+{
+    transition: 1s;
+}
+
+.selector-rotate-90:checked ~ .main .main-image-rotate
+{
+    transform: rotate(90deg);
+}
+
+.selector-rotate-180:checked ~ .main .main-image-rotate
+{
+    transform: rotate(180deg);
+}
+
+.selector-rotate-270:checked ~ .main .main-image-rotate
+{
+    transform: rotate(270deg);
+}
+
+.main-image-scale,
+.main-image-flip,
+.main-image-rotate
+{
+    height: 100%;
+}
+
+.selector-full:checked ~ .main .main-image
+{
+    height: 100%;
+}
+
+.selector-scale-bigger:checked ~ .main .main-image-scale
+{
+    transform: scale(1.5);
+}
+
+.selector-scale-biggest:checked ~ .main .main-image-scale
+{
+    transform: scale(2);
+}
+
+.selector-flip:checked ~ .main .main-image-flip
+{
+    transform: scaleX(-1);
+}
+
+.selector-show-initial:checked ~ .main .main-image-scale
+{
+    display: none;
+}
+
+/* Filter animations */
+
 @keyframes gray
 {
     to
@@ -38,158 +186,28 @@
     }
 }
 
-html,
-head
-{
-    margin: 0;
-}
+/* Filters */
 
-.svg-definition
+.filters-container-wrapper
 {
-    display: none;
-}
-
-.selector
-{
-    display: none;
-}
-
-.label-no-scale,
-.label-scale-bigger,
-.label-scale-biggest,
-.label-no-rotate,
-.label-rotate-90,
-.label-rotate-180,
-.label-rotate-270
-{
-    display: none;
-}
-
-.selector-no-scale:checked ~ .main .label-scale-bigger,
-.selector-scale-bigger:checked ~ .main .label-scale-biggest,
-.selector-scale-biggest:checked ~ .main .label-no-scale,
-.selector-no-rotate:checked ~ .main .label-rotate-90,
-.selector-rotate-90:checked ~ .main .label-rotate-180,
-.selector-rotate-180:checked ~ .main .label-rotate-270,
-.selector-rotate-270:checked ~ .main .label-no-rotate
-{
-    display: block;
-}
-
-.main
-{
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-direction: column;
-    width: 450px;
-    height: 600px;
-    box-shadow: 0 0 5px 1px grey;
-}
-
-.controls
-{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 40px;
-}
-
-.controls label
-{
-    width: 48px;
-    height: 48px;
     overflow: hidden;
-    cursor: pointer;
-}
-
-.label-flip svg
-{
-    margin-top: 5px;
-}
-
-.main-image-area
-{
-    margin: auto;
-}
-
-.main-image,
-.main-image-initial
-{
-    width: 450px;
-    height: 300px;
-}
-
-.main-image-scale,
-.main-image-flip,
-.main-image-rotate,
-.main-image
-{
-    transition: 1s;
-}
-
-.selector-rotate-90:checked ~ .main .main-image-rotate
-{
-    transform: rotate(90deg);
-}
-
-.selector-rotate-180:checked ~ .main .main-image-rotate
-{
-    transform: rotate(180deg);
-}
-
-.selector-rotate-270:checked ~ .main .main-image-rotate
-{
-    transform: rotate(270deg);
-}
-
-.main-image-area
-{
-    height: 100%;
-    width: 450px;
-    overflow: hidden;
-}
-
-.main-image-scale,
-.main-image-flip,
-.main-image-rotate
-{
-    height: 100%;
-}
-
-.selector-full:checked ~ .main .main-image
-{
-    height: 100%;
-}
-
-.selector-scale-bigger:checked ~ .main .main-image-scale
-{
-    transform: scale(1.5);
-}
-
-.selector-scale-biggest:checked ~ .main .main-image-scale
-{
-    transform: scale(2);
-}
-
-.selector-flip:checked ~ .main .main-image-flip
-{
-    transform: scaleX(-1);
-}
-
-.selector-show-initial:checked ~ .main .main-image-scale
-{
-    display: none;
-}
-
-.selector-show-initial:not(:checked) ~ .main .main-image-initial
-{
-    display: none;
 }
 
 .filters-container
 {
+    width: 1500px;
+    height: 100%;
+    margin: 0;
     display: flex;
     flex-direction: row;
+}
+
+.filters
+{
+    display: flex;
+    flex-direction: row;
+    height: 150px;
+    box-shadow: 0 0 5px 1px grey;
 }
 
 .filter-image
@@ -217,6 +235,7 @@ head
 
 .filters-container
 {
+    position: relative;
     overflow: hidden;
 }
 
@@ -243,6 +262,11 @@ head
 .invert-filter .filter-image
 {
     animation: invert 0s linear forwards;
+}
+
+.selector-show-initial:not(:checked) ~ .main .main-image-initial
+{
+    display: none;
 }
 
 .selector-no-filter:checked ~ .main .main-image
@@ -283,4 +307,52 @@ head
 .selector-invert:checked ~ .main .invert-filter .filter-name
 {
     font-weight: bold;
+}
+
+.left-arrow
+{
+    transform: rotate(90deg);
+}
+
+.right-arrow
+{
+    transform: rotate(-90deg);
+}
+
+.left-arrow,
+.right-arrow
+{
+    display: none;
+    position: absolute;
+    margin-top: 40px;
+}
+
+.left-arrow
+{
+    margin-left: -60px;
+}
+
+.right-arrow
+{
+    margin-left: 460px;
+}
+
+.carousel-from-1:checked ~ .main .left-arrow-1,
+.carousel-from-1:checked ~ .main .right-arrow-1,
+.carousel-from-2:checked ~ .main .left-arrow-2,
+.carousel-from-2:checked ~ .main .right-arrow-2,
+.carousel-from-3:checked ~ .main .left-arrow-3,
+.carousel-from-3:checked ~ .main .right-arrow-3
+{
+    display: block;
+}
+
+.carousel-from-2:checked ~ .main .filters-container
+{
+    left: -112px;
+}
+
+.carousel-from-3:checked ~ .main .filters-container
+{
+    left: -224px;
 }
