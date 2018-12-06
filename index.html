@@ -3,10 +3,128 @@
 <head>
     <meta charset="utf-8">
     <title>Задача «Котограм»</title>
+    <link rel="stylesheet" href="index.css" type="text/css">
 </head>
 <body>
 <!--Ваш спрайт-->
+    <main class="main-content">
+        <input type="checkbox" class="fill" id="fill" name="fill">
 
-<!--Ваша разметка-->
+        <input type="radio" class="scale_little" id="scale_little" name="scale" checked>
+        <input type="radio" class="scale_normal" id="scale_normal" name="scale">
+        <input type="radio" class="scale_big" id="scale_big" name="scale">
+        
+        <input type="checkbox" class="logo" id="logo" name="logo">
+
+        <input type="radio" class="rotate_0deg" id="rotate_0deg" name="rotate" checked>
+        <input type="radio" class="rotate_90deg" id="rotate_90deg" name="rotate">
+        <input type="radio" class="rotate_180deg" id="rotate_180deg" name="rotate">
+        <input type="radio" class="rotate_270deg" id="rotate_270deg" name="rotate">
+
+        <input type="checkbox" class="flip" id="flip" name="flip">
+
+        <input type="radio" class="filter-selector filter-1" id="filter-1" name="filter-selector" checked>
+        <input type="radio" class="filter-selector filter-2" id="filter-2" name="filter-selector">
+        <input type="radio" class="filter-selector filter-3" id="filter-3" name="filter-selector">
+        <input type="radio" class="filter-selector filter-4" id="filter-4" name="filter-selector">
+        <section class="main-content__options">
+            <ul class="options__items-list">
+                <li class="list-item">
+                    <label class="option fill-option" for="fill">
+                        <img class="fill_svg" src="icons/fill.svg" alt="вмещаемость">
+                    </label>
+                </li>
+                <li class="list-item">
+                    <label class="option scale-option scale_little_label" for="scale_little">
+                        <img class="scale_svg" src="icons/scale.svg" alt="масштабирование">
+                    </label>
+                    <label class="option scale-option scale_normal_label" for="scale_normal">
+                        <img class="scale_svg" src="icons/scale.svg" alt="масштабирование">
+                    </label>
+                    <label class="option scale-option scale_big_label" for="scale_big">
+                        <img class="scale_svg" src="icons/scale.svg" alt="масштабирование">
+                    </label>
+                </li>
+                <li class="list-item">
+                    <label class="option logo-option" for="logo">
+                        <img class="logo_svg" src="icons/logo.svg" alt="просмотр исходного изображения">
+                    </label>
+                </li>
+                <li class="list-item">
+                    <label class="option rotate-option rotate_0deg_label" for="rotate_0deg">
+                        <img class="rotate_svg" src="icons/rotate.svg" alt="поворот">
+                    </label>
+                    <label class="option rotate-option rotate_90deg_label" for="rotate_90deg">
+                        <img class="rotate_svg" src="icons/rotate.svg" alt="поворот">
+                    </label>
+                    <label class="option rotate-option rotate_180deg_label" for="rotate_180deg">
+                        <img class="rotate_svg" src="icons/rotate.svg" alt="поворот">
+                    </label>
+                    <label class="option rotate-option rotate_270deg_label" for="rotate_270deg">
+                        <img class="rotate_svg" src="icons/rotate.svg" alt="поворот">
+                    </label>
+                </li>
+                <li class="list-item">
+                    <label class="option flip-option" for="flip">
+                        <img class="flip_svg" src="icons/flip.svg" alt="отражение по горизонтали">
+                    </label>
+                </li>
+            </ul>
+        </section>
+        <section class="main-content__photo">
+            <div class="photo modified-photo">
+                <div class="photo-wrapper modified-by-scale">
+                    <div class="photo-wrapper modified-by-rotate">
+                        <div class="photo-wrapper modified-by-flip">
+                            <img class="photo__image" src="images/cat.jpg" alt="фото для обработки">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="photo original-photo">
+                <img class="photo__image" src="images/cat.jpg" alt="фото для обработки">
+            </div>
+        </section>
+        <section class="main-content__filters">
+            <ul class="filters__carousel">
+                <li class="list-item filter">
+                    <label class="filter__label filter-1__label" for="filter-1">
+                        <span class="filter__name filter-1-name">Без фильтра</span>
+                        <img class="filter-1__image" src="images/cat.jpg" alt="фото под фильтром">
+                    </label>
+                </li>
+                <li class="list-item filter">
+                    <label class="filter__label filter-2__label" for="filter-2">
+                        <span class="filter__name filter-2-name">Сепия</span>
+                        <img class="filter-2__image" src="images/cat.jpg" alt="фото под фильтром">
+                    </label>
+                </li>
+                <li class="list-item filter">
+                    <label class="filter__label filter-3__label" for="filter-3">
+                        <span class="filter__name filter-3-name">Негатив</span>
+                        <img class="filter-3__image" src="images/cat.jpg" alt="фото под фильтром">
+                    </label>
+                </li>
+                <li class="list-item filter">
+                    <label class="filter__label filter-4__label" for="filter-4">
+                        <span class="filter__name filter-4-name">Sutro</span>
+                        <img class="filter-4__image" src="images/cat.jpg" alt="фото под фильтром">
+                    </label>
+                </li><!--
+                <li class="list-item filter">
+                    <span class="filter__name">X-PRO 2</span>
+                    <img class="X-PRO-2-image" src="images/cat.jpg" alt="фото под фильтром">
+                </li>
+                <li class="list-item filter">
+                    <span class="filter__name">Kelvin</span>
+                    <img class="Kelvin-image" src="images/cat.jpg" alt="фото под фильтром">
+                </li>
+                <li class="list-item filter">
+                    <span class="filter__name">Inkwell</span>
+                    <img class="Inkwell-image" src="images/cat.jpg" alt="фото под фильтром">
+                </li>-->
+            </ul>
+        </section>
+    </main>
 </body>
 </html>
