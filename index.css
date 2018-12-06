@@ -480,3 +480,62 @@ input[id='UralSummer-filter']:checked ~ main .ArL label[for='Yalta-filter']
 {
     display: block;
 }
+
+input[id='Piter-filter']:checked ~ main .imgM
+{
+    animation: PiterFilterAnim 1s linear forwards;
+}
+
+@keyframes PiterFilterAnim
+{
+    from
+    {
+        filter: grayscale(0);
+    }
+
+    to
+    {
+        filter: grayscale(1);
+    }
+}
+
+input[id='Yalta-filter']:checked ~ main .imgM
+{
+    animation: YaltaFilterAnim 1s linear forwards;
+}
+
+@keyframes YaltaFilterAnim
+{
+    0%
+    {
+        filter: saturate(0);
+    }
+
+    50%
+    {
+        filter: saturate(1);
+    }
+
+    100%
+    {
+        filter: saturate(2);
+    }
+}
+
+input[id='UralSummer-filter']:checked ~ main .imgM
+{
+    animation: UralSummerFilterAnim 1s linear forwards ;
+}
+
+@keyframes UralSummerFilterAnim
+{
+    from
+    {
+        filter: hue-rotate(0);
+    }
+
+    to
+    {
+        filter: hue-rotate(180deg);
+    }
+}
