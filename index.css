@@ -4,6 +4,7 @@ body
     --angle: 0;
     --flip: 1;
     --scale: 1;
+    --translateX: 0;
 }
 
 .container
@@ -173,8 +174,9 @@ input[id='fill']:checked ~ .photo .image
 
 .filters
 {
+    position: relative;
     display: inline-flex;
-    white-space: nowrap;
+    transform: translate3d(var(--translateX), 0, 0);
 }
 
 .filter
@@ -273,7 +275,19 @@ input[id='slide-2']:checked ~ .filter-carousel .flip-right
     display: none;
 }
 
-input[id='slide-0']:checked ~ .filter-carousel .control-slide-0
+input[id='slide-0']:checked ~ .filter-carousel .control-slide-0,
+input[id='slide-1']:checked ~ .filter-carousel .control-slide-1,
+input[id='slide-2']:checked ~ .filter-carousel .control-slide-2
 {
     display: block;
+}
+
+input[id='slide-1']:checked ~ .filter-carousel
+{
+    --translateX: -175px;
+}
+
+input[id='slide-2']:checked ~ .filter-carousel
+{
+    --translateX: -350px;
 }
