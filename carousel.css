@@ -51,7 +51,7 @@
 .f1-preview,
 .f1:checked ~ .Catogram-Default .photo
 {
-    animation: originalFilter 1s ease forwards;
+    animation: originalFilter .5s ease forwards;
 }
 
 @keyframes originalFilter
@@ -65,7 +65,7 @@
 .f2-preview,
 .f2:checked ~ .Catogram-Default .photo
 {
-    animation: grayscaleFilter 1s ease forwards;
+    animation: grayscaleFilter .5s ease forwards;
 }
 
 @keyframes grayscaleFilter
@@ -79,7 +79,7 @@
 .f3-preview,
 .f3:checked ~ .Catogram-Default .photo
 {
-    animation: sepiaFilter 1s ease forwards;
+    animation: sepiaFilter .5s ease forwards;
 }
 
 @keyframes sepiaFilter
@@ -93,7 +93,7 @@
 .f4-preview,
 .f4:checked ~ .Catogram-Default .photo
 {
-    animation: hueRotateFilter 1s ease forwards;
+    animation: hueRotateFilter .5s ease forwards;
 }
 
 @keyframes hueRotateFilter
@@ -107,7 +107,7 @@
 .f5-preview,
 .f5:checked ~ .Catogram-Default .photo
 {
-    animation: saturateFilter 1s ease forwards;
+    animation: saturateFilter .5s ease forwards;
 }
 
 @keyframes saturateFilter
@@ -121,7 +121,7 @@
 .f6-preview,
 .f6:checked ~ .Catogram-Default .photo
 {
-    animation: invertFilter 1s ease forwards;
+    animation: invertFilter .5s ease forwards;
 }
 
 @keyframes invertFilter
