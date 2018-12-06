@@ -41,6 +41,11 @@ body
     cursor: pointer;
 }
 
+.photo
+{
+    transition: all 1s ease;
+}
+
 .photo__content
 {
     width: 500px;
@@ -50,6 +55,7 @@ body
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: cover;
+    transition: 1s ease;
 }
 
 input[id='fill']:checked ~ .main .photo__content
@@ -62,29 +68,29 @@ label[for^='scale']
     display: none;
 }
 
-input[id='scale1x']:checked ~.main label[for='scale2x'],
-input[id='scale2x']:checked ~.main label[for='scale3x'],
-input[id='scale3x']:checked ~.main label[for='scale1x']
+input[id='scale1x']:checked ~ .main label[for='scale2x'],
+input[id='scale2x']:checked ~ .main label[for='scale3x'],
+input[id='scale3x']:checked ~ .main label[for='scale1x']
 {
     display: block;
 }
 
-input[id='scale2x']:checked ~.main .photo__content
+input[id='scale2x']:checked ~ .main .photo__content
 {
     background-size: 200%;
 }
 
-input[id='scale3x']:checked ~.main .photo__content
+input[id='scale3x']:checked ~ .main .photo__content
 {
     background-size: 300%;
 }
 
-input[id='logo']:checked ~.main .photo__content,
-input[id='logo']:checked ~.main .photo
+input[id='logo']:checked ~ .main .photo__content,
+input[id='logo']:checked ~ .main .photo
 {
-    transform: none;
+    transform: none !important;
+    filter: none !important;
     background-size: cover;
-    filter: none;
 }
 
 label[for^='rotate']
@@ -92,10 +98,10 @@ label[for^='rotate']
     display: none;
 }
 
-input[id='rotate1']:checked ~.main label[for='rotate2'],
-input[id='rotate2']:checked ~.main label[for='rotate3'],
-input[id='rotate3']:checked ~.main label[for='rotate4'],
-input[id='rotate4']:checked ~.main label[for='rotate1']
+input[id='rotate1']:checked ~ .main label[for='rotate2'],
+input[id='rotate2']:checked ~ .main label[for='rotate3'],
+input[id='rotate3']:checked ~ .main label[for='rotate4'],
+input[id='rotate4']:checked ~ .main label[for='rotate1']
 {
     display: block;
 }
@@ -120,5 +126,135 @@ input[id='flip']:checked ~ .main .photo
     transform: scaleX(-1);
 }
 
+svg[class='arrow']
+{
+    width: 32px;
+    height: 49px;
+    margin-top: 120px;
+}
 
+.neg
+{
+    transform: rotate(90deg);
+    position: absolute;
+    left: 0;
+}
+
+.pos
+{
+    transform: rotate(-90deg);
+    position: absolute;
+    right: 0;
+}
+
+.filters-container
+{
+    height: 140px;
+    margin-top: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.filter
+{
+    position: relative;
+    display: inline-block;
+    width: 120px;
+    height: 140px;
+    margin-right: 4px;
+}
+
+.filter__label
+{
+    position: absolute;
+    width: 120px;
+    height: 140px;
+    z-index: 1;
+}
+
+.filter__sample
+{
+    width: 120px;
+    height: 120px;
+    background-image: url(icons/cat.png);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+}
+
+.filter__name
+{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+label[for^='move']
+{
+    display: none;
+}
+
+input[id='move0']:checked ~ .main label[for='move0'][class='neg'],
+input[id='move2']:checked ~ .main label[for='move2'][class='pos']
+{
+    display: inline-block;
+    opacity: .4;
+}
+
+input[id='move0']:checked ~ .main label[for='move1'][class='pos'],
+input[id='move1']:checked ~ .main label[for='move2'][class='pos'],
+input[id='move1']:checked ~ .main label[for='move0'][class='neg'],
+input[id='move2']:checked ~ .main label[for='move1'][class='neg']
+{
+    display: inline-block;
+}
+
+input[id='move1']:checked ~ .main .filter
+{
+    left: calc(-128px * 1);
+}
+
+input[id='move2']:checked ~ .main .filter
+{
+    left: calc(-128px * 2);
+}
+
+input[id='filter1']:checked ~ .main .filter1 .filter__name,
+input[id='filter2']:checked ~ .main .filter2 .filter__name,
+input[id='filter3']:checked ~ .main .filter3 .filter__name,
+input[id='filter4']:checked ~ .main .filter4 .filter__name,
+input[id='filter5']:checked ~ .main .filter5 .filter__name,
+input[id='filter6']:checked ~ .main .filter6 .filter__name
+{
+    font-weight: bolder;
+}
+
+.filter2 .filter__sample,
+input[id='filter2']:checked ~ .main .photo__content
+{
+    filter: grayscale(1);
+}
+
+.filter3 .filter__sample,
+input[id='filter3']:checked ~ .main .photo__content
+{
+    filter: sepia(1);
+}
+
+.filter4 .filter__sample,
+input[id='filter4']:checked ~ .main .photo__content
+{
+    filter: hue-rotate(180deg) saturate(2.5) brightness(1.2);
+}
+
+.filter5 .filter__sample,
+input[id='filter5']:checked ~ .main .photo__content
+{
+    filter: hue-rotate(100deg) saturate(5) brightness(1.2);
+}
+
+.filter6 .filter__sample,
+input[id='filter6']:checked ~ .main .photo__content
+{
+    filter: invert(1);
+}
 
