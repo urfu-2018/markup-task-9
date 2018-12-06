@@ -257,4 +257,3 @@ input[id='filter6']:checked ~ .main .photo__content
 {
     filter: invert(1);
 }
-
