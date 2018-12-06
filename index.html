@@ -3,10 +3,84 @@
 <head>
     <meta charset="utf-8">
     <title>Задача «Котограм»</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
 <!--Ваш спрайт-->
+<input class="zoom-cat-0" id="zoom-0" type="radio" name="zoom" checked>
+<input class="zoom-cat-20" id="zoom-20" type="radio" name="zoom">
+<input class="zoom-cat-40" id="zoom-40" type="radio" name="zoom">
 
+<input class="rotate-cat-0deg" id="rotation-0deg" type="radio" name="rotation" checked>
+<input class="rotate-cat-90deg" id="rotation-90deg" type="radio" name="rotation">
+<input class="rotate-cat-180deg" id="rotation-180deg" type="radio" name="rotation">
+<input class="rotate-cat-270deg" id="rotation-270deg" type="radio" name="rotation">
+
+<input type="checkbox" id="mirror-cat" class="mirror-cat">
+
+<input type="checkbox" id="fit" class="full-size-cat">
+
+<main class="catgrams">
+    <section class="view-cat">
+        <input class="filter-cat-none" id="filter-0" type="radio" name="filter" checked>
+        <input class="filter-cat-1" id="filter-1" type="radio" name="filter">
+        <input class="filter-cat-2" id="filter-2" type="radio" name="filter">
+        <input class="filter-cat-3" id="filter-3" type="radio" name="filter">
+        <section class="wrap-button">
+                <label for="fit" class="box-button fit-img"></label>
+                <label for="zoom-20" class="box-button zoom-img zoom-0"></label>
+                <label for="zoom-40" class="box-button zoom-img zoom-20"></label>
+                <label for="zoom-0" class="box-button zoom-img zoom-40"></label>
+                <a href="index.html" class="box-button catgram"></a>
+                <label for="rotation-90deg" class="box-button rotate-img rotation-0deg"></label>
+                <label for="rotation-180deg" class="box-button rotate-img rotation-90deg"></label>
+                <label for="rotation-270deg" class="box-button rotate-img rotation-180deg"></label>
+                <label for="rotation-0deg" class="box-button rotate-img rotation-270deg"></label>
+                <label for="mirror-cat" class="box-button mirror-img"></label>
+        </section>
+        <section class="cat-IMG">
+            <img src="cat1.jpg" alt="Cat" class="cat">
+        </section>
+        <section class="box-filter">
+            <label for="next" class="box-button next-button"></label>
+            <section class="filters-set">
+                <label for="filter-0" class="filter-0">
+                    <span class="title-filter">Без фильтра</span>
+                    <img src="cat1.jpg" alt="Cat" class="filter0 img-with-filter">
+                </label>
+                <label for="filter-1" class="filter-1">
+                    <span class="title-filter">Фильтер 1</span>
+                    <img src="cat1.jpg" alt="Cat" class="filter1 img-with-filter">
+                </label>
+                <label for="filter-2" class="filter-2">
+                    <span class="title-filter">Фильтер 2</span>
+                    <img src="cat1.jpg" alt="Cat" class="filter2 img-with-filter">
+                </label>
+                <label for="filter-3" class="filter-3">
+                    <span class="title-filter">Фильтер 3</span>
+                    <img src="cat1.jpg" alt="Cat" class="filter3 img-with-filter">
+                </label>
+                <label for="filter-4" class="filter-4">
+                    <span class="title-filter">Фильтер 4</span>
+                    <img src="cat1.jpg" alt="Cat" class="filter4 img-with-filter">
+                </label>
+                <label for="filter-5" class="filter-5">
+                    <span class="title-filter">Фильтер 5</span>
+                    <img src="cat1.jpg" alt="Cat" class="filter5 img-with-filter">
+                </label>
+                <label for="filter-6" class="filter-6">
+                    <span class="title-filter">Фильтер 6</span>
+                    <img src="cat1.jpg" alt="Cat" class="filter6 img-with-filter">
+                </label>
+                <label for="filter-7" class="filter-7">
+                    <span class="title-filter">Фильтер 7</span>
+                    <img src="cat1.jpg" alt="Cat" class="filter7 img-with-filter">
+                </label>
+            </section>
+            <label for="back" class="box-button beck-button"></label>
+        </section>
+    </section>
+</main>
 <!--Ваша разметка-->
 </body>
 </html>
