@@ -104,8 +104,6 @@ body
     width: 632px;
     height: 632px;
 
-    transition: .5s all linear;
-
     object-fit: contain;
 }
 
@@ -115,7 +113,6 @@ body
 {
     font-family: Helvetica, serif;
     font-size: 18px;
-    font-weight: bold;
     font-style: normal;
     font-stretch: normal;
     line-height: normal;
@@ -187,37 +184,37 @@ body
     height: 169px;
 }
 
-.filter-1
+.filter-1__preview
 {
     filter: none;
 }
 
-.filter-2
+.filter-2__preview
 {
     filter: grayscale(1);
 }
 
-.filter-3
+.filter-3__preview
 {
     filter: sepia(1);
 }
 
-.filter-4
+.filter-4__preview
 {
     filter: hue-rotate(180deg);
 }
 
-.filter-5
+.filter-5__preview
 {
     filter: invert(100%);
 }
 
-.filter-6
+.filter-6__preview
 {
     filter: saturate(300%);
 }
 
-.filter-7
+.filter-7__preview
 {
     filter: hue-rotate(90deg) saturate(300%) sepia(15%);
 }
@@ -240,57 +237,23 @@ body
 
 /*________________________TO_MAKE_CONTROLS_WORK____________________________*/
 
-.fill-input:checked ~ .canvas > .photo
+.canvas_flip,
+.canvas_rotate,
+.canvas_scale,
+.canvas,
+.photo
+{
+    transition: .5s all linear;
+}
+
+.fill-input:checked ~ .canvas .photo
 {
     object-fit: fill;
 }
 
-.rotate-input-0:checked ~ .flip-input:checked ~ .canvas > .photo
+.flip-input:checked ~ .canvas .canvas_flip
 {
-    transition: .5s;
-    transform: rotate(0deg) scale(-1, 1);
-}
-
-.rotate-input-1:checked ~ .flip-input:checked ~ .canvas > .photo
-{
-    transition: .5s;
-    transform: rotate(90deg) scale(-1, 1);
-}
-
-.rotate-input-2:checked ~ .flip-input:checked ~ .canvas > .photo
-{
-    transition: .5s;
-    transform: rotate(180deg) scale(-1, 1);
-}
-
-.rotate-input-3:checked ~ .flip-input:checked ~ .canvas > .photo
-{
-    transition: .5s;
-    transform: rotate(270deg) scale(-1, 1);
-}
-
-.rotate-input-4:checked ~ .flip-input:checked ~ .canvas > .photo
-{
-    transition: .5s;
-    transform: rotate(360deg) scale(-1, 1);
-}
-
-.rotate-input-5:checked ~ .flip-input:checked ~ .canvas > .photo
-{
-    transition: .5s;
-    transform: rotate(270deg) scale(-1, 1);
-}
-
-.rotate-input-6:checked ~ .flip-input:checked ~ .canvas > .photo
-{
-    transition: .5s;
-    transform: rotate(180deg) scale(-1, 1);
-}
-
-.rotate-input-7:checked ~ .flip-input:checked ~ .canvas > .photo
-{
-    transition: .5s;
-    transform: rotate(90deg) scale(-1, 1);
+    transform: scale(-1, 1);
 }
 
 .rotate
@@ -308,55 +271,45 @@ body
 .rotate-input-7:checked ~ .controls > .rotate-0
 {
     display: block;
-
-    transition: .5s all linear;
 }
 
-.rotate-input-0:checked ~ .canvas > .photo_rotated
+.rotate-input-0:checked ~ .canvas > .canvas_rotate
 {
-    transition: .5s all linear;
     transform: none;
 }
 
-.rotate-input-1:checked ~ .canvas > .photo_rotated
+.rotate-input-1:checked ~ .canvas > .canvas_rotate
 {
-    transition: .5s all linear;
     transform: rotate(90deg);
 }
 
-.rotate-input-2:checked ~ .canvas > .photo_rotated
+.rotate-input-2:checked ~ .canvas > .canvas_rotate
 {
-    transition: .5s all linear;
     transform: rotate(180deg);
 }
 
-.rotate-input-3:checked ~ .canvas > .photo_rotated
+.rotate-input-3:checked ~ .canvas > .canvas_rotate
 {
-    transition: .5s all linear;
     transform: rotate(270deg);
 }
 
-.rotate-input-4:checked ~ .canvas > .photo_rotated
+.rotate-input-4:checked ~ .canvas > .canvas_rotate
 {
-    transition: .5s all linear;
     transform: rotate(360deg);
 }
 
-.rotate-input-5:checked ~ .canvas > .photo_rotated
+.rotate-input-5:checked ~ .canvas > .canvas_rotate
 {
-    transition: .5s all linear;
     transform: rotate(270deg);
 }
 
-.rotate-input-6:checked ~ .canvas > .photo_rotated
+.rotate-input-6:checked ~ .canvas > .canvas_rotate
 {
-    transition: .5s all linear;
     transform: rotate(180deg);
 }
 
-.rotate-input-7:checked ~ .canvas > .photo_rotated
+.rotate-input-7:checked ~ .canvas > .canvas_rotate
 {
-    transition: .5s all linear;
     transform: rotate(90deg);
 }
 
@@ -377,68 +330,41 @@ body
     display: block;
 }
 
-.scale-input-1:checked ~ .canvas > .photo
+.scale-input-1:checked ~ .canvas .canvas_scale
 {
-    width: 695px;
-    height: 695px;
-    margin: -20px 0 0 -20px;
-
-    transition: .5s all linear;
+    transform: scale(1.2, 1.2);
 }
 
-.scale-input-2:checked ~ .canvas > .photo
+.scale-input-2:checked ~ .canvas .canvas_scale
 {
-    width: 758px;
-    height: 758px;
-    margin: -40px 0 0 -40px;
-
-    transition: .5s all linear;
+    transform: scale(1.4, 1.4);
 }
 
-.scale-input-3:checked ~ .canvas > .photo
+.scale-input-3:checked ~ .canvas .canvas_scale
 {
-    width: 821px;
-    height: 821px;
-    margin: -60px 0 0 -60px;
-
-    transition: .5s all linear;
+    transform: scale(1.6, 1.6);
 }
 
-.scale-input-4:checked ~ .canvas > .photo
+.scale-input-4:checked ~ .canvas .canvas_scale
 {
-    width: 884px;
-    height: 884px;
-    margin: -80px 0 0 -80px;
-
-    transition: .5s all linear;
+    transform: scale(1.8, 1.8);
 }
 
-.scale-input-5:checked ~ .canvas > .photo
+.scale-input-5:checked ~ .canvas .canvas_scale
 {
-    width: 948px;
-    height: 948px;
-    margin: -100px 0 0 -100px;
-
-    transition: .5s all linear;
+    transform: scale(2, 2);
 }
 
-.scale-input-6:checked ~ .canvas > .photo
+.scale-input-6:checked ~ .canvas .canvas_scale
 {
-    width: 1011px;
-    height: 1011px;
-    margin: -120px 0 0 -120px;
-
-    transition: .5s all linear;
+    transform: scale(2.2, 2.2);
 }
 
-.scale-input-7:checked ~ .canvas > .photo
+.scale-input-7:checked ~ .canvas .canvas_scale
 {
-    width: 1075px;
-    height: 1075px;
-    margin: -140px 0 0 -140px;
-
-    transition: .5s all linear;
+    transform: scale(2.4, 2.4);
 }
+
 /*______________________HOVER_ALL___________________________________*/
 
 .fill,
@@ -464,7 +390,6 @@ body
 .rotate:hover,
 .flip:hover,
 .fill-input:checked ~ .controls > .fill,
-.scale-input:checked ~ .controls > .scale,
 .flip-input:checked ~ .controls > .flip
 {
     transition: .5s;
@@ -474,53 +399,107 @@ body
 
 /*_______________________________FILTERS___________________________________*/
 
-.filter-input-1:checked ~ .canvas > .photo_filtered
+.filter-input-1:checked ~ .canvas .photo
 {
-    transition: .5s all linear;
+    transition: .5s linear;
 
     filter: none;
 }
 
-.filter-input-2:checked ~ .canvas > .photo_filtered
+.filter-input-2:checked ~ .canvas .photo
 {
-    transition: .5s all linear;
-
-    filter: grayscale(1);
+    animation: filter-2 .5s linear forwards;
 }
 
-.filter-input-3:checked ~ .canvas > .photo_filtered
+@keyframes filter-2
 {
-    transition: .5s all linear;
-
-    filter: sepia(1);
+    to
+    {
+        filter: grayscale(1);
+    }
 }
 
-.filter-input-4:checked ~ .canvas > .photo_filtered
+.filter-input-3:checked ~ .canvas .photo
 {
-    transition: .5s all linear;
-
-    filter: hue-rotate(180deg);
+    animation: filter-3 .5s linear forwards;
 }
 
-.filter-input-5:checked ~ .canvas > .photo_filtered
+@keyframes filter-3
 {
-    transition: .5s all linear;
-
-    filter: invert(100%);
+    to
+    {
+        filter: sepia(1);
+    }
 }
 
-.filter-input-6:checked ~ .canvas > .photo_filtered
+.filter-input-4:checked ~ .canvas .photo
 {
-    transition: .5s all linear;
-
-    filter: saturate(300%);
+    animation: filter-4 .5s linear forwards;
 }
 
-.filter-input-7:checked ~ .canvas > .photo_filtered
+@keyframes filter-4
 {
-    transition: .5s all linear;
+    to
+    {
+        filter: hue-rotate(180deg);
+    }
+}
 
-    filter: hue-rotate(90deg) saturate(300%) sepia(15%);
+.filter-input-5:checked ~ .canvas .photo
+{
+    animation: filter-5 .5s linear forwards;
+}
+
+@keyframes filter-5
+{
+    to
+    {
+        filter: invert(100%);
+    }
+}
+
+.filter-input-6:checked ~ .canvas .photo
+{
+    animation: filter-6 .5s linear forwards;
+}
+
+@keyframes filter-6
+{
+    to
+    {
+        filter: saturate(300%);
+    }
+}
+
+.filter-input-7:checked ~ .canvas .photo
+{
+    animation: filter-7 .5s linear forwards;
+}
+
+@keyframes filter-7
+{
+    to
+    {
+        filter: hue-rotate(90deg) saturate(300%) sepia(15%);
+    }
+}
+
+.filter-1:hover > .filter-1__name,
+.filter-2:hover > .filter-2__name,
+.filter-3:hover > .filter-3__name,
+.filter-4:hover > .filter-4__name,
+.filter-5:hover > .filter-5__name,
+.filter-6:hover > .filter-6__name,
+.filter-7:hover > .filter-7__name,
+.filter-input-1:checked ~ .filters .filter-1__name,
+.filter-input-2:checked ~ .filters .filter-2__name,
+.filter-input-3:checked ~ .filters .filter-3__name,
+.filter-input-4:checked ~ .filters .filter-4__name,
+.filter-input-5:checked ~ .filters .filter-5__name,
+.filter-input-6:checked ~ .filters .filter-6__name,
+.filter-input-7:checked ~ .filters .filter-7__name
+{
+    font-weight: bolder;
 }
 
 /*____________________________CAROUSEL_______________________________*/
@@ -531,22 +510,22 @@ body
     display: block;
 }
 
-.right-arrow-1-input:checked ~ .filters > .carousel > .carousel__item,
-.left-arrow-3-input:checked ~ .filters > .carousel > .carousel__item
+.right-arrow-1-input:checked ~ .filters .carousel__item,
+.left-arrow-3-input:checked ~ .filters .carousel__item
 {
     transition: .5s;
     transform: translateX(-175px);
 }
 
-.right-arrow-2-input:checked ~ .filters > .carousel > .carousel__item,
-.left-arrow-4-input:checked ~ .filters > .carousel > .carousel__item
+.right-arrow-2-input:checked ~ .filters .carousel__item,
+.left-arrow-4-input:checked ~ .filters .carousel__item
 {
     transition: .5s;
     transform: translateX(-350px);
 }
 
-.right-arrow-3-input:checked ~ .filters > .carousel > .carousel__item,
-.right-arrow-4-input:checked ~ .filters > .carousel > .carousel__item
+.right-arrow-3-input:checked ~ .filters .carousel__item,
+.right-arrow-4-input:checked ~ .filters .carousel__item
 {
     transition: .5s;
     transform: translateX(-525px);
@@ -573,12 +552,12 @@ body
     display: block;
 }
 
-.left-arrow-1-input:checked ~ .filters > .carousel > .carousel__item
+.left-arrow-1-input:checked ~ .filters .carousel__item
 {
     transform: none;
 }
 
-.left-arrow-2-input:checked ~ .filters > .carousel > .carousel__item
+.left-arrow-2-input:checked ~ .filters .carousel__item
 {
     transition: .5s;
     transform: none;
@@ -594,20 +573,18 @@ body
 
 /*________________________MAKE_LOGO_WORK_AGAIN________________________*/
 
-.logo-input:checked ~ .canvas > .photo_filtered
+.logo-input:checked ~ .canvas .photo
 {
-    width: 632px;
-    min-width: 632px;
-    max-width: 632px;
-    height: 632px;
-    min-height: 632px;
-    max-height: 632px;
-    margin: auto;
-
     transition: .5s;
-    transform: none !important;
     animation: none;
 
     filter: none;
     object-fit: contain;
+}
+
+.logo-input:checked ~ .canvas .canvas_flip,
+.logo-input:checked ~ .canvas > .canvas_rotate,
+.logo-input:checked ~ .canvas .canvas_scale
+{
+    transform: none;
 }

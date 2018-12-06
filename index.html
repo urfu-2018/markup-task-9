@@ -176,8 +176,14 @@
     </label>
 </article>
 <article class="canvas">
-    <img src="_normal.jpg" alt="Котик" class="photo photo_filtered photo_rotated"
-         title="В задании не оговаривалось, должен ли быть котик сухопутным или морским :)">
+    <section class="canvas_rotate">
+        <section class="canvas_scale">
+            <section class="canvas_flip">
+                <img  src="_normal.jpg" srcset="_normal2.jpg 2x" alt="Котик" class="photo"
+                     title="В задании не оговаривалось, должен ли быть котик сухопутным или морским :)">
+            </section>
+        </section>
+    </section>
 </article>
 <article class="filters">
     <label class="left-arrow arrow  left-arrow-1 arrow_inactive" for="left-arrow-1-input">
@@ -201,33 +207,40 @@
         </svg>
     </label>
     <section class="carousel">
-        <label class="carousel__item filter" for="filter-input-1">
-            <span class="filter__name">Без фильтра</span>
-            <img class="filter__preview filter-1" src="_normal.jpg" alt="#nofilter">
+        <label class="carousel__item filter filter-1" for="filter-input-1">
+            <span class="filter__name filter-1__name">Без фильтра</span>
+            <img  src="_normal.jpg" srcset="_normal2.jpg 2x" alt="#nofilter"
+                  class="filter__preview filter-1__preview">
         </label>
-        <label class="carousel__item filter" for="filter-input-2">
-            <span class="filter__name">Питер</span>
-            <img class="filter__preview filter-2" src="_normal.jpg" alt="#Питер">
+        <label class="carousel__item filter filter-2" for="filter-input-2">
+            <span class="filter__name filter-2__name">Питер</span>
+            <img  src="_normal.jpg" srcset="_normal2.jpg 2x" alt="#Питер"
+                  class="filter__preview filter-2__preview">
         </label>
-        <label class="carousel__item filter" for="filter-input-3">
-            <span class="filter__name">Ялта</span>
-            <img class="filter__preview filter-3" src="_normal.jpg" alt="#Ялта">
+        <label class="carousel__item filter filter-3" for="filter-input-3">
+            <span class="filter__name filter-3__name">Ялта</span>
+            <img  src="_normal.jpg" srcset="_normal2.jpg 2x" alt="#Ялта"
+                  class="filter__preview filter-3__preview">
         </label>
-        <label class="carousel__item filter" for="filter-input-4">
-            <span class="filter__name">Уральское лето</span>
-            <img class="filter__preview filter-4" src="_normal.jpg" alt="#Уральское Бали">
+        <label class="carousel__item filter filter-4" for="filter-input-4">
+            <span class="filter__name filter-4__name">Уральское лето</span>
+            <img  src="_normal.jpg" srcset="_normal2.jpg 2x" alt="#Уральское лето"
+                  class="filter__preview filter-4__preview">
         </label>
-        <label class="carousel__item filter" for="filter-input-5">
-            <span class="filter__name">Лесновский день</span>
-            <img class="filter__preview filter-5" src="_normal.jpg" alt="#День в Лесном">
+        <label class="carousel__item filter filter-5" for="filter-input-5">
+            <span class="filter__name filter-5__name">Лесновский день</span>
+            <img  src="_normal.jpg" srcset="_normal2.jpg 2x" alt="#Лесновский день"
+                  class="filter__preview filter-5__preview">
         </label>
-        <label class="carousel__item filter" for="filter-input-6">
-            <span class="filter__name">Закат</span>
-            <img class="filter__preview filter-6" src="_normal.jpg" alt="#Закат">
+        <label class="carousel__item filter filter-6" for="filter-input-6">
+            <span class="filter__name filter-6__name">Закат</span>
+            <img  src="_normal.jpg" srcset="_normal2.jpg 2x" alt="#Закат"
+                  class="filter__preview filter-6__preview">
         </label>
-        <label class="carousel__item filter" for="filter-input-7">
-            <span class="filter__name">Ядерные остатки</span>
-            <img class="filter__preview filter-7" src="_normal.jpg" alt="#Ядерные остатки">
+        <label class="carousel__item filter filter-7" for="filter-input-7">
+            <span class="filter__name filter-7__name">Ядерные остатки</span>
+            <img  src="_normal.jpg" srcset="_normal2.jpg 2x" alt="#Ядерные остатки"
+                  class="filter__preview filter-7__preview">
         </label>
     </section>
     <label class="right-arrow arrow right-arrow-1" for="right-arrow-1-input">
