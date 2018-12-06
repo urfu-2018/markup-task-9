@@ -10,7 +10,7 @@
     <svg class="svg-sprite">
         <defs>
             <linearGradient id="gradient" x1="100%" x2="0%" y2="100%">
-                <stop stop-color="#8a2387"/>
+                <stop offset="0" stop-color="#8a2387"/>
                 <stop offset=".64" stop-color="#e94057"/>
                 <stop offset="1" stop-color="#f27121"/>
             </linearGradient>
@@ -49,9 +49,11 @@
     <input type="radio" class="control control-rotate-180" name="rotate" id="rotate_180">
     <input type="radio" class="control control-rotate-270" name="rotate" id="rotate_270">
     <input type="checkbox" class="control control-flip" id="img_flip">
+    <input type="checkbox" class="control" id="stub">
+    <input type="checkbox" class="control" id="stub1">
     <!--Ваша разметка-->
-    <article class="catogram-app page__app">
-        <header class="controls catogram-app__controls">
+    <article class="app page__app">
+        <header class="controls app__controls">
             <label class="controls__control" for="img_fill">
                 <svg class="icon controls__icon">
                     <use xlink:href="#fill"></use>
@@ -103,13 +105,13 @@
                 </svg>
             </label>
         </header>
-        <section class="image-box catogram-app__image-box">
+        <section class="image-box app__image-box">
             <img class="image image-box__image" src="cat.jpg"
                 width="632" height="632"
                 srcset="cat@2x.jpg 2x" alt="Кот">
         </section>
-        <section class="filters catogram-app__filters">
-            <label class="filters__arrow filters__arrow_left" for="">
+        <section class="filters app__filters">
+            <label class="filters__arrow filters__arrow_left" for="stub">
                 <svg class="icon filters__arrow-icon">
                     <use xlink:href="#arrow"></use>
                 </svg>
@@ -140,7 +142,7 @@
                         srcset="cat@2x.jpg 2x" alt="Кот">
                 </article>
             </section>
-            <label class="filters__arrow filters__arrow_right" for="">
+            <label class="filters__arrow filters__arrow_right" for="stub1">
                 <svg class="icon filters__arrow-icon">
                     <use xlink:href="#arrow"></use>
                 </svg>
