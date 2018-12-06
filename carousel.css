@@ -51,37 +51,85 @@
 .f1-preview,
 .f1:checked ~ .Catogram-Default .photo
 {
-    filter: none;
+    animation: originalFilter 1s ease forwards;
+}
+
+@keyframes originalFilter
+{
+    to
+    {
+        filter: none;
+    }
 }
 
 .f2-preview,
 .f2:checked ~ .Catogram-Default .photo
 {
-    filter: grayscale(100%);
+    animation: grayscaleFilter 1s ease forwards;
+}
+
+@keyframes grayscaleFilter
+{
+    to
+    {
+        filter: grayscale(100%);
+    }
 }
 
 .f3-preview,
 .f3:checked ~ .Catogram-Default .photo
 {
-    filter: sepia(100%);
+    animation: sepiaFilter 1s ease forwards;
+}
+
+@keyframes sepiaFilter
+{
+    to
+    {
+        filter: sepia(100%);
+    }
 }
 
 .f4-preview,
 .f4:checked ~ .Catogram-Default .photo
 {
-    filter: hue-rotate(180deg);
+    animation: hueRotateFilter 1s ease forwards;
+}
+
+@keyframes hueRotateFilter
+{
+    to
+    {
+        filter: hue-rotate(180deg);
+    }
 }
 
 .f5-preview,
 .f5:checked ~ .Catogram-Default .photo
 {
-    filter: saturate(600%);
+    animation: saturateFilter 1s ease forwards;
+}
+
+@keyframes saturateFilter
+{
+    to
+    {
+        filter: saturate(600%);
+    }
 }
 
 .f6-preview,
 .f6:checked ~ .Catogram-Default .photo
 {
-    filter: invert(100%);
+    animation: invertFilter 1s ease forwards;
+}
+
+@keyframes invertFilter
+{
+    to
+    {
+        filter: invert(100%);
+    }
 }
 
 .f1:checked ~ .Catogram-Default .f1-name,
