@@ -2,6 +2,7 @@
 {
     font: 18px Helvetica, sans-serif;
     margin: 0;
+    user-select: none;
 }
 
 .control,
@@ -15,20 +16,65 @@
 .page__app
 {
     width: 824px;
-    margin: auto;
+    margin: 10px auto;
 }
 
 /*----------Controls----------*/
 
-.control-scale_1:checked ~ .catogram-app .switch-scale_1,
-.control-scale_1-5:checked ~ .catogram-app .switch-scale_1-5,
-.control-scale_2:checked ~ .catogram-app .switch-scale_2,
-.control-rotate-reset:checked ~ .catogram-app .switch-rotate_reset,
-.control-rotate-90:checked ~ .catogram-app .switch-rotate_90,
-.control-rotate-180:checked ~ .catogram-app .switch-rotate_180,
-.control-rotate-270:checked ~ .catogram-app .switch-rotate_270
+.control-scale_1:checked ~ .catogram-app .switch-scale_1-5,
+.control-scale_1-5:checked ~ .catogram-app .switch-scale_2,
+.control-scale_2:checked ~ .catogram-app .switch-scale_1,
+.control-rotate-reset:checked ~ .catogram-app .switch-rotate_90,
+.control-rotate-90:checked ~ .catogram-app .switch-rotate_180,
+.control-rotate-180:checked ~ .catogram-app .switch-rotate_270,
+.control-rotate-270:checked ~ .catogram-app .switch-rotate_reset
 {
     display: initial;
+}
+
+.control-flip:checked ~ .catogram-app .image-box__image
+{
+    transform: scaleX(-1);
+}
+
+.control-fill:checked ~ .catogram-app .image-box__image
+{
+    object-fit: cover;
+}
+
+.control-scale_1-5:checked ~ .catogram-app .image-box__image
+{
+    transform: scale(1.5);
+}
+
+.control-scale_2:checked ~ .catogram-app .image-box__image
+{
+    transform: scale(2);
+}
+
+.control-scale_1-5:checked ~ .control-flip:checked ~ .catogram-app .image-box__image
+{
+    transform: scale(1.5) scaleX(-1);
+}
+
+.control-scale_2:checked ~ .control-flip:checked ~ .catogram-app .image-box__image
+{
+    transform: scale(2) scaleX(-1);
+}
+
+.control-rotate-90:checked ~ .catogram-app .image-box
+{
+    transform: rotate(90deg);
+}
+
+.control-rotate-180:checked ~ .catogram-app .image-box
+{
+    transform: rotate(180deg);
+}
+
+.control-rotate-270:checked ~ .catogram-app .image-box
+{
+    transform: rotate(270deg);
 }
 
 /*----------App Grid----------*/
@@ -36,7 +82,7 @@
 .catogram-app
 {
     display: grid;
-    grid-template: 'controls' 80px
+    grid-template: 'controls' 72px
         'image' 701px
         'filters' 206px
         / 100%;
@@ -57,7 +103,21 @@
     grid-area: filters;
 }
 
-/*----------Controls----------*/
+/*----------Icons----------*/
+
+.icon
+{
+    fill: #444;
+    fill-opacity: .8;
+    cursor: pointer;
+}
+
+.icon:hover
+{
+    fill: #000;
+}
+
+/*----------Header----------*/
 
 .controls
 {
@@ -71,11 +131,6 @@
     margin: auto;
 }
 
-.controls__control
-{
-    cursor: pointer;
-}
-
 .controls__icon
 {
     width: 48px;
@@ -87,18 +142,25 @@
 .image-box
 {
     display: flex;
+    overflow: hidden;
+
+    transition: .5s;
 }
 
 .catogram-app__image-box
 {
+    width: 632px;
+    height: 632px;
+    margin: auto;
     margin-bottom: 69px;
 }
 
 .image-box__image
 {
-    width: 632px;
     margin: auto;
-    object-fit: cover;
+    object-fit: contain;
+
+    transition: .5s;
 }
 
 /*----------Filters----------*/
