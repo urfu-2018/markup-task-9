@@ -28,6 +28,14 @@ head
     box-shadow: 0 0 5px 1px grey;
 }
 
+.svg-icon
+{
+    width: 48px;
+    height: 48px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
 /* Controls */
 
 .label-no-scale,
@@ -52,6 +60,25 @@ head
     display: block;
 }
 
+.selector-show-initial:checked ~ .main .svg-icon,
+.selector-show-initial:checked ~ .main .filter
+{
+    opacity: 0;
+    visibility: hidden;
+    cursor: default;
+}
+
+.label-show-initial
+{
+    cursor: pointer !important;
+    opacity: 1 !important;
+}
+
+.selector-show-initial:checked ~ .main .controls .label-show-initial
+{
+    visibility: visible;
+}
+
 .controls
 {
     display: flex;
@@ -59,12 +86,9 @@ head
     margin: 5px 5px 40px;
 }
 
-.svg-icon
+.controls .svg-icon
 {
-    width: 48px;
-    height: 48px;
-    overflow: hidden;
-    cursor: pointer;
+    transition: 1s;
 }
 
 .label-flip svg
@@ -221,6 +245,7 @@ head
     flex-direction: column;
     width: 110px;
     margin-left: 2px;
+    transition: 1s;
 }
 
 .filter-label
@@ -325,6 +350,13 @@ head
     display: none;
     position: absolute;
     margin-top: 40px;
+}
+
+.left-arrow-1,
+.right-arrow-3
+{
+    fill: #aaa;
+    cursor: auto;
 }
 
 .left-arrow
