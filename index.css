@@ -62,6 +62,12 @@ input[id='fill']:checked ~ main .imgM
     object-fit: contain;
 }
 
+input[id='fill']:checked ~ main .Photo-container::after
+{
+    background-image: linear-gradient(to bottom,
+    rgba(255, 255, 255, 0) 0, #fff 70%);
+}
+
 .Scalings
 {
     grid-area: scale;
@@ -88,6 +94,48 @@ input[id='fill']:checked ~ main .imgM
 .Rotatings svg
 {
     cursor: pointer;
+}
+
+.RadioRt90:checked ~ main .Photo-container::after
+{
+    background-image: linear-gradient(to bottom,
+    rgba(255, 255, 255, 0) 0, #fff 100%);
+    transform: rotate(90deg) translate(-275px, 275px);
+}
+
+input[id='fill']:checked .RadioRt90:checked ~ main .Photo-container::after
+{
+    background-image: linear-gradient(to bottom,
+    rgba(255, 255, 255, 0) 0, #fff 70%);
+    transform: rotate(90deg) translate(-275px, 275px);
+}
+
+.RadioRt270:checked ~ main .Photo-container::after
+{
+    background-image: linear-gradient(to bottom,
+    rgba(255, 255, 255, 0) 0, #fff 100%);
+    transform: rotate(-90deg) translate(275px, 275px);
+}
+
+input[id='fill']:checked .RadioRt270:checked ~ main .Photo-container::after
+{
+    background-image: linear-gradient(to bottom,
+    rgba(255, 255, 255, 0) 0, #fff 70%);
+    transform: rotate(-90deg) translate(275px, 275px);
+}
+
+.RadioRt180:checked ~ main .Photo-container::after
+{
+    background-image: linear-gradient(to bottom,
+    rgba(255, 255, 255, 0) 0, #fff 100%);
+    transform: rotate(180deg) translateY(551px);
+}
+
+input[id='fill']:checked .RadioRt180:checked ~ main .Photo-container::after
+{
+    background-image: linear-gradient(to bottom,
+    rgba(255, 255, 255, 0) 0, #fff 70%);
+    transform: rotate(180deg) translateY(551px);
 }
 
 /* Совместим две анимации при 90% скейлинге */
@@ -311,6 +359,17 @@ input[id='rotate-270deg']:checked ~ main .Sprites .Rotate_origin
     height: 632px;
     overflow: hidden;
     justify-self: center;
+}
+
+.Photo-container::after
+{
+    display: block;
+    position: relative;
+    background-image: linear-gradient(to bottom,
+    rgba(255, 255, 255, 0) 0, #fff 100%);
+    margin-top: -85px;
+    height: 85px;
+    content: '';
 }
 
 .Photo-container > img
