@@ -50,11 +50,27 @@ body
     fill: #444;
 }
 
-.Fill
+.Sprites > label[for='fill']
 {
     grid-area: fill;
     background: no-repeat 0 38px;
     cursor: pointer;
+}
+
+.Fill:hover,
+.Scalings:hover,
+.Logo:hover,
+.Rotatings:hover,
+.Flip:hover
+{
+    opacity: 1;
+}
+
+input[id='fill']:checked ~ main .Fill,
+input[id='flip']:checked ~ main .Flip
+{
+    fill: #000;
+    opacity: 1;
 }
 
 input[id='fill']:checked ~ main .imgM
@@ -316,7 +332,7 @@ input[id='fill']:checked .RadioRt180:checked ~ main .Photo-container::after
 
 /* Всё */
 
-.Flip
+.Sprites > label[for='flip']
 {
     grid-area: flip;
     display: flex;
@@ -381,21 +397,9 @@ input[id='rotate-270deg']:checked ~ main .Sprites .Rotate_origin
 
 .Filters
 {
-    display: grid;
-    grid-template: 'no-filter Piter Yalta UralSummer';
-    grid-gap: 5px;
-}
-
-.Filters img
-{
-    margin-top: 15px;
-    width: 170px;
-    height: 169px;
-    object-fit: contain;
-}
-
-.Filters
-{
+    width: 695px;
+    height: 222px;
+    overflow: hidden;
     text-align: center;
     font-family: Helvetica, serif;
     font-size: 18px;
@@ -404,6 +408,22 @@ input[id='rotate-270deg']:checked ~ main .Sprites .Rotate_origin
     font-stretch: normal;
     line-height: normal;
     letter-spacing: normal;
+}
+
+.Filters__carousel
+{
+    display: grid;
+    grid-template: 'no-filter Piter Yalta UralSummer Canada Cuba' 206px / 1fr;
+    grid-gap: 5px;
+    width: 100%;
+}
+
+.Filters img
+{
+    margin-top: 15px;
+    width: 170px;
+    height: 169px;
+    object-fit: contain;
 }
 
 .Filters span,
@@ -455,10 +475,34 @@ input[id='rotate-270deg']:checked ~ main .Sprites .Rotate_origin
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .12);
 }
 
-input[id='no-filter']:checked ~ main > .Filters > .Filters__no-filter,
-input[id='Piter-filter']:checked ~ main > .Filters > .Filters__Piter,
-input[id='Yalta-filter']:checked ~ main > .Filters > .Filters__Yalta,
-input[id='UralSummer-filter']:checked ~ main > .Filters > .Filters__UralSummer
+.Filters__Canada
+{
+    grid-area: Canada;
+}
+
+.Filters__Canada img
+{
+    filter: sepia(1);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .12);
+}
+
+.Filters__Cuba
+{
+    grid-area: Cuba;
+}
+
+.Filters__Cuba img
+{
+    animation: CubaFilterAnim 2s linear alternate infinite;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .12);
+}
+
+input[id='no-filter']:checked ~ main > .Filters .Filters__no-filter,
+input[id='Piter-filter']:checked ~ main > .Filters .Filters__Piter,
+input[id='Yalta-filter']:checked ~ main > .Filters .Filters__Yalta,
+input[id='UralSummer-filter']:checked ~ main > .Filters .Filters__UralSummer,
+input[id='Canada-filter']:checked ~ main > .Filters .Filters__Canada,
+input[id='Cuba-filter']:checked ~ main > .Filters .Filters__Cuba
 {
     font-weight: bold;
 }
@@ -483,6 +527,17 @@ input[id='Yalta-filter']:checked ~ main > .Photo-container > img
 input[id='UralSummer-filter']:checked ~ main > .Photo-container > img
 {
     filter: hue-rotate(180deg);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .12);
+}
+
+input[id='Canada-filter']:checked ~ main > .Photo-container > img
+{
+    filter: sepia(1);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .12);
+}
+
+input[id='Cuba-filter']:checked ~ main > .Photo-container > img
+{
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .12);
 }
 
@@ -523,11 +578,12 @@ input[id='UralSummer-filter']:checked ~ main > .Photo-container > img
 }
 
 input[id='no-filter']:checked ~ main .ArL label[for='no-filter'],
-input[id='UralSummer-filter']:checked ~ main .ArR label[for='UralSummer-filter']
+input[id='Cuba-filter']:checked ~ main .ArR label[for='Cuba-filter']
 {
     display: block;
     opacity: .6;
     fill: rgba(170, 170, 170, .8);
+    cursor: not-allowed;
 }
 
 input[id='no-filter']:checked ~ main .ArR label[for='Piter-filter'],
@@ -535,9 +591,49 @@ input[id='Piter-filter']:checked ~ main .ArL label[for='no-filter'],
 input[id='Piter-filter']:checked ~ main .ArR label[for='Yalta-filter'],
 input[id='Yalta-filter']:checked ~ main .ArL label[for='Piter-filter'],
 input[id='Yalta-filter']:checked ~ main .ArR label[for='UralSummer-filter'],
-input[id='UralSummer-filter']:checked ~ main .ArL label[for='Yalta-filter']
+input[id='UralSummer-filter']:checked ~ main .ArL label[for='Yalta-filter'],
+input[id='UralSummer-filter']:checked ~ main .ArR label[for='Canada-filter'],
+input[id='Canada-filter']:checked ~ main .ArL label[for='UralSummer-filter'],
+input[id='Canada-filter']:checked ~ main .ArR label[for='Cuba-filter'],
+input[id='Cuba-filter']:checked ~ main .ArL label[for='Canada-filter']
 {
     display: block;
+}
+
+input[id='no-filter']:checked ~ main .Filters > .Filters__carousel
+{
+    transition: 1s ease-in-out;
+    transform: translateX(0);
+}
+
+input[id='Piter-filter']:checked ~ main .Filters > .Filters__carousel
+{
+    transition: 1s ease-in-out;
+    transform: translateX(-175px);
+}
+
+input[id='Yalta-filter']:checked ~ main .Filters > .Filters__carousel
+{
+    transition: 1s ease-in-out;
+    transform: translateX(-350px);
+}
+
+input[id='UralSummer-filter']:checked ~ main .Filters > .Filters__carousel
+{
+    transition: 1s ease-in-out;
+    transform: translateX(-350px);
+}
+
+input[id='Canada-filter']:checked ~ main .Filters > .Filters__carousel
+{
+    transition: 1s ease-in-out;
+    transform: translateX(-350px);
+}
+
+input[id='Cuba-filter']:checked ~ main .Filters > .Filters__carousel
+{
+    transition: 1s ease-in-out;
+    transform: translateX(-350px);
 }
 
 input[id='Piter-filter']:checked ~ main .imgM
@@ -596,5 +692,59 @@ input[id='UralSummer-filter']:checked ~ main .imgM
     to
     {
         filter: hue-rotate(180deg);
+    }
+}
+
+input[id='Canada-filter']:checked ~ main .imgM
+{
+    animation: CanadaHELLOAnim 2s linear forwards;
+}
+
+@keyframes CanadaHELLOAnim
+{
+    from
+    {
+        filter: none;
+    }
+
+    to
+    {
+        filter: sepia(1);
+    }
+
+}
+
+input[id='Cuba-filter']:checked ~ main .imgM
+{
+    animation: CubaFilterAnim 2s ease-in-out alternate infinite;
+}
+
+/* Бонус */
+
+@keyframes CubaFilterAnim
+{
+    0%
+    {
+        filter: hue-rotate(72deg);
+    }
+
+    25%
+    {
+        filter: hue-rotate(144deg) saturate(3);
+    }
+
+    50%
+    {
+        filter: hue-rotate(216deg) saturate(9) blur(2px);
+    }
+
+    75%
+    {
+        filter: hue-rotate(288deg) saturate(6);
+    }
+
+    100%
+    {
+        filter: hue-rotate(360deg) saturate(1) blur(4px);
     }
 }
