@@ -35,6 +35,16 @@
     fill: #444;
 }
 
+.scale-buttons .edit-button
+{
+    display: none;
+}
+
+.rotate-buttons .edit-button
+{
+    display: none;
+}
+
 .edit-button:hover
 {
     fill: #222;
@@ -45,8 +55,16 @@
 {
     width: 632px;
     height: 632px;
-    margin: auto;
-    
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 100px;
+    overflow: hidden;
+}
+
+.wrapper-rotate,
+.wrapper-scale
+{
+    overflow: hidden;
 }
 
 .kitty-photo
@@ -56,10 +74,10 @@
     object-fit: cover;
 }
 
-.filters-box
+.filters
 {
     width: 832px;
-    margin-top: 40px;
+    margin-top: 20px;
     position: relative;
     height: 240px;
 }
@@ -68,14 +86,14 @@
 {
     position: absolute;
     transform: rotate(90deg);
-    top: 100px;
+    top: 110px;
 }
 
 .next-button
 {
     position: absolute;
     transform: rotate(-90deg);
-    top: 100px;
+    top: 110px;
     right: 0;
 }
 
@@ -95,7 +113,7 @@
     height: 31px;
 }
 
-.filter-buttons
+.filter-boxes
 {
     width: 695px;
     margin: auto;
@@ -103,18 +121,22 @@
     justify-content: space-between;
 }
 
-.filter-button
+.filter-box
 {
     width: 170px;
-    display: inline-block;
 }
 
-.filter-button p
+.filter-box p
 {
     font-family: Helvetica;
     font-size: 18px;
     text-align: center;
     margin: 9px 0 15px;
+}
+
+.filter-box label:hover
+{
+    cursor: pointer;
 }
 
 .filter-img
@@ -124,7 +146,57 @@
     object-fit: cover;
 }
 
-.without-filter
+input[id='fill-mode']:checked ~ .photo-box .kitty-photo
+{
+    width: 632px;
+    height: 632px;
+}
+
+input[id='scale-mode-x2']:checked ~ .photo-box .wrapper-scale
+{
+    transform: scale(2);
+}
+
+input[id='scale-mode-x3']:checked ~ .photo-box .wrapper-scale
+{
+    transform: scale(3);
+}
+
+input[id='scale-mode-x1']:checked ~ .editor-buttons .scale-buttons .scale-x1,
+input[id='scale-mode-x2']:checked ~ .editor-buttons .scale-buttons .scale-x2,
+input[id='scale-mode-x3']:checked ~ .editor-buttons .scale-buttons .scale-x3,
+input[id='rotate-norm']:checked ~ .editor-buttons .rotate-buttons .rotate-norm,
+input[id='rotate-left']:checked ~ .editor-buttons .rotate-buttons .rotate-left,
+input[id='rotate-down']:checked ~ .editor-buttons .rotate-buttons .rotate-down,
+input[id='rotate-right']:checked ~ .editor-buttons .rotate-buttons .rotate-right
+{
+    display: block;
+}
+
+input[id='rotate-left']:checked ~ .photo-box .wrapper-rotate
+{
+    transform: rotate(-90deg);
+}
+
+input[id='rotate-down']:checked ~ .photo-box .wrapper-rotate
+{
+    transform: rotate(-180deg);
+}
+
+input[id='rotate-right']:checked ~ .photo-box .wrapper-rotate
+{
+    transform: rotate(-270deg);
+}
+
+input[id='flip']:checked ~ .photo-box .kitty-photo
+{
+    transform: scale(-1, 1);
+}
+
+input[id='without']:checked ~ .filters label[for='without'],
+input[id='hopelessness']:checked ~ .filters label[for='hopelessness'],
+input[id='retro']:checked ~ .filters label[for='retro'],
+input[id='winter']:checked ~ .filters label[for='winter']
 {
     font-weight: bold;
 }
