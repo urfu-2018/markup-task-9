@@ -6,31 +6,51 @@
 }
 
 .control,
-.svg-sprite,
 .switch-scale,
-.switch-rotate
+.switch-rotate,
+.filters__arrow
 {
     display: none;
 }
 
-.page__app
+.svg-sprite
 {
-    width: 824px;
-    margin: 10px auto;
+    width: 0;
+    height: 0;
 }
 
-/*----------Controls----------*/
+.page__sprite
+{
+    position: absolute;
+}
+
+/*----------Controls (Cyclic Buttons)----------*/
 
 .control-scale_1:checked ~ .app .switch-scale_1-5,
 .control-scale_1-5:checked ~ .app .switch-scale_2,
 .control-scale_2:checked ~ .app .switch-scale_1,
-.control-rotate-reset:checked ~ .app .switch-rotate_90,
-.control-rotate-90:checked ~ .app .switch-rotate_180,
-.control-rotate-180:checked ~ .app .switch-rotate_270,
-.control-rotate-270:checked ~ .app .switch-rotate_reset
+.control-rotate_reset:checked ~ .app .switch-rotate_90,
+.control-rotate_90:checked ~ .app .switch-rotate_180,
+.control-rotate_180:checked ~ .app .switch-rotate_270,
+.control-rotate_270:checked ~ .app .switch-rotate_reset,
+.control-slide_1:checked ~ .app .filters__arrow_slide_1-back,
+.control-slide_1:checked ~ .app .filters__arrow_slide_2-forth,
+.control-slide_2:checked ~ .app .filters__arrow_slide_1-back,
+.control-slide_2:checked ~ .app .filters__arrow_slide_3-forth,
+.control-slide_3:checked ~ .app .filters__arrow_slide_2-back,
+.control-slide_3:checked ~ .app .filters__arrow_slide_3-forth
 {
     display: initial;
 }
+
+.control-slide_1:checked ~ .app .filters__arrow-icon_back,
+.control-slide_3:checked ~ .app .filters__arrow-icon_forth
+{
+    fill: rgba(170, 170, 170, .8);
+    opacity: .6;
+}
+
+/*----------Controls (Transformations)----------*/
 
 .control-flip:checked ~ .app .image-box__image
 {
@@ -62,27 +82,151 @@
     transform: scale(2) scaleX(-1);
 }
 
-.control-rotate-90:checked ~ .app .image-box
+.control-rotate_90:checked ~ .app .image-box
 {
     transform: rotate(90deg);
 }
 
-.control-rotate-180:checked ~ .app .image-box
+.control-rotate_180:checked ~ .app .image-box
 {
     transform: rotate(180deg);
 }
 
-.control-rotate-270:checked ~ .app .image-box
+.control-rotate_270:checked ~ .app .image-box
 {
     transform: rotate(270deg);
 }
 
+/*----------Controls (Filters)----------*/
+
+@keyframes grayscale
+{
+    to
+    {
+        filter: grayscale(1);
+    }
+}
+
+@keyframes sepia
+{
+    to
+    {
+        filter: sepia(50%);
+    }
+}
+
+@keyframes blue
+{
+    to
+    {
+        filter: hue-rotate(180deg) saturate(2);
+    }
+}
+
+@keyframes blur
+{
+    to
+    {
+        filter: blur(2px);
+    }
+}
+
+@keyframes invert
+{
+    to
+    {
+        filter: invert(1);
+    }
+}
+
+.control-filter_none:checked ~ .app .filter__name_none,
+.control-filter_gray:checked ~ .app .filter__name_grayscale,
+.control-filter_sepia:checked ~ .app .filter__name_sepia,
+.control-filter_blue:checked ~ .app .filter__name_blue
+{
+    font-weight: bold;
+    color: #000;
+}
+
+.control-filter_gray:checked ~ .app .image-box__image
+{
+    animation: grayscale .5s linear forwards;
+}
+
+.preview_grayscale
+{
+    filter: grayscale(1);
+}
+
+.control-filter_sepia:checked ~ .app .image-box__image
+{
+    animation: sepia .5s linear forwards;
+}
+
+.preview_sepia
+{
+    filter: sepia(50%);
+}
+
+.control-filter_blue:checked ~ .app .image-box__image
+{
+    animation: blue .5s linear forwards;
+}
+
+.preview_blue
+{
+    filter: hue-rotate(180deg) saturate(2);
+}
+
+.control-filter_blur:checked ~ .app .image-box__image
+{
+    animation: blur .5s linear forwards;
+}
+
+.preview_blur
+{
+    filter: blur(3px);
+}
+
+.control-filter_invert:checked ~ .app .image-box__image
+{
+    animation: invert .5s linear forwards;
+}
+
+.preview_invert
+{
+    filter: invert(1);
+}
+
+.control-reset:checked ~ .app .image-box__image
+{
+    animation: none;
+}
+
+/*----------Controls (Carousel)----------*/
+
+.control-slide_2:checked ~ .app .carousel__inner
+{
+    transform: translateX(-175px);
+}
+
+.control-slide_3:checked ~ .app .carousel__inner
+{
+    transform: translateX(-350px);
+}
+
 /*----------App Grid----------*/
+
+.page__app
+{
+    width: 824px;
+    margin: auto;
+}
 
 .app
 {
     display: grid;
-    grid-template: 'controls' 72px
+    grid-template: 'controls' 80px
         'image' 701px
         'filters' 206px
         / 100%;
@@ -117,6 +261,28 @@
     fill: #000;
 }
 
+.icon_logo
+{
+    fill: url(#linear-gradient);
+    fill-opacity: 1;
+}
+
+.icon_logo:hover
+{
+    fill: url(#linear-gradient);
+}
+
+.control-reset:checked ~ .app .icon_logo
+{
+    fill: #444;
+    fill-opacity: .8;
+}
+
+.control-reset:checked ~ .app .icon_logo:hover
+{
+    fill: #000;
+}
+
 /*----------Header----------*/
 
 .controls
@@ -129,6 +295,7 @@
 {
     width: 632px;
     margin: auto;
+    margin-bottom: 12px;
 }
 
 .controls__icon
@@ -172,6 +339,11 @@
     align-items: center;
 }
 
+.filters__arrow
+{
+    margin-top: 35px;
+}
+
 .filters__arrow-icon
 {
     width: 48px;
@@ -192,8 +364,15 @@
 
 .carousel
 {
+    overflow: hidden;
+}
+
+.carousel__inner
+{
     display: flex;
     justify-content: space-between;
+
+    transition: transform .2s ease-in-out;
 }
 
 .filters__carousel
@@ -210,12 +389,27 @@
 
 .carousel__filter
 {
+    position: relative;
     margin-right: 5px;
+}
+
+.carousel__label
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 1;
 }
 
 .filter__name
 {
+    margin-top: 0;
+    margin-bottom: 15px;
     font: inherit;
+    color: #444;
 }
 
 .preview

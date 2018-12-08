@@ -7,14 +7,12 @@
 </head>
 <body class="page">
     <!--Ваш спрайт-->
-    <svg class="svg-sprite">
-        <defs>
-            <linearGradient id="gradient" x1="100%" x2="0%" y2="100%">
-                <stop offset="0" stop-color="#8a2387"/>
-                <stop offset=".64" stop-color="#e94057"/>
-                <stop offset="1" stop-color="#f27121"/>
-            </linearGradient>
-        </defs>
+    <svg class="svg-sprite page__sprite">
+        <linearGradient id="linear-gradient" x1="100%" x2="0%" y2="100%">
+            <stop offset="0" stop-color="#8a2387"/>
+            <stop offset=".64" stop-color="#e94057"/>
+            <stop offset="1" stop-color="#f27121"/>
+        </linearGradient>
         <symbol id="arrow">
             <path d="M.5 7.401L24.428 31.33 48.357 7.4 41.569.613l-17.14 17.14L7.288.614z" fill-rule="evenodd"/>
         </symbol>
@@ -39,18 +37,28 @@
         </symbol>
     </svg>
     <!--Ваши контролы-->
+    <!------Трансформации-->
     <input type="checkbox" class="control control-fill" id="img_fill" checked>
     <input type="radio" class="control control-scale_1" name="scale" id="scale_reset" checked>
     <input type="radio" class="control control-scale_1-5" name="scale" id="scale_1,5">
     <input type="radio" class="control control-scale_2" name="scale" id="scale_2">
     <input type="checkbox" class="control control-reset" id="reset">
-    <input type="radio" class="control control-rotate-reset" name="rotate" id="rotate_reset" checked>
-    <input type="radio" class="control control-rotate-90" name="rotate" id="rotate_90">
-    <input type="radio" class="control control-rotate-180" name="rotate" id="rotate_180">
-    <input type="radio" class="control control-rotate-270" name="rotate" id="rotate_270">
+    <input type="radio" class="control control-rotate_reset" name="rotate" id="rotate_reset" checked>
+    <input type="radio" class="control control-rotate_90" name="rotate" id="rotate_90">
+    <input type="radio" class="control control-rotate_180" name="rotate" id="rotate_180">
+    <input type="radio" class="control control-rotate_270" name="rotate" id="rotate_270">
     <input type="checkbox" class="control control-flip" id="img_flip">
-    <input type="checkbox" class="control" id="stub">
-    <input type="checkbox" class="control" id="stub1">
+    <!------Фильтры-->
+    <input type="radio" class="control control-filter_none" name="filter" id="filter_none" checked>
+    <input type="radio" class="control control-filter_gray" name="filter" id="filter_grayscale">
+    <input type="radio" class="control control-filter_sepia" name="filter" id="filter_sepia">
+    <input type="radio" class="control control-filter_blue" name="filter" id="filter_blue">
+    <input type="radio" class="control control-filter_blur" name="filter" id="filter_blur">
+    <input type="radio" class="control control-filter_invert" name="filter" id="filter_invert">
+    <!------Карусель-->
+    <input type="radio" class="control control-slide_1" name="slide" id="slide_1" checked>
+    <input type="radio" class="control control-slide_2" name="slide" id="slide_2">
+    <input type="radio" class="control control-slide_3" name="slide" id="slide_3">
     <!--Ваша разметка-->
     <article class="app page__app">
         <header class="controls app__controls">
@@ -75,7 +83,7 @@
                 </svg>
             </label>
             <label class="switch-reset controls__control" for="reset">
-                <svg class="icon icon_fill_gradient controls__icon" fill="url(#catogram_gradient)">
+                <svg class="icon icon_logo controls__icon">
                     <use xlink:href="#logo"></use>
                 </svg>
             </label>
@@ -111,39 +119,69 @@
                 srcset="cat@2x.jpg 2x" alt="Кот">
         </section>
         <section class="filters app__filters">
-            <label class="filters__arrow filters__arrow_left" for="stub">
+            <label class="filters__arrow filters__arrow_left filters__arrow_slide_1-back" for="slide_1">
+                <svg class="icon filters__arrow-icon filters__arrow-icon_back">
+                    <use xlink:href="#arrow"></use>
+                </svg>
+            </label>
+            <label class="filters__arrow filters__arrow_left filters__arrow_slide_2-back" for="slide_2">
                 <svg class="icon filters__arrow-icon">
                     <use xlink:href="#arrow"></use>
                 </svg>
             </label>
             <section class="carousel filters__carousel">
-                <article class="filter carousel__filter carousel__filter_none">
-                    <h2 class="filter__name">Без фильтра</h2>
-                    <img class="preview filter__preview filter__preview_none" src="cat.jpg"
+                <div class="carousel__inner">
+                    <section class="filter carousel__filter carousel__filter_none">
+                        <label class="carousel__label" for="filter_none"></label>
+                        <h2 class="filter__name filter__name_none">Без фильтра</h2>
+                        <img class="preview filter__preview preview_none" src="cat.jpg"
                         width="170" height="169"
                         srcset="cat@2x.jpg 2x" alt="Кот">
-                </article>
-                <article class="filter carousel__filter carousel__filter_grayscale">
-                    <h2 class="filter__name">Питер</h2>
-                    <img class="preview filter__preview filter__preview_grayscale" src="cat.jpg"
+                    </section>
+                    <section class="filter carousel__filter carousel__filter_grayscale">
+                        <label class="carousel__label" for="filter_grayscale"></label>
+                        <h2 class="filter__name filter__name_grayscale">Питер</h2>
+                        <img class="preview filter__preview preview_grayscale" src="cat.jpg"
                         width="170" height="169"
                         srcset="cat@2x.jpg 2x" alt="Кот">
-                </article>
-                <article class="filter carousel__filter carousel__filter_sepia">
-                    <h2 class="filter__name">Ялта</h2>
-                    <img class="preview filter__preview filter__preview_sepia" src="cat.jpg"
+                    </section>
+                    <section class="filter carousel__filter carousel__filter_sepia">
+                        <label class="carousel__label" for="filter_sepia"></label>
+                        <h2 class="filter__name filter__name_sepia">Ялта</h2>
+                        <img class="preview filter__preview preview_sepia" src="cat.jpg"
                         width="170" height="169"
                         srcset="cat@2x.jpg 2x" alt="Кот">
-                </article>
-                <article class="filter carousel__filter carousel__filter_blue">
-                    <h2 class="filter__name">Уральское лето</h2>
-                    <img class="preview filter__preview filter__preview_blue" src="cat.jpg"
+                    </section>
+                    <section class="filter carousel__filter carousel__filter_blue">
+                        <label class="carousel__label" for="filter_blue"></label>
+                        <h2 class="filter__name filter__name_blue">Уральское лето</h2>
+                        <img class="preview filter__preview preview_blue" src="cat.jpg"
                         width="170" height="169"
                         srcset="cat@2x.jpg 2x" alt="Кот">
-                </article>
+                    </section>
+                    <section class="filter carousel__filter carousel__filter_blur">
+                        <label class="carousel__label" for="filter_blur"></label>
+                        <h2 class="filter__name filter__name_blur">Мыльный раствор</h2>
+                        <img class="preview filter__preview preview_blur" src="cat.jpg"
+                        width="170" height="169"
+                        srcset="cat@2x.jpg 2x" alt="Кот">
+                    </section>
+                    <section class="filter carousel__filter carousel__filter_invert">
+                        <label class="carousel__label" for="filter_invert"></label>
+                        <h2 class="filter__name filter__name_invert">Негатив</h2>
+                        <img class="preview filter__preview preview_invert" src="cat.jpg"
+                        width="170" height="169"
+                        srcset="cat@2x.jpg 2x" alt="Кот">
+                    </section>
+                </div>
             </section>
-            <label class="filters__arrow filters__arrow_right" for="stub1">
+            <label class="filters__arrow filters__arrow_right filters__arrow_slide_2-forth" for="slide_2">
                 <svg class="icon filters__arrow-icon">
+                    <use xlink:href="#arrow"></use>
+                </svg>
+            </label>
+            <label class="filters__arrow filters__arrow_right filters__arrow_slide_3-forth" for="slide_3">
+                <svg class="icon filters__arrow-icon filters__arrow-icon_forth">
                     <use xlink:href="#arrow"></use>
                 </svg>
             </label>
