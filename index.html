@@ -45,6 +45,7 @@
         <input type="radio" id="scale-mode-x1" name="scale" checked>
         <input type="radio" id="scale-mode-x2" name="scale">
         <input type="radio" id="scale-mode-x3" name="scale">
+        <input type="radio" id="scale-mode-x4" name="scale">
         <input type="radio" id="rotate-norm" name="rotate" checked>
         <input type="radio" id="rotate-left" name="rotate">
         <input type="radio" id="rotate-down" name="rotate">
@@ -72,7 +73,12 @@
                         <use xlink:href="#icon-scale" />
                     </svg>
                 </label>
-                <label for="scale-mode-x1" class="edit-button scale-x3">
+                <label for="scale-mode-x4" class="edit-button scale-x3">
+                    <svg class="icon">
+                        <use xlink:href="#icon-scale" />
+                    </svg>
+                </label>
+                <label for="scale-mode-x1" class="edit-button scale-x4">
                     <svg class="icon">
                         <use xlink:href="#icon-scale" />
                     </svg>
@@ -110,9 +116,11 @@
             </label>
         </section>
         <section class="photo-box">
-            <section class="wrapper-rotate">
-                <section class="wrapper-scale">
-                    <img class="kitty-photo" src="kitty/kotik.jpg" alt="kitty">
+            <section class="wrapper-filters">
+                <section class="wrapper-rotate">
+                    <section class="wrapper-scale">
+                        <img class="kitty-photo" src="kitty/kotik.jpg" alt="kitty">
+                    </section>
                 </section>
             </section>
         </section>

@@ -1,3 +1,8 @@
+input
+{
+    display: none;
+}
+
 .icon 
 {
     width: 48px;
@@ -162,9 +167,15 @@ input[id='scale-mode-x3']:checked ~ .photo-box .wrapper-scale
     transform: scale(3);
 }
 
+input[id='scale-mode-x4']:checked ~ .photo-box .wrapper-scale
+{
+    transform: scale(4);
+}
+
 input[id='scale-mode-x1']:checked ~ .editor-buttons .scale-buttons .scale-x1,
 input[id='scale-mode-x2']:checked ~ .editor-buttons .scale-buttons .scale-x2,
 input[id='scale-mode-x3']:checked ~ .editor-buttons .scale-buttons .scale-x3,
+input[id='scale-mode-x4']:checked ~ .editor-buttons .scale-buttons .scale-x4,
 input[id='rotate-norm']:checked ~ .editor-buttons .rotate-buttons .rotate-norm,
 input[id='rotate-left']:checked ~ .editor-buttons .rotate-buttons .rotate-left,
 input[id='rotate-down']:checked ~ .editor-buttons .rotate-buttons .rotate-down,
@@ -199,4 +210,58 @@ input[id='retro']:checked ~ .filters label[for='retro'],
 input[id='winter']:checked ~ .filters label[for='winter']
 {
     font-weight: bold;
+}
+
+input[id='hopelessness']:checked ~ .photo-box .wrapper-filters
+{
+    animation: filter_hopelessness 1s forwards;
+}
+
+input[id='retro']:checked ~ .photo-box .wrapper-filters
+{
+    animation: filter_retro 1s forwards;
+}
+
+input[id='winter']:checked ~ .photo-box .wrapper-filters
+{
+    animation: winter 1s forwards;
+}
+
+@keyframes filter_hopelessness
+{
+    from
+    {
+        filter: grayscale(0);
+    }
+
+    to
+    {
+        filter: grayscale(1);
+    }
+}
+
+@keyframes filter_retro
+{
+    from
+    {
+        filter: sepia(0);
+    }
+
+    to
+    {
+        filter: sepia(.7);
+    }
+}
+
+@keyframes winter
+{
+    from
+    {
+        filter: hue-rotate(0);
+    }
+
+    to
+    {
+        filter: hue-rotate(170deg);
+    }
 }
