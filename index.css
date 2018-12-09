@@ -10,7 +10,7 @@ input
     opacity: .8;
 }
 
-.icon_logo
+.icon-logo
 {
     fill: url(#gradient);
     opacity: 1;
@@ -133,7 +133,7 @@ input
 
 .filter-box p
 {
-    font-family: Helvetica;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
     text-align: center;
     margin: 9px 0 15px;
