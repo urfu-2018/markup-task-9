@@ -324,7 +324,7 @@ main
 
 .arrow_inactive
 {
-    fill: #aaaaaacc;
+    fill: #aaac;
 }
 
 .arrow:not(.arrow_inactive):active
