@@ -1,10 +1,22 @@
 main
 {
-    text-align: center;
-    
+    width: 1440px;
+    height: 1024px;
+    background-color: #fff;
+    font-family: Helvetica;
 }
 
-.content
+.arrow_left,
+.arrow_right,
+.icon-plain
+{
+    fill: #444;
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+}
+
+.page
 {
     margin: 50px auto;
     width: 632px;
@@ -15,25 +27,52 @@ main
         'car car car car car' auto / 50px 50px 50px 50px 50px;
 }
 
-.photo
+.carousel
+{
+    grid-area: car;
+    display: grid;
+    grid-template-columns: auto 700px auto;
+    grid-template-areas: 'left carousel right';
+    width: 820px;
+    margin-left: -90px;
+    margin-top: 60px;
+    height: 230px;
+}
+
+.carousel__inner
+{
+    overflow: hidden;
+    grid-area: carousel;
+    display: flex;
+}
+
+.carousel .filter__item
+{
+    display: inline;
+    transition: transform 1s;
+}
+
+.logo
+{
+    grid-area: logo;
+    fill: url(#KotoGradient);
+}
+
+.preview
 {
     grid-area: img;
     overflow: hidden;
 }
 
-.photo__picture
+.preview__picture
 {
     width: 632px;
     height: 632px;
-    object-fit: cover;
 }
 
-.icon-plain
+.flip
 {
-    fill: #444;
-    cursor: pointer;
-    width: 48px;
-    height: 48px;
+    transform: translateY(5px);
 }
 
 .sprite,
@@ -47,38 +86,298 @@ main
     display: none;
 }
 
-.fill-cb:checked ~ .photo .photo__picture
+.fill-cb:checked ~ .preview .preview__picture
 {
     object-fit: contain;
 }
 
-.fill-cb:not(:checked) ~ .photo .photo__picture
+.fill-cb:not(:checked) ~ .preview .preview__picture
 {
     object-fit: cover;
 }
 
-.flip-cb:checked ~ .photo .photo__picture
+.flip-cb:checked ~ .preview .flip-wrapper
 {
-    transform: scale(-1, 1);
+    transform: scaleX(-1);
 }
 
-.logotype
+.flip-cb:not(:checked) ~ .preview .flip-wrapper
 {
-    grid-area: logo;
-    fill: url(#KotogramGradient);
+    transform: scaleX(1);
 }
 
-.logotype:active ~ .photo .photo__picture
+.rotate-rb-1:checked ~ .rotate-img-1,
+.rotate-rb-1:checked ~ .rotate-img-3,
+.rotate-rb-1:checked ~ .rotate-img-4,
+
+.rotate-rb-2:checked ~ .rotate-img-1,
+.rotate-rb-2:checked ~ .rotate-img-2,
+.rotate-rb-2:checked ~ .rotate-img-4,
+
+.rotate-rb-3:checked ~ .rotate-img-1,
+.rotate-rb-3:checked ~ .rotate-img-2,
+.rotate-rb-3:checked ~ .rotate-img-3,
+
+.rotate-rb-4:checked ~ .rotate-img-2,
+.rotate-rb-4:checked ~ .rotate-img-3,
+.rotate-rb-4:checked ~ .rotate-img-4
 {
-    transform: rotate(0) scaleX(1);
+    display: none;
 }
 
-.rotate-2:checked ~ .photo .photo__picture
+.rotate-rb-1:checked ~ .preview .rotate-wrapper
+{
+    transform: rotate(0);
+}
+
+.rotate-rb-2:checked ~ .preview .rotate-wrapper
+{
+    transform: rotate(-90deg);
+}
+
+.rotate-rb-3:checked ~ .preview .rotate-wrapper
+{
+    transform: rotate(-180deg);
+}
+
+.rotate-rb-4:checked ~ .preview .rotate-wrapper
+{
+    transform: rotate(-270deg);
+}
+
+.scale-rb-1:checked ~ .scale-link-1,
+.scale-rb-1:checked ~ .scale-link-3,
+.scale-rb-1:checked ~ .scale-link-4,
+.scale-rb-1:checked ~ .scale-img-1,
+.scale-rb-1:checked ~ .scale-img-3,
+.scale-rb-1:checked ~ .scale-img-4,
+
+.scale-rb-2:checked ~ .scale-link-1,
+.scale-rb-2:checked ~ .scale-link-2,
+.scale-rb-2:checked ~ .scale-link-4,
+.scale-rb-2:checked ~ .scale-img-1,
+.scale-rb-2:checked ~ .scale-img-2,
+.scale-rb-2:checked ~ .scale-img-4,
+
+.scale-rb-3:checked ~ .scale-link-1,
+.scale-rb-3:checked ~ .scale-link-2,
+.scale-rb-3:checked ~ .scale-link-3,
+.scale-rb-3:checked ~ .scale-img-1,
+.scale-rb-3:checked ~ .scale-img-2,
+.scale-rb-3:checked ~ .scale-img-3,
+
+.scale-rb-4:checked ~ .scale-link-2,
+.scale-rb-4:checked ~ .scale-link-3,
+.scale-rb-4:checked ~ .scale-link-4,
+.scale-rb-4:checked ~ .scale-img-2,
+.scale-rb-4:checked ~ .scale-img-3,
+.scale-rb-4:checked ~ .scale-img-4
+{
+    display: none;
+}
+
+.scale-rb-1:checked ~ .preview .preview__picture
+{
+    transform: scale(1);
+}
+
+.scale-rb-2:checked ~ .preview .preview__picture
+{
+    transform: scale(1.3);
+}
+
+.scale-rb-3:checked ~ .preview .preview__picture
+{
+    transform: scale(1.6);
+}
+
+.scale-rb-4:checked ~ .preview .preview__picture
+{
+    transform: scale(2);
+}
+
+.logo:active ~ .preview .flip-wrapper
+{
+    transform: scaleX(1);
+}
+
+.logo:active ~ .preview .rotate-wrapper
+{
+    transform: rotate(0);
+}
+
+.filter__gray:checked ~ .preview .preview__picture
+{
+    filter: grayscale(1);
+}
+
+.filter__sepia:checked ~ .preview .preview__picture
+{
+    filter: sepia(1);
+}
+
+.filter__blue:checked ~ .preview .preview__picture
+{
+    filter: hue-rotate(180deg);
+}
+
+.filter__negate:checked ~ .preview .preview__picture
+{
+    filter: invert(1);
+}
+
+.filter__blur:checked ~ .preview .preview__picture
+{
+    filter: blur(3px);
+}
+
+.logo:active ~ .preview .preview__picture
+{
+    transform: scale(1);
+    filter: none;
+}
+
+.filter__item
+{
+    border-left: 2.5px solid transparent;
+    border-right: 2.5px solid transparent;
+}
+
+.filter__item label
+{
+    cursor: pointer;
+}
+
+.filter__item .filter-preview
+{
+    width: 170px;
+    height: 169px;
+    object-fit: cover;
+}
+
+.filter__item.filter__gray .filter-preview
+{
+    filter: grayscale(1);
+}
+
+.filter__item.filter__sepia .filter-preview
+{
+    filter: sepia(1);
+}
+
+.filter__item.filter__blue .filter-preview
+{
+    filter: hue-rotate(180deg);
+}
+
+.filter__item.filter__blur .filter-preview
+{
+    filter: blur(3px);
+}
+
+.filter__item.filter__negate .filter-preview
+{
+    filter: invert(1);
+}
+
+.filter__label
+{
+    font-family: Helvetica, sans-serif;
+    color: #444;
+    font-size: 18px;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.filter__none:checked ~ .carousel .filter__item.filter__none .filter__label,
+.filter__gray:checked ~ .carousel .filter__item.filter__gray .filter__label,
+.filter__sepia:checked ~ .carousel .filter__item.filter__sepia .filter__label,
+.filter__blue:checked ~ .carousel .filter__item.filter__blue .filter__label,
+.filter__negate:checked ~ .carousel .filter__item.filter__negate .filter__label,
+.filter__blur:checked ~ .carousel .filter__item.filter__blur .filter__label
+{
+    font-weight: bold;
+}
+
+.arrow
+{
+    margin: auto;
+}
+
+.arrow_left
 {
     transform: rotate(90deg);
+    grid-area: left;
 }
 
-.rotate-3:checked ~ .photo .photo__picture
+.arrow_right
 {
-    transform: rotate(180deg);
+    transform: rotate(-90deg);
+    grid-area: right;
+}
+
+.icon-plain:not(.logo):active
+{
+    fill: #333;
+}
+
+.arrow_inactive
+{
+    fill: #aaaaaacc;
+}
+
+.arrow:not(.arrow_inactive):active
+{
+    transform: scale(.9);
+}
+
+.arrow:not(.arrow_inactive)
+{
+    cursor: pointer;
+}
+
+.arrow-rb__left_inactive:checked ~ .carousel .left-1__label,
+.arrow-rb__left_inactive:checked ~ .carousel .left-2__label,
+.arrow-rb__left_inactive:checked ~ .carousel .right-2__label,
+.arrow-rb__left_inactive:checked ~ .carousel .right_inactive__label,
+
+.arrow-rb__left-1:checked ~ .carousel .left-1__label,
+.arrow-rb__left-1:checked ~ .carousel .left-2__label,
+.arrow-rb__left-1:checked ~ .carousel .right-2__label,
+.arrow-rb__left-1:checked ~ .carousel .right_inactive__label,
+
+.arrow-rb__left-2:checked ~ .carousel .left_inactive__label,
+.arrow-rb__left-2:checked ~ .carousel .left-2__label,
+.arrow-rb__left-2:checked ~ .carousel .right-1__label,
+.arrow-rb__left-2:checked ~ .carousel .right_inactive__label,
+
+.arrow-rb__right-1:checked ~ .carousel .left_inactive__label,
+.arrow-rb__right-1:checked ~ .carousel .left-2__label,
+.arrow-rb__right-1:checked ~ .carousel .right-1__label,
+.arrow-rb__right-1:checked ~ .carousel .right_inactive__label,
+
+.arrow-rb__right-2:checked ~ .carousel .left_inactive__label,
+.arrow-rb__right-2:checked ~ .carousel .left-1__label,
+.arrow-rb__right-2:checked ~ .carousel .right-1__label,
+.arrow-rb__right-2:checked ~ .carousel .right-2__label,
+
+.arrow-rb__right_inactive:checked ~ .carousel .left-1__label,
+.arrow-rb__right_inactive:checked ~ .carousel .right-1__label,
+.arrow-rb__right_inactive:checked ~ .carousel .right-2__label,
+.arrow-rb__right_inactive:checked ~ .carousel .left_inactive__label
+{
+    display: none;
+}
+
+.arrow-rb__left-2:checked ~ .carousel .carousel__inner .filter__item,
+.arrow-rb__right-1:checked ~ .carousel .carousel__inner .filter__item
+{
+    transform: translateX(-174px);
+}
+
+.arrow-rb__right_inactive:checked ~ .carousel .carousel__inner .filter__item,
+.arrow-rb__right-2:checked ~ .carousel .carousel__inner .filter__item
+{
+    transform: translateX(-350px);
 }
