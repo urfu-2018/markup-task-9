@@ -97,6 +97,11 @@
     transform: rotate(270deg);
 }
 
+.control-rotate_reset:checked ~ .app .image-box
+{
+    transform: rotate(360deg) rotate(0);
+}
+
 /*----------Controls (Filters)----------*/
 
 @keyframes grayscale
