@@ -35,12 +35,39 @@
     opacity: .8;
 }
 
+.fill-option
+{
+    width: 48px;
+    height: 48px;
+}
+
 .fill-option:hover,
 .scale-option:hover,
 .rotate-option:hover,
 .flip-option:hover
 {
     opacity: 1;
+}
+
+.fill-icon,
+.scale-icon,
+.logo-icon,
+.rotate-icon
+{
+    width: 48px;
+    height: 48px;
+}
+
+.flip-icon
+{
+    width: 48px;
+    height: 37px;
+}
+
+.arrow-icon
+{
+    width: 48px;
+    height: 32px;
 }
 
 .option > img
@@ -87,18 +114,18 @@
     position: relative;
 }
 
-.filters__carousel-wrapper::before
+.left_arrow
 {
-    content: url(icons/arrow.svg);
+    /* content: url(icons/arrow.svg); */
     transform: rotate(90deg);
     position: absolute;
     left: -10%;
     bottom: 30%;
 }
 
-.filters__carousel-wrapper::after
+.right_arrow
 {
-    content: url(icons/arrow.svg);
+    /* content: url(icons/arrow.svg); */
     transform: rotate(-90deg);
     position: absolute;
     right: -10%;
@@ -133,12 +160,12 @@
 .scale_little,
 .scale_normal,
 .scale_big,
-.logo,
+.logo__input,
 .rotate_0deg,
 .rotate_90deg,
 .rotate_180deg,
 .rotate_270deg,
-.flip,
+.flip__input,
 .filter-selector
 {
     display: none;
@@ -180,25 +207,25 @@
     transform: scale(1.1);
 }
 
-.logo:checked ~ .main-content__photo .modified-photo
+.logo__input:checked ~ .main-content__photo .modified-photo
 {
     display: none;
 }
 
-.logo:checked ~ .main-content__options .options__items-list
+.logo__input:checked ~ .main-content__options .options__items-list
 {
     justify-content: center;
 }
 
-.logo:checked ~ .main-content__photo .original-photo
+.logo__input:checked ~ .main-content__photo .original-photo
 {
     display: block;
 }
 
-.logo:checked ~ .main-content__options .list-item__fill,
-.logo:checked ~ .main-content__options .list-item__scale,
-.logo:checked ~ .main-content__options .list-item__rotate,
-.logo:checked ~ .main-content__options .list-item__flip
+.logo__input:checked ~ .main-content__options .list-item__fill,
+.logo__input:checked ~ .main-content__options .list-item__scale,
+.logo__input:checked ~ .main-content__options .list-item__rotate,
+.logo__input:checked ~ .main-content__options .list-item__flip
 {
     display: none;
 }
@@ -223,7 +250,7 @@
     transform: rotate(-270deg);
 }
 
-.flip:checked ~ .main-content__photo .photo__image
+.flip__input:checked ~ .main-content__photo .photo__image
 {
     transform: scale(-1, 1);
 }
