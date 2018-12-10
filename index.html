@@ -76,7 +76,11 @@
                 <div class="photo-wrapper modified-by-scale">
                     <div class="photo-wrapper modified-by-rotate">
                         <div class="photo-wrapper modified-by-flip">
-                            <img class="photo__image" src="images/cat.jpg" alt="фото для обработки">
+                            <img
+                                class="photo__image filtered-image"
+                                src="images/cat.jpg"
+                                alt="фото для обработки"
+                            >
                         </div>
                     </div>
                 </div>
@@ -86,60 +90,74 @@
             </div>
         </section>
         <section class="main-content__filters">
-            <ul class="filters__carousel">
-                <li class="list-item filter">
-                    <label class="filter__label filter-1__label" for="filter-1">
-                        <span class="filter__name filter-1-name">Без фильтра</span>
+            <div class="filters__carousel-wrapper">
+                <ul class="filters__carousel">
+                    <li class="list-item filter">
+                        <label class="filter__label filter-1__label" for="filter-1">
+                            <span class="filter__name filter-1-name">Без фильтра</span>
+                            <img
+                                class="photo-with-filter filter-1__image"
+                                src="images/cat.jpg"
+                                alt="фото под фильтром"
+                            >
+                        </label>
+                    </li>
+                    <li class="list-item filter">
+                        <label class="filter__label filter-2__label" for="filter-2">
+                            <span class="filter__name filter-2-name">Сепия</span>
+                            <img
+                                class="photo-with-filter filter-2__image"
+                                src="images/cat.jpg"
+                                alt="фото под фильтром"
+                            >
+                        </label>
+                    </li>
+                    <li class="list-item filter">
+                        <label class="filter__label filter-3__label" for="filter-3">
+                            <span class="filter__name filter-3-name">Негатив</span>
+                            <img
+                                class="photo-with-filter filter-3__image"
+                                src="images/cat.jpg"
+                                alt="фото под фильтром"
+                            >
+                        </label>
+                    </li>
+                    <li class="list-item filter">
+                        <label class="filter__label filter-4__label" for="filter-4">
+                            <span class="filter__name filter-4-name">Sutro</span>
+                            <img
+                                class="photo-with-filter filter-4__image"
+                                src="images/cat.jpg"
+                                alt="фото под фильтром"
+                            >
+                        </label>
+                    </li><!--
+                    <li class="list-item filter">
+                        <span class="filter__name">X-PRO 2</span>
                         <img
-                            class="photo-with-filter filter-1__image"
+                            class="photo-with-filter X-PRO-2-image"
                             src="images/cat.jpg"
                             alt="фото под фильтром"
                         >
-                    </label>
-                </li>
-                <li class="list-item filter">
-                    <label class="filter__label filter-2__label" for="filter-2">
-                        <span class="filter__name filter-2-name">Сепия</span>
+                    </li>
+                    <li class="list-item filter">
+                        <span class="filter__name">Kelvin</span>
                         <img
-                            class="photo-with-filter filter-2__image"
+                            class="photo-with-filter Kelvin-image"
                             src="images/cat.jpg"
                             alt="фото под фильтром"
                         >
-                    </label>
-                </li>
-                <li class="list-item filter">
-                    <label class="filter__label filter-3__label" for="filter-3">
-                        <span class="filter__name filter-3-name">Негатив</span>
+                    </li>
+                    <li class="list-item filter">
+                        <span class="filter__name">Inkwell</span>
                         <img
-                            class="photo-with-filter filter-3__image"
+                            class="photo-with-filter Inkwell-image"
                             src="images/cat.jpg"
                             alt="фото под фильтром"
                         >
-                    </label>
-                </li>
-                <li class="list-item filter">
-                    <label class="filter__label filter-4__label" for="filter-4">
-                        <span class="filter__name filter-4-name">Sutro</span>
-                        <img
-                            class="photo-with-filter filter-4__image"
-                            src="images/cat.jpg"
-                            alt="фото под фильтром"
-                        >
-                    </label>
-                </li><!--
-                <li class="list-item filter">
-                    <span class="filter__name">X-PRO 2</span>
-                    <img class="photo-with-filter X-PRO-2-image" src="images/cat.jpg" alt="фото под фильтром">
-                </li>
-                <li class="list-item filter">
-                    <span class="filter__name">Kelvin</span>
-                    <img class="photo-with-filter Kelvin-image" src="images/cat.jpg" alt="фото под фильтром">
-                </li>
-                <li class="list-item filter">
-                    <span class="filter__name">Inkwell</span>
-                    <img class="photo-with-filter Inkwell-image" src="images/cat.jpg" alt="фото под фильтром">
-                </li>-->
-            </ul>
+                    </li>-->
+                </ul>
+            </div>
         </section>
     </main>
 </body>
