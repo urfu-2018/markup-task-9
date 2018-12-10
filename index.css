@@ -25,7 +25,6 @@ head
     flex-direction: column;
     width: 450px;
     height: 600px;
-    box-shadow: 0 0 5px 1px grey;
 }
 
 .svg-icon
@@ -58,6 +57,17 @@ head
 .selector-rotate-270:checked ~ .main .label-no-rotate
 {
     display: block;
+}
+
+.controls > .svg-icon
+{
+    fill: grey;
+}
+
+.controls > .svg-icon:hover
+{
+    fill: black;
+    transition: .1s;
 }
 
 .selector-show-initial:checked ~ .main .svg-icon,
@@ -228,22 +238,24 @@ head
 
 .filters
 {
+    position: relative;
+    left: -50px;
+    width: calc(100% + 100px);
     display: flex;
     flex-direction: row;
-    height: 150px;
-    box-shadow: 0 0 5px 1px grey;
+    height: 200px;
 }
 
 .filter-image
 {
-    width: 110px;
+    width: 135px;
 }
 
 .filter
 {
     display: flex;
     flex-direction: column;
-    width: 110px;
+    width: 135px;
     margin-left: 2px;
     transition: 1s;
 }
@@ -349,7 +361,7 @@ head
 {
     display: none;
     position: absolute;
-    margin-top: 40px;
+    margin-top: 60px;
 }
 
 .left-arrow-1,
@@ -366,7 +378,7 @@ head
 
 .right-arrow
 {
-    margin-left: 460px;
+    margin-left: 560px;
 }
 
 .carousel-from-1:checked ~ .main .left-arrow-1,
@@ -381,10 +393,10 @@ head
 
 .carousel-from-2:checked ~ .main .filters-container
 {
-    left: -112px;
+    left: -137px;
 }
 
 .carousel-from-3:checked ~ .main .filters-container
 {
-    left: -224px;
+    left: -274px;
 }
