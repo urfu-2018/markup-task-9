@@ -1,16 +1,15 @@
 body
 {
-    display: flex;
-    justify-content: center;
+    background-color: rgb(218, 218, 218);
 }
 
-main
+.content
 {
-    display: flex;
-    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    margin: 0 auto;
+    padding: 20px;
     width: 632px;
 }
-
 
 .icons
 {
@@ -22,12 +21,32 @@ main
 input
 {
     display: none;
-
 }
-.cat-photo img
+
+.cat-container
 {
-    margin-top: 10px;
+    margin-top: 20px;
+    height: 632px;
     width: 632px;
+    overflow: hidden;
+}
+
+.rotate-wrap
+{
+    height: 100%;
+    transition: .5s transform;
+}
+
+.cat-img
+{
+    width: 100%;
+}
+
+.scale-wrap
+{
+    display: flex;
+    height: 100%;
+    align-items: center;
 }
 
 .icon
@@ -36,8 +55,6 @@ input
     height: 48px;
     fill: rgb(112, 112, 112);
 }
-
-
 
 .switches
 {
@@ -51,28 +68,246 @@ input
     width: 48px;
     height: 48px;
     cursor: pointer;
+    user-select: none;
 }
 
+/* Поворот */
 
+.label-rotate
+{
+    display: none;
+}
 
-.rotate-90:checked ~ main .switches .label-rotate-180,
-.rotate-180:checked ~ main .switches .label-rotate-270,
-.rotate-270:checked ~ main .switches .label-rotate-360,
-.rotate-360:checked ~ main .switches .label-rotate-90
+.label-logo
+{
+    display: none;
+}
+
+.logo:checked ~ main .label-logo
 {
     display: block;
 }
 
-.scale-x:checked ~ main .switches .label-scale-x2,
-.scale-x2:checked ~ main .switches .label-scale-x4,
-.scale-x4:checked ~ main .switches .label-scale-x
+.logo:checked ~ main .label-logo-grey
+{
+    display: none;
+}
+
+.rotate-90:checked ~ main .label-rotate-180,
+.rotate-180:checked ~ main .label-rotate-270,
+.rotate-270:checked ~ main .label-rotate-360,
+.rotate-360:checked ~ main .label-rotate-90
 {
     display: block;
 }
 
+.rotate-180:checked ~ main .rotate-wrap
+{
+    transform: rotate(-90deg);
+}
 
+.rotate-270:checked ~ main .rotate-wrap
+{
+    transform: rotate(-180deg);
+}
 
+.rotate-360:checked ~ main .rotate-wrap
+{
+    transform: rotate(-270deg);
+}
 
+.rotate-90:checked ~ main .rotate-wrap
+{
+    transform: rotate(0deg);
+}
 
+/* Увеличить */
 
+.label-scale
+{
+    display: none;
+}
 
+.scale-x:checked ~ main .label-scale-x2,
+.scale-x2:checked ~ main .label-scale-x4,
+.scale-x4:checked ~ main .label-scale-x
+{
+    display: block;
+}
+
+.scale-x2:checked ~ main .scale-wrap
+{
+    transform: scale(2);
+}
+
+.scale-x4:checked ~ main .scale-wrap
+{
+    transform: scale(4);
+}
+/* Отразить */
+
+.flip:checked ~ main .cat-img
+{
+    transform: scale(-1, 1);
+}
+
+/* Черный цвет при выборе иконки */
+
+.scale-x2:checked ~ main .label-scale .icon
+{
+    fill: rgb(77, 76, 76);
+}
+
+.flip:checked ~ main .label-flip .icon,
+.fill:checked ~ main .label-fill .icon,
+.scale-x4:checked ~ main .label-scale .icon,
+.rotate-360:checked ~ main .label-rotate .icon
+
+{
+    fill: rgb(0, 0, 0);
+}
+/* Отразить иконку */
+
+.flip:checked ~ main .label-flip .icon
+{
+    transform: scale(-1, 1);
+}
+
+.rotate-180:checked ~ main .label-rotate .icon
+{
+    fill: rgb(77, 76, 76);
+}
+
+.rotate-270:checked ~ main .label-rotate .icon
+{
+    fill: rgb(61, 60, 60);
+}
+
+/* Вписать */
+
+.fill:checked ~ main .cat-img
+{
+    height: 100%;
+    width: auto;
+}
+
+/* Сбросить все */
+
+.logo:checked ~ main .scale-wrap
+{
+    transform: scale(1);
+}
+
+.logo:checked ~ main .rotate-wrap
+{
+    transform: rotate(0deg);
+}
+
+.logo:checked ~ main .cat-img
+{
+    transform: scale(1, 1);
+    -webkit-filter: none;
+    filter: none;
+}
+
+/* Слайдер */
+
+.cat-img
+{
+    transition: .5s filter;
+}
+
+.filter
+{
+    transform: translateX(-42px);
+}
+
+.slider-wrap
+{
+    width: 719px;
+    overflow: hidden;
+}
+
+.effect-wrap
+{
+    display: flex;
+    width: 715px;
+    justify-content: space-between ;
+}
+
+.effect
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 170px;
+    height: 190px;
+}
+
+.label-image
+{
+    width: 170px;
+    height: 170px;
+    background-image: url(./cat.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.description
+{
+    font: 18px Helvetica;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.label-effect-2 .label-image
+{
+    filter: blur(1px);
+}
+
+.label-effect-3 .label-image
+{
+    filter: grayscale(100%);
+}
+
+.label-effect-4 .label-image
+{
+    filter: brightness(1.5);
+}
+
+.filt-2:checked ~ main .cat-img
+{
+    filter: blur(1px);
+}
+
+.filt-3:checked ~ main .cat-img
+{
+    filter: grayscale(100%);
+}
+
+.filt-4:checked ~ main .cat-img
+{
+    filter: brightness(1.5);
+}
+
+.filt-1:checked ~ main .des-1
+{
+    font-weight: bold;
+}
+
+.filt-2:checked ~ main .des-2
+{
+    font-weight: bold;
+}
+
+.filt-3:checked ~ main .des-3
+{
+    font-weight: bold;
+}
+
+.filt-4:checked ~ main .des-4
+{
+    font-weight: bold;
+}

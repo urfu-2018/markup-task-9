@@ -24,6 +24,9 @@
         <symbol id="logo-icon" fill="url(#gradient)" viewBox="0 0 48 48">
             <path d="M0 0v48h48V0H0zm24.107 16.782a7.12 7.12 0 0 1 7.11 7.111 7.12 7.12 0 0 1-7.11 7.111 7.12 7.12 0 0 1-7.111-7.11 7.12 7.12 0 0 1 7.11-7.112zM6.4 5.547h7.253v4.693H6.4V5.547zM41.6 41.6H6.4V24.747h4.225c.443 7.053 6.318 12.657 13.482 12.657 7.163 0 13.039-5.604 13.481-12.657H41.6V41.6z" fill-rule="evenodd"></path>
         </symbol>
+        <symbol id="logo-icon-grey" viewBox="0 0 48 48">
+            <path d="M0 0v48h48V0H0zm24.107 16.782a7.12 7.12 0 0 1 7.11 7.111 7.12 7.12 0 0 1-7.11 7.111 7.12 7.12 0 0 1-7.111-7.11 7.12 7.12 0 0 1 7.11-7.112zM6.4 5.547h7.253v4.693H6.4V5.547zM41.6 41.6H6.4V24.747h4.225c.443 7.053 6.318 12.657 13.482 12.657 7.163 0 13.039-5.604 13.481-12.657H41.6V41.6z" fill-rule="evenodd"></path>
+        </symbol>
         <symbol id="rotate-icon" viewBox="0 0 48 48">
             <path d="M24 48c13.234 0 24-9.765 24-21.753 0-11.99-10.766-21.749-24-21.749-.88 0-1.768.046-2.651.136V1.119c0-.452-.308-.863-.761-1.038a1.353 1.353 0 0 0-1.355.251l-8.504 7.722c-.484.438-.484 1.138 0 1.583l8.5 7.739c.362.319.886.418 1.359.243.453-.177.76-.585.76-1.035v-3.899c.88-.146 1.764-.212 2.651-.212 8.384 0 15.207 6.18 15.207 13.774 0 7.593-6.825 13.778-15.207 13.778-8.382 0-15.203-6.187-15.203-13.778 0-.616-.553-1.12-1.24-1.12H1.24c-.684 0-1.241.504-1.241 1.12C0 38.235 10.774 48 24 48z" fill-rule="evenodd"></path>
         </symbol>
@@ -37,23 +40,28 @@
         </symbol>
     </svg>
     
-    </svg>
     <!-- Заполнить -->
     <input type="checkbox" id="fill" class="fill">
     <!-- Логотип -->
     <input type="checkbox" id="logo" class="logo">
     <!-- Увеличить -->
-    <input type="radio" id="scale-x" class="scale-x" checked>
-    <input type="radio" id="scale-x2" class="scale-x2">
-    <input type="radio" id="scale-x4" class="scale-x4">
+    <input type="radio" id="scale-x" class="scale-x" checked name="scale">
+    <input type="radio" id="scale-x2" class="scale-x2" name="scale">
+    <input type="radio" id="scale-x4" class="scale-x4" name="scale">
     <!-- Вращать -->
-    <input type="radio" id="rotate-90" class="rotate-90" checked>
-    <input type="radio" id="rotate-180" class="rotate-180">
-    <input type="radio" id="rotate-270" class="rotate-270">
-    <input type="radio" id="rotate-360" class="rotate-360">
+    <input type="radio" id="rotate-90" class="rotate-90" checked name="rotate">
+    <input type="radio" id="rotate-180" class="rotate-180" name="rotate">
+    <input type="radio" id="rotate-270" class="rotate-270" name="rotate">
+    <input type="radio" id="rotate-360" class="rotate-360" name="rotate">
     <!-- Развернуть -->
     <input type="checkbox" id="flip" class="flip">
-   <main>
+
+    <!-- Слайдер -->
+    <input type="radio" id="filt-1" class="filt-1" checked name="filt">
+    <input type="radio" id="filt-2" class="filt-2" name="filt">
+    <input type="radio" id="filt-3" class="filt-3" name="filt">
+    <input type="radio" id="filt-4" class="filt-4" name="filt">
+    <main class="content">
         <section class="switches">
                 <!-- Заполнить -->
                 <label for="fill" class="label-fill">
@@ -83,6 +91,11 @@
                 <label for="logo" class="label-logo">
                     <svg class="icon">
                         <use xlink:href="#logo-icon"></use>
+                    </svg>
+                </label>
+                <label for="logo" class="label-logo-grey">
+                    <svg class="icon">
+                        <use xlink:href="#logo-icon-grey"></use>
                     </svg>
                 </label>
 
@@ -116,15 +129,40 @@
                 </label>
             </section>
 
-       <div class="cat-photo">
-            <img src="https://clck.ru/EqjD2" alt="Кот">
-       </div>
+        <div class="cat-container">
+            <div class="rotate-wrap">
+                <div class="scale-wrap">
+                    <img src="./cat.jpg" class="cat-img" alt="Кот">
+                </div>
+            </div>
+        </div>
 
-       <!-- <div class="filter">
-            <img src="https://clck.ru/EqjD2" alt="Кот">
-            <img src="https://clck.ru/EqjD2" alt="Кот">
-            <img src="https://clck.ru/EqjD2" alt="Кот">
-       </div> -->
-   </main>
+        <div class="filter">
+            <div class="slider-wrap">
+                <div class="effect-wrap">
+                    
+                    <div class="effect">
+                        <span class="description des-1">Нет фильтра</span>  
+                        <label for="filt-1" class=" label-effect-1 label-image"></label>
+                    </div>          
+
+                    <div class="effect">
+                        <span class="description des-2">Блюр</span>  
+                        <label for="filt-2" class=" label-effect-2 label-image"></label>
+                    </div>
+
+                    <div class="effect">
+                        <span class="description des-3">Чёрно-белый</span>  
+                        <label for="filt-3" class=" label-effect-3 label-image"></label>
+                    </div>      
+                    
+                    <div class="effect">
+                        <span class="description des-4">Яркий</span>  
+                        <label for="filt-4" class=" label-effect-4 label-image"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
