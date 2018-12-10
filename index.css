@@ -58,103 +58,6 @@ input[id='rotate-270']:checked ~ .settings label[for='rotate-0'] .settings__icon
     fill: #000;
 }
 
-/* settings' impact on photo */
-
-input[id='fill']:checked ~ .kotogram .kotogram__cat-photo
-{
-    margin: 84px auto 141px;
-    width: 632px;
-    height: 488px;
-    background-size: 632px 488px;
-}
-
-input[id='scale-1']:checked ~ .kotogram .kotogram__cat-photo
-{
-    background-size: 100% 100%;
-}
-
-input[id='scale-2']:checked ~ .kotogram .kotogram__cat-photo
-{
-    background-size: 150% 150%;
-}
-
-input[id='scale-3']:checked ~ .kotogram .kotogram__cat-photo
-{
-    background-size: 200% 200%;
-}
-
-input[id='rotate-0']:checked ~ .kotogram .kotogram__cat-photo
-{
-    transform: rotate(0deg);
-}
-
-input[id='rotate-90']:checked ~ .kotogram .kotogram__cat-photo
-{
-    transform: rotate(-90deg);
-}
-
-input[id='rotate-180']:checked ~ .kotogram .kotogram__cat-photo
-{
-    transform: rotate(-180deg);
-}
-
-input[id='rotate-270']:checked ~ .kotogram .kotogram__cat-photo
-{
-    transform: rotate(-270deg);
-}
-
-input[id='rotate-0']:checked ~ input[id='flip']:checked ~ .kotogram .kotogram__cat-photo
-{
-    transform: scaleX(-1);
-}
-
-input[id='rotate-90']:checked ~ input[id='flip']:checked ~ .kotogram .kotogram__cat-photo
-{
-    transform: scaleX(-1) rotate(-90deg);
-}
-
-input[id='rotate-180']:checked ~ input[id='flip']:checked ~ .kotogram .kotogram__cat-photo
-{
-    transform: scaleX(-1) rotate(-180deg);
-}
-
-input[id='rotate-270']:checked ~ input[id='flip']:checked ~ .kotogram .kotogram__cat-photo
-{
-    transform: scaleX(-1) rotate(-270deg);
-}
-
-input[id='origin']:checked ~ .kotogram .kotogram__cat-photo
-{
-    width: 632px;
-    height: 488px;
-    background-size: 100% 100%;
-    transform: initial;
-    filter: grayscale(0%) sepia(0%) hue-rotate(0deg) invert(0) !important;
-}
-
-input[id='origin']:checked ~ input[id='flip']:checked ~ .kotogram .kotogram__cat-photo
-{
-    transform: scaleX(-1);
-}
-
-input[id='origin']:checked ~ .settings label[for='fill'],
-input[id='origin']:checked ~ .settings label[for='scale-1'],
-input[id='origin']:checked ~ .settings label[for='scale-2'],
-input[id='origin']:checked ~ .settings label[for='scale-3'],
-input[id='origin']:checked ~ .settings label[for='rotate-0'],
-input[id='origin']:checked ~ .settings label[for='rotate-90'],
-input[id='origin']:checked ~ .settings label[for='rotate-180'],
-input[id='origin']:checked ~ .settings label[for='rotate-270'],
-input[id='origin']:checked ~ .settings label[for='flip']
-{
-    display: none;
-}
-
-input[id='origin']:checked ~ .settings
-{
-    justify-content: center;
-}
-
 /* cat-photo default */
 
 .kotogram__cat-photo
@@ -318,4 +221,101 @@ input[id='filter-inversion']:checked ~ .kotogram .kotogram__cat-photo
 input[id='filter-halloween']:checked ~ .kotogram .kotogram__cat-photo
 {
     filter: grayscale(0%) sepia(100%) hue-rotate(0deg) invert(100%);
+}
+
+/* settings' impact on photo */
+
+input[id='fill']:checked ~ .kotogram .kotogram__cat-photo
+{
+    margin: 84px auto 141px;
+    width: 632px;
+    height: 488px;
+    background-size: 632px 488px;
+}
+
+input[id='scale-1']:checked ~ .kotogram .kotogram__cat-photo
+{
+    background-size: 100% 100%;
+}
+
+input[id='scale-2']:checked ~ .kotogram .kotogram__cat-photo
+{
+    background-size: 150% 150%;
+}
+
+input[id='scale-3']:checked ~ .kotogram .kotogram__cat-photo
+{
+    background-size: 200% 200%;
+}
+
+input[id='rotate-0']:checked ~ .kotogram .kotogram__cat-photo
+{
+    transform: rotate(0deg);
+}
+
+input[id='rotate-90']:checked ~ .kotogram .kotogram__cat-photo
+{
+    transform: rotate(-90deg);
+}
+
+input[id='rotate-180']:checked ~ .kotogram .kotogram__cat-photo
+{
+    transform: rotate(-180deg);
+}
+
+input[id='rotate-270']:checked ~ .kotogram .kotogram__cat-photo
+{
+    transform: rotate(-270deg);
+}
+
+input[id='rotate-0']:checked ~ input[id='flip']:checked ~ .kotogram .kotogram__cat-photo
+{
+    transform: scaleX(-1);
+}
+
+input[id='rotate-90']:checked ~ input[id='flip']:checked ~ .kotogram .kotogram__cat-photo
+{
+    transform: scaleX(-1) rotate(-90deg);
+}
+
+input[id='rotate-180']:checked ~ input[id='flip']:checked ~ .kotogram .kotogram__cat-photo
+{
+    transform: scaleX(-1) rotate(-180deg);
+}
+
+input[id='rotate-270']:checked ~ input[id='flip']:checked ~ .kotogram .kotogram__cat-photo
+{
+    transform: scaleX(-1) rotate(-270deg);
+}
+
+input[id='origin']:checked ~ .kotogram .kotogram__cat-photo
+{
+    width: 632px;
+    height: 488px;
+    background-size: 100% 100%;
+    transform: initial;
+    filter: grayscale(0%) sepia(0%) hue-rotate(0deg) invert(0);
+}
+
+input[id='origin']:checked ~ input[id='flip']:checked ~ .kotogram .kotogram__cat-photo
+{
+    transform: scaleX(-1);
+}
+
+input[id='origin']:checked ~ .settings label[for='fill'],
+input[id='origin']:checked ~ .settings label[for='scale-1'],
+input[id='origin']:checked ~ .settings label[for='scale-2'],
+input[id='origin']:checked ~ .settings label[for='scale-3'],
+input[id='origin']:checked ~ .settings label[for='rotate-0'],
+input[id='origin']:checked ~ .settings label[for='rotate-90'],
+input[id='origin']:checked ~ .settings label[for='rotate-180'],
+input[id='origin']:checked ~ .settings label[for='rotate-270'],
+input[id='origin']:checked ~ .settings label[for='flip']
+{
+    display: none;
+}
+
+input[id='origin']:checked ~ .settings
+{
+    justify-content: center;
 }
