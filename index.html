@@ -7,30 +7,30 @@
 </head>
 <body>
     <svg xmlns="http://www.w3.org/2000/svg" width="49" height="261" viewBox="0 0 49 261" style="display: none">
-        <symbol width="49" height="32" id="arrow" viewBox="0 0 48 32">
+        <symbol id="arrow" viewBox="0 0 48 32">
             <path
                 d="M.5 7.401L24.428 31.33 48.357 7.4 41.569.613l-17.14 17.14L7.288.614z"
                 fill-rule="evenodd"
             />
         </symbol>
-        <symbol width="48" height="48" id="fill" viewBox="0 0 48 48">
+        <symbol id="fill" viewBox="0 0 48 48">
             <path d="M8.395 8.395h30.996v30.996H8.395z"/>
             <path d="M35.946 0v5.166h6.888v6.673H48V0zM5.166 5.166h6.673V0H0v11.839h5.166zm37.668
              37.668h-6.888V48H48V35.946h-5.166zM5.166 35.946H0V48h11.839v-5.166H5.166z"/>
         </symbol>
-        <symbol width="48" height="37" id="flip" viewBox="0 0 48 37">
+        <symbol id="flip" viewBox="0 0 48 37">
             <path d="M0 29.9l19.084-11.788L0 6.325zM28.916 18.112L48 29.9V6.325L28.916 18.112zm15.058 
             4.425l-7.163-4.425 7.163-4.424v8.849zM21.398 
             8.05h5.205v5.175h-5.205zm0-8.05h5.205v5.175h-5.205zm0 16.1h5.205v5.175h-5.205zm0 
             7.475h5.205v5.175h-5.205zm0 8.05h5.205V36.8h-5.205z"/>
         </symbol>
-        <symbol width="48" height="48" id="logo" viewBox="0 0 48 48">
+        <symbol id="logo" viewBox="0 0 48 48">
             <path d="M0 0v48h48V0H0zm24.107 16.782a7.12 7.12 0 0 1 7.11 7.111 7.12 7.12 0 0 1-7.11 
             7.111 7.12 7.12 0 0 1-7.111-7.11 7.12 7.12 0 0 1 7.11-7.112zM6.4 
             5.547h7.253v4.693H6.4V5.547zM41.6 41.6H6.4V24.747h4.225c.443 7.053 6.318 12.657 13.482 12.657 
             7.163 0 13.039-5.604 13.481-12.657H41.6V41.6z" fill-rule="evenodd"/>
         </symbol>
-        <symbol width="48" height="48" id="rotate" viewBox="0 0 48 48">
+        <symbol id="rotate" viewBox="0 0 48 48">
             <path d="M24 48c13.234 0 24-9.765 24-21.753 0-11.99-10.766-21.749-24-21.749-.88 
             0-1.768.046-2.651.136V1.119c0-.452-.308-.863-.761-1.038a1.353 1.353 0 0 0-1.355.251l-8.504 
             7.722c-.484.438-.484 1.138 0 1.583l8.5 7.739a1.35 1.35 0 0 0 
@@ -39,10 +39,17 @@
             0-15.203-6.187-15.203-13.778 0-.616-.553-1.12-1.24-1.12H1.24c-.684 0-1.241.504-1.241 
             1.12C0 38.235 10.774 48 24 48z" fill-rule="evenodd"/>
         </symbol>
-        <symbol width="48" height="48" id="scale" viewBox="0 0 48 48">
+        <symbol id="scale" viewBox="0 0 48 48">
             <path d="M0 0v48h48V0H0zm6.4 6.4h33.682L6.4 40.227V6.4zm34.56 32.427H25.6v-6.4h15.36v6.4z"/>
             <path d="M24 13.071h-4.375v-4.5h-6.25v4.5H9V19.5h4.375V24h6.25v-4.5H24z"/>
         </symbol>
+        <!-- <defs>
+            <linearGradient id="gradient" x1="100%" x2="0%" y1="0%" y2="100%">
+                <stop offset="0" stop-color="#8A2387"></stop>
+                <stop offset=".64" stop-color="#E94057"></stop>
+                <stop offset="1" stop-color="#F27121"></stop>
+            </linearGradient>
+        </defs> -->
     </svg>
     <main class="main-content">
         <input type="checkbox" class="fill__input" id="fill__input" name="fill">
@@ -64,6 +71,10 @@
         <input type="radio" class="filter-selector filter-2" id="filter-2" name="filter-selector">
         <input type="radio" class="filter-selector filter-3" id="filter-3" name="filter-selector">
         <input type="radio" class="filter-selector filter-4" id="filter-4" name="filter-selector">
+        <input type="radio" class="filter-selector filter-5" id="filter-5" name="filter-selector">
+        <input type="radio" class="filter-selector filter-6" id="filter-6" name="filter-selector">
+        <input type="radio" class="filter-selector filter-7" id="filter-7" name="filter-selector">
+
         <section class="main-content__options">
             <ul class="options__items-list">
                 <li class="list-item list-item__fill">
@@ -147,18 +158,37 @@
             </div>
         </section>
         <section class="main-content__filters">
+            <input type="radio" class="filter-set filter-set-1" id="filter-set-1" name="filter-set" checked>
+            <input type="radio" class="filter-set filter-set-2" id="filter-set-2" name="filter-set">
+            <input type="radio" class="filter-set filter-set-3" id="filter-set-3" name="filter-set">
+            <input type="radio" class="filter-set filter-set-4" id="filter-set-4" name="filter-set">
             <div class="filters__carousel-wrapper">
-                <div class="arrow left_arrow">
-                    <label class="option arrow-option left_arrow_label" for="left_arrow">
-                        <svg class="icon arrow-icon left_arrow-icon arrow_hovered">
+                <div class="arrow left-arrow">
+                    <label class="left-arrow__label-1 arrow_disabled" for="filter-set-1">
+                        <svg class="icon arrow-icon left-arrow-icon arrow_hovered">
+                            <use xlink:href="#arrow"></use>
+                        </svg>
+                    </label>
+                    <label class="left-arrow__label-2" for="filter-set-1">
+                        <svg class="icon arrow-icon left-arrow-icon arrow_hovered">
+                            <use xlink:href="#arrow"></use>
+                        </svg>
+                    </label>
+                    <label class="left-arrow__label-3" for="filter-set-2">
+                        <svg class="icon arrow-icon left-arrow-icon arrow_hovered">
+                            <use xlink:href="#arrow"></use>
+                        </svg>
+                    </label>
+                    <label class="left-arrow__label-4" for="filter-set-3">
+                        <svg class="icon arrow-icon left-arrow-icon arrow_hovered">
                             <use xlink:href="#arrow"></use>
                         </svg>
                     </label>
                 </div>
                 <ul class="filters__carousel">
-                    <li class="list-item filter">
+                    <li class="list-item filter filter-1">
                         <label class="filter__label filter-1__label" for="filter-1">
-                            <span class="filter__name filter-1-name">Без фильтра</span>
+                            <span class="filter__name filter-1__name">Без фильтра</span>
                             <img
                                 class="photo-with-filter filter-1__image"
                                 src="images/cat.jpg"
@@ -166,9 +196,9 @@
                             >
                         </label>
                     </li>
-                    <li class="list-item filter">
+                    <li class="list-item filter filter-2">
                         <label class="filter__label filter-2__label" for="filter-2">
-                            <span class="filter__name filter-2-name">Сепия</span>
+                            <span class="filter__name filter-2__name">Сепия</span>
                             <img
                                 class="photo-with-filter filter-2__image"
                                 src="images/cat.jpg"
@@ -176,9 +206,9 @@
                             >
                         </label>
                     </li>
-                    <li class="list-item filter">
+                    <li class="list-item filter filter-3">
                         <label class="filter__label filter-3__label" for="filter-3">
-                            <span class="filter__name filter-3-name">Негатив</span>
+                            <span class="filter__name filter-3__name">Негатив</span>
                             <img
                                 class="photo-with-filter filter-3__image"
                                 src="images/cat.jpg"
@@ -186,44 +216,65 @@
                             >
                         </label>
                     </li>
-                    <li class="list-item filter">
+                    <li class="list-item filter filter-4">
                         <label class="filter__label filter-4__label" for="filter-4">
-                            <span class="filter__name filter-4-name">Sutro</span>
+                            <span class="filter__name filter-4__name">Sutro</span>
                             <img
                                 class="photo-with-filter filter-4__image"
                                 src="images/cat.jpg"
                                 alt="фото под фильтром"
                             >
                         </label>
-                    </li><!--
-                    <li class="list-item filter">
-                        <span class="filter__name">X-PRO 2</span>
-                        <img
-                            class="photo-with-filter X-PRO-2-image"
-                            src="images/cat.jpg"
-                            alt="фото под фильтром"
-                        >
                     </li>
-                    <li class="list-item filter">
-                        <span class="filter__name">Kelvin</span>
-                        <img
-                            class="photo-with-filter Kelvin-image"
-                            src="images/cat.jpg"
-                            alt="фото под фильтром"
-                        >
+                    <li class="list-item filter filter-5">
+                        <label class="filter__label filter-5__label" for="filter-5">
+                            <span class="filter__name filter-5__name">X-PRO 2</span>
+                            <img
+                                class="photo-with-filter filter-5__image"
+                                src="images/cat.jpg"
+                                alt="фото под фильтром"
+                            >
+                        </label>
                     </li>
-                    <li class="list-item filter">
-                        <span class="filter__name">Inkwell</span>
-                        <img
-                            class="photo-with-filter Inkwell-image"
-                            src="images/cat.jpg"
-                            alt="фото под фильтром"
-                        >
-                    </li>-->
+                    <li class="list-item filter filter-6">
+                        <span class="filter__name filter-6__name">Kelvin</span>
+                        <label class="filter__label filter-6__label" for="filter-6">
+                            <img
+                                class="photo-with-filter filter-6__image"
+                                src="images/cat.jpg"
+                                alt="фото под фильтром"
+                            >
+                        </label>
+                    </li>
+                    <li class="list-item filter filter-7">
+                        <span class="filter__name filter-7__name">Inkwell</span>
+                        <label class="filter__label filter-7__label" for="filter-7">
+                            <img
+                                class="photo-with-filter filter-7__image"
+                                src="images/cat.jpg"
+                                alt="фото под фильтром"
+                            >
+                        </label>
+                    </li>
                 </ul>
-                <div class="arrow right_arrow">
-                    <label class="option arrow-option right_arrow_label" for="right_arrow">
-                        <svg class="icon arrow-icon right_arrow-icon arrow_hovered">
+                <div class="arrow right-arrow">
+                    <label class="right-arrow__label-1" for="filter-set-2">
+                        <svg class="icon arrow-icon right-arrow-icon arrow_hovered">
+                            <use xlink:href="#arrow"></use>
+                        </svg>
+                    </label>
+                    <label class="right-arrow__label-2" for="filter-set-3">
+                        <svg class="icon arrow-icon right-arrow-icon arrow_hovered">
+                            <use xlink:href="#arrow"></use>
+                        </svg>
+                    </label>
+                    <label class="right-arrow__label-3" for="filter-set-4">
+                        <svg class="icon arrow-icon right-arrow-icon arrow_hovered">
+                            <use xlink:href="#arrow"></use>
+                        </svg>
+                    </label>
+                    <label class="right-arrow__label-4 arrow_disabled" for="filter-set-4">
+                        <svg class="icon arrow-icon right-arrow-icon arrow_hovered">
                             <use xlink:href="#arrow"></use>
                         </svg>
                     </label>
