@@ -7,11 +7,12 @@ body
     height: 100%;
 }
 
-.Catogram-Default
+.catogram-default
 {
     position: relative;
 
-    width: 1440px;
+    max-width: 1440px;
+    width: 100%;
     height: 1024px;
     margin: auto;
 
@@ -22,8 +23,8 @@ body
 .controls
 {
     position: relative;
-
-    width: 100%;
+    margin: auto;
+    width: 690px;
     height: 70px;
 }
 
@@ -64,28 +65,28 @@ body
 
 .fill
 {
-    left: 392px;
+    left: 10px;
 }
 
 .scale
 {
-    left: 539px;
+    left: 157px;
 }
 
 .logo
 {
-    left: 686px;
+    left: 304px;
 }
 
 .rotate
 {
-    left: 833px;
+    left: 451px;
 }
 
 .flip
 {
-    top: 4px;
-    left: 980px;
+    top: 8px;
+    left: 598px;
 }
 
 /*______________________________________CANVAS________________________________________*/
@@ -96,7 +97,7 @@ body
 
     width: 632px;
     height: 632px;
-    margin: 0 404px;
+    margin: auto;
 }
 
 .photo
@@ -126,6 +127,13 @@ body
     color: #000;
 }
 
+.filters
+{
+    position: relative;
+    width: 690px;
+    margin: auto;
+}
+
 .carousel
 {
     position: relative;
@@ -134,7 +142,7 @@ body
 
     width: 690px;
     height: 220px;
-    margin: 70px 0 37px 373px;
+    margin: auto 0 37px auto;
 
     transition-duration: .5s;
     white-space: nowrap;
@@ -221,16 +229,15 @@ body
 
 .left-arrow
 {
-    bottom: 90px;
-    left: 308px;
-
+    bottom: 65px;
+    left: -60px;
     transform: rotate(90deg);
 }
 
 .right-arrow
 {
-    right: 315px;
-    bottom: 93px;
+    right: -60px;
+    bottom: 65px;
 
     transform: rotate(-90deg);
 }
