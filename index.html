@@ -7,6 +7,11 @@
 </head>
 <body>
 <svg class="svg">
+    <linearGradient id="svg__icon-hover" x1="0" x2="100" y1="0" y2="100">
+        <stop offset="0%" stop-color="#8A2387">
+        <stop offset="60" stop-color="#E94057">
+        <stop offset="100%" stop-color="#F27121">
+    </linearGradient>
     <symbol id="svg__icon-logo" viewBox="0 0 48 48">
         <path d="M0 0v48h48V0H0zm24.107 16.782a7.12 7.12 0 0 1 7.11 7.111 7.12 7.12 0 0 1-7.11 7.111 7.12 7.12 0 0 1-7.111-7.11 7.12 7.12 0 0 1 7.11-7.112zM6.4 5.547h7.253v4.693H6.4V5.547zM41.6 41.6H6.4V24.747h4.225c.443 7.053 6.318 12.657 13.482 12.657 7.163 0 13.039-5.604 13.481-12.657H41.6V41.6z" fill-rule="evenodd"/>
     </symbol>
@@ -30,30 +35,59 @@
         <path d="M24 13.071h-4.375v-4.5h-6.25v4.5H9V19.5h4.375V24h6.25v-4.5H24z"/>
     </symbol>
 </svg>
-<main class="main">
-    <input type="text" id="test" class="test">
+<form class="main">
+    <input type="radio" checked name="filter" id="filter1" class="filter-input input-filter1">
+    <input type="radio" name="filter" id="filter2" class="filter-input input-filter2">
+    <input type="radio" name="filter" id="filter3" class="filter-input input-filter3">
+    <input type="radio" name="filter" id="filter4" class="filter-input input-filter4">
+    <input type="radio" name="filter" id="filter5" class="filter-input input-filter5">
+    <input type="radio" name="filter" id="filter6" class="filter-input input-filter6">
+
+    <input type="checkbox" name="controll" id="controll1" class="controll-input input-controll1">
+    <input type="checkbox" name="controll" id="controll2" class="controll-input input-controll2">
+    <input type="radio" checked name="rotate" id="controll3" class="controll-input input-controll3">
+    <input type="radio" name="rotate" id="controll4" class="controll-input input-controll4">
+    <input type="radio" name="rotate" id="controll5" class="controll-input input-controll5">
+    <input type="radio" name="rotate" id="controll6" class="controll-input input-controll6">
+    <input type="checkbox" name="controll" id="controll7" class="controll-input input-controll7">
+    <input type="reset" id="reset" class="reset">
     <section class="controlls">
-        <label for="test" class="controlls__label">
+        <label for="controll1" class="controlls__label">
             <svg class="controlls__icon">
                 <use xlink:href="#svg__icon-fill"></use>
             </svg>
         </label>
-        <label for="test" class="controlls__label">
+        <label for="controll2" class="controlls__label">
             <svg class="controlls__icon">
                 <use xlink:href="#svg__icon-scale"></use>
             </svg>
         </label>
-        <label for="test" class="controlls__label">
-            <svg class="controlls__icon">
+        <label for="reset" class="controlls__label">
+            <svg class="controlls__icon controlls__logo">
                 <use xlink:href="#svg__icon-logo"></use>
             </svg>
         </label>
-        <label for="test" class="controlls__label">
+        <label for="controll3" class="controlls__label controlls__rotate controlls__rotate1">
             <svg class="controlls__icon">
                 <use xlink:href="#svg__icon-rotate"></use>
             </svg>
         </label>
-        <label for="test" class="controlls__label">
+        <label for="controll4" class="controlls__label controlls__rotate controlls__rotate2">
+            <svg class="controlls__icon">
+                <use xlink:href="#svg__icon-rotate"></use>
+            </svg>
+        </label>
+        <label for="controll5" class="controlls__label controlls__rotate controlls__rotate3">
+            <svg class="controlls__icon">
+                <use xlink:href="#svg__icon-rotate"></use>
+            </svg>
+        </label>
+        <label for="controll6" class="controlls__label controlls__rotate controlls__rotate4">
+            <svg class="controlls__icon">
+                <use xlink:href="#svg__icon-rotate"></use>
+            </svg>
+        </label>
+        <label for="controll7" class="controlls__label">
             <svg class="controlls__icon">
                 <use xlink:href="#svg__icon-flip"></use>
             </svg>
@@ -75,8 +109,11 @@
         </div>
     </section>
     <section class="filters">
+        <input type="radio" checked name="arrow" id="input-arrow1" class="input-arrow input-arrow1">
+        <input type="radio" name="arrow" id="input-arrow2" class="input-arrow input-arrow2">
+        <input type="radio" name="arrow" id="input-arrow3" class="input-arrow input-arrow3">
         <div class="filters__list">
-            <label for="test" class="filters__item">
+            <label for="filter1" class="filters__item input-filter1">
                 <span class="filters__name">Без фильтра</span>
                 <img
                     src="images/cat.jpg"
@@ -84,40 +121,40 @@
                     title="Без фильтра"
                     class="filters__image">
             </label>
-            <label for="test" class="filters__item">
-                <span class="filters__name">Без фильтра2</span>
+            <label for="filter2" class="filters__item input-filter2">
+                <span class="filters__name">Blur</span>
                 <img
                     src="images/cat.jpg"
                     alt="Изображение без обработки"
                     title="Без фильтра"
                     class="filters__image">
             </label>
-            <label for="test" class="filters__item">
-                <span class="filters__name">Без фильтра3</span>
+            <label for="filter3" class="filters__item input-filter3">
+                <span class="filters__name">Grayscale</span>
                 <img
                     src="images/cat.jpg"
                     alt="Изображение без обработки"
                     title="Без фильтра"
                     class="filters__image">
             </label>
-            <label for="test" class="filters__item">
-                <span class="filters__name">Без фильтра4</span>
+            <label for="filter4" class="filters__item input-filter4">
+                <span class="filters__name">Invert</span>
                 <img
                     src="images/cat.jpg"
                     alt="Изображение без обработки"
                     title="Без фильтра"
                     class="filters__image">
             </label>
-            <label for="test" class="filters__item">
-                <span class="filters__name">Без фильтра5</span>
+            <label for="filter5" class="filters__item input-filter5">
+                <span class="filters__name">Hue-rotate</span>
                 <img
                     src="images/cat.jpg"
                     alt="Изображение без обработки"
                     title="Без фильтра"
                     class="filters__image">
             </label>
-            <label for="test" class="filters__item">
-                <span class="filters__name">Без фильтра6</span>
+            <label for="filter6" class="filters__item input-filter6">
+                <span class="filters__name">Sepia</span>
                 <img
                     src="images/cat.jpg"
                     alt="Изображение без обработки"
@@ -125,27 +162,27 @@
                     class="filters__image">
             </label>
         </div>
-        <label for="test" class="arrow arrow_last arrow-last1">
+        <label for="input-arrow1" class="arrow arrow_last arrow-last1">
             <svg class="arrow__icon">
                 <use xlink:href="#svg__icon-arrow"></use>
             </svg>
         </label>
-        <label for="test" class="arrow arrow_last arrow-last2">
+        <label for="input-arrow2" class="arrow arrow_last arrow-last2">
             <svg class="arrow__icon">
                 <use xlink:href="#svg__icon-arrow"></use>
             </svg>
         </label>
-        <label for="test" class="arrow arrow_next arrow-next1">
+        <label for="input-arrow2" class="arrow arrow_next arrow-next1">
             <svg class="arrow__icon">
                 <use xlink:href="#svg__icon-arrow"></use>
             </svg>
         </label>
-        <label for="test" class="arrow arrow_next arrow-next1">
+        <label for="input-arrow3" class="arrow arrow_next arrow-next2">
             <svg class="arrow__icon">
                 <use xlink:href="#svg__icon-arrow"></use>
             </svg>
         </label>
     </section>
-</main>
+</form>
 </body>
 </html>

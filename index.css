@@ -30,7 +30,7 @@ body
     flex-direction: column;
 }
 
-.test
+.filter-input
 {
     display: none;
 }
@@ -56,6 +56,19 @@ body
     width: 100%;
     height: 100%;
     fill: #444;
+    opacity: .8;
+    transition: .3s;
+}
+
+.controlls__icon:hover
+{
+    opacity: 1;
+    cursor: pointer;
+}
+
+.controlls__logo
+{
+    fill: url('#svg__icon-hove');
 }
 
 .image
@@ -68,6 +81,16 @@ body
     align-items: center;
     justify-content: center;
     margin: 0 auto;
+}
+
+.image__filter-rotate
+{
+    transition: .3s;
+}
+
+.image__picture
+{
+    transition: .3s;
 }
 
 .filters
@@ -95,14 +118,16 @@ body
     height: 207px;
     overflow: hidden;
     text-align: center;
+    transition: .3s;
 }
 
 .filters__name
 {
     font-family: Helvetica, Arial, sans-serif;
     font-size: 18px;
-    font-weight: 600;
     color: #000;
+    margin-bottom: 10px;
+    display: inline-block;
 }
 
 .filters__image
@@ -110,11 +135,16 @@ body
     height: 169px;
 }
 
+.filters__image:hover
+{
+    cursor: pointer;
+}
+
 .arrow
 {
-    display: inline-block;
+    display: none;
     position: absolute;
-    top: 115px;
+    top: 100px;
 }
 
 .arrow_last
@@ -134,4 +164,217 @@ body
     width: 47px;
     height: 30px;
     fill: #444;
+}
+
+.input-arrow
+{
+    display: none;
+}
+
+.arrow:hover
+{
+    cursor: pointer;
+}
+
+.input-arrow1:checked ~ .filters__list .filters__item:first-child
+{
+    margin-left: 0;
+}
+
+.input-arrow2:checked ~ .filters__list .filters__item:first-child
+{
+    margin-left: -174px;
+}
+
+.input-arrow3:checked ~ .filters__list .filters__item:first-child
+{
+    margin-left: -348px;
+}
+
+.input-arrow1:checked ~ .arrow-last1
+{
+    pointer-events: none;
+}
+
+.input-arrow1:checked ~ .arrow-last1 .arrow__icon
+{
+    fill: #aaac;
+}
+
+.input-arrow3:checked ~ .arrow-next2
+{
+    pointer-events: none;
+}
+
+.input-arrow3:checked ~ .arrow-next2 .arrow__icon
+{
+    fill: #aaac;
+}
+
+.input-arrow1:checked ~ .arrow-last1,
+.input-arrow1:checked ~ .arrow-next1
+{
+    display: inline-block;
+}
+
+.input-arrow2:checked ~ .arrow-last1,
+.input-arrow2:checked ~ .arrow-next2
+{
+    display: inline-block;
+}
+
+.input-arrow3:checked ~ .arrow-last2,
+.input-arrow3:checked ~ .arrow-next2
+{
+    display: inline-block;
+}
+
+.input-filter1:checked ~ .filters .filters__list .input-filter1 .filters__name
+{
+    font-weight: 600;
+}
+
+.input-filter2:checked ~ .filters .filters__list .input-filter2 .filters__name
+{
+    font-weight: 600;
+}
+
+.input-filter3:checked ~ .filters .filters__list .input-filter3 .filters__name
+{
+    font-weight: 600;
+}
+
+.input-filter4:checked ~ .filters .filters__list .input-filter4 .filters__name
+{
+    font-weight: 600;
+}
+
+.input-filter5:checked ~ .filters .filters__list .input-filter5 .filters__name
+{
+    font-weight: 600;
+}
+
+.input-filter6:checked ~ .filters .filters__list .input-filter6 .filters__name
+{
+    font-weight: 600;
+}
+
+.input-filter2 .filters__image
+{
+    filter: blur(3px);
+}
+
+.input-filter3 .filters__image
+{
+    filter: grayscale(100%);
+}
+
+.input-filter4 .filters__image
+{
+    filter: invert(100%);
+}
+
+.input-filter5 .filters__image
+{
+    filter: hue-rotate(180deg);
+}
+
+.input-filter6 .filters__image
+{
+    filter: sepia(150%);
+}
+
+.input-filter2:checked ~ .image .image__picture
+{
+    filter: blur(3px);
+}
+
+.input-filter3:checked ~ .image .image__picture
+{
+    filter: grayscale(100%);
+}
+
+.input-filter4:checked ~ .image .image__picture
+{
+    filter: invert(100%);
+}
+
+.input-filter5:checked ~ .image .image__picture
+{
+    filter: hue-rotate(180deg);
+}
+
+.input-filter6:checked ~ .image .image__picture
+{
+    filter: sepia(150%);
+}
+
+.controll-input
+{
+    display: none;
+}
+
+.input-controll1:checked ~ .image .image__picture
+{
+    width: 100%;
+}
+
+.input-controll2:checked ~ .image .image__filter-scale
+{
+    transform: scale(1.5);
+}
+
+.controlls__rotate
+{
+    display: none;
+}
+
+.input-controll3:checked ~ .controlls .controlls__rotate2
+{
+    display: block;
+}
+
+.input-controll4:checked ~ .controlls .controlls__rotate3
+{
+    display: block;
+}
+
+.input-controll5:checked ~ .controlls .controlls__rotate4
+{
+    display: block;
+}
+
+.input-controll6:checked ~ .controlls .controlls__rotate1
+{
+    display: block;
+}
+
+.input-controll3:checked ~ .image .image__filter-rotate
+{
+    transform: rotate(0deg);
+}
+
+.input-controll4:checked ~ .image .image__filter-rotate
+{
+    transform: rotate(90deg);
+}
+
+.input-controll5:checked ~ .image .image__filter-rotate
+{
+    transform: rotate(180deg);
+}
+
+.input-controll6:checked ~ .image .image__filter-rotate
+{
+    transform: rotate(270deg);
+}
+
+.input-controll7:checked ~ .image .image__filter-flip
+{
+    transform: scale(-1, 1);
+}
+
+.reset
+{
+    display: none;
 }
