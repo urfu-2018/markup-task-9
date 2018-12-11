@@ -15,6 +15,15 @@ label
     cursor: pointer;
 }
 
+span
+{
+    display: inline-block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 170px;
+}
+
 .svg-sprite
 {
     width: 0;
@@ -26,8 +35,12 @@ label
     width: 1200px;
     height: 1000px;
     display: grid;
-    grid-template-rows: 70% 30%;
     justify-items: center;
+}
+
+.photo-section
+{
+    height: 763px;
 }
 
 .header
@@ -45,11 +58,7 @@ label
     height: 48px;
     fill: #444;
     opacity: .8;
-}
-
-.logo
-{
-    fill: url(#icon-logo-gradient);
+    transition: .2s ease-out;
 }
 
 .photo-container
@@ -61,16 +70,6 @@ label
     transition: .2s ease-out;
 }
 
-.inp-fill:not(:checked) ~ .photo-section .photo-container
-{
-    max-height: 700px;
-}
-
-.inp-fill:checked ~ .photo-section .photo-container
-{
-    max-height: 632px;
-}
-
 .photo
 {
     width: 100%;
@@ -79,14 +78,8 @@ label
 
 /* top buttons common */
 
-.inp-scale-1-label,
-.inp-scale-2-label,
-.inp-scale-3-label,
-.inp-scale-4-label,
-.inp-rotate-1-label,
-.inp-rotate-2-label,
-.inp-rotate-3-label,
-.inp-rotate-4-label
+.label,
+.default-label
 {
     display: none;
 }
@@ -98,26 +91,36 @@ label
 .inp-rotate-1:checked ~ .photo-section .inp-rotate-2-label,
 .inp-rotate-2:checked ~ .photo-section .inp-rotate-3-label,
 .inp-rotate-3:checked ~ .photo-section .inp-rotate-4-label,
-.inp-rotate-4:checked ~ .photo-section .inp-rotate-1-label
+.inp-rotate-4:checked ~ .photo-section .inp-rotate-1-label,
+.inp-fill-no:checked ~ .photo-section .inp-fill-yes-label,
+.inp-fill-yes:checked ~ .photo-section .inp-fill-no-label,
+.inp-flip-no:checked ~ .photo-section .inp-flip-yes-label,
+.inp-flip-yes:checked ~ .photo-section .inp-flip-no-label
 {
     display: inline-block;
+
 }
 
-.inp-scale-2:checked ~ .photo-section .inp-scale-3-label .icon,
-.inp-scale-3:checked ~ .photo-section .inp-scale-4-label .icon,
-.inp-scale-4:checked ~ .photo-section .inp-scale-1-label .icon,
-.inp-rotate-2:checked ~ .photo-section .inp-rotate-3-label .icon,
-.inp-rotate-3:checked ~ .photo-section .inp-rotate-4-label .icon,
-.inp-rotate-4:checked ~ .photo-section .inp-rotate-1-label .icon,
-.inp-fill:checked ~ .photo-section .inp-fill-label .icon,
-.inp-flip:checked ~ .photo-section .inp-flip-label .icon
+.label .icon
 {
     fill: #000;
 }
 
-.inp-logo:checked ~ .photo-section .inp-logo-label .icon
+/* fill */
+
+.inp-fill-no:checked ~ .photo-section .photo-container
 {
-    opacity: 1;
+    max-height: 700px;
+}
+
+.inp-fill-no:checked ~ .photo-section
+{
+    margin-bottom: 69px;
+}
+
+.inp-fill-yes:checked ~ .photo-section .photo-container
+{
+    max-height: 632px;
 }
 
 /* scale */
@@ -142,14 +145,29 @@ label
 
 /* logo */
 
-.inp-logo:checked ~ .photo-section .photo,
-.inp-logo:checked ~ .photo-section .photo-container,
-.inp-logo:checked ~ .photo-section .photo-container-scale,
-.inp-logo:checked ~ .photo-section .photo-container-rotate,
-.inp-logo:checked ~ .photo-section .photo-container-flip
+.logo
 {
-    -webkit-transform: none;
-    transform: none;
+    fill: url(#icon-logo-gradient);
+}
+
+.logo-gradient-1
+{
+    stop-color: rgb(242, 112, 34);
+}
+
+.logo-gradient-2
+{
+    stop-color: rgb(214, 58, 97);
+}
+
+.logo-gradient-3
+{
+    stop-color: rgb(142, 36, 133);
+}
+
+.inp-logo-label .icon:hover
+{
+    opacity: 1;
 }
 
 /* rotate */
@@ -166,7 +184,7 @@ label
     transform: rotate(180deg);
 }
 
-.inp-rotate-3:checked ~ .photo-section .photo-container-rotate
+.inp-rotate-4:checked ~ .photo-section .photo-container-rotate
 {
     -webkit-transform: rotate(270deg);
     transform: rotate(270deg);
@@ -174,7 +192,13 @@ label
 
 /* flip */
 
-.inp-flip:checked ~ .photo-section .photo-container-flip
+.inp-flip-no:checked ~ .photo-section .photo-container-flip
+{
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+.inp-flip-yes:checked ~ .photo-section .photo-container-flip
 {
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
@@ -185,8 +209,8 @@ label
 .filters-section
 {
     width: 860px;
+    height: 237px;
     display: flex;
-    margin-top: 69px;
     align-items: center;
 }
 
@@ -210,8 +234,8 @@ label
 .filter
 {
     width: 170px;
-    padding: 0 2px;
-    margin-top: -20px;
+    padding: 0 2.5px;
+    margin-top: -15px;
     text-align: center;
 }
 
