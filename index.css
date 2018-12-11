@@ -33,15 +33,16 @@ main
     display: grid;
     grid-template-columns: auto 700px auto;
     grid-template-areas: 'left carousel right';
-    width: 820px;
-    margin-left: -90px;
+    width: 910px;
+    margin-left: -141px;
     margin-top: 60px;
     height: 230px;
 }
 
 .carousel__inner
 {
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     grid-area: carousel;
     display: flex;
 }
@@ -300,6 +301,10 @@ main
     font-weight: normal;
     text-align: center;
     margin-bottom: 15px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 160px;
+    overflow: hidden;
 }
 
 .filter__none:checked ~ .carousel .filter__item.filter__none .filter__label,
