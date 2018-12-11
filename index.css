@@ -1,11 +1,17 @@
 img
 {
-    width: 20px;
+    /*width: 20px;*/
 }
 
 input
 {
     display: none;
+}
+
+label:hover
+{
+    cursor: pointer;
+    overflow: hidden;
 }
 
 .catogram
@@ -16,29 +22,166 @@ input
     grid-template: 'a' 80px 'b' 632px 'c' 312px/ auto;
 }
 
+/*Контроллеры*/
+
 .control
 {
     grid-area: a;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 634px;
+    margin: 0 auto;
 }
 
 .control_icon
 {
-    border: 1px solid red;
     width: 48px;
     height: 48px;
+    background-image: url('icons/icon.svg');
+    object-fit: contain;
 }
+
+/*Бэкграунд для контролеров*/
+
+.fill_icon
+{
+    background-position: -51px -50px;
+}
+
+input[id='icon-1']:checked ~ .control label[for='icon-1']
+{
+    background-position: -51px 0;
+}
+
+.flip_icon
+{
+    background-position: -103px -50px;
+}
+
+input[id='icon-5']:checked ~ .control label[for='icon-5']
+{
+    background-position: -103px 0;
+}
+
+.scale2_icon
+{
+    background-position: -207px -50px;
+}
+
+.scale1_icon,
+.scale3_icon
+{
+    background-position: -207px 0;
+}
+
+.logo_icon
+{
+    background-position: -156px -50px;
+}
+
+.rotate2_icon
+{
+    background-position: -257px -50px;
+}
+
+.rotate1_icon,
+.rotate3_icon,
+.rotate4_icon
+
+{
+    background-position: -257px 0;
+
+}
+/*Переключение*/
+
+input[id='icon-21']:checked ~ .control label[for^='icon-2']:not([
+for='icon-22']),
+input[id='icon-22']:checked ~ .control label[for^='icon-2']:not([
+for='icon-23']),
+input[id='icon-23']:checked ~ .control label[for^='icon-2']:not([
+for='icon-21']),
+input[id='icon-41']:checked ~ .control label[for^='icon-4']:not([
+for='icon-42']),
+input[id='icon-42']:checked ~ .control label[for^='icon-4']:not([
+for='icon-43']),
+input[id='icon-43']:checked ~ .control label[for^='icon-4']:not([
+for='icon-44']),
+input[id='icon-44']:checked ~ .control label[for^='icon-4']:not([
+for='icon-41'])
+{
+    display: none;
+}
+
+/*Контролеры и изображение*/
 
 .result
 {
     grid-area: b;
+    justify-self: center;
+    overflow: hidden;
+}
+
+.result_img
+{
     width: 632px;
     height: 632px;
-    margin: 0 auto;
-    border: 1px solid yellow;
+    object-fit: cover;
+    overflow: hidden;
+
 }
+
+.icon-41:checked ~ .result
+{
+    transform: rotate(0);
+}
+
+.icon-42:checked ~ .result
+{
+    transform: rotate(90deg);
+}
+
+.icon-43:checked ~ .result
+{
+    transform: rotate(180deg);
+}
+
+.icon-44:checked ~ .result
+{
+    transform: rotate(270deg);
+}
+
+.icon-5:not(:checked) ~ .result .result_img
+{
+    --scale: 1;
+}
+
+.icon-5:checked ~ .result .result_img
+{
+    --scale: -1;
+}
+
+.icon-21:checked ~ .result .result_img
+{
+    transform: scale(calc(var(--scale)*1),1);
+}
+
+.icon-22:checked ~ .result .result_img
+{
+    transform: scale(calc(var(--scale)*1.2),1.2);
+}
+
+.icon-23:checked ~ .result .result_img
+{
+    transform: scale(calc(var(--scale)*1.4),1.4);
+}
+
+.icon-1:checked ~ .result .result_img
+{
+    object-fit: contain;
+}
+
+/*n*/
 
 .settings
 {

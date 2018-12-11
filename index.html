@@ -7,7 +7,6 @@
 </head>
 <body>
 <!--Ваш спрайт-->
-
 <!--Ваша разметка-->
 <div class="catogram">
     <input type="radio" id="slide1" name="carousel">
@@ -17,15 +16,42 @@
     <input type="radio" id="slide5" name="carousel">
     <input type="radio" id="slide6" name="carousel">
     <input type="radio" id="slide7" name="carousel">
+
+    <input id="icon-21" class="icon-21" type="radio" name="scale" checked>
+    <input id="icon-22" class="icon-22" type="radio" name="scale">
+    <input id="icon-23" class="icon-23" type="radio" name="scale">
+
+    <input id="icon-41" class="icon-41" type="radio" name="rotate" checked>
+    <input id="icon-42" class="icon-42" type="radio" name="rotate">
+    <input id="icon-43" class="icon-43" type="radio" name="rotate">
+    <input id="icon-44" class="icon-44" type="radio" name="rotate">
+
+    <input id="icon-5" class="icon-5" type="checkbox">
+    <input id="icon-1" class="icon-1" type="checkbox">
+
     <section class="control">
-        <div class="control_icon"></div>
-        <div class="control_icon"></div>
-        <div class="control_icon"></div>
-        <div class="control_icon"></div>
-        <div class="control_icon"></div>
+        <!--Вписать в квадрат-->
+        <label class="control_icon fill_icon" for="icon-1" title="Изменить размер" ></label>
+
+        <!--Размер-->
+        <label class="control_icon scale1_icon" for="icon-21" title="Размер исходный"></label>
+        <label class="control_icon scale2_icon" for="icon-22" title="Размер больше"></label>
+        <label class="control_icon scale3_icon" for="icon-23" title="Размер еще больше"></label>
+
+        <!--Оригинал-->
+        <a href="index.html" class="control_icon logo_icon" title="Сбросить"></a>
+
+        <!--Повороты-->
+        <label class="control_icon rotate1_icon" for="icon-41" title="Начальное положение"></label>
+        <label class="control_icon rotate2_icon" for="icon-42" title="Поворот на 90"></label>
+        <label class="control_icon rotate3_icon" for="icon-43" title="Поворот на 180"></label>
+        <label class="control_icon rotate4_icon" for="icon-44" title="Поворот на 270"></label>
+
+        <!--Отражение-->
+        <label class="control_icon flip_icon" for="icon-5" title="Отразить"></label>
     </section>
     <section class="result">
-        <img src="cat2.jpg" alt="Catogram">
+        <img class="result_img" src="cat2.jpg" alt="Catogram">
     </section>
     <section class="settings">
         <div class="settings_switch">
@@ -35,43 +61,43 @@
             <li>
                 <label for="slide1">
                     blur
-                    <img src="cat2.jpg" alt="#">
+                    <!--<img src="cat2.jpg" alt="#">-->
                 </label>
             </li>
             <li>
                 <label for="slide2">
                     brightness
-                    <img src="cat2.jpg" alt="#">
+                    <!--<img src="cat2.jpg" alt="#">-->
                 </label>
             </li>
             <li>
                 <label for="slide3">
                     contrast
-                    <img src="cat2.jpg" alt="#">
+                    <!--<img src="cat2.jpg" alt="#">-->
                 </label>
             </li>
             <li>
                 <label for="slide4">
                     drop-shadow
-                    <img src="cat2.jpg" alt="#">
+                    <!--<img src="cat2.jpg" alt="#">-->
                 </label>
             </li>
             <li>
                 <label for="slide5">
                     grayscale
-                    <img src="cat2.jpg" alt="#">
+                    <!--<img src="cat2.jpg" alt="#">-->
                 </label>
             </li>
             <li>
                 <label for="slide6">
                     hue-rotate
-                    <img src="cat2.jpg" alt="#">
+                    <!--<img src="cat2.jpg" alt="#">-->
                 </label>
             </li>
             <li>
                 <label for="slide7">
                     invert
-                    <img src="cat2.jpg" alt="#">
+                    <!--<img src="cat2.jpg" alt="#">-->
                 </label>
             </li>
         </ul>
