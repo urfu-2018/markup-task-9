@@ -20,7 +20,7 @@
             </g>
         </symbol>
         <symbol id="logo">
-            <path d="M0 0v48h48V0H0zm24.107 16.782a7.12 7.12 0 0 1 7.11 7.111 7.12 7.12 0 0 1-7.11 7.111 7.12 7.12 0 0 1-7.111-7.11 7.12 7.12 0 0 1 7.11-7.112zM6.4 5.547h7.253v4.693H6.4V5.547zM41.6 41.6H6.4V24.747h4.225c.443 7.053 6.318 12.657 13.482 12.657 7.163 0 13.039-5.604 13.481-12.657H41.6V41.6z"  fill-rule="evenodd"/>
+            <path d="M0 0v48h48V0H0zm24.107 16.782a7.12 7.12 0 0 1 7.11 7.111 7.12 7.12 0 0 1-7.11 7.111 7.12 7.12 0 0 1-7.111-7.11 7.12 7.12 0 0 1 7.11-7.112zM6.4 5.547h7.253v4.693H6.4V5.547zM41.6 41.6H6.4V24.747h4.225c.443 7.053 6.318 12.657 13.482 12.657 7.163 0 13.039-5.604 13.481-12.657H41.6V41.6z"  fill-rule="evenodd" fill="url(#insta-gradient)"/>
         </symbol>
         
         <symbol id="rotate">
@@ -39,29 +39,32 @@
             </g>
         </symbol>
     </svg>
-    <main class="catgram">
-        <input type="checkbox" id="switch-fill" class="switch-fill">
 
+    <svg style="width:0;height:0;position:absolute;">
+        <radialGradient id="insta-gradient" cx=".1" cy="1" r="1.6">
+            <stop offset="25%" stop-color="#fd5949"/>
+            <stop offset="75%" stop-color="#962780"/>
+        </radialGradient>
+    </svg>
+    <main class="catgram">
+        <input type="checkbox" name="fill" id="switch-fill" class="switch-fill">
         <input type="radio" name="scale" id="switch-scale-1x" class="switch-scale-1x" checked>
         <input type="radio" name="scale" id="switch-scale-15x" class="switch-scale-15x">
         <input type="radio" name="scale" id="switch-scale-2x" class="switch-scale-2x">
-
-        <input type="checkbox" id="switch-logo" class="switch-logo">
-
+        <input type="checkbox" name="logo" id="switch-logo" class="switch-logo">
         <input type="radio" name="rotate" id="switch-rotate-0" class="switch-rotate-0" checked>
         <input type="radio" name="rotate" id="switch-rotate-90" class="switch-rotate-90">
         <input type="radio" name="rotate" id="switch-rotate-180" class="switch-rotate-180">
         <input type="radio" name="rotate" id="switch-rotate-270" class="switch-rotate-270">
-
         <input type="checkbox" id="switch-flip" class="switch-flip">
-
         <input type="radio" name="filter" id="filter-none" class="filter-none" checked>
         <input type="radio" name="filter" id="filter-saint_petersburg" class="filter-saint_petersburg">
         <input type="radio" name="filter" id="filter-yalta" class="filter-yalta">
         <input type="radio" name="filter" id="filter-ural-summer" class="filter-ural-summer">
         <input type="radio" name="filter" id="filter-bright" class="filter-bright">
         <input type="radio" name="filter" id="filter-warm-cat" class="filter-warm-cat">
-
+        <input type="radio" name="filter" id="filter-pink-dream" class="filter-pink-dream">
+        <input type="radio" name="filter" id="filter-blusher" class="filter-blusher">
         <section class="options">
             <label class="option fill" for="switch-fill">
                 <svg>
@@ -119,14 +122,20 @@
             </label>
         </section>
         <section class="cat-box">
-            <img src="icons/cat.jpg" alt="" class="photo">
+            <div class="flip-wrap">
+                <div class="rotate-wrap">
+                    <div class="scale-wrap">
+                        <img src="icons/cat.jpg" alt="" class="photo">
+                        <div class="filter-mask"></div>
+                    </div>
+                </div>
+            </div>
         </section>
         <section class="filters">
             <input type="radio" name="slider" id="prev-1"  class="switch-prev-1" checked>
             <input type="radio" name="slider" id="prev-2" class="switch-prev-2">
             <input type="radio" name="slider" id="prev-3" class="switch-prev-3">
             <input type="radio" name="slider" id="prev-4" class="switch-prev-4">
-    
             <input type="radio" name="slider" id="next-1" class="switch-next-1">
             <input type="radio" name="slider" id="next-2" class="switch-next-2">
             <input type="radio" name="slider" id="next-3" class="switch-next-3">
@@ -177,12 +186,12 @@
                         <span class="filter-name">Тёплый кот</span>
                         <img src="icons/cat.jpg" alt="" class="photo">
                     </label> 
-                    <label for="filter-yalta" class="filter yalta">
-                        <span class="filter-name">Ялта</span>
+                    <label for="filter-pink-dream" class="filter pink-dream">
+                        <span class="filter-name">Розовый сон</span>
                         <img src="icons/cat.jpg" alt="" class="photo">
                     </label>
-                    <label for="filter-ural-summer" class="filter ural-summer">
-                        <span class="filter-name">Уральское лето</span>
+                    <label for="filter-blusher" class="filter blusher">
+                        <span class="filter-name">Пудра</span>
                         <img src="icons/cat.jpg" alt="" class="photo">
                     </label>   
                 </div>
