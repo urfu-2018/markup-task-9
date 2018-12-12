@@ -152,17 +152,17 @@ span
 
 .logo-gradient-1
 {
-    stop-color: rgb(242, 112, 34);
+    stop-color: #f27022;
 }
 
 .logo-gradient-2
 {
-    stop-color: rgb(214, 58, 97);
+    stop-color: #d63a62;
 }
 
 .logo-gradient-3
 {
-    stop-color: rgb(142, 36, 133);
+    stop-color: #8e2471;
 }
 
 .inp-logo-label .icon:hover
