@@ -11,7 +11,6 @@ input
 
 .catgrams
 {
-    margin: auto;
     width: 1440px;
     height: 1024px;
 }
@@ -23,7 +22,7 @@ input
     height: 693px;
 }
 
-.cat-IMG
+.cat-img
 {
     overflow: hidden;
 }
@@ -94,22 +93,22 @@ input
     display: block;
 }
 
-.rotate-cat-0deg:checked ~ .catgrams .cat-IMG
+.rotate-cat-0deg:checked ~ .catgrams .cat-img
 {
     transform: rotate(0);
 }
 
-.rotate-cat-90deg:checked ~ .catgrams .cat-IMG
+.rotate-cat-90deg:checked ~ .catgrams .cat-img
 {
     transform: rotate(90deg);
 }
 
-.rotate-cat-180deg:checked ~ .catgrams .cat-IMG
+.rotate-cat-180deg:checked ~ .catgrams .cat-img
 {
     transform: rotate(180deg);
 }
 
-.rotate-cat-270deg:checked ~ .catgrams .cat-IMG
+.rotate-cat-270deg:checked ~ .catgrams .cat-img
 {
     transform: rotate(270deg);
 }
@@ -121,12 +120,12 @@ input
     display: block;
 }
 
-.mirror-cat:checked ~ .catgrams .cat-IMG .cat
+.mirror-cat:checked ~ .catgrams .cat-img .cat
 {
     --scale: -1;
 }
 
-.mirror-cat:not(:checked) ~ .catgrams .cat-IMG .cat
+.mirror-cat:not(:checked) ~ .catgrams .cat-img .cat
 {
     --scale: 1;
 }
@@ -137,22 +136,22 @@ input
     margin-top: -1px;
 }
 
-.zoom-cat-0:checked ~ .catgrams .cat-IMG .cat
+.zoom-cat-0:checked ~ .catgrams .cat-img .cat
 {
     transform: scale(calc(var(--scale)*1),1);
 }
 
-.zoom-cat-20:checked ~ .catgrams .cat-IMG .cat
+.zoom-cat-20:checked ~ .catgrams .cat-img .cat
 {
     transform: scale(calc(var(--scale)*1.2),1.2);
 }
 
-.zoom-cat-40:checked ~ .catgrams .cat-IMG .cat
+.zoom-cat-40:checked ~ .catgrams .cat-img .cat
 {
     transform: scale(calc(var(--scale)*1.4),1.4);
 }
 
-.full-size-cat:checked ~ .catgrams .cat-IMG .cat
+.full-size-cat:checked ~ .catgrams .cat-img .cat
 {
     object-fit: contain;
 }
@@ -218,17 +217,17 @@ input
 }
 
 .filter-cat-n:checked ~ .box-filter .w-f .filters-set .filter-0 .title-filter,
-.filter-cat-1:checked ~ .box-filter .w-f .filters-set .filter-1 .title-filter,
-.filter-cat-2:checked ~ .box-filter .w-f .filters-set .filter-2 .title-filter,
-.filter-cat-3:checked ~ .box-filter .w-f .filters-set .filter-3 .title-filter,
-.filter-cat-4:checked ~ .box-filter .w-f .filters-set .filter-4 .title-filter,
-.filter-cat-5:checked ~ .box-filter .w-f .filters-set .filter-5 .title-filter
+.filter-cat-1:checked ~ .box-filter .w-f .filters-set .filter-grayscale .title-filter,
+.filter-cat-2:checked ~ .box-filter .w-f .filters-set .filter-sepia .title-filter,
+.filter-cat-3:checked ~ .box-filter .w-f .filters-set .filter-Hue-rotate .title-filter,
+.filter-cat-4:checked ~ .box-filter .w-f .filters-set .filter-saturation .title-filter,
+.filter-cat-5:checked ~ .box-filter .w-f .filters-set .filter-negativity .title-filter
 {
     color: #000;
     font-weight: 600;
 }
 
-.filter-cat-1:checked ~ .cat-IMG .cat
+.filter-cat-1:checked ~ .cat-img .cat
 {
     
     animation: grayscale 1s linear forwards;
@@ -252,7 +251,7 @@ input
     }
 }
 
-.filter-cat-2:checked ~ .cat-IMG .cat
+.filter-cat-2:checked ~ .cat-img .cat
 {
     animation: hue-rotate 1s linear forwards;
 }
@@ -275,7 +274,7 @@ input
     }
 }
 
-.filter-cat-3:checked ~ .cat-IMG .cat
+.filter-cat-3:checked ~ .cat-img .cat
 {
     animation: sepia 1s linear forwards;
 }
@@ -298,7 +297,7 @@ input
     }
 }
 
-.filter-cat-4:checked ~ .cat-IMG .cat
+.filter-cat-4:checked ~ .cat-img .cat
 {
     animation: saturate 1s linear forwards;
 }
@@ -321,7 +320,7 @@ input
     }
 }
 
-.filter-cat-5:checked ~ .cat-IMG .cat
+.filter-cat-5:checked ~ .cat-img .cat
 {
     animation: invert 1s linear forwards;
 }
