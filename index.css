@@ -161,7 +161,7 @@ input
     background-position: -50px -1px;
 }
 
-.box-filter
+.box-fltr
 {
     margin: 86px 0 37px calc(50% - 390px);
     display: flex;
@@ -198,36 +198,36 @@ input
     object-fit: cover;
 }
 
-.filters-set
+.fltrs-set
 {
     display: flex;
     height: 190px;
 }
 
-.filters-set label
+.fltrs-set label
 {
     text-align: center;
     cursor: pointer;
 }
 
-.title-filter
+.title-fltr
 {
     color: #444;
     margin-top: -10px;
 }
 
-.filter-cat-n:checked ~ .box-filter .w-f .filters-set .filter-0 .title-filter,
-.filter-cat-1:checked ~ .box-filter .w-f .filters-set .filter-grayscale .title-filter,
-.filter-cat-2:checked ~ .box-filter .w-f .filters-set .filter-sepia .title-filter,
-.filter-cat-3:checked ~ .box-filter .w-f .filters-set .filter-Hue-rotate .title-filter,
-.filter-cat-4:checked ~ .box-filter .w-f .filters-set .filter-saturation .title-filter,
-.filter-cat-5:checked ~ .box-filter .w-f .filters-set .filter-negativity .title-filter
+.fltr-cat-n:checked ~ .box-fltr .w-f .fltrs-set .filter-0 .title-fltr,
+.fltr-cat-1:checked ~ .box-fltr .w-f .fltrs-set .filter-grscale .title-fltr,
+.fltr-cat-2:checked ~ .box-fltr .w-f .fltrs-set .filter-sepia .title-fltr,
+.fltr-cat-3:checked ~ .box-fltr .w-f .fltrs-set .filter-Hue-rotate .title-fltr,
+.fltr-cat-4:checked ~ .box-fltr .w-f .fltrs-set .filter-saturation .title-fltr,
+.fltr-cat-5:checked ~ .box-fltr .w-f .fltrs-set .filter-negativity .title-fltr
 {
     color: #000;
     font-weight: 600;
 }
 
-.filter-cat-1:checked ~ .cat-img .cat
+.fltr-cat-1:checked ~ .cat-img .cat
 {
     
     animation: grayscale 1s linear forwards;
@@ -251,7 +251,7 @@ input
     }
 }
 
-.filter-cat-2:checked ~ .cat-img .cat
+.fltr-cat-2:checked ~ .cat-img .cat
 {
     animation: hue-rotate 1s linear forwards;
 }
@@ -274,7 +274,7 @@ input
     }
 }
 
-.filter-cat-3:checked ~ .cat-img .cat
+.fltr-cat-3:checked ~ .cat-img .cat
 {
     animation: sepia 1s linear forwards;
 }
@@ -297,7 +297,7 @@ input
     }
 }
 
-.filter-cat-4:checked ~ .cat-img .cat
+.fltr-cat-4:checked ~ .cat-img .cat
 {
     animation: saturate 1s linear forwards;
 }
@@ -320,7 +320,7 @@ input
     }
 }
 
-.filter-cat-5:checked ~ .cat-img .cat
+.fltr-cat-5:checked ~ .cat-img .cat
 {
     animation: invert 1s linear forwards;
 }
@@ -343,59 +343,59 @@ input
     }
 }
 
-.next-but:checked ~ .box-filter .next-button
+.next-but:checked ~ .box-fltr .next-button
 {
     display: inline;
 }
 
-.next-but-1:checked ~ .box-filter .next-1-button
+.next-but-1:checked ~ .box-fltr .next-1-button
 {
     display: inline;
 }
 
-.next-but-2:checked ~ .box-filter .next-2-button
-{
-    display: inline;
-    opacity: .5;
-}
-
-.next-but:checked ~ .box-filter .back-button
+.next-but-2:checked ~ .box-fltr .next-2-button
 {
     display: inline;
     opacity: .5;
 }
 
-.back-but-1:checked ~ .box-filter .back-button
+.next-but:checked ~ .box-fltr .back-button
 {
     display: inline;
     opacity: .5;
 }
 
-.next-but-1:checked ~ .box-filter .back-1-button,
-.back-but-1:checked ~ .box-filter .next-button
-{
-    display: inline;
-}
-
-.next-but-2:checked ~ .box-filter .back-2-button,
-.back-but-2:checked ~ .box-filter .next-1-button,
-.back-but-2:checked ~ .box-filter .back-1-button
-{
-    display: inline;
-}
-
-.back-but:checked ~ .box-filter .back-button
+.back-but-1:checked ~ .box-fltr .back-button
 {
     display: inline;
     opacity: .5;
 }
 
-.back-but:checked ~ .box-filter .next-button
+.next-but-1:checked ~ .box-fltr .back-1-button,
+.back-but-1:checked ~ .box-fltr .next-button
 {
     display: inline;
 }
 
-.next-but-1:checked ~ .box-filter .wrap-filter .filters-set 
+.next-but-2:checked ~ .box-fltr .back-2-button,
+.back-but-2:checked ~ .box-fltr .next-1-button,
+.back-but-2:checked ~ .box-fltr .back-1-button
+{
+    display: inline;
+}
+
+.back-but:checked ~ .box-fltr .back-button
+{
+    display: inline;
+    opacity: .5;
+}
+
+.back-but:checked ~ .box-fltr .next-button
+{
+    display: inline;
+}
+
+.next-but-1:checked ~ .box-fltr .wrap-filter .fltrs-set 
 {
     animation: translateXnext1 1s linear forwards;
 }
@@ -413,7 +413,7 @@ input
     }
 }
 
-.back-but-1:checked ~ .box-filter .wrap-filter .filters-set 
+.back-but-1:checked ~ .box-fltr .wrap-filter .fltrs-set 
 {
     animation: translateXback1 1s linear forwards;
 }
@@ -431,7 +431,7 @@ input
     }
 }
 
-.next-but-2:checked ~ .box-filter .wrap-filter .filters-set 
+.next-but-2:checked ~ .box-fltr .wrap-filter .fltrs-set 
 {
     animation: translateXnext2 1s linear forwards;
 }
@@ -449,7 +449,7 @@ input
     }
 }
 
-.back-but-2:checked ~ .box-filter .wrap-filter .filters-set 
+.back-but-2:checked ~ .box-fltr .wrap-filter .fltrs-set 
 {
     animation: translateXback2 1s linear forwards;
 }
