@@ -23,8 +23,8 @@ head
     margin-right: auto;
     display: flex;
     flex-direction: column;
-    width: 450px;
-    height: 600px;
+    width: 638px;
+    height: 800px;
 }
 
 .svg-icon
@@ -112,15 +112,15 @@ head
 {
     margin: auto;
     height: 100%;
-    width: 450px;
+    width: 638px;
     overflow: hidden;
 }
 
 .main-image,
 .main-image-initial
 {
-    width: 450px;
-    height: 300px;
+    width: 638px;
+    height: 460px;
 }
 
 .main-image-scale,
@@ -239,24 +239,24 @@ head
 .filters
 {
     position: relative;
-    left: -50px;
-    width: calc(100% + 100px);
+    left: -31px;
+    width: calc(100% + 62px);
     display: flex;
     flex-direction: row;
-    height: 200px;
+    height: 230px;
 }
 
 .filter-image
 {
-    width: 135px;
+    width: 170px;
 }
 
 .filter
 {
     display: flex;
     flex-direction: column;
-    width: 135px;
-    margin-left: 2px;
+    width: 170px;
+    margin-left: 5px;
     transition: 1s;
 }
 
@@ -361,24 +361,26 @@ head
 {
     display: none;
     position: absolute;
-    margin-top: 60px;
+    margin-top: 80px;
+    fill: #444;
+    opacity: .8;
 }
 
 .left-arrow-1,
 .right-arrow-3
 {
-    fill: #aaa;
+    opacity: .6;
     cursor: auto;
 }
 
 .left-arrow
 {
-    margin-left: -60px;
+    margin-left: -65px;
 }
 
 .right-arrow
 {
-    margin-left: 560px;
+    margin-left: 730px;
 }
 
 .carousel-from-1:checked ~ .main .left-arrow-1,
@@ -393,10 +395,10 @@ head
 
 .carousel-from-2:checked ~ .main .filters-container
 {
-    left: -137px;
+    left: -175px;
 }
 
 .carousel-from-3:checked ~ .main .filters-container
 {
-    left: -274px;
+    left: -350px;
 }
