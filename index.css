@@ -244,6 +244,16 @@ main
     filter: blur(5px);
 }
 
+.logo:active
+{
+    transform: scale(.9);
+}
+
+.logo:hover
+{
+    transform: scale(1.1);
+}
+
 .logo:active ~ .preview .preview__picture
 {
     transform: scale(1);
