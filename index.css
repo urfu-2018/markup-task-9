@@ -1,9 +1,8 @@
 main
 {
-    width: 1440px;
-    height: 1024px;
+    text-align: center;
     background-color: #fff;
-    font-family: Helvetica;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .arrow_left,
