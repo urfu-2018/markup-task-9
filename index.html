@@ -8,6 +8,10 @@
 <body>
     <svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg">
         <defs>
+            <linearGradient id="logo-gradient" x1="0" y1="0" x2="1" y2="1">
+                <stop stop-color="#AD1457" offset="0"></stop>
+                <stop stop-color="#FF5252" offset="1"></stop>
+            </linearGradient>
             <symbol id="icon-fill">
                 <g>
                     <path d="M8.395 8.395h30.996v30.996H8.395z"/>
@@ -20,7 +24,7 @@
                     <path d="M24 13.071h-4.375v-4.5h-6.25v4.5H9V19.5h4.375V24h6.25v-4.5H24z"/>
                 </g>
             </symbol>
-            <symbol id="icon-logo">
+            <symbol id="icon-logo" fill="url(#logo-gradient)">
                     <path d="M0 0v48h48V0H0zm24.107 16.782a7.12 7.12 0 0 1 7.11 7.111 7.12 7.12 0 0 1-7.11 7.111 7.12 7.12 0 0 1-7.111-7.11 7.12 7.12 0 0 1 7.11-7.112zM6.4 5.547h7.253v4.693H6.4V5.547zM41.6 41.6H6.4V24.747h4.225c.443 7.053 6.318 12.657 13.482 12.657 7.163 0 13.039-5.604 13.481-12.657H41.6V41.6z" fill-rule="evenodd"/>
             </symbol>
             <symbol id="icon-rotate">
@@ -42,25 +46,28 @@
     <div class="container">
         <input type="checkbox" name="fill" id="fill" class="fill">
 
-        <input type="radio" name="scale" id="scale40" class="scale40">
-        <input type="radio" name="scale" id="scale60" class="scale60" >
-        <input type="radio" name="scale" id="scale80" class="scale80">
+        <input type="radio" name="scale" id="scale120" class="scale120">
+        <input type="radio" name="scale" id="scale150" class="scale150" >
+        <input type="radio" name="scale" id="scale200" class="scale200">
         <input type="radio" name="scale" id="scale100" class="scale100" checked>
+
+        <input type="checkbox" name="logo" id="logo" class="logo">
 
         <input type="radio" name="rotate" id="rotate0" class="rotate0" checked>
         <input type="radio" name="rotate" id="rotate90" class="rotate90" >
         <input type="radio" name="rotate" id="rotate180" class="rotate180">
         <input type="radio" name="rotate" id="rotate270" class="rotate270">
-        
+
         <input type="checkbox" name="flip" id="flip" class="flip">
 
         <input type="radio" name="filter" id="filter1" class="filter1" checked>
         <input type="radio" name="filter" id="filter2" class="filter2">
         <input type="radio" name="filter" id="filter3" class="filter3">
         <input type="radio" name="filter" id="filter4" class="filter4">
+        <input type="radio" name="filter" id="filter5" class="filter5">
 
-        <input type="radio" name="arrowLeft" id="arrowLeft">
-        <input type="radio" name="arrowRight" id="arrowRight">
+        <input type="radio" name="arrowStep" id="arrowStep1" class="arrowStep1" checked>
+        <input type="radio" name="arrowStep" id="arrowStep2" class="arrowStep2">
 
         <div class="control">
             <label for="fill">
@@ -68,17 +75,17 @@
                         <use xlink:href="#icon-fill"></use>
                 </svg>
             </label>
-            <label for="scale40" class="icon-scale">
+            <label for="scale120" class="icon-scale">
                 <svg class="icon">
                     <use xlink:href="#icon-scale"></use>
                 </svg>
             </label>
-            <label for="scale60" class="icon-scale">
+            <label for="scale150" class="icon-scale">
                 <svg class="icon">
                     <use xlink:href="#icon-scale"></use>
                 </svg>
             </label>
-            <label for="scale80" class="icon-scale">
+            <label for="scale200" class="icon-scale">
                 <svg class="icon">
                     <use xlink:href="#icon-scale"></use>
                 </svg>
@@ -88,9 +95,11 @@
                     <use xlink:href="#icon-scale"></use>
                 </svg>
             </label>
+            <label for="logo" class="icon-logo">
             <svg class="icon">
                 <use xlink:href="#icon-logo"></use>
             </svg>
+            </label>
             <label for="rotate0" class="icon-rotate">
                 <svg class="icon">
                     <use xlink:href="#icon-rotate"></use>
@@ -118,51 +127,76 @@
             </label>
         </div>
         <div class="bigImage">
-            <img src="images/cat.jpg" alt="cat">
+            <div class="image-rotate">
+                <div class="image-flip">
+                    <div class="image-scale">
+                        <img src="images/cat.jpg" alt="cat" class="editableImage">
+                    </div>
+                </div>
+            </div>
+            <img src="images/cat.jpg" alt="catWithoutChanges" class="cleanImage">
         </div>
         <div class="filters">
-            <label for="arrowLeft">
-                <svg class="icon icon-arrow-left">
+            <label for="arrowStep1" class="arrowLeft">
+                <svg class="icon">
+                    <use xlink:href="#icon-arrow"></use>
+                </svg>
+            </label>
+            <label for="arrowStep2" class="arrowLeft">
+                <svg class="icon">
                     <use xlink:href="#icon-arrow"></use>
                 </svg>
             </label>        
-            <div>
+            <div class="blockFilter1">
                 Без фильтра
                 <div>
-                <label for="filter1">
-                    <img src="images/cat.jpg" alt="catFilter1" class="catFilter1">
-                </label>
-            </div>
-        </div>
-            <div>
-                Питер
-                <div>
-                <label for="filter2">
-                    <img src="images/cat.jpg" alt="catFilter2" class="catFilter2">
-                </label>
-            </div>
-        </div>
-            <div>
-                Ялта
-                <div>
-                <label for="filter3">
-                    <img src="images/cat.jpg" alt="catFilter3" class="catFilter3">
-                </label>
+                    <label for="filter1">
+                        <img src="images/cat.jpg" alt="catFilter1" class="catFilter1">
+                    </label>
                 </div>
             </div>
-            <div>
+            <div class="blockFilter2">
+                Питер
+                <div>
+                    <label for="filter2">
+                        <img src="images/cat.jpg" alt="catFilter2" class="catFilter2">
+                    </label>
+                </div>
+            </div>
+            <div class="blockFilter3">
+                Ялта
+                <div>
+                    <label for="filter3">
+                        <img src="images/cat.jpg" alt="catFilter3" class="catFilter3">
+                    </label>
+                </div>
+            </div>
+            <div class="blockFilter4">
                 Уральское лето
                 <div>
-                <label for="filter4">
-                    <img src="images/cat.jpg" alt="catFilter4" class="catFilter4">
-                </label>
+                    <label for="filter4">
+                        <img src="images/cat.jpg" alt="catFilter4" class="catFilter4">
+                    </label>
+                </div>
             </div>
-        </div>
-            <label for="arrowRight">
-                <svg class="icon icon-arrow-right">
+            <div class="blockFilter5">
+                Краски жизни
+                <div>
+                    <label for="filter5">
+                        <img src="images/cat.jpg" alt="catFilter5" class="catFilter5">
+                    </label>
+                </div>
+            </div>
+            <label for="arrowStep1" class="arrowRight">
+                <svg class="icon">
                     <use xlink:href="#icon-arrow"></use>
                 </svg>
-            </label>   
+            </label>
+            <label for="arrowStep2" class="arrowRight">
+                <svg class="icon">
+                    <use xlink:href="#icon-arrow"></use>
+                </svg>
+            </label> 
         </div>
     </div>
 </body>

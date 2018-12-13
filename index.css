@@ -14,6 +14,17 @@ input
     display: none;
 }
 
+label > svg
+{
+    fill: #444;
+    opacity: .8;
+}
+
+label:hover > svg
+{
+    opacity: 1;
+}
+
 .control
 {
     margin: 0 auto;
@@ -35,10 +46,10 @@ input
     display: none;
 }
 
-.scale40:checked ~ .control > .icon-scale[for='scale60'],
-.scale60:checked ~ .control > .icon-scale[for='scale80'],
-.scale80:checked ~ .control > .icon-scale[for='scale100'],
-.scale100:checked ~ .control > .icon-scale[for='scale40']
+.scale120:checked ~ .control > .icon-scale[for='scale150'],
+.scale150:checked ~ .control > .icon-scale[for='scale200'],
+.scale200:checked ~ .control > .icon-scale[for='scale100'],
+.scale100:checked ~ .control > .icon-scale[for='scale120']
 {
     display: inline-block;
 }
@@ -57,69 +68,190 @@ input
     height: 68vh;
     width: 68vh;
     overflow: hidden;
+    transition-duration: .5s;
 }
 
-.bigImage > img,
+.cleanImage
+{
+    display: none;
+}
+
+.image-rotate,
+.image-flip,
+.image-scale
+{
+    width: 100%;
+    height: 100%;
+    transition-duration: .5s;
+}
+
+.image-scale
+{
+    overflow: hidden;
+}
+
+.fill:not(:checked) ~ .bigImage img,
 .filters > div img
 {
     position: relative;
     height: 100%;
+    width: auto;
     left: 50%;
-    transform: translate(-50%,0);
+    transform: translateX(-50%);
 }
 
-.filter2:checked ~ .bigImage > img
+.fill:checked ~ .bigImage img
+{
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.scale120:checked ~ .bigImage .image-scale
+{
+    transform: scale(1.2);
+}
+
+.scale150:checked ~ .bigImage .image-scale
+{
+    transform: scale(1.5);
+}
+
+.scale200:checked ~ .bigImage .image-scale
+{
+    transform: scale(2);
+}
+
+.logo:checked ~ .bigImage > .image-rotate
+{
+    display: none;
+}
+
+.logo:checked ~ .bigImage > .cleanImage
+{
+    display: block;
+}
+
+.rotate90:checked ~ .bigImage .image-rotate
+{
+    transform: rotate(90deg);
+}
+
+.rotate180:checked ~ .bigImage .image-rotate
+{
+    transform: rotate(180deg);
+}
+
+.rotate270:checked ~ .bigImage .image-rotate
+{
+    transform: rotate(270deg);
+}
+
+.flip:checked ~ .bigImage .image-flip
+{
+    transform: scaleX(-1);
+}
+
+.filter2:checked ~ .bigImage .editableImage
 {
     filter: grayscale();
 }
 
-.filter3:checked ~ .bigImage > img
+.filter3:checked ~ .bigImage .editableImage
 {
     filter: sepia();
 }
 
-.filter4:checked ~ .bigImage > img
+.filter4:checked ~ .bigImage .editableImage
 {
     filter: hue-rotate(180deg);
+}
+
+.filter5:checked ~ .bigImage .editableImage
+{
+    filter: saturate(200%);
 }
 
 .filters
 {
     height: 22vh;
-    width: 90vh;
+    width: 94vh;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.filters > [for^='arrow']
+.filters > label[for^='arrow']
 {
+    display: none;
     align-self: center;
+    margin: 0 1vh;
 }
 
-.icon-arrow-left
+.arrowLeft
 {
     transform: rotate(90deg);
 }
 
-.icon-arrow-right
+.arrowRight
 {
     transform: rotate(-90deg);
+}
+
+.arrowStep1:checked ~ .filters > label[for='arrowStep2'].arrowLeft,
+.arrowStep1:checked ~ .filters > label[for='arrowStep2'].arrowRight,
+.arrowStep2:checked ~ .filters > label[for='arrowStep1'].arrowLeft,
+.arrowStep2:checked ~ .filters > label[for='arrowStep1'].arrowRight
+{
+    display: block;
+}
+
+label[for='arrowStep2'].arrowLeft,
+label[for='arrowStep1'].arrowRight
+{
+    pointer-events: none;
+}
+
+label[for='arrowStep2'].arrowLeft > .icon,
+label[for='arrowStep1'].arrowRight > .icon
+{
+    opacity: .6;
+}
+
+.arrowStep1:checked ~ .filters > .blockFilter5,
+.arrowStep2:checked ~ .filters > .blockFilter1
+{
+    display: none;
 }
 
 .filters > div
 {
     margin: 0;
-    width: 15vh;
+    width: 18vh;
     flex-wrap: wrap;
+    text-align: center;
+    color: #444;
+    padding-top: 1vh;
+}
+
+.filter1:checked ~ .filters > .blockFilter1,
+.filter2:checked ~ .filters > .blockFilter2,
+.filter3:checked ~ .filters > .blockFilter3,
+.filter4:checked ~ .filters > .blockFilter4,
+.filter5:checked ~ .filters > .blockFilter5
+{
+    font-weight: 600;
 }
 
 .filters > div div
 {
-    width: 15vh;
-    height: 15vh;
+    width: 18vh;
+    height: 18vh;
     overflow: hidden;
+    margin-top: .5vh;
 }
 
 .catFilter2
@@ -135,4 +267,9 @@ input
 .catFilter4
 {
     filter: hue-rotate(180deg);
+}
+
+.catFilter5
+{
+    filter: saturate(200%);
 }
