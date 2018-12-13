@@ -71,6 +71,11 @@ label:hover > svg
     transition-duration: .5s;
 }
 
+.editableImage
+{
+    transition-duration: .5s;
+}
+
 .cleanImage
 {
     display: none;
