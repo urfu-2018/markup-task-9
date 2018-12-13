@@ -18,7 +18,7 @@ body
     display: none;
 }
 
-.setting_label,
+.setting-icon,
 .left-swap_label,
 .right-swap_label
 {
@@ -37,6 +37,12 @@ body
     width: 48px;
     height: 48px;
     opacity: .5;
+    background: url('./icons/sprite.svg');
+}
+
+.setting-icon:hover
+{
+    opacity: 1;
 }
 
 .logo
@@ -95,7 +101,7 @@ body
     text-align: center;
     font-weight: normal;
     font-size: 18px;
-    font-family: Helvetica;
+    font-family: Helvetica, Verdana, Arial, sans-serif;
 }
 
 .filter-2 .preview,
@@ -210,14 +216,10 @@ body
     font-weight: bold;
 }
 
-.swap-1_radio:checked ~ .filters-navigation .swap-2_label .setting-icon,
-.swap-2_radio:checked ~ .filters-navigation .swap-1_label .setting-icon,
-.swap-2_radio:checked ~ .filters-navigation .swap-3_label .setting-icon,
-.swap-3_radio:checked ~ .filters-navigation .swap-2_label .setting-icon,
-.swap-3_radio:checked ~ .filters-navigation .swap-4_label .setting-icon,
-.swap-4_radio:checked ~ .filters-navigation .swap-3_label .setting-icon
+.swap-1_radio:checked ~ .filters-navigation .swap-1_label,
+.swap-4_radio:checked ~ .filters-navigation .swap-4_label
 {
-    opacity: 1;
+    opacity: .5;
 }
 
 .zoom-photo-2_radio:checked ~ .catogram .photo-card .zoom-photo
@@ -280,6 +282,26 @@ body
 .right-swap_label
 {
     right: 275px;
+}
+
+.zoom-icon
+{
+    background-position-x: -52px;
+}
+
+.logo-icon
+{
+    background-position-x: -104px;
+}
+
+.rotate-icon
+{
+    background-position-x: -156px;
+}
+
+.flip-icon
+{
+    background-position-x: 48px;
 }
 
 @keyframes filter-2
