@@ -42,12 +42,6 @@ input
     justify-content: center;
 }
 
-.main img
-{
-    width: 550px;
-    height: 475px;
-}
-
 .header__control
 {
     width: 48px;
@@ -366,10 +360,25 @@ input[id='default']:checked ~ main .first-layer
     animation: none;
 }
 
-input[id='square']:checked ~ main img
+.square
 {
-    width: 450px;
-    height: 450px;
+    height: 490px;
+    display: none;
+}
+
+.default-image
+{
+    height: 490px;
+}
+
+input[id='square']:checked ~ main .square
+{
+    display: block;
+}
+
+input[id='square']:checked ~ main .default-image
+{
+    display: none;
 }
 
 .arrow
