@@ -111,7 +111,7 @@
     overflow-x: hidden;
 }
 
-.filters__line__container
+.filters__line-container
 {
     display: inline-flex;
     justify-content: space-between;
@@ -155,20 +155,15 @@
     margin-right: 5px;
 }
 
-.filter-block-caption
+.filter__caption
 {
-    font-family: Helvetica, serif;
-    font-size: 18px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
+    font: normal normal normal normal 18px/normal Helvetica, serif;
     letter-spacing: normal;
     text-align: center;
     color: #444;
 }
 
-.filter-block-image
+.filter__image
 {
     background: url('cat.jpg') no-repeat center;
     background-size: cover;
@@ -260,23 +255,23 @@
     fill: rgba(170, 170, 170, .8);
 }
 
-.filter-1-selected:checked ~ .filters .filters-item-1 .filter-block-caption,
-.filter-2-selected:checked ~ .filters .filters-item-2 .filter-block-caption,
-.filter-3-selected:checked ~ .filters .filters-item-3 .filter-block-caption,
-.filter-4-selected:checked ~ .filters .filters-item-4 .filter-block-caption,
-.filter-5-selected:checked ~ .filters .filters-item-5 .filter-block-caption,
-.filter-6-selected:checked ~ .filters .filters-item-6 .filter-block-caption
+.filter-1-selected:checked ~ .filters .filters-item-1 .filter__caption,
+.filter-2-selected:checked ~ .filters .filters-item-2 .filter__caption,
+.filter-3-selected:checked ~ .filters .filters-item-3 .filter__caption,
+.filter-4-selected:checked ~ .filters .filters-item-4 .filter__caption,
+.filter-5-selected:checked ~ .filters .filters-item-5 .filter__caption,
+.filter-6-selected:checked ~ .filters .filters-item-6 .filter__caption
 {
     font-weight: bold;
     color: #000;
 }
 
-.filter-block
+.filter
 {
     position: relative;
 }
 
-.filter-block-label
+.filter__label
 {
     width: 100%;
     height: 100%;
