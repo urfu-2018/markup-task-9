@@ -11,7 +11,7 @@ input
 
 .catgrams
 {
-    width: 1440px;
+    min-width: 850px;
     height: 1024px;
 }
 
