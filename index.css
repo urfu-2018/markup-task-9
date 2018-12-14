@@ -194,7 +194,7 @@ input
 {
     width: 170px;
     height: 169px;
-    margin: 0 4px 0;
+    margin: 0 4px;
     object-fit: cover;
 }
 
@@ -401,6 +401,7 @@ input
     transform: translateX(-177px);
     transition: transform 1s;
 }
+
 .back-but-1:checked ~ .box-fltr .wrap-filter .fltrs-set 
 {
     transform: translateX(0);
