@@ -163,10 +163,10 @@ input
 
 .box-fltr
 {
-    margin: 86px 0 37px calc(50% - 390px);
+    margin: 73px 0 37px calc(50% - 410px);
     display: flex;
-    height: 190px;
-    width: 790px;
+    height: 210px;
+    width: 850px;
     align-items: center;
     overflow: hidden;
 }
@@ -194,7 +194,7 @@ input
 {
     width: 170px;
     height: 169px;
-    margin: 0 4px;
+    margin: 0 4px 0;
     object-fit: cover;
 }
 
@@ -212,8 +212,9 @@ input
 
 .title-fltr
 {
+    display: block;
     color: #444;
-    margin-top: -10px;
+    margin-bottom: 13px;
 }
 
 .fltr-cat-n:checked ~ .box-fltr .w-f .fltrs-set .filter-0 .title-fltr,
@@ -397,78 +398,30 @@ input
 
 .next-but-1:checked ~ .box-fltr .wrap-filter .fltrs-set 
 {
-    animation: translateXnext1 1s linear forwards;
+    transform: translateX(-177px);
+    transition: transform 1s;
 }
-
-@keyframes translateXnext1
-{
-    from
-    {
-        transform: translateX(0);
-    }
-
-    to
-    {
-        transform: translateX(-177px);
-    }
-}
-
 .back-but-1:checked ~ .box-fltr .wrap-filter .fltrs-set 
 {
-    animation: translateXback1 1s linear forwards;
-}
-
-@keyframes translateXback1
-{
-    from
-    {
-        transform: translateX(-177px);
-    }
-
-    to
-    {
-        transform: translateX(0);
-    }
+    transform: translateX(0);
+    transition: transform 1s;
 }
 
 .next-but-2:checked ~ .box-fltr .wrap-filter .fltrs-set 
 {
-    animation: translateXnext2 1s linear forwards;
-}
-
-@keyframes translateXnext2
-{
-    from
-    {
-        transform: translateX(-177px);
-    }
-
-    to
-    {
-        transform: translateX(-354px);
-    }
+    transform: translateX(-354px);
+    transition: transform 1s;
 }
 
 .back-but-2:checked ~ .box-fltr .wrap-filter .fltrs-set 
 {
-    animation: translateXback2 1s linear forwards;
-}
-
-@keyframes translateXback2
-{
-    from
-    {
-        transform: translateX(-354px);
-    }
-
-    to
-    {
-        transform: translateX(-177px);
-    }
+    transform: translateX(-177px);
+    transition: transform 1s;
 }
 
 .wrap-filter
 {
-    width: 760px;
+    width: 830px;
     overflow: hidden;
+    margin: -13px 34px 0;
 }
