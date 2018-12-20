@@ -1,0 +1,57 @@
+.main
+{
+    display: grid;
+    grid-template: '. controls .' 80px
+        '. view .' 632px
+        'filters filters filters' 312px / 1fr 632px 1fr;
+}
+
+.view
+{
+    grid-area: view;
+    background-image: url('images/cat.jpg');
+    background-size: 100%;
+}
+
+.controls
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-area: controls;
+}
+
+.filters
+{
+    grid-area: filters;
+    display: grid;
+    grid-template: 'left-arrow visible-blocks right-arrow' 1fr / 1fr 695px 1fr;
+}
+
+.filters__left-arrow-container
+{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    grid-area: left-arrow;
+}
+
+.filters__left-arrow
+{
+    width: 39px;
+    overflow: hidden;
+}
+
+.filters__right-arrow-container
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    grid-area: right-arrow;
+}
+
+.filters__right-arrow
+{
+    width: 39px;
+    overflow: hidden;
+}
