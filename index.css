@@ -1,16 +1,21 @@
 .main
 {
     display: grid;
-    grid-template: '. controls .' 80px
-        '. view .' 632px
-        'filters filters filters' 312px / 1fr 632px 1fr;
+    grid-template: '. controls .' 80px '. view .' 632px 'filters filters filters' 312px / 1fr 632px 1fr;
+}
+
+.sprite
+{
+    visibility: hidden;
+    position: absolute;
 }
 
 .view
 {
     grid-area: view;
-    background-image: url('images/cat.jpg');
-    background-size: 100%;
+    height: 632px;
+    width: 632px;
+    object-fit: cover;
 }
 
 .controls
@@ -21,15 +26,72 @@
     grid-area: controls;
 }
 
+.control
+{
+    opacity: .8;
+    fill: #444;
+}
+
+input
+{
+    display: none;
+}
+
+.fill-input:checked ~ .view
+{
+    object-fit: contain;
+}
+
+.control:hover
+{
+    opacity: 1;
+    cursor: pointer;
+}
+
+.logo
+{
+    /*fill: url(#grad);*/
+}
+
 .filters
 {
+    padding-bottom: 37px;
     grid-area: filters;
     display: grid;
-    grid-template: 'left-arrow visible-blocks right-arrow' 1fr / 1fr 695px 1fr;
+    grid-template: 'left-arrow visible-filters right-arrow' 1fr / 1fr 695px 1fr;
+}
+
+.visible-filters
+{
+    grid-area: visible-filters;
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter__name
+{
+    font-family: Helvetica, sans-serif;
+    font-size: 18px;
+    height: 76px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 15px;
+    color: #444
+}
+
+.filter__image
+{
+    object-fit: cover;
+    width: 169px;
+    height: 170px;
 }
 
 .filters__left-arrow-container
 {
+    padding-right: 34px;
+    padding-top: 106px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -38,12 +100,15 @@
 
 .filters__left-arrow
 {
-    width: 39px;
-    overflow: hidden;
+    transform: rotate(90deg);
+    opacity: .8;
+    fill: #444;
 }
 
 .filters__right-arrow-container
 {
+    padding-left: 34px;
+    padding-top: 106px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -52,6 +117,7 @@
 
 .filters__right-arrow
 {
-    width: 39px;
-    overflow: hidden;
+    transform: rotate(-90deg);
+    opacity: .8;
+    fill: #444;
 }

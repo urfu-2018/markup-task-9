@@ -7,7 +7,14 @@
 </head>
 <body>
 <!--Ваш спрайт-->
-<svg style="display: none;">
+<svg class="sprite">
+    <defs>
+        <linearGradient id="grad" gradientTransform="rotate(135)">
+            <stop offset="0%" stop-color="#8a2387"/>
+            <stop offset="36%" stop-color="#e94057"/>
+            <stop offset="100%" stop-color="#f27121"/>
+        </linearGradient>
+    </defs>
     <symbol id="fill">
         <g>
             <path d="M8.395 8.395h30.996v30.996H8.395z"></path>
@@ -27,7 +34,7 @@
             <path d="M24 13.071h-4.375v-4.5h-6.25v4.5H9V19.5h4.375V24h6.25v-4.5H24z"></path>
         </g>
     </symbol>
-    <symbol id="logo">
+    <symbol id="logo" fill="url(#grad)">
         <path
             d="M0 0v48h48V0H0zm24.107 16.782a7.12 7.12 0 0 1 7.11 7.111 7.12 7.12 0 0 1-7.11 7.111 7.12 7.12 0 0 1-7.111-7.11 7.12 7.12 0 0 1 7.11-7.112zM6.4 5.547h7.253v4.693H6.4V5.547zM41.6 41.6H6.4V24.747h4.225c.443 7.053 6.318 12.657 13.482 12.657 7.163 0 13.039-5.604 13.481-12.657H41.6V41.6z"
             fill-rule="evenodd"></path>
@@ -48,38 +55,57 @@
 </svg>
 
 <main class="main">
+    <input  type="checkbox" class="fill-input" id="fill-input">
     <article class="controls">
-        <svg height="48" width="48">
-            <use xlink:href="#fill"></use>
-        </svg>
-        <svg height="48" width="48">
+        <label for="fill-input">
+            <svg class="control" height="48" width="48">
+                <use xlink:href="#fill"></use>
+            </svg>
+        </label>
+        <svg class="control" height="48" width="48">
             <use xlink:href="#scale"></use>
         </svg>
-        <svg height="48" width="48">
+        <svg class="control logo" height="48" width="48">
             <use xlink:href="#logo"></use>
         </svg>
-        <svg height="48" width="48">
+        <svg class="control" height="48" width="48">
             <use xlink:href="#rotate"></use>
         </svg>
-        <svg height="37" width="48">
+        <svg class="control" height="37" width="48">
             <use xlink:href="#flip"></use>
         </svg>
     </article>
-    <article class="view">
-    </article>
+    <img src="images/cat.jpg" class="view">
     <article class="filters">
         <section class="filters__left-arrow-container">
             <section class="filters__left-arrow">
-                <svg height="50" width="50">
-                    <use transform="translate(-6,10) rotate(90 25 16)" xlink:href="#arrow"></use>
+                <svg height="37" width="49">
+                    <use xlink:href="#arrow"></use>
                 </svg>
             </section>
         </section>
-        <section class="filters__visible-filters"></section>
+        <article class="visible-filters">
+            <article class="filter">
+                <section class="filter__name">Без фильтра</section>
+                <img src="images/cat.jpg" class="filter__image">
+            </article>
+            <article class="filter">
+                <section class="filter__name">Питер</section>
+                <img src="images/cat.jpg" class="filter__image">
+            </article>
+            <article class="filter">
+                <section class="filter__name">Ялта</section>
+                <img src="images/cat.jpg" class="filter__image">
+            </article>
+            <article class="filter">
+                <section class="filter__name">Уральское лето</section>
+                <img src="images/cat.jpg" class="filter__image">
+            </article>
+        </article>
         <section class="filters__right-arrow-container">
             <section class="filters__right-arrow">
-                <svg height="50" width="50">
-                    <use transform="translate(-6,10) rotate(-90 25 16)" xlink:href="#arrow"></use>
+                <svg height="37" width="49">
+                    <use xlink:href="#arrow"></use>
                 </svg>
             </section>
         </section>
