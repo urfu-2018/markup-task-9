@@ -39,8 +39,8 @@
         </symbol>
     </svg>
 
-    <input type="checkbox" id="input-fill" class="input-fill" name="input-fill">
     <input type="checkbox" id="input-logo" class="input-logo" name="input-logo">
+    <input type="checkbox" id="input-fill" class="input-fill" name="input-fill">
     <input type="checkbox" id="input-flip" class="input-flip" name="input-flit">
 
     <input type="radio" id="input-scale-1" class="input-scale-1" name="input-scale" checked>
@@ -65,68 +65,83 @@
 
 <!--Ваша разметка-->
     <main>
-        <section class="controls">
-            <label for="input-fill" class="label-fill">
-                <svg class="icon">
-                    <use xlink:href="#sprite__fill"></use>
-                </svg>
-            </label>
+        <ul class="controls">
+            <li>
+                <section class="cover-fill cover"></section>
+                <label for="input-fill" class="label-fill">
+                    <svg class="icon">
+                        <use xlink:href="#sprite__fill"></use>
+                    </svg>
+                </label>
+            </li>
 
-            <label for="input-scale-1" class="label-scale label-scale-1">
-                <svg class="icon">
-                    <use xlink:href="#sprite__scale"></use>
-                </svg>
-            </label>
-            <label for="input-scale-2" class="label-scale label-scale-2">
-                <svg class="icon">
-                    <use xlink:href="#sprite__scale"></use>
-                </svg>
-            </label>
-            <label for="input-scale-3" class="label-scale label-scale-3">
-                <svg class="icon">
-                    <use xlink:href="#sprite__scale"></use>
-                </svg>
-            </label>
+            <li>
+                <section class="cover-scale cover"></section>
+                <label for="input-scale-1" class="label-scale label-scale-1">
+                    <svg class="icon">
+                        <use xlink:href="#sprite__scale"></use>
+                    </svg>
+                </label>
+                <label for="input-scale-2" class="label-scale label-scale-2">
+                    <svg class="icon">
+                        <use xlink:href="#sprite__scale"></use>
+                    </svg>
+                </label>
+                <label for="input-scale-3" class="label-scale label-scale-3">
+                    <svg class="icon">
+                        <use xlink:href="#sprite__scale"></use>
+                    </svg>
+                </label>
+            </li>
 
-            <label for="input-logo" class="label-logo">
-                <svg class="icon">
-                    <use xlink:href="#sprite__logo"></use>
-                </svg>
-            </label>
+            <li>
+                <section></section>
+                <label for="input-logo" class="label-logo">
+                    <svg class="icon">
+                        <use xlink:href="#sprite__logo"></use>
+                    </svg>
+                </label>
+            </li>
 
-            <label for="input-rotate-1" class="label-rotate label-rotate-1">
-                <svg class="icon">
-                    <use xlink:href="#sprite__rotate"></use>
-                </svg>
-            </label>
-            <label for="input-rotate-2" class="label-rotate label-rotate-2">
-                <svg class="icon">
-                    <use xlink:href="#sprite__rotate"></use>
-                </svg>
-            </label>
-            <label for="input-rotate-3" class="label-rotate label-rotate-3">
-                <svg class="icon">
-                    <use xlink:href="#sprite__rotate"></use>
-                </svg>
-            </label>
-            <label for="input-rotate-4" class="label-rotate label-rotate-4">
-                <svg class="icon">
-                    <use xlink:href="#sprite__rotate"></use>
-                </svg>
-            </label>
+            <li>
+                <section class="cover-rotate cover"></section>
+                <label for="input-rotate-1" class="label-rotate label-rotate-1">
+                    <svg class="icon">
+                        <use xlink:href="#sprite__rotate"></use>
+                    </svg>
+                </label>
+                <label for="input-rotate-2" class="label-rotate label-rotate-2">
+                    <svg class="icon">
+                        <use xlink:href="#sprite__rotate"></use>
+                    </svg>
+                </label>
+                <label for="input-rotate-3" class="label-rotate label-rotate-3">
+                    <svg class="icon">
+                        <use xlink:href="#sprite__rotate"></use>
+                    </svg>
+                </label>
+                <label for="input-rotate-4" class="label-rotate label-rotate-4">
+                    <svg class="icon">
+                        <use xlink:href="#sprite__rotate"></use>
+                    </svg>
+                </label>
+            </li>
 
-            <label for="input-flip" class="label-flip">
-                <svg class="icon">
-                    <use xlink:href="#sprite__flip"></use>
-                </svg>
-            </label>
-        </section>
+            <li>
+                <section class="cover-flip cover"></section>
+                <label for="input-flip" class="label-flip">
+                    <svg class="icon">
+                        <use xlink:href="#sprite__flip"></use>
+                    </svg>
+                </label>
+            </li>
+        </ul>
 
-        <section class="main-photo">
-            <section class="flip-photo">
+        <article class="main-photo">
+            <div class="flip-photo">
                 <img src="Байт_cr.jpg" alt="кот Байт">
-            </section>
-        </section>
+            </div>
+        </article>
 
         <section class="nav-filter">
             <span class="label-gallery-1">
