@@ -1,3 +1,9 @@
+@font-face
+{
+    font-family: Helvetica;
+    src: url('Helvetica.otf') format('opentype');
+}
+
 .hidden-input
 {
     display: none;
@@ -25,10 +31,24 @@ svg
     padding-top: 5px;
 }
 
+.disabled-control,
 .control
 {
     width: 48px;
     height: 48px;
+}
+
+.disabled-control
+{
+    fill: gray;
+    cursor: default;
+    display: none;
+    margin-bottom: 4px;
+}
+
+.flip-control
+{
+    padding-top: 5px;
 }
 
 .controls
@@ -332,14 +352,24 @@ svg
     left: -360px;
 }
 
-.default-checkbox:checked ~ .catogram .rotate-photo-wrapper
+.def-ch:checked ~ .catogram .rotate-photo-wrapper
 {
     transform: none;
 }
 
-.default-checkbox:checked ~ .catogram .photo
+.def-ch:checked ~ .catogram .photo
 {
     filter: none;
     background-size: cover;
     transform: none;
+}
+
+.def-ch:checked ~ .catogram .disabled-control
+{
+    display: block;
+}
+
+.def-ch:checked ~ .catogram .controls label:not(.default-label)
+{
+    display: none;
 }

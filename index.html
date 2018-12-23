@@ -43,8 +43,8 @@
         </symbol>
         </defs>
     </svg>
+    <input type="checkbox" id="def-ch" class="def-ch hidden-input">
     <input type="checkbox" id="flip-checkbox" class="flip-checkbox hidden-input">
-    <input type="checkbox" id="default-checkbox" class="default-checkbox hidden-input">
 
     <input type="radio" id="scale-cover-radio" name="scale-control" class="scale-cover-radio hidden-input"
            checked>
@@ -76,8 +76,8 @@
     <input type="radio" id="prev-2-radio" name="arrow-radio" class="prev-2-radio hidden-input">
     <input type="radio" id="prev-notactive-radio" name="arrow-radio" class="prev-notactive-radio
      hidden-input" checked>
-    <div class="catogram">
-        <div class="controls">
+    <section class="catogram">
+        <section class="controls">
             <label for="scale-cover-radio" class="scale-cover-label">
                 <svg class="control">
                     <use href="#fill"></use>
@@ -108,7 +108,13 @@
                     <use href="#scale"></use>
                 </svg>
             </label>
-            <label for="default-checkbox" class="default-label">
+            <svg class="disabled-control">
+                <use href="#fill"></use>
+            </svg>
+            <svg class="disabled-control">
+                <use href="#scale"></use>
+            </svg>
+            <label for="def-ch" class="default-label">
                 <svg class="control logo">
                     <use href="#logo"></use>
                 </svg>
@@ -138,11 +144,17 @@
                     <use href="#flip"></use>
                 </svg>
             </label>
-        </div>
-        <div class="rotate-photo-wrapper">
-            <div class="photo"></div>
-        </div>
-        <div class="filters-widget">
+            <svg class="disabled-control">
+                <use href="#rotate"></use>
+            </svg>
+            <svg class="disabled-control flip-control">
+                <use href="#flip"></use>
+            </svg>
+        </section>
+        <section class="rotate-photo-wrapper">
+            <section class="photo"></section>
+        </section>
+        <section class="filters-widget">
             <label for="prev-notactive-radio" class="prev-notactive-label">
                 <svg class="arrow prev-arrow">
                     <use href="#arrow"></use>
@@ -158,8 +170,8 @@
                     <use href="#arrow"></use>
                 </svg>
             </label>
-            <div class="visible-filters">
-                <div class="filters">
+            <section class="visible-filters">
+                <section class="filters">
                     <label for="filter-1-radio">
                         <span class="filter filter-1">
                             <span class="filter-name">Без фильтров</span>
@@ -196,8 +208,8 @@
                             <span class="filter-demo"></span>
                         </span>
                     </label>
-                </div>
-            </div>
+                </section>
+            </section>
             <label for="next-notactive-radio" class="next-notactive-label">
                 <svg class="arrow next-arrow">
                     <use href="#arrow"></use>
@@ -213,7 +225,7 @@
                     <use href="#arrow"></use>
                 </svg>
             </label>
-        </div>
-    </div>
+        </section>
+    </section>
 </body>
 </html>
