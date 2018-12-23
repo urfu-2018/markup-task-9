@@ -32,7 +32,7 @@ ul
     fill: #444;
 }
 
-main .controls li label:hover > .icon
+main .controls ul li label:hover > .icon
 {
     transform: rotate(1turn);
     transition: 1s;
@@ -50,7 +50,7 @@ input
     display: none;
 }
 
-.controls
+.controls ul
 {
     margin: auto;
     display: flex;
@@ -58,14 +58,14 @@ input
     justify-content: space-around;
 }
 
-.controls li
+.controls ul li
 {
     width: 48px;
     height: 48px;
 
 }
 
-.controls li label
+.controls ul li label
 {
     width: 48px;
     height: 48px;
@@ -82,17 +82,17 @@ input
     display: none;
 }
 
-.input-rotate-1:checked ~ main .controls li .label-rotate-2,
-.input-rotate-2:checked ~ main .controls li .label-rotate-3,
-.input-rotate-3:checked ~ main .controls li .label-rotate-4,
-.input-rotate-4:checked ~ main .controls li .label-rotate-1
+.input-rotate-1:checked ~ main .controls ul li .label-rotate-2,
+.input-rotate-2:checked ~ main .controls ul li .label-rotate-3,
+.input-rotate-3:checked ~ main .controls ul li .label-rotate-4,
+.input-rotate-4:checked ~ main .controls ul li .label-rotate-1
 {
     display: block;
 }
 
-.input-scale-1:checked ~ main .controls li .label-scale-2,
-.input-scale-2:checked ~ main .controls li .label-scale-3,
-.input-scale-3:checked ~ main .controls li .label-scale-1
+.input-scale-1:checked ~ main .controls ul li .label-scale-2,
+.input-scale-2:checked ~ main .controls ul li .label-scale-3,
+.input-scale-3:checked ~ main .controls ul li .label-scale-1
 {
     display: block;
 }
@@ -144,8 +144,8 @@ input
     margin: auto;
 }
 
-.input-fill:checked ~ main .controls li .label-fill .icon,
-.input-flip:checked ~ main .controls li .label-flip .icon
+.input-fill:checked ~ main .controls ul li .label-fill .icon,
+.input-flip:checked ~ main .controls ul li .label-flip .icon
 {
     fill: #000;
 }
@@ -321,12 +321,27 @@ main .gallery .filters .contrast .filter__image
     transform: scale(1);
 }
 
-.input-logo:checked ~ main .controls li .cover
+.input-logo:checked ~ main .controls .cover
 {
     z-index: 5;
 }
 
-.input-logo:checked ~ main .controls li .label-logo svg
+.input-logo:checked ~ main .controls ul li label svg
+{
+    fill: #afafaf;
+}
+
+.input-logo:checked ~ main .controls ul li label
+{
+    z-index: -1;
+}
+
+.input-logo:checked ~ main .controls ul .icon-logo
+{
+    z-index: 6;
+}
+
+.input-logo:checked ~ main .controls ul li .label-logo svg
 {
     transform: scale(1.2);
 }
@@ -334,26 +349,6 @@ main .gallery .filters .contrast .filter__image
 .cover
 {
     position: absolute;
-    width: 50px;
-    height: 50px;
-}
-
-.cover-fill
-{
-    left: 426px;
-}
-
-.cover-scale
-{
-    left: 538px;
-}
-
-.cover-rotate
-{
-    left: 761px;
-}
-
-.cover-flip
-{
-    left: 873px;
+    width: 100%;
+    height: 70px;
 }
