@@ -13,9 +13,18 @@
 .view
 {
     grid-area: view;
-    height: 632px;
-    width: 632px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.image
+{
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    user-select: none;
+    transition: transform 1s, filter 1s;
 }
 
 .controls
@@ -26,7 +35,7 @@
     grid-area: controls;
 }
 
-.control
+.control:not(.logo)
 {
     opacity: .8;
     fill: #444;
@@ -37,32 +46,96 @@ input
     display: none;
 }
 
-.fill-input:checked ~ .view
+.fill-input:checked ~ .view .image
 {
     object-fit: contain;
 }
 
 .scale-label1,
-.scale-label2
+.scale-label2,
+.scale-label3,
+.scale-label4
 {
     display: none;
 }
 
-.scale-input1:checked ~ .controls > .scale-label1,
-.scale-input2:checked ~ .controls > .scale-label2
+.scale-input1:checked ~ .controls > .scale-label2,
+.scale-input2:checked ~ .controls > .scale-label3,
+.scale-input3:checked ~ .controls > .scale-label4,
+.scale-input4:checked ~ .controls > .scale-label1
 {
     display: initial;
 }
 
-.scale-input1:checked ~ .view
+.scale-input2:checked ~ .view .image
 {
+    transform: scale(1.2);
+}
 
+.scale-input3:checked ~ .view .image
+{
+    transform: scale(1.4);
+}
+
+.scale-input4:checked ~ .view .image
+{
+    transform: scale(1.6);
+}
+
+.rotate-label1,
+.rotate-label2,
+.rotate-label3,
+.rotate-label4
+{
+    display: none;
+}
+
+.rotate-input1:checked ~ .controls > .rotate-label2,
+.rotate-input2:checked ~ .controls > .rotate-label3,
+.rotate-input3:checked ~ .controls > .rotate-label4,
+.rotate-input4:checked ~ .controls > .rotate-label1
+{
+    display: initial;
+}
+
+.rotate-input2:checked ~ .view .image
+{
+    transform: rotate(.25turn);
+}
+
+.rotate-input3:checked ~ .view .image
+{
+    transform: rotate(.5turn);
+}
+
+.rotate-input4:checked ~ .view .image
+{
+    transform: rotate(.75turn);
+}
+
+.logo-input:checked ~ .view .image
+{
+    transform: initial;
+    object-fit: cover;
+}
+
+.flip-input:checked ~ .view .image
+{
+    transform: rotateY(180deg);
 }
 
 .control:hover
 {
     opacity: 1;
     cursor: pointer;
+}
+
+.no-filter-input:checked ~ .filters .visible-filters .no-filter .filter__name,
+.piter-input:checked ~ .filters .visible-filters .piter-filter .filter__name,
+.yalta-input:checked ~ .filters .visible-filters .yalta-filter .filter__name,
+.ural-input:checked ~ .filters .visible-filters .ural-filter .filter__name
+{
+    font-weight: bold;
 }
 
 .filters
@@ -80,6 +153,24 @@ input
     justify-content: space-between;
 }
 
+.piter-input:checked ~ .view .image,
+.piter-filter
+{
+    filter: grayscale(1);
+}
+
+.yalta-input:checked ~ .view .image,
+.yalta-filter
+{
+    filter: sepia(1);
+}
+
+.ural-input:checked ~ .view .image,
+.ural-filter
+{
+    filter: hue-rotate(180deg);
+}
+
 .filter__name
 {
     font-family: Helvetica, sans-serif;
@@ -90,7 +181,7 @@ input
     justify-content: flex-end;
     align-items: center;
     padding: 15px;
-    color: #444
+    color: #444;
 }
 
 .filter__image

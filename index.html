@@ -34,7 +34,7 @@
             <path d="M24 13.071h-4.375v-4.5h-6.25v4.5H9V19.5h4.375V24h6.25v-4.5H24z"></path>
         </g>
     </symbol>
-    <symbol id="logo" fill="url(#grad)">
+    <symbol fill="url(#grad)" id="logo">
         <path
             d="M0 0v48h48V0H0zm24.107 16.782a7.12 7.12 0 0 1 7.11 7.111 7.12 7.12 0 0 1-7.11 7.111 7.12 7.12 0 0 1-7.111-7.11 7.12 7.12 0 0 1 7.11-7.112zM6.4 5.547h7.253v4.693H6.4V5.547zM41.6 41.6H6.4V24.747h4.225c.443 7.053 6.318 12.657 13.482 12.657 7.163 0 13.039-5.604 13.481-12.657H41.6V41.6z"
             fill-rule="evenodd"></path>
@@ -55,36 +55,81 @@
 </svg>
 
 <main class="main">
-    <input  type="checkbox" class="fill-input" id="fill">
-    <input checked type="radio" class="scale-input1" id="scale1" name="scale">
-    <input  type="radio" class="scale-input2" id="scale2" name="scale">
+    <input class="fill-input" id="fill-input" type="checkbox">
+    <input checked class="scale-input1" id="scale1" name="scale" type="radio">
+    <input class="scale-input2" id="scale2" name="scale" type="radio">
+    <input class="scale-input3" id="scale3" name="scale" type="radio">
+    <input class="scale-input4" id="scale4" name="scale" type="radio">
+    <input class="logo-input" id="logo-input" type="checkbox">
+    <input checked class="rotate-input1" id="rotate1" name="rotate" type="radio">
+    <input class="rotate-input2" id="rotate2" name="rotate" type="radio">
+    <input class="rotate-input3" id="rotate3" name="rotate" type="radio">
+    <input class="rotate-input4" id="rotate4" name="rotate" type="radio">
+    <input class="flip-input" id="flip-input" type="checkbox">
+    <input checked class="no-filter-input" id="no-filter" name="filter" type="radio">
+    <input class="piter-input" id="piter-filter" name="filter" type="radio">
+    <input class="yalta-input" id="yalta-filter" name="filter" type="radio">
+    <input class="ural-input" id="ural-filter" name="filter" type="radio">
     <article class="controls">
-        <label for="fill">
+        <label for="fill-input">
             <svg class="control" height="48" width="48">
                 <use xlink:href="#fill"></use>
             </svg>
         </label>
-        <label for="scale1" class="scale-label1">
+        <label class="scale-label1" for="scale1">
             <svg class="control" height="48" width="48">
                 <use xlink:href="#scale"></use>
             </svg>
         </label>
-        <label for="scale2" class="scale-label2">
-        <svg class="control" height="48" width="48">
-            <use xlink:href="#scale"></use>
-        </svg>
+        <label class="scale-label2" for="scale2">
+            <svg class="control" height="48" width="48">
+                <use xlink:href="#scale"></use>
+            </svg>
         </label>
-        <svg class="control logo" height="48" width="48">
-            <use xlink:href="#logo"></use>
-        </svg>
-        <svg class="control" height="48" width="48">
-            <use xlink:href="#rotate"></use>
-        </svg>
-        <svg class="control" height="37" width="48">
-            <use xlink:href="#flip"></use>
-        </svg>
+        <label class="scale-label3" for="scale3">
+            <svg class="control" height="48" width="48">
+                <use xlink:href="#scale"></use>
+            </svg>
+        </label>
+        <label class="scale-label4" for="scale4">
+            <svg class="control" height="48" width="48">
+                <use xlink:href="#scale"></use>
+            </svg>
+        </label>
+        <label for="logo-input">
+            <svg class="control logo" height="48" width="48">
+                <use xlink:href="#logo"></use>
+            </svg>
+        </label>
+        <label class="rotate-label1" for="rotate1">
+            <svg class="control" height="48" width="48">
+                <use xlink:href="#rotate"></use>
+            </svg>
+        </label>
+        <label class="rotate-label2" for="rotate2">
+            <svg class="control" height="48" width="48">
+                <use xlink:href="#rotate"></use>
+            </svg>
+        </label>
+        <label class="rotate-label3" for="rotate3">
+            <svg class="control" height="48" width="48">
+                <use xlink:href="#rotate"></use>
+            </svg>
+        </label>
+        <label class="rotate-label4" for="rotate4">
+            <svg class="control" height="48" width="48">
+                <use xlink:href="#rotate"></use>
+            </svg>
+        </label>
+        <label for="flip-input">
+            <svg class="control" height="37" width="48">
+                <use xlink:href="#flip"></use>
+            </svg>
+        </label>
     </article>
-    <img src="images/cat.jpg" class="view">
+    <article class="view">
+        <img class="image" src="images/cat.jpg">
+    </article>
     <article class="filters">
         <section class="filters__left-arrow-container">
             <section class="filters__left-arrow">
@@ -94,21 +139,29 @@
             </section>
         </section>
         <article class="visible-filters">
-            <article class="filter">
+            <article class="filter no-filter">
                 <section class="filter__name">Без фильтра</section>
-                <img src="images/cat.jpg" class="filter__image">
+                <label for="no-filter">
+                <img class="filter__image" src="images/cat.jpg">
+                </label>
             </article>
-            <article class="filter">
-                <section class="filter__name">Питер</section>
-                <img src="images/cat.jpg" class="filter__image">
+            <article class="filter piter-filter">
+                <section  class="filter__name">Питер</section>
+                <label for="piter-filter">
+                <img class="filter__image" src="images/cat.jpg">
+                </label>
             </article>
-            <article class="filter">
+            <article class="filter yalta-filter">
                 <section class="filter__name">Ялта</section>
-                <img src="images/cat.jpg" class="filter__image">
+                <label for="yalta-filter">
+                <img class="filter__image" src="images/cat.jpg">
+                </label>
             </article>
-            <article class="filter">
+            <article class="filter ural-filter">
                 <section class="filter__name">Уральское лето</section>
-                <img src="images/cat.jpg" class="filter__image">
+                <label for="ural-filter">
+                <img class="filter__image" src="images/cat.jpg">
+                </label>
             </article>
         </article>
         <section class="filters__right-arrow-container">
