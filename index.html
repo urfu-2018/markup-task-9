@@ -9,10 +9,10 @@
 <!--Ваш спрайт-->
 <svg class="sprite">
     <defs>
-        <linearGradient id="grad" gradientTransform="rotate(135)">
-            <stop offset="0%" stop-color="#8a2387"/>
-            <stop offset="36%" stop-color="#e94057"/>
-            <stop offset="100%" stop-color="#f27121"/>
+        <linearGradient id="grad" x1="101.5%" x2=".5%" y1="-.5%" y2="101.5%">
+            <stop offset="0%" stop-color="#8a2387"></stop>
+            <stop offset="64%" stop-color="#e94057"></stop>
+            <stop offset="100%" stop-color="#f27121"></stop>
         </linearGradient>
     </defs>
     <symbol id="fill">
@@ -55,16 +55,25 @@
 </svg>
 
 <main class="main">
-    <input  type="checkbox" class="fill-input" id="fill-input">
+    <input  type="checkbox" class="fill-input" id="fill">
+    <input checked type="radio" class="scale-input1" id="scale1" name="scale">
+    <input  type="radio" class="scale-input2" id="scale2" name="scale">
     <article class="controls">
-        <label for="fill-input">
+        <label for="fill">
             <svg class="control" height="48" width="48">
                 <use xlink:href="#fill"></use>
             </svg>
         </label>
+        <label for="scale1" class="scale-label1">
+            <svg class="control" height="48" width="48">
+                <use xlink:href="#scale"></use>
+            </svg>
+        </label>
+        <label for="scale2" class="scale-label2">
         <svg class="control" height="48" width="48">
             <use xlink:href="#scale"></use>
         </svg>
+        </label>
         <svg class="control logo" height="48" width="48">
             <use xlink:href="#logo"></use>
         </svg>

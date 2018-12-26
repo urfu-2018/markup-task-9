@@ -42,15 +42,27 @@ input
     object-fit: contain;
 }
 
+.scale-label1,
+.scale-label2
+{
+    display: none;
+}
+
+.scale-input1:checked ~ .controls > .scale-label1,
+.scale-input2:checked ~ .controls > .scale-label2
+{
+    display: initial;
+}
+
+.scale-input1:checked ~ .view
+{
+
+}
+
 .control:hover
 {
     opacity: 1;
     cursor: pointer;
-}
-
-.logo
-{
-    /*fill: url(#grad);*/
 }
 
 .filters
