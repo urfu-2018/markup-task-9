@@ -70,6 +70,7 @@
     <input class="piter-input" id="piter-filter" name="filter" type="radio">
     <input class="yalta-input" id="yalta-filter" name="filter" type="radio">
     <input class="ural-input" id="ural-filter" name="filter" type="radio">
+    <input class="invert-input" id="invert-filter" name="filter" type="radio">
     <article class="controls">
         <label for="fill-input">
             <svg class="control" height="48" width="48">
@@ -138,38 +139,45 @@
                 </svg>
             </section>
         </section>
-        <article class="visible-filters">
-            <article class="filter no-filter">
-                <section class="filter__name">Без фильтра</section>
-                <label for="no-filter">
+        <input checked class="input-right-arrow" id="right-arrow1" name="right-arrow" type="radio">
+        <article class="filter no-filter">
+            <section class="filter__name">Без фильтра</section>
+            <label for="no-filter">
                 <img class="filter__image" src="images/cat.jpg">
-                </label>
-            </article>
-            <article class="filter piter-filter">
-                <section  class="filter__name">Питер</section>
-                <label for="piter-filter">
+            </label>
+        </article>
+        <input class="input-right-arrow" id="right-arrow2" name="right-arrow" type="radio">
+        <article class="filter piter-filter">
+            <section class="filter__name">Питер</section>
+            <label for="piter-filter">
                 <img class="filter__image" src="images/cat.jpg">
-                </label>
-            </article>
-            <article class="filter yalta-filter">
-                <section class="filter__name">Ялта</section>
-                <label for="yalta-filter">
+            </label>
+        </article>
+        <input class="input-right-arrow" id="right-arrow3" name="right-arrow" type="radio">
+        <article class="filter yalta-filter">
+            <section class="filter__name">Ялта</section>
+            <label for="yalta-filter">
                 <img class="filter__image" src="images/cat.jpg">
-                </label>
-            </article>
-            <article class="filter ural-filter">
-                <section class="filter__name">Уральское лето</section>
-                <label for="ural-filter">
+            </label>
+        </article>
+        <article class="filter ural-filter">
+            <section class="filter__name">Уральское лето</section>
+            <label for="ural-filter">
                 <img class="filter__image" src="images/cat.jpg">
-                </label>
-            </article>
+            </label>
+        </article>
+        <article class="filter invert-filter">
+            <section class="filter__name">Тлен</section>
+            <label for="invert-filter">
+                <img class="filter__image" src="images/cat.jpg">
+            </label>
         </article>
         <section class="filters__right-arrow-container">
-            <section class="filters__right-arrow">
+            <label class="filters__right-arrow">
                 <svg height="37" width="49">
                     <use xlink:href="#arrow"></use>
                 </svg>
-            </section>
+            </label>
         </section>
     </article>
 </main>

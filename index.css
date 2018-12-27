@@ -130,10 +130,11 @@ input
     cursor: pointer;
 }
 
-.no-filter-input:checked ~ .filters .visible-filters .no-filter .filter__name,
-.piter-input:checked ~ .filters .visible-filters .piter-filter .filter__name,
-.yalta-input:checked ~ .filters .visible-filters .yalta-filter .filter__name,
-.ural-input:checked ~ .filters .visible-filters .ural-filter .filter__name
+.no-filter-input:checked ~ .filters .no-filter .filter__name,
+.piter-input:checked ~ .filters .piter-filter .filter__name,
+.yalta-input:checked ~ .filters .yalta-filter .filter__name,
+.ural-input:checked ~ .filters .ural-filter .filter__name,
+.invert-input:checked ~ .filters .invert-filter .filter__name
 {
     font-weight: bold;
 }
@@ -142,15 +143,21 @@ input
 {
     padding-bottom: 37px;
     grid-area: filters;
-    display: grid;
-    grid-template: 'left-arrow visible-filters right-arrow' 1fr / 1fr 695px 1fr;
+    display: flex;
+    justify-content: center;
+    /*grid-template: 'left-arrow visible-filters right-arrow' 1fr / 1fr 695px 1fr;*/
 }
 
-.visible-filters
+/*.visible-filters*/
+/*{*/
+/*grid-area: visible-filters;*/
+/*display: flex;*/
+/*justify-content: space-between;*/
+/*}*/
+
+.filter
 {
-    grid-area: visible-filters;
-    display: flex;
-    justify-content: space-between;
+    padding-left: 5px;
 }
 
 .piter-input:checked ~ .view .image,
@@ -171,6 +178,17 @@ input
     filter: hue-rotate(180deg);
 }
 
+.invert-input:checked ~ .view .image,
+.invert-filter .filter__image
+{
+    filter: invert(1);
+}
+
+.filter
+{
+    display: none;
+}
+
 .filter__name
 {
     font-family: Helvetica, sans-serif;
@@ -180,7 +198,7 @@ input
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    padding: 15px;
+    padding: 15px 0;
     color: #444;
 }
 
@@ -210,12 +228,17 @@ input
 
 .filters__right-arrow-container
 {
+    display: flex;
     padding-left: 34px;
     padding-top: 106px;
-    display: flex;
     justify-content: flex-start;
     align-items: center;
     grid-area: right-arrow;
+}
+
+.input-right-arrow:checked ~ .filter:nth-child(-n+8)
+{
+    display: initial;
 }
 
 .filters__right-arrow
