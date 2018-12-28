@@ -70,7 +70,6 @@ input
 .footer__carousel
 {
     display: flex;
-    flex-direction: row;
     align-items: center;
 }
 
@@ -154,7 +153,7 @@ input[id='ural']:checked ~ footer .filter__name_ural
 {
     to
     {
-        transform: rotate(90deg);
+        transform: rotate(-90deg);
     }
 }
 
@@ -167,12 +166,12 @@ input[id='rotation90']:checked ~ main .first-layer
 {
     from
     {
-        transform: rotate(90deg);
+        transform: rotate(-90deg);
     }
 
     to
     {
-        transform: rotate(180deg);
+        transform: rotate(-180deg);
     }
 }
 
@@ -185,12 +184,12 @@ input[id='rotation180']:checked ~ main .first-layer
 {
     from
     {
-        transform: rotate(180deg);
+        transform: rotate(-180deg);
     }
 
     to
     {
-        transform: rotate(270deg);
+        transform: rotate(-270deg);
     }
 }
 
@@ -203,12 +202,12 @@ input[id='rotation270']:checked ~ main .first-layer
 {
     from
     {
-        transform: rotate(270deg);
+        transform: rotate(-270deg);
     }
 
     to
     {
-        transform: rotate(360deg);
+        transform: rotate(-360deg);
     }
 }
 
@@ -356,8 +355,10 @@ input[id='free']:checked ~ header .default
 input[id='default']:checked ~ main .third-layer,
 input[id='default']:checked ~ main .second-layer,
 input[id='default']:checked ~ main .first-layer
+input[id='default']:checked ~ main img
 {
-    animation: none;
+    filter: unset;
+    animation: unset;
 }
 
 .square
