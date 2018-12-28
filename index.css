@@ -19,7 +19,7 @@ input
 
 .header,
 .main,
-.footer
+.filters
 {
     display: flex;
     width: 632px;
@@ -50,7 +50,7 @@ input
     margin-bottom: 104px;
 }
 
-.footer
+.filters
 {
     width: 810px;
     flex-direction: row;
@@ -67,7 +67,7 @@ input
     margin: 5px;
 }
 
-.footer__carousel
+.filters__carousel
 {
     display: flex;
     align-items: center;
@@ -92,7 +92,7 @@ input
     }
 }
 
-input[id='spb']:checked ~ main img
+input[id='spb']:checked ~ .main img
 {
     animation: filter__image_spb 1s linear forwards;
 }
@@ -110,7 +110,7 @@ input[id='spb']:checked ~ main img
     }
 }
 
-input[id='yalta']:checked ~ main img
+input[id='yalta']:checked ~ .main img
 {
     animation: filter__image_yalta 1s linear forwards;
 }
@@ -128,7 +128,7 @@ input[id='yalta']:checked ~ main img
     }
 }
 
-input[id='ural']:checked ~ main img
+input[id='ural']:checked ~ .main img
 {
     animation: filter__image_ural 1s linear forwards;
 }
@@ -157,7 +157,7 @@ input[id='ural']:checked ~ footer .filter__name_ural
     }
 }
 
-input[id='rotation90']:checked ~ main .first-layer
+input[id='rotation90']:checked ~ .main .first-layer
 {
     animation: rotation90 1s linear forwards;
 }
@@ -175,7 +175,7 @@ input[id='rotation90']:checked ~ main .first-layer
     }
 }
 
-input[id='rotation180']:checked ~ main .first-layer
+input[id='rotation180']:checked ~ .main .first-layer
 {
     animation: rotation180 1s linear forwards;
 }
@@ -193,7 +193,7 @@ input[id='rotation180']:checked ~ main .first-layer
     }
 }
 
-input[id='rotation270']:checked ~ main .first-layer
+input[id='rotation270']:checked ~ .main .first-layer
 {
     animation: rotation270 1s linear forwards;
 }
@@ -211,7 +211,7 @@ input[id='rotation270']:checked ~ main .first-layer
     }
 }
 
-input[id='rotation360']:checked ~ main .first-layer
+input[id='rotation360']:checked ~ .main .first-layer
 {
     animation: rotation360 1s linear forwards;
 }
@@ -243,7 +243,7 @@ input[id='hr-default']:checked ~ header .hr
     }
 }
 
-input[id='hr']:checked ~ main .second-layer
+input[id='hr']:checked ~ .main .second-layer
 {
     animation: hr 1s linear forwards;
 }
@@ -261,7 +261,7 @@ input[id='hr']:checked ~ main .second-layer
     }
 }
 
-input[id='hr-default']:checked ~ main .second-layer
+input[id='hr-default']:checked ~ .main .second-layer
 {
     animation: hr-default 1s linear forwards;
 }
@@ -287,7 +287,7 @@ input[id='scaling12r']:checked ~ header .scaling
     }
 }
 
-input[id='scaling']:checked ~ main .third-layer
+input[id='scaling']:checked ~ .main .third-layer
 {
     animation: scaling 1s linear forwards;
 }
@@ -305,7 +305,7 @@ input[id='scaling']:checked ~ main .third-layer
     }
 }
 
-input[id='scaling12']:checked ~ main .third-layer
+input[id='scaling12']:checked ~ .main .third-layer
 {
     animation: scaling12 1s linear forwards;
 }
@@ -323,7 +323,7 @@ input[id='scaling12']:checked ~ main .third-layer
     }
 }
 
-input[id='scaling14']:checked ~ main .third-layer
+input[id='scaling14']:checked ~ .main .third-layer
 {
     animation: scaling14 1s linear forwards;
 }
@@ -341,7 +341,7 @@ input[id='scaling14']:checked ~ main .third-layer
     }
 }
 
-input[id='scaling12r']:checked ~ main .third-layer
+input[id='scaling12r']:checked ~ .main .third-layer
 {
     animation: scaling12r 1s linear forwards;
 }
@@ -352,10 +352,10 @@ input[id='free']:checked ~ header .default
     display: block;
 }
 
-input[id='default']:checked ~ main .third-layer,
-input[id='default']:checked ~ main .second-layer,
-input[id='default']:checked ~ main .first-layer
-input[id='default']:checked ~ main img
+input[id='default']:checked ~ .main .third-layer,
+input[id='default']:checked ~ .main .second-layer,
+input[id='default']:checked ~ .main .first-layer,
+input[id='default']:checked ~ .main img
 {
     filter: unset;
     animation: unset;
@@ -372,12 +372,12 @@ input[id='default']:checked ~ main img
     height: 490px;
 }
 
-input[id='square']:checked ~ main .square
+input[id='square']:checked ~ .main .square
 {
     display: block;
 }
 
-input[id='square']:checked ~ main .default-image
+input[id='square']:checked ~ .main .default-image
 {
     display: none;
 }
