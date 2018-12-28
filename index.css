@@ -200,14 +200,9 @@ input[id='rotation270']:checked ~ .main .first-layer
 
 @keyframes rotation360
 {
-    from
-    {
-        transform: rotate(-270deg);
-    }
-
     to
     {
-        transform: rotate(-360deg);
+        transform: rotate(0deg);
     }
 }
 
@@ -250,11 +245,6 @@ input[id='hr']:checked ~ .main .second-layer
 
 @keyframes hr-default
 {
-    from
-    {
-        transform: scale(-1,1);
-    }
-
     to
     {
         transform: scale(1);
@@ -276,11 +266,6 @@ input[id='scaling12r']:checked ~ header .scaling
 
 @keyframes scaling
 {
-    from
-    {
-        transform: scale(1.2);
-    }
-
     to
     {
         transform: scale(1);
