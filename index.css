@@ -13,8 +13,6 @@ input
 
 .general-layout
 {
-    position: relative;
-    top: -20px;
     width: 824px;
     height: 1024px;
     margin: auto;
@@ -40,6 +38,7 @@ input
     padding-top: 20px;
     height: 100%;
     width: 100%;
+
 }
 
 .setting-tabs__item
@@ -50,16 +49,13 @@ input
 
 .tab-icon
 {
-    max-width: 48px;
-    max-height: 48px;
-    fill: #444;
-    fill-opacity: .8;
+    opacity: .6;
 }
 
 .carousel-label:hover .icon-arrow,
 .tab-icon:hover
 {
-    fill-opacity: 1;
+    opacity: .8;
 }
 
 .cat-photo
@@ -135,7 +131,7 @@ input
     justify-content: center;
 }
 
-.filter-img-label
+.filter__img-label
 {
     width: 170px;
     height: 170px;
@@ -166,17 +162,12 @@ input
 .arrow
 {
     display: block;
-    height: 48px;
-    width: 31px;
 }
 
 .icon-arrow
 {
-    height: 48px;
-    width: 48px;
     position: relative;
-    fill: #444;
-    fill-opacity: .8;
+    opacity: .6;
 }
 
 .icon-left-arrow
@@ -207,27 +198,27 @@ input
     height: 100%;
 }
 
-.cat-preview__filter-2
+.cat-preview__filter-blur
 {
     filter: blur(2px);
 }
 
-.cat-preview__filter-3
+.cat-preview__filter-sepia
 {
     filter: sepia(100%);
 }
 
-.cat-preview__filter-4
+.cat-preview__filter-saturate
 {
     filter: saturate(200%);
 }
 
-.cat-preview__filter-5
+.cat-preview__filter-invert
 {
     filter: invert(100%);
 }
 
-.cat-preview__filter-6
+.cat-preview__filter-hue-rotate
 {
     filter: hue-rotate(270deg);
 }
@@ -270,7 +261,8 @@ input[id='flip-standart']:checked ~ main .label__flip-reflection,
 input[id='rotate-0deg']:checked ~ main .label__rotate-90deg,
 input[id='rotate-90deg']:checked ~ main .label__rotate-180deg,
 input[id='rotate-180deg']:checked ~ main .label__rotate-270deg,
-input[id='rotate-270deg']:checked ~ main .label__rotate-0deg,
+input[id='rotate-270deg']:checked ~ main .label__rotate-360deg,
+input[id='rotate-360deg']:checked ~ main .label__rotate-90deg,
 input[id='scale-1']:checked ~ main .label__scale-2,
 input[id='scale-2']:checked ~ main .label__scale-3,
 input[id='scale-3']:checked ~ main .label__scale-4,
@@ -307,17 +299,22 @@ input[id='flip-reflection']:checked ~ main .cat-photo__flip-wrapper
 
 input[id='rotate-90deg']:checked ~ main .cat-photo__rotate-wrapper
 {
-    transform: rotate(-90deg);
+    animation: rotate90 .4s ease-out forwards;
 }
 
 input[id='rotate-180deg']:checked ~ main .cat-photo__rotate-wrapper
 {
-    transform: rotate(-180deg);
+    animation: rotate180 .4s ease-out forwards;
 }
 
 input[id='rotate-270deg']:checked ~ main .cat-photo__rotate-wrapper
 {
-    transform: rotate(-270deg);
+    animation: rotate270 .4s ease-out forwards;
+}
+
+input[id='rotate-360deg']:checked ~ main .cat-photo__rotate-wrapper
+{
+    animation: rotate360 .4s ease-out;
 }
 
 input[id='scale-2']:checked ~ main .cat-photo__scale-wrapper
@@ -335,40 +332,100 @@ input[id='scale-4']:checked ~ main .cat-photo__scale-wrapper
     transform: scale(1.9);
 }
 
-input[id='filter-1']:checked ~ main .filter-1-label,
-input[id='filter-2']:checked ~ main .filter-2-label,
-input[id='filter-3']:checked ~ main .filter-3-label,
-input[id='filter-4']:checked ~ main .filter-4-label,
-input[id='filter-5']:checked ~ main .filter-5-label,
-input[id='filter-6']:checked ~ main .filter-6-label
+input[id='filter-no']:checked ~ main .filter-no-label,
+input[id='filter-blur']:checked ~ main .filter-blur-label,
+input[id='filter-sepia']:checked ~ main .filter-sepia-label,
+input[id='filter-saturate']:checked ~ main .filter-saturate-label,
+input[id='filter-invert']:checked ~ main .filter-invert-label,
+input[id='filter-hue-rotate']:checked ~ main .filter-hue-rotate-label
 {
     color: #000;
     font-weight: bold;
 }
 
-input[id='filter-2']:checked ~ main .cat-photo__filter-wrapper
+input[id='filter-blur']:checked ~ main .cat-photo__filter-wrapper
 {
     animation: blur-filter .8s ease-in forwards;
 }
 
-input[id='filter-3']:checked ~ main .cat-photo__filter-wrapper
+input[id='filter-sepia']:checked ~ main .cat-photo__filter-wrapper
 {
     animation: sepia-filter .8s ease-out forwards;
 }
 
-input[id='filter-4']:checked ~ main .cat-photo__filter-wrapper
+input[id='filter-saturate']:checked ~ main .cat-photo__filter-wrapper
 {
     animation: saturate-filter .8s ease-out forwards;
 }
 
-input[id='filter-5']:checked ~ main .cat-photo__filter-wrapper
+input[id='filter-invert']:checked ~ main .cat-photo__filter-wrapper
 {
     animation: invert-filter .8s ease-out forwards;
 }
 
-input[id='filter-6']:checked ~ main .cat-photo__filter-wrapper
+input[id='filter-hue-rotate']:checked ~ main .cat-photo__filter-wrapper
 {
     animation: hue-rotate-filter .8s ease-out forwards;
+}
+
+@keyframes rotate0
+{
+    100%
+    {
+        transform: rotate(0);
+    }
+}
+
+@keyframes rotate360
+{
+    0%
+    {
+        transform: rotate(-270deg);
+    }
+
+    100%
+    {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes rotate90
+{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+
+    100%
+    {
+        transform: rotate(-90deg);
+    }
+}
+
+@keyframes rotate180
+{
+    0%
+    {
+        transform: rotate(-90deg);
+    }
+
+    100%
+    {
+        transform: rotate(-180deg);
+    }
+}
+
+@keyframes rotate270
+{
+    0%
+    {
+        transform: rotate(-180deg);
+    }
+
+    100%
+    {
+        transform: rotate(-270deg);
+    }
 }
 
 @keyframes no-filter
@@ -426,7 +483,7 @@ input[id='reset']:checked ~ main .cat-photo__scale-wrapper
 
 input[id='reset']:checked ~ main .cat-photo__rotate-wrapper
 {
-    transform: rotate(0);
+    animation: rotate0 .4s ease-out;
 }
 
 input[id='reset']:checked ~ main .cat-photo__flip-wrapper
@@ -441,5 +498,5 @@ input[id='reset']:checked ~ main .cat-photo__filter-wrapper
 
 input[id='reset']:checked ~ main .tab-icon__logo
 {
-    fill: #444;
+    fill: black;
 }

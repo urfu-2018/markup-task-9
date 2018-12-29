@@ -50,6 +50,7 @@
     <input type="radio" id="rotate-90deg" name="rotate">
     <input type="radio" id="rotate-180deg" name="rotate">
     <input type="radio" id="rotate-270deg" name="rotate">
+    <input type="radio" id="rotate-360deg" name="rotate">
 
     <input type="radio" id="scale-1" name="scale" checked>
     <input type="radio" id="scale-2" name="scale">
@@ -60,12 +61,12 @@
     <input type="radio" id="carousel-2" name="carousel" >
     <input type="radio" id="carousel-3" name="carousel" >
 
-    <input type="radio" id="filter-1" name="filter" checked>
-    <input type="radio" id="filter-2" name="filter" >
-    <input type="radio" id="filter-3" name="filter" >
-    <input type="radio" id="filter-4" name="filter" >
-    <input type="radio" id="filter-5" name="filter" >
-    <input type="radio" id="filter-6" name="filter" >
+    <input type="radio" id="filter-no" name="filter" checked>
+    <input type="radio" id="filter-blur" name="filter" >
+    <input type="radio" id="filter-sepia" name="filter" >
+    <input type="radio" id="filter-saturate" name="filter" >
+    <input type="radio" id="filter-invert" name="filter" >
+    <input type="radio" id="filter-hue-rotate" name="filter" >
 
     <input type="checkbox" id="reset" name="reset">
 
@@ -74,75 +75,75 @@
             <div class="settings-tabs">
                 <div class="setting-tabs__item tab">
                     <label for="fill-standart" class="tabs-label label__fill-standart">
-                        <svg class="tab-icon tab-icon__fill">
+                        <svg class="tab-icon tab-icon__fill" width="48" height="48">
                             <use xlink:href="#icon-fill"></use>
                         </svg>
                     </label>
                     <label for="fill-cover" class="tabs-label label__fill-cover">
-                        <svg class="tab-icon tab-icon__fill">
+                        <svg class="tab-icon tab-icon__fill" width="48" height="48">
                             <use xlink:href="#icon-fill"></use>
                         </svg>
                     </label>
                 </div>
                 <div class="setting-tabs__item tab">
                     <label for="scale-2" class="tabs-label label__scale-2">
-                        <svg class="tab-icon tab-icon__scale">
+                        <svg class="tab-icon tab-icon__scale" width="48" height="48">
                             <use xlink:href="#icon-scale"></use>
                         </svg>
                     </label>
                     <label for="scale-3" class="tabs-label label__scale-3">
-                        <svg class="tab-icon tab-icon__scale">
+                        <svg class="tab-icon tab-icon__scale" width="48" height="48">
                             <use xlink:href="#icon-scale"></use>
                         </svg>
                     </label>
                     <label for="scale-4" class="tabs-label label__scale-4">
-                        <svg class="tab-icon tab-icon__scale">
+                        <svg class="tab-icon tab-icon__scale" width="48" height="48">
                             <use xlink:href="#icon-scale"></use>
                         </svg>
                     </label>
                     <label for="scale-1" class="tabs-label label__scale-1">
-                        <svg class="tab-icon tab-icon__scale">
+                        <svg class="tab-icon tab-icon__scale" width="48" height="48">
                             <use xlink:href="#icon-scale"></use>
                         </svg>
                     </label>
                 </div>
                 <div class="setting-tabs__item tab">
                     <label for="reset">
-                        <svg class="tab-icon tab-icon__logo">
+                        <svg class="tab-icon tab-icon__logo" width="48" height="48">
                             <use xlink:href="#icon-logo"></use>
                         </svg>
                     </label>
                 </div>
                 <div class="setting-tabs__item tab">
                     <label for="rotate-90deg" class="tabs-label label__rotate-90deg">
-                        <svg class="tab-icon tab-icon__rotate">
+                        <svg class="tab-icon tab-icon__rotate" width="48" height="48">
                             <use xlink:href="#icon-rotate"></use>
                         </svg>
                     </label>
                     <label for="rotate-180deg" class="tabs-label label__rotate-180deg">
-                        <svg class="tab-icon tab-icon__rotate">
+                        <svg class="tab-icon tab-icon__rotate" width="48" height="48">
                             <use xlink:href="#icon-rotate"></use>
                         </svg>
                     </label>
                     <label for="rotate-270deg" class="tabs-label label__rotate-270deg">
-                        <svg class="tab-icon tab-icon__rotate">
+                        <svg class="tab-icon tab-icon__rotate" width="48" height="48">
                             <use xlink:href="#icon-rotate"></use>
                         </svg>
                     </label>
-                    <label for="rotate-0deg" class="tabs-label label__rotate-0deg">
-                        <svg class="tab-icon tab-icon__rotate">
+                    <label for="rotate-360deg" class="tabs-label label__rotate-360deg">
+                        <svg class="tab-icon tab-icon__rotate" width="48" height="48">
                             <use xlink:href="#icon-rotate"></use>
                         </svg>
                     </label>
                 </div>
                 <div class="setting-tabs__item tab">
                     <label for="flip-reflection" class="tabs-label label__flip-reflection">
-                        <svg class="tab-icon tab-icon__flip">
+                        <svg class="tab-icon tab-icon__flip" width="48" height="48">
                             <use xlink:href="#icon-flip"></use>
                         </svg>
                     </label>
                     <label for="flip-standart" class="tabs-label label__flip-standart">
-                        <svg class="tab-icon tab-icon__flip">
+                        <svg class="tab-icon tab-icon__flip" width="48" height="48">
                             <use xlink:href="#icon-flip"></use>
                         </svg>
                     </label>
@@ -155,8 +156,8 @@
                     <div class="cat-photo__rotate-wrapper">
                         <div class="cat-photo__flip-wrapper">
                             <div class="cat-photo__filter-wrapper">
-                                <img src="./pictures/cat-photo.jpg" 
-                                    srcset="./pictures/cat-photo-2x.jpg"
+                                <img src="./pictures/cat-photo.jpg"
+                                    srcset="./pictures/cat-photo-2x.jpg 2x"
                                     alt="cat photo" class="cat-photo__img">
                             </div>
                         </div>
@@ -167,20 +168,20 @@
         <div class="filters__wrapper">
             <div class="left-arrow__wrapper arrow__wrapper">
                 <div class="arrow arrow_active_no">
-                    <svg class="icon-arrow icon-left-arrow">
+                    <svg class="icon-arrow icon-left-arrow" width="48px" height="48px">
                         <use xlink:href="#icon-arrow"></use>
                     </svg>
                 </div>
                 <label for="carousel-1" class="carousel-label carousel-1-label">
                     <span class="arrow">
-                        <svg class="icon-arrow icon-left-arrow">
+                        <svg class="icon-arrow icon-left-arrow" width="48px" height="48px">
                             <use xlink:href="#icon-arrow"></use>
                         </svg>
                     </span>
                 </label>
                 <label for="carousel-2" class="carousel-label carousel-2-label">
                     <span class="arrow">
-                        <svg class="icon-arrow icon-left-arrow">
+                        <svg class="icon-arrow icon-left-arrow" width="48px" height="48px">
                             <use xlink:href="#icon-arrow"></use>
                         </svg>
                     </span>
@@ -190,90 +191,90 @@
                 <div class="filters__layout">
                     <div class="filters__item filter">
                         <div class="filter__title">
-                            <label for="filter-1" class="filter-label filter-1-label">
+                            <label for="filter-no" class="filter__label filter-no-label">
                                 <span>Без фильтра</span>
                             </label>
                         </div>
                         <div class="filter__preview">
-                            <label for="filter-1" class="filter-img-label">
-                                <img src="./pictures/cat-photo.jpg" 
+                            <label for="filter-no" class="filter__img-label">
+                                <img src="./pictures/cat-photo.jpg"
                                     srcset="./pictures/cat-photo-2x.jpg"
-                                    class="cat-preview cat-preview__filter-1"
+                                    class="cat-preview cat-preview__filter-no"
                                     alt="filter preview">
                             </label>
                         </div>
                     </div>
                     <div class="filters__item filter">
                         <div class="filter__title">
-                            <label for="filter-2" class="filter-label filter-2-label">
+                            <label for="filter-blur" class="filter__label filter-blur-label">
                                 <span>Размытие</span>
                             </label>
                         </div>
                         <div class="filter__preview">
-                            <label for="filter-2" class="filter-img-label">
-                                <img src="./pictures/cat-photo.jpg" 
-                                    srcset="./pictures/cat-photo-2x.jpg"
-                                    class="cat-preview cat-preview__filter-2"
+                            <label for="filter-blur" class="filter__img-label">
+                                <img src="./pictures/cat-photo.jpg"
+                                    srcset="./pictures/cat-photo-2x.jpg 2x"
+                                    class="cat-preview cat-preview__filter-blur"
                                     alt="filter preview">
                             </label>
                         </div>
                     </div>
                     <div class="filters__item filter">
                         <div class="filter__title">
-                            <label for="filter-3" class="filter-label filter-3-label">
+                            <label for="filter-sepia" class="filter__label filter-sepia-label">
                                 <span>Сепия</span>
                             </label>
                         </div>
                         <div class="filter__preview">
-                            <label for="filter-3" class="filter-img-label">
-                                <img src="./pictures/cat-photo.jpg" 
-                                    srcset="./pictures/cat-photo-2x.jpg"
-                                    class="cat-preview cat-preview__filter-3"
+                            <label for="filter-sepia" class="filter__img-label">
+                                <img src="./pictures/cat-photo.jpg"
+                                    srcset="./pictures/cat-photo-2x.jpg 2x"
+                                    class="cat-preview cat-preview__filter-sepia"
                                     alt="filter preview">
                             </label>
                         </div>
                     </div>
                     <div class="filters__item filter">
                         <div class="filter__title">
-                            <label for="filter-4" class="filter-label filter-4-label">
+                            <label for="filter-saturate" class="filter__label filter-saturate-label">
                                 <span>Насыщенность</span>
                             </label>
                         </div>
                         <div class="filter__preview">
-                            <label for="filter-4" class="filter-img-label">
-                                <img src="./pictures/cat-photo.jpg" 
-                                    srcset="./pictures/cat-photo-2x.jpg"
-                                    class="cat-preview cat-preview__filter-4"
+                            <label for="filter-saturate" class="filter__img-label">
+                                <img src="./pictures/cat-photo.jpg"
+                                    srcset="./pictures/cat-photo-2x.jpg 2x"
+                                    class="cat-preview cat-preview__filter-saturate"
                                     alt="filter preview">
                             </label>
                         </div>
                     </div>
                     <div class="filters__item filter">
                         <div class="filter__title">
-                            <label for="filter-5" class="filter-label filter-5-label">
+                            <label for="filter-invert" class="filter__label filter-invert-label">
                                 <span>Инверсия</span>
                             </label>
                         </div>
                         <div class="filter__preview">
-                            <label for="filter-5" class="filter-img-label">
-                                <img src="./pictures/cat-photo.jpg" 
-                                    srcset="./pictures/cat-photo-2x.jpg"
-                                    class="cat-preview cat-preview__filter-5"
+                            <label for="filter-invert" class="filter__img-label">
+                                <img src="./pictures/cat-photo.jpg"
+                                    srcset="./pictures/cat-photo-2x.jpg 2x"
+                                    class="cat-preview cat-preview__filter-invert"
                                     alt="filter preview">
                             </label>
                         </div>
                     </div>
                     <div class="filters__item filter">
                         <div class="filter__title">
-                            <label for="filter-6" class="filter-label filter-6-label">
+                            <label for="filter-hue-rotate" class="filter__label filter-hue-rotate-label">
                                 <span>Смещение цвета</span>
                             </label>
                         </div>
                         <div class="filter__preview">
-                            <label for="filter-6" class="filter-img-label">
-                                <img src="./pictures/cat-photo.jpg" 
-                                    srcset="./pictures/cat-photo-2x.jpg"
-                                    class="cat-preview cat-preview__filter-6"
+                            <label for="filter-hue-rotate" class="filter__img-label">
+                                <img src="./pictures/cat-photo.jpg"
+                                    srcset="./pictures/cat-photo-2x.jpg 2x"
+                                    class="cat-preview cat-preview__filter-hue-rotate"
                                     alt="filter preview">
                             </label>
                         </div>
@@ -282,20 +283,20 @@
             </div>
             <div class="right-arrow__wrapper arrow__wrapper">
                 <div class="arrow arrow_active_no">
-                    <svg class="icon-arrow icon-right-arrow">
+                    <svg class="icon-arrow icon-right-arrow" width="48px" height="48px">
                         <use xlink:href="#icon-arrow"></use>
                     </svg>
                 </div>
                 <label for="carousel-2" class="carousel-label carousel-2-label">
                     <span class="arrow">
-                        <svg class="icon-arrow icon-right-arrow">
+                        <svg class="icon-arrow icon-right-arrow" width="48px" height="48px">
                             <use xlink:href="#icon-arrow"></use>
                         </svg>
                     </span>
                 </label>
                 <label for="carousel-3" class="carousel-label carousel-3-label">
                     <span class="arrow">
-                        <svg class="icon-arrow icon-right-arrow">
+                        <svg class="icon-arrow icon-right-arrow" width="48px" height="48px">
                             <use xlink:href="#icon-arrow"></use>
                         </svg>
                     </span>
