@@ -55,90 +55,90 @@ input[name^='gallery']
 
 /*Работа верхнего меню*/
 
-input[id^='logo']:checked ~ .instruments .logo-color,
-input[id^='fill']:checked ~ .instruments .fill,
-input[id^='scale']:checked ~ .instruments .scale,
-input[id^='rotate']:checked ~ .instruments .rotate,
-input[id^='filp']:checked ~ .instruments .filp
+input[name*='menu']:checked ~ .instruments .logo-color,
+input[name*='fill']:checked ~ .instruments .fill,
+input[name*='scale']:checked ~ .instruments .scale,
+input[name*='rotate']:checked ~ .instruments .rotate,
+input[name*='filp']:checked ~ .instruments .filp
 {
     opacity: 1;
 }
 
-input[id='fill-in']:checked ~ .image .image__photo
+.fill-in:checked ~ .image .image__photo
 {
     height: 488px;
     margin-top: 84px;
     margin-bottom: 100px;
 }
 
-input[id='fill-in']:checked ~ .instruments label[for='fill-out'],
-input[id='fill-out']:checked ~ .instruments label[for='fill-in'],
-input[id='scale']:checked ~ .instruments label[for='scale-2'],
-input[id='scale-2']:checked ~ .instruments label[for='scale-3'],
-input[id='scale-3']:checked ~ .instruments label[for='scale-4'],
-input[id='scale-4']:checked ~ .instruments label[for='scale'],
-input[id='rotate']:checked ~ .instruments label[for='rotate-2'],
-input[id='rotate-2']:checked ~ .instruments label[for='rotate-3'],
-input[id='rotate-3']:checked ~ .instruments label[for='rotate-4'],
-input[id='rotate-4']:checked ~ .instruments label[for='rotate'],
-input[id='filp-in']:checked ~ .instruments label[for='filp-out'],
-input[id='filp-out']:checked ~ .instruments label[for='filp-in'],
-input[id='logo']:checked ~ .instruments label[for='logo-color'],
-input[id='logo-color']:checked ~ .instruments label[for='logo']
+.fill-in:checked ~ .instruments label[for='fill-out'],
+.fill-out:checked ~ .instruments label[for='fill-in'],
+.scale-1:checked ~ .instruments label[for='scale-2'],
+.scale-2:checked ~ .instruments label[for='scale-3'],
+.scale-3:checked ~ .instruments label[for='scale-4'],
+.scale-4:checked ~ .instruments label[for='scale'],
+.rotate-1:checked ~ .instruments label[for='rotate-2'],
+.rotate-2:checked ~ .instruments label[for='rotate-3'],
+.rotate-3:checked ~ .instruments label[for='rotate-4'],
+.rotate-4:checked ~ .instruments label[for='rotate'],
+.filp-in:checked ~ .instruments label[for='filp-out'],
+.filp-out:checked ~ .instruments label[for='filp-in'],
+.logo-1:checked ~ .instruments label[for='logo-color'],
+.logo-color-1:checked ~ .instruments label[for='logo']
 {
     display: block;
 }
 
-input[id='scale']:checked ~ .image .image__scale
+.scale-1:checked ~ .image .image__scale
 {
     transform: scale(.8);
 }
 
-input[id='scale-2']:checked ~ .image .image__scale
+.scale-2:checked ~ .image .image__scale
 {
     transform: scale(.6);
 }
 
-input[id='scale-3']:checked ~ .image .image__scale
+.scale-3:checked ~ .image .image__scale
 {
     transform: scale(.4);
 }
 
-input[id='scale-4']:checked ~ .image .image__scale
+.scale-4:checked ~ .image .image__scale
 {
     transform: scale(1);
 }
 
-input[id='rotate']:checked ~ .image .image__rotate
+.rotate-1:checked ~ .image .image__rotate
 {
     transform: rotate(-90deg);
 }
 
-input[id='rotate-2']:checked ~ .image .image__rotate
+.rotate-2:checked ~ .image .image__rotate
 {
     transform: rotate(-180deg);
 }
 
-input[id='rotate-3']:checked ~ .image .image__rotate
+.rotate-3:checked ~ .image .image__rotate
 {
     transform: rotate(-270deg);
 }
 
-input[id='rotate-4']:checked ~ .image .image__rotate
+.rotate-4:checked ~ .image .image__rotate
 {
     transform: rotate(0deg);
 }
 
-input[id='rotate-4']:checked ~ .instruments label[for='rotate'],
-input[id='scale-4']:checked ~ .instruments label[for='scale'],
-input[id='fill-out']:checked ~ .instruments label[for='fill-in'],
-input[id='filp-out']:checked ~ .instruments label[for='filp-in'],
-input[id='logo-color']:checked ~ .instruments label[for='logo']
+.rotate-4:checked ~ .instruments label[for='rotate'],
+.scale-4:checked ~ .instruments label[for='scale'],
+.fill-out:checked ~ .instruments label[for='fill-in'],
+.filp-out:checked ~ .instruments label[for='filp-in'],
+.logo-color-1:checked ~ .instruments label[for='logo']
 {
     opacity: .5;
 }
 
-input[id='filp-in']:checked ~ .image .image__photo
+.filp-in:checked ~ .image .image__photo
 {
     transform: scale(-1, 1);
 }
@@ -162,13 +162,13 @@ input[id='filp-in']:checked ~ .image .image__photo
     transition: .5s;
 }
 
-input[id='logo']:checked ~ .image
+.logo-1:checked ~ .image
 {
     background: url('cats/cat-1-632.jpg');
     background-size: 632px;
 }
 
-input[id='logo']:checked ~ .image .image__photo
+.logo-1:checked ~ .image .image__photo
 {
     display: none;
 }
@@ -291,48 +291,48 @@ input[id='logo']:checked ~ .image .image__photo
 
 /*Работа фильтров*/
 
-input[id='no-filter']:checked ~ .gallery .title-no-filter,
-input[id='piter']:checked ~ .gallery .title-piter,
-input[id='yalta']:checked ~ .gallery .title-yalta,
-input[id='ural-summer']:checked ~ .gallery .title-ural-summer,
-input[id='spring']:checked ~ .gallery .title-spring,
-input[id='rentgen']:checked ~ .gallery .title-rentgen,
-input[id='myopia']:checked ~ .gallery .title-myopia
+.no-filter-1:checked ~ .gallery .title-no-filter,
+.piter-1:checked ~ .gallery .title-piter,
+.yalta-1:checked ~ .gallery .title-yalta,
+.ural-summer-1:checked ~ .gallery .title-ural-summer,
+.spring-1:checked ~ .gallery .title-spring,
+.rentgen-1:checked ~ .gallery .title-rentgen,
+.myopia-1:checked ~ .gallery .title-myopia
 {
     font-weight: bold;
 }
 
-input[id='no-filter']:checked ~ .image .image__photo
+.no-filter-1:checked ~ .image .image__photo
 {
     animation: no-filter-move .5s linear forwards;
 }
 
-input[id='piter']:checked ~ .image .image__photo
+.piter-1:checked ~ .image .image__photo
 {
     animation: piter-move .5s linear forwards;
 }
 
-input[id='yalta']:checked ~ .image .image__photo
+.yalta-1:checked ~ .image .image__photo
 {
     animation: yalta-move .5s linear forwards;
 }
 
-input[id='ural-summer']:checked ~ .image .image__photo
+.ural-summer-1:checked ~ .image .image__photo
 {
     animation: ural-summer-move .5s linear forwards;
 }
 
-input[id='spring']:checked ~ .image .image__photo
+.spring-1:checked ~ .image .image__photo
 {
     animation: spring-move .5s linear forwards;
 }
 
-input[id='rentgen']:checked ~ .image .image__photo
+.rentgen-1:checked ~ .image .image__photo
 {
     animation: rentgen-move .5s linear forwards;
 }
 
-input[id='myopia']:checked ~ .image .image__photo
+.myopia-1:checked ~ .image .image__photo
 {
     animation: myopia-move .5s linear forwards;
 }
@@ -400,35 +400,35 @@ label[for^='filter']
     display: none;
 }
 
-input[id='filter-4']:checked ~ .gallery .block-right label[for='filter-4'],
-input[id='filter-1']:checked ~ .gallery .block-left label[for='filter-1']
+.filter-4:checked ~ .gallery .block-right label[for='filter-4'],
+.filter-1:checked ~ .gallery .block-left label[for='filter-1']
 {
     opacity: .3;
 }
 
-input[id='filter-1']:checked ~ .gallery .block-right label[for='filter-2'],
-input[id='filter-2']:checked ~ .gallery .block-right label[for='filter-3'],
-input[id='filter-3']:checked ~ .gallery .block-right label[for='filter-4'],
-input[id='filter-4']:checked ~ .gallery .block-right label[for='filter-4'],
-input[id='filter-1']:checked ~ .gallery .block-left label[for='filter-1'],
-input[id='filter-2']:checked ~ .gallery .block-left label[for='filter-1'],
-input[id='filter-3']:checked ~ .gallery .block-left label[for='filter-2'],
-input[id='filter-4']:checked ~ .gallery .block-left label[for='filter-3']
+.filter-1:checked ~ .gallery .block-right label[for='filter-2'],
+.filter-2:checked ~ .gallery .block-right label[for='filter-3'],
+.filter-3:checked ~ .gallery .block-right label[for='filter-4'],
+.filter-4:checked ~ .gallery .block-right label[for='filter-4'],
+.filter-1:checked ~ .gallery .block-left label[for='filter-1'],
+.filter-2:checked ~ .gallery .block-left label[for='filter-1'],
+.filter-3:checked ~ .gallery .block-left label[for='filter-2'],
+.filter-4:checked ~ .gallery .block-left label[for='filter-3']
 {
     display: block;
 }
 
-input[id='filter-2']:checked ~ .gallery .gallery__cats .cat-card
+.filter-2:checked ~ .gallery .gallery__cats .cat-card
 {
     transform: translateX(-180px);
 }
 
-input[id='filter-3']:checked ~ .gallery .gallery__cats .cat-card
+.filter-3:checked ~ .gallery .gallery__cats .cat-card
 {
     transform: translateX(-360px);
 }
 
-input[id='filter-4']:checked ~ .gallery .gallery__cats .cat-card
+.filter-4:checked ~ .gallery .gallery__cats .cat-card
 {
     transform: translateX(-540px);
 }
