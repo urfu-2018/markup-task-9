@@ -89,7 +89,7 @@ input[id='logo-color']:checked ~ .instruments label[for='logo']
     display: block;
 }
 
-input[id='scale']:checked ~ .image .image__scale
+#scale:checked ~ .image .image__scale
 {
     transform: scale(.8);
 }
@@ -155,7 +155,7 @@ input[id='filp-in']:checked ~ .image .image__photo
 
 div[class^='image']
 {
-    transition: .5s;
+    /*transition: .5s;*/
 }
 
 .image__photo
