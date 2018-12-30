@@ -153,11 +153,6 @@ input[id='filp-in']:checked ~ .image .image__photo
     margin: 20px auto;
 }
 
-div[class^='image']
-{
-    /*transition: .5s;*/
-}
-
 .image__photo
 {
     z-index: 1;
