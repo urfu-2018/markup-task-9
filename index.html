@@ -71,6 +71,7 @@
     <input class="yalta-input" id="yalta-filter" name="filter" type="radio">
     <input class="ural-input" id="ural-filter" name="filter" type="radio">
     <input class="invert-input" id="invert-filter" name="filter" type="radio">
+    <input class="sahara-input" id="sahara-filter" name="filter" type="radio">
     <article class="controls">
         <label for="fill-input">
             <svg class="control" height="48" width="48">
@@ -129,55 +130,89 @@
         </label>
     </article>
     <article class="view">
-        <img class="image" src="images/cat.jpg">
+        <img class="image" src="images/cat.jpg" alt="мой кот">
     </article>
     <article class="filters">
-        <section class="filters__left-arrow-container">
-            <section class="filters__left-arrow">
+        <input checked class="input-arrow1" id="arrow1" name="right-arrow" type="radio">
+        <input class="input-arrow2" id="arrow2" name="right-arrow" type="radio">
+        <input class="input-arrow3" id="arrow3" name="right-arrow" type="radio">
+        <section class="filters__left-arrow-container left-arrow1 last-arrow    ">
+            <div class="filters__left-arrow">
                 <svg height="37" width="49">
                     <use xlink:href="#arrow"></use>
                 </svg>
-            </section>
+            </div>
         </section>
-        <input checked class="input-right-arrow" id="right-arrow1" name="right-arrow" type="radio">
         <article class="filter no-filter">
             <section class="filter__name">Без фильтра</section>
             <label for="no-filter">
-                <img class="filter__image" src="images/cat.jpg">
+                <img class="filter__image" src="images/cat.jpg" alt="мой кот">
             </label>
         </article>
-        <input class="input-right-arrow" id="right-arrow2" name="right-arrow" type="radio">
+        <section class="filters__left-arrow-container left-arrow2">
+            <label class="filters__left-arrow" for="arrow1">
+                <svg height="37" width="49">
+                    <use xlink:href="#arrow"></use>
+                </svg>
+            </label>
+        </section>
         <article class="filter piter-filter">
             <section class="filter__name">Питер</section>
             <label for="piter-filter">
-                <img class="filter__image" src="images/cat.jpg">
+                <img class="filter__image" src="images/cat.jpg" alt="мой кот">
             </label>
         </article>
-        <input class="input-right-arrow" id="right-arrow3" name="right-arrow" type="radio">
+        <section class="filters__left-arrow-container left-arrow3">
+            <label class="filters__left-arrow"  for="arrow2">
+                <svg height="37" width="49">
+                    <use xlink:href="#arrow"></use>
+                </svg>
+            </label>
+        </section>
         <article class="filter yalta-filter">
             <section class="filter__name">Ялта</section>
             <label for="yalta-filter">
-                <img class="filter__image" src="images/cat.jpg">
+                <img class="filter__image" src="images/cat.jpg" alt="мой кот">
             </label>
         </article>
         <article class="filter ural-filter">
             <section class="filter__name">Уральское лето</section>
             <label for="ural-filter">
-                <img class="filter__image" src="images/cat.jpg">
+                <img class="filter__image" src="images/cat.jpg" alt="мой кот">
             </label>
         </article>
-        <article class="filter invert-filter">
-            <section class="filter__name">Тлен</section>
-            <label for="invert-filter">
-                <img class="filter__image" src="images/cat.jpg">
-            </label>
-        </article>
-        <section class="filters__right-arrow-container">
-            <label class="filters__right-arrow">
+        <section class="filters__right-arrow-container right-arrow1">
+            <label class="filters__right-arrow" for="arrow2">
                 <svg height="37" width="49">
                     <use xlink:href="#arrow"></use>
                 </svg>
             </label>
+        </section>
+        <article class="filter invert-filter">
+            <section class="filter__name">Тлен</section>
+            <label for="invert-filter">
+                <img class="filter__image" src="images/cat.jpg" alt="мой кот">
+            </label>
+        </article>
+        <section class="filters__right-arrow-container right-arrow2">
+            <label class="filters__right-arrow" for="arrow3">
+                <svg height="37" width="49">
+                    <use xlink:href="#arrow"></use>
+                </svg>
+            </label>
+        </section>
+        <article class="filter sahara-filter">
+            <section class="filter__name">Сахара</section>
+            <label for="sahara-filter">
+                <img class="filter__image" src="images/cat.jpg" alt="мой кот">
+            </label>
+        </article>
+        <section class="filters__right-arrow-container right-arrow3 last-arrow">
+            <div class="filters__right-arrow">
+                <svg height="37" width="49">
+                    <use xlink:href="#arrow"></use>
+                </svg>
+            </div>
         </section>
     </article>
 </main>

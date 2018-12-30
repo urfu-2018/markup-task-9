@@ -1,7 +1,9 @@
 .main
 {
     display: grid;
-    grid-template: '. controls .' 80px '. view .' 632px 'filters filters filters' 312px / 1fr 632px 1fr;
+    grid-template: '. controls .' 80px '. view .'
+        632px 'filters filters filters'
+        312px / 1fr 632px 1fr;
 }
 
 .sprite
@@ -134,7 +136,8 @@ input
 .piter-input:checked ~ .filters .piter-filter .filter__name,
 .yalta-input:checked ~ .filters .yalta-filter .filter__name,
 .ural-input:checked ~ .filters .ural-filter .filter__name,
-.invert-input:checked ~ .filters .invert-filter .filter__name
+.invert-input:checked ~ .filters .invert-filter .filter__name,
+.sahara-input:checked ~ .filters .sahara-filter .filter__name
 {
     font-weight: bold;
 }
@@ -145,19 +148,6 @@ input
     grid-area: filters;
     display: flex;
     justify-content: center;
-    /*grid-template: 'left-arrow visible-filters right-arrow' 1fr / 1fr 695px 1fr;*/
-}
-
-/*.visible-filters*/
-/*{*/
-/*grid-area: visible-filters;*/
-/*display: flex;*/
-/*justify-content: space-between;*/
-/*}*/
-
-.filter
-{
-    padding-left: 5px;
 }
 
 .piter-input:checked ~ .view .image,
@@ -184,9 +174,17 @@ input
     filter: invert(1);
 }
 
+.sahara-input:checked ~ .view .image,
+.sahara-filter .filter__image
+{
+    filter: brightness(2);
+}
+
 .filter
 {
     display: none;
+    padding-left: 5px;
+    user-select: none;
 }
 
 .filter__name
@@ -213,7 +211,7 @@ input
 {
     padding-right: 34px;
     padding-top: 106px;
-    display: flex;
+    display: none;
     justify-content: flex-end;
     align-items: center;
     grid-area: left-arrow;
@@ -226,9 +224,14 @@ input
     fill: #444;
 }
 
+.last-arrow
+{
+    opacity: .6;
+}
+
 .filters__right-arrow-container
 {
-    display: flex;
+    display: none;
     padding-left: 34px;
     padding-top: 106px;
     justify-content: flex-start;
@@ -236,9 +239,22 @@ input
     grid-area: right-arrow;
 }
 
-.input-right-arrow:checked ~ .filter:nth-child(-n+8)
+.input-arrow1:checked ~ .right-arrow1,
+.input-arrow2:checked ~ .right-arrow2,
+.input-arrow3:checked ~ .right-arrow3,
+.input-arrow1:checked ~ .left-arrow1,
+.input-arrow2:checked ~ .left-arrow2,
+.input-arrow3:checked ~ .left-arrow3
+{
+    display: flex;
+}
+
+.input-arrow1:checked ~ .filter:nth-child(n + 5):nth-child(-n+10),
+.input-arrow2:checked ~ .filter:nth-child(n + 7):nth-child(-n+12),
+.input-arrow3:checked ~ .filter:nth-child(n + 9):nth-child(-n+14)
 {
     display: initial;
+    visibility: initial;
 }
 
 .filters__right-arrow
