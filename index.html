@@ -6,57 +6,6 @@
     <title>Задача «Котограм»</title>
 </head>
 <body>
-<svg class="sprite">
-    <symbol id="icon-fill">
-        <g>
-            <path d="M8.3945 8.3945h30.9961v30.9961H8.3946zm0 0"/>
-            <path d="M35.9453 0v5.164h6.8906v6.6758H48V0zM5.1641
-             5.164h6.6757V0H0v11.8398h5.164zm37.6718 37.672h-6.8906V48H48V35.9453h-5.164zM5.1641
-              35.9452H0V48h11.8398v-5.164H5.1641zm0 0"/>
-        </g>
-    </symbol>
-    <symbol id="icon-filp">
-        <g>
-            <path d="M0 29.8984l19.086-11.7851L0 6.3243zm0 0M28.914 18.1133L48 29.8984V6.3242zm15.0587
-            4.4219l-7.1602-4.422 7.1602-4.4257zm0 0M21.3984
-            8.0508h5.2032v5.1758h-5.2032zm0-8.0508h5.2032v5.1758h-5.2032zm0 16.1016h5.2032v5.1718h-5.2032zm0
-             7.4726h5.2032V28.75h-5.2032zm0 8.0508h5.2032v5.1758h-5.2032zm0 0"/>
-        </g>
-    </symbol>
-    <symbol id="icon-logo">
-        <path d="M0 0v48h48V0zm24.1055 16.7813c3.9258.0078 7.1054 3.1874 7.1133 7.1132-.0079 3.922-3.1876
-         7.1055-7.1133 7.1094C20.1835 31 17 27.8203 16.996 23.8945c.0039-3.9258 3.1836-7.1054
-          7.1094-7.1133zM6.3985 5.5468h7.2538v4.6914H6.3984zm35.203 36.0547H6.3986V24.746h4.2265c.4414
-          7.0547 6.3164 12.6562 13.4805 12.6562 7.164 0
-          13.039-5.6015 13.4843-12.6562h4.0118zm0 0" fill-rule="evenodd"/>
-    </symbol>
-    <symbol id="icon-logo-color">
-        <path d="M0 0v48h48V0zm24.1016 16.8008c3.8984 0 7.0976 3.1992 7.0976 7.0976C31.1992 27.8008
-         28 31 24.1016 31 20.1992 31 17 27.8008 17 23.8984c0-3.8984 3.1992-7.0976 7.1016-7.0976zM6.3984
-          5.5h7.3008v4.6992H6.3984zm35.2032 36.1016H6.3984V24.6992h4.2032c.3984 7.1016 6.2968 12.6992
-           13.5 12.6992 7.1992 0 13-5.5976 13.5-12.6992h4zm0 0" fill="url(#grad1)"/>
-    </symbol>
-    <symbol id="icon-scale">
-        <g>
-            <path d="M0 0v48h48V0H0zm6.4 6.4h33.682L6.4 40.227V6.4zm34.56 32.427H25.6v-6.4h15.36v6.4z"
-                  fill-rule="nonzero"/>
-            <path d="M24 13.071h-4.375v-4.5h-6.25v4.5H9V19.5h4.375V24h6.25v-4.5H24z"/>
-        </g>
-    </symbol>
-    <symbol id="icon-rotate">
-        <path d="M24 48c13.2344 0 24-9.7656 24-21.754 0-11.9882-10.7656-21.75-24-21.75-.879
-         0-1.7695.047-2.6523.1368V1.1172c0-.4492-.3086-.8594-.7579-1.0352a1.349 1.349 0 0
-          0-1.3554.25l-8.504 7.7227c-.4843.4375-.4843 1.1367 0 1.582l8.5 7.7383c.3594.3203.8829.418
-           1.3594.2422.4493-.1758.7579-.582.7579-1.0313v-3.9023c.8789-.1445 1.7656-.211 2.6523-.211
-            8.3828 0 15.207 6.1797 15.207 13.7735 0 7.5937-6.8242 13.7773-15.207 13.7773S8.7969
-            33.8398 8.7969 26.2461c0-.6133-.5547-1.1172-1.2422-1.1172H1.2383C.5547 25.129 0 25.633
-             0 26.2461 0 38.2344 10.7734 48 24 48zm0 0" fill-rule="evenodd"/>
-    </symbol>
-    <symbol id="icon-arrow">
-        <path d="M.746 11.1016L36.3946 46.996 72.043 11.1016 61.9297.918 36.3945 26.629
-         10.8594.9218zm0 0" fill-rule="evenodd"/>
-    </symbol>
-</svg>
 <main>
     <div class="main__wrapper">
         <input type="radio" id="fill-in" name="instruments fill">
@@ -85,47 +34,60 @@
         <input type="radio" id="filter-3" name="gallery">
         <input type="radio" id="filter-4" name="gallery">
         <section class="instruments">
-            <label for="fill-in" title="Сжать">
-                <img class="fill instruments__icon" src="icons/fill.svg">
+            <label for="fill-in">
+                <img class="fill instruments__icon" src="icons/fill.svg"
+                     title="Сжать" alt="fill_svg">
             </label>
-            <label for="fill-out" title="Расжать">
-                <img class="fill instruments__icon" src="icons/fill.svg">
+            <label for="fill-out">
+                <img class="fill instruments__icon" src="icons/fill.svg" alt="fill_svg" title="Расжать">
             </label>
-            <label for="scale" title="Сделать х0.8">
-                <img class="scale instruments__icon" src="icons/scale.svg">
+            <label for="scale">
+                <img class="scale instruments__icon" src="icons/scale.svg"
+                     title="Сделать х0.8" alt="scale_svg">
             </label>
-            <label for="scale-2" title="Сделать х0.6">
-                <img class="scale instruments__icon" src="icons/scale.svg">
+            <label for="scale-2">
+                <img class="scale instruments__icon"
+                     src="icons/scale.svg" alt="scale_svg" title="Сделать х0.6">
             </label>
-            <label for="scale-3" title="Сделать х0.4">
-                <img class="scale instruments__icon" src="icons/scale.svg">
+            <label for="scale-3">
+                <img class="scale instruments__icon"
+                     src="icons/scale.svg" alt="scale_svg" title="Сделать х0.4">
             </label>
-            <label for="scale-4" title="Сделать х1">
-                <img class="scale instruments__icon" src="icons/scale.svg">
+            <label for="scale-4">
+                <img class="scale instruments__icon"
+                     src="icons/scale.svg" alt="scale_svg" title="Сделать х1">
             </label>
-            <label for="logo" title="Посмотреть оригинал">
-                <img class="logo instruments__icon" src="icons/logo.svg">
+            <label for="logo">
+                <img class="logo instruments__icon" src="icons/logo.svg"
+                     alt="logo_svg" title="Посмотреть оригинал">
             </label>
-            <label for="logo-color" title="Посмотреть с изменениями">
-                <img class="logo-color instruments__icon" src="icons/logo-color.svg">
+            <label for="logo-color">
+                <img class="logo-color instruments__icon" src="icons/logo-color.svg"
+                     alt="logo_svg" title="Посмотреть с изменениями">
             </label>
-            <label for="rotate" title="Повернуть на левый бок">
-                <img class="rotate instruments__icon" src="icons/rotate.svg">
+            <label for="rotate">
+                <img class="rotate instruments__icon" src="icons/rotate.svg"
+                     title="Повернуть на левый бок" alt="rotate_svg">
             </label>
-            <label for="rotate-2" title="Повернуть вврех ногами">
-                <img class="rotate instruments__icon" src="icons/rotate.svg">
+            <label for="rotate-2">
+                <img class="rotate instruments__icon" src="icons/rotate.svg"
+                     alt="rotate_svg" title="Повернуть вврех ногами">
             </label>
-            <label for="rotate-3" title="Повернуть на правый бок">
-                <img class="rotate instruments__icon" src="icons/rotate.svg">
+            <label for="rotate-3">
+                <img class="rotate instruments__icon" src="icons/rotate.svg"
+                     alt="rotate_svg" title="Повернуть на правый бок">
             </label>
-            <label for="rotate-4" title="Повернуть изначально">
-                <img class="rotate instruments__icon" src="icons/rotate.svg">
+            <label for="rotate-4">
+                <img class="rotate instruments__icon" src="icons/rotate.svg"
+                     alt="rotate_svg" title="Повернуть изначально">
             </label>
-            <label for="filp-in" title="Сделать зеркальное отражение">
-                <img class="filp instruments__icon" src="icons/flip.svg">
+            <label for="filp-in">
+                <img class="filp instruments__icon" src="icons/flip.svg"
+                     title="Сделать зеркальное отражение" alt="filp_svg">
             </label>
-            <label for="filp-out" title="Сделать нормальное отражение">
-                <img class="filp instruments__icon" src="icons/flip.svg">
+            <label for="filp-out">
+                <img class="filp instruments__icon" src="icons/flip.svg"
+                     alt="filp_svg" title="Сделать нормальное отражение">
             </label>
         </section>
         <section class="image">
@@ -142,16 +104,20 @@
             <div class="gallery__wrapper">
                 <div class="block-left">
                     <label for="filter-1">
-                        <img class="arrow arrow__left" src="icons/arrow.svg">
+                        <img class="arrow arrow__left" src="icons/arrow.svg"
+                             title="Влево" alt="arrow_left_svg">
                     </label>
                     <label for="filter-2">
-                        <img class="arrow arrow__left" src="icons/arrow.svg">
+                        <img class="arrow arrow__left" src="icons/arrow.svg"
+                             title="Влево" alt="arrow_left_svg">
                     </label>
                     <label for="filter-3">
-                        <img class="arrow arrow__left" src="icons/arrow.svg">
+                        <img class="arrow arrow__left" src="icons/arrow.svg"
+                             title="Влево" alt="arrow_left_svg">
                     </label>
                     <label for="filter-4">
-                        <img class="arrow arrow__left" src="icons/arrow.svg">
+                        <img class="arrow arrow__left" src="icons/arrow.svg"
+                             title="Влево" alt="arrow_left_svg">
                     </label>
                 </div>
                 <div class="gallery__cats">
@@ -194,16 +160,20 @@
                 </div>
                 <div class="block-right">
                     <label for="filter-1">
-                        <img class="arrow arrow__right" src="icons/arrow.svg">
+                        <img class="arrow arrow__right" src="icons/arrow.svg"
+                             alt="arrow_right_svg" title="Вправо">
                     </label>
                     <label for="filter-2">
-                        <img class="arrow arrow__right" src="icons/arrow.svg">
+                        <img class="arrow arrow__right" src="icons/arrow.svg"
+                             alt="arrow_right_svg" title="Вправо">
                     </label>
                     <label for="filter-3">
-                        <img class="arrow arrow__right" src="icons/arrow.svg">
+                        <img class="arrow arrow__right" src="icons/arrow.svg"
+                             alt="arrow_right_svg" title="Вправо">
                     </label>
                     <label for="filter-4">
-                        <img class="arrow arrow__right" src="icons/arrow.svg">
+                        <img class="arrow arrow__right" src="icons/arrow.svg"
+                             alt="arrow_right_svg" title="Вправо">
                     </label>
                 </div>
             </div>
