@@ -89,7 +89,7 @@ input[id='logo-color']:checked ~ .instruments label[for='logo']
     display: block;
 }
 
-#scale:checked ~ .image .image__scale
+input[id='scale']:checked ~ .image .image__scale
 {
     transform: scale(.8);
 }
