@@ -262,7 +262,9 @@ input,
 .filter-yalta:checked ~ .filters .yalta .filter-name,
 .filter-ural-summer:checked ~ .filters .ural-summer .filter-name,
 .filter-bright:checked ~ .filters .bright .filter-name,
-.filter-warm-cat:checked ~ .filters .warm-cat .filter-name
+.filter-warm-cat:checked ~ .filters .warm-cat .filter-name,
+.filter-pink-dream:checked ~ .filters .pink-dream .filter-name,
+.filter-blusher:checked ~ .filters .blusher .filter-name
 {
     font-weight: bold;
 }
@@ -298,7 +300,7 @@ input,
 .switch-rotate-180:checked ~ .cat-box .rotate-wrap
 {
     transform: rotate(-180deg);
-    
+
 }
 
 .switch-rotate-270:checked ~ .cat-box .rotate-wrap
