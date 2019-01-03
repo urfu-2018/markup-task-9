@@ -7,3 +7,7 @@
 *.swp
 
 node_modules
+
+sprites
+icons/create_sprites.js
+icons/sprite.svg

@@ -1,0 +1,339 @@
+.svg_hidden
+{
+    width: 0;
+    height: 0;
+}
+
+.catogram
+{
+    display: grid;
+    grid-template-columns: 373px auto 372px;
+    grid-template-rows: 80px 632px 312px;
+}
+
+.catogram__block
+{
+    width: 1440px;
+    height: 1024px;
+    background-color: #fff;
+    margin: auto;
+}
+
+.controls
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.catogram__controls
+{
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+
+    width: 632px;
+    margin: 20px auto 84px;
+}
+
+.controls_color_gray
+{
+    fill: gray;
+}
+
+.controls__flip-svg
+{
+    height: 48px;
+    margin: auto;
+}
+
+.catogram__photo
+{
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+
+    width: 632px;
+    height: auto;
+    margin: auto;
+}
+
+.catogram__filters
+{
+    grid-row: 3 / 4;
+    grid-column: 2 / 3;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter
+{
+    position: relative;
+}
+
+.filter__label
+{
+    width: 170px;
+    height: 22px;
+    font-family: Helvetica;
+    font-size: 18px;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #444;
+    margin: 69px 0 15px;
+}
+
+.filter__image
+{
+    width: 170px;
+    height: 169px;
+    background-image: url('images/cat-compressed.png');
+    background-size: 100% 100%;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .12);
+}
+
+.filter-grayscale_effect
+{
+    filter: grayscale(1);
+}
+
+.filter-sepia_effect
+{
+    filter: sepia(1);
+}
+
+.filter-hue-rotate_effect
+{
+    filter: hue-rotate(180deg);
+}
+
+.catogram__left-arrow
+{
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
+
+    margin: 169px 34px 95px 308px;
+    transform: rotate(90deg);
+}
+
+.catogram__right-arrow
+{
+    grid-row: 3 / 4;
+    grid-column: 3 / 4;
+
+    margin: 167px 307px 97px 34px;
+    transform: rotate(-90deg);
+}
+
+.arrow
+{
+    cursor: pointer;
+    fill: #444;
+}
+
+.arrow_disable
+{
+    cursor: default;
+    opacity: .4;
+}
+
+.filter-none_checked:checked ~ .catogram .filter-none .filter__label
+{
+    font-weight: bold;
+    color: #000;
+}
+
+.filter-grayscale_checked:checked ~ .catogram .filter-grayscale .filter__label
+{
+    font-weight: bold;
+    color: #000;
+}
+
+.filter-sepia_checked:checked ~ .catogram .filter-sepia .filter__label
+{
+    font-weight: bold;
+    color: #000;
+}
+
+.filter-hue-rotate_checked:checked ~ .catogram .filter-hue-rotate .filter__label
+{
+    font-weight: bold;
+    color: #000;
+}
+
+.selector-label
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.selector
+{
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+}
+
+.selector_hidden
+{
+    display: none;
+}
+
+@keyframes filter-grayscale
+{
+    to
+    {
+        filter: grayscale(1);
+    }
+}
+
+@keyframes filter-sepia
+{
+    to
+    {
+        filter: sepia(1);
+    }
+}
+
+@keyframes filter-hue-rotate
+{
+    to
+    {
+        filter: hue-rotate(180deg);
+    }
+}
+
+.filter-grayscale_checked:checked ~ .catogram .catogram__photo
+{
+    animation: filter-grayscale 1s linear 1 forwards;
+}
+
+.filter-sepia_checked:checked ~ .catogram .catogram__photo
+{
+    animation: filter-sepia 1s linear 1 forwards;
+}
+
+.filter-hue-rotate_checked:checked ~ .catogram .catogram__photo
+{
+    animation: filter-hue-rotate 1s linear 1 forwards;
+}
+
+.control
+{
+    position: relative;
+    cursor: pointer;
+}
+
+.control_hover:hover
+{
+    fill: #000;
+}
+
+.image-scale-100percent_checked:checked ~ .catogram .catogram__photo
+{
+    transform: scale(1);
+}
+
+.image-scale-80percent_checked:checked ~ .catogram .catogram__photo
+{
+    transform: scale(.8);
+}
+
+.image-scale-60percent_checked:checked ~ .catogram .catogram__photo
+{
+    transform: scale(.6);
+}
+
+.image-scale-40percent_checked:checked ~ .catogram .catogram__photo
+{
+    transform: scale(.4);
+}
+
+.image-scale-100percent_checked:checked ~ .catogram .selector-label__scale-80
+{
+    z-index: 9;
+}
+
+.image-scale-80percent_checked:checked ~ .catogram .selector-label__scale-60
+{
+    z-index: 9;
+}
+
+.image-scale-60percent_checked:checked ~ .catogram .selector-label__scale-40
+{
+    z-index: 9;
+}
+
+.image-scale-40percent_checked:checked ~ .catogram .selector-label__scale-100
+{
+    z-index: 9;
+}
+
+.selector_image-fill:checked ~ .catogram .catogram__photo
+{
+    width: 632px;
+    height: 632px;
+}
+
+.selector_image-fill:not(:checked) ~ .catogram .catogram__photo
+{
+    width: 632px;
+    height: auto;
+}
+
+.image-rotate-0deg_checked:checked ~ .catogram .catogram__photo-rotate-wrapper
+{
+    transform: rotate(0deg);
+}
+
+.image-rotate-90deg_checked:checked ~ .catogram .catogram__photo-rotate-wrapper
+{
+    transform: rotate(-90deg);
+}
+
+.image-rotate-180deg_checked:checked ~ .catogram .catogram__photo-rotate-wrapper
+{
+    transform: rotate(-180deg);
+}
+
+.image-rotate-270deg_checked:checked ~ .catogram .catogram__photo-rotate-wrapper
+{
+    transform: rotate(-270deg);
+}
+
+.image-rotate-0deg_checked:checked ~ .catogram .selector-label__rotate-90deg
+{
+    z-index: 9;
+}
+
+.image-rotate-90deg_checked:checked ~ .catogram .selector-label__rotate-180deg
+{
+    z-index: 9;
+}
+
+.image-rotate-180deg_checked:checked ~ .catogram .selector-label__rotate-270deg
+{
+    z-index: 9;
+}
+
+.image-rotate-270deg_checked:checked ~ .catogram .selector-label__rotate-0deg
+{
+    z-index: 9;
+}
+
+.catogram__photo-rotate-wrapper
+{
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    margin: auto;
+}
+
+.image-reflect_checked:checked ~ .catogram .catogram__photo-reflect-wrapper
+{
+    transform: scale(-1, 1);
+}
