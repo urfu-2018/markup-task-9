@@ -1,0 +1,51 @@
+body
+{
+    margin: 0;
+}
+
+.icons
+{
+    display: none;
+}
+
+.main
+{
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.catogram
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.image-editor
+{
+    display: grid;
+    grid-template: 48px 332px / 632px;
+    grid-row-gap: 12px;
+}
+
+.catogram__image-editor
+{
+    margin-top: 20px;
+}
+
+.image-editor__image,
+.image-editor__control
+{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.image-editor__controls
+{
+    display: grid;
+    grid-template-columns: repeat(5, 48px);
+    grid-column-gap: 98px;
+}
