@@ -1,18 +1,26 @@
 body
 {
     margin: 0;
+    font: 18px Helvetica, sans-serif;
 }
 
-.icons
+.icons,
+.radio,
+.image-editor__circle-control
 {
     display: none;
+}
+
+.pointer
+{
+    cursor: pointer;
 }
 
 .main
 {
     display: flex;
     justify-content: center;
-    min-height: 100vh;
+    min-height: 95vh;
 }
 
 .catogram
@@ -26,8 +34,20 @@ body
 .image-editor
 {
     display: grid;
-    grid-template: 48px 332px / 632px;
+    grid-template: 48px 632px / 632px;
     grid-row-gap: 12px;
+}
+
+.image-editor__control-img,
+.arrow-img
+{
+    opacity: .5;
+}
+
+.image-editor__control-img:hover,
+.arrow-img:hover
+{
+    opacity: 1;
 }
 
 .catogram__image-editor
@@ -35,17 +55,164 @@ body
     margin-top: 20px;
 }
 
+.image-editor__image-container
+{
+    overflow: hidden;
+}
+
 .image-editor__image,
-.image-editor__control
+.image-editor__control-img,
+.filters__image,
+.image-editor__transform-wrapper
 {
     width: 100%;
     height: 100%;
     object-fit: contain;
 }
 
+.image-editor__image,
+.image-editor__transform-wrapper
+{
+    transition: all linear .3s;
+}
+
 .image-editor__controls
 {
     display: grid;
-    grid-template-columns: repeat(5, 48px);
+    grid-template: 48px / repeat(5, 48px);
     grid-column-gap: 98px;
+}
+
+.filters
+{
+    display: flex;
+    align-items: center;
+}
+
+.filters__filters
+{
+    display: grid;
+    grid-template: 22px 169px / repeat(4, 170px);
+    grid-gap: 15px 5px;
+    margin-top: 69px;
+}
+
+.filters__label
+{
+    text-align: center;
+}
+
+.arrow-img
+{
+    width: 48px;
+    height: 48px;
+    margin-top: calc(69px + 15px + 22px);
+}
+
+.filters__l-arrow-img
+{
+    transform: rotate(90deg);
+    margin-right: 34px;
+}
+
+.filters__r-arrow-img
+{
+    transform: rotate(-90deg);
+    margin-left: 34px;
+}
+
+.filters__image-f2,
+.filter-2:checked ~ .catogram .image-editor__image
+{
+    filter: grayscale(80%);
+}
+
+.filters__image-f3,
+.filter-3:checked ~ .catogram .image-editor__image
+{
+    filter: sepia(60%);
+}
+
+.filters__image-f4,
+.filter-4:checked ~ .catogram .image-editor__image
+{
+    filter: sepia(100%) hue-rotate(190deg) saturate(500%);
+}
+
+.fill-rb:checked ~ .catogram .image-editor__image
+{
+    object-fit: cover;
+}
+
+.flip-rb:checked ~ .catogram .image-editor__flip-wrapper
+{
+    transform: scaleX(-1);
+}
+
+.scale-x2-rb:checked ~ .catogram .image-editor__scale-wrapper
+{
+    transform: scale(1.5);
+}
+
+.scale-x3-rb:checked ~ .catogram .image-editor__scale-wrapper
+{
+    transform: scale(2);
+}
+
+.scale-x4-rb:checked ~ .catogram .image-editor__scale-wrapper
+{
+    transform: scale(2.5);
+}
+
+.rotate-90:checked ~ .catogram .image-editor__rotate-wrapper
+{
+    transform: rotate(-90deg);
+}
+
+.rotate-180:checked ~ .catogram .image-editor__rotate-wrapper
+{
+    transform: rotate(-180deg);
+}
+
+.rotate-270:checked ~ .catogram .image-editor__rotate-wrapper
+{
+    transform: rotate(-270deg);
+}
+
+.icon-rb:not(:checked) ~ .catogram .image-editor__logo
+{
+    opacity: 1;
+    fill: url(#cg-gradient);
+    fill-rule: nonzero;
+}
+
+.icon-rb:checked ~ .catogram .image-editor__image
+{
+    object-fit: contain;
+    filter: none;
+}
+
+.icon-rb:checked ~ .catogram .image-editor__transform-wrapper
+{
+    transform: none;
+}
+
+.scale-x1-rb:checked ~ .catogram .image-editor__scale-x2,
+.scale-x2-rb:checked ~ .catogram .image-editor__scale-x3,
+.scale-x3-rb:checked ~ .catogram .image-editor__scale-x4,
+.scale-x4-rb:checked ~ .catogram .image-editor__scale-x1,
+.rotate-0:checked ~ .catogram .image-editor__rotate-90,
+.rotate-90:checked ~ .catogram .image-editor__rotate-180,
+.rotate-180:checked ~ .catogram .image-editor__rotate-270,
+.rotate-270:checked ~ .catogram .image-editor__rotate-0
+{
+    display: block;
+}
+
+.filter-1:checked ~ .catogram .filters__label-1,
+.filter-2:checked ~ .catogram .filters__label-2,
+.filter-3:checked ~ .catogram .filters__label-3,
+.filter-4:checked ~ .catogram .filters__label-4
+{
+    font-weight: bold;
 }
