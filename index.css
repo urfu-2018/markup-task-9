@@ -73,7 +73,7 @@ body
 .image-editor__image,
 .image-editor__transform-wrapper
 {
-    transition: all linear .3s;
+    transition: transform linear .3s, filter linear .3s;
 }
 
 .image-editor__controls
@@ -100,6 +100,7 @@ body
 .filters__label
 {
     text-align: center;
+    color: #444;
 }
 
 .arrow-img
@@ -215,4 +216,5 @@ body
 .filter-4:checked ~ .catogram .filters__label-4
 {
     font-weight: bold;
+    color: #000;
 }
