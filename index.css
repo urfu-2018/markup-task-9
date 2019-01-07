@@ -18,7 +18,7 @@ main
 {
     width: 48px;
     height: 48px;
-    background-color: magenta;
+    overflow: hidden;
 }
 
 .control > label
@@ -50,6 +50,7 @@ img
     width: 100%;
     height: 100%;
     object-fit: contain;
+    transition: transform linear .5s, filter linear .5s;
 }
 
 .fit-control:checked ~ main .picture img
@@ -87,7 +88,8 @@ img
     transform: scale(3);
 }
 
-.hidden-state
+.hidden-state,
+.icons
 {
     display: none;
 }
@@ -196,4 +198,11 @@ body
 .filter-4:checked ~ main .picture img
 {
     filter: hue-rotate(190deg);
+}
+
+.logo
+{
+    opacity: 1;
+    fill: url(#logo-gradient);
+    fill-rule: nonzero;
 }
