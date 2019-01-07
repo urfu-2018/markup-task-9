@@ -1,0 +1,199 @@
+main
+{
+    display: grid;
+    grid-template-rows: 80px 632px 312px;
+    width: 700px;
+    margin: auto;
+}
+
+.controls
+{
+    grid-row: 1/2;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.control
+{
+    width: 48px;
+    height: 48px;
+    background-color: magenta;
+}
+
+.control > label
+{
+    width: 48px;
+    height: 48px;
+    display: block;
+}
+
+.filters
+{
+    grid-row: 3/4;
+}
+
+.picture
+{
+    grid-row: 2/3;
+    width: 632px;
+    height: 632px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.box1,
+.box2,
+.box3,
+img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.fit-control:checked ~ main .picture img
+{
+    object-fit: cover;
+}
+
+.flip-control:checked ~ main .box1
+{
+    transform: scaleX(-1);
+}
+
+.rotate-90-control:checked ~ main .box2
+{
+    transform: rotate(-90deg);
+}
+
+.rotate-180-control:checked ~ main .box2
+{
+    transform: rotate(-180deg);
+}
+
+.rotate-270-control:checked ~ main .box2
+{
+    transform: rotate(-270deg);
+}
+
+.scale-x2-control:checked ~ main .box3
+{
+    transform: scale(2);
+}
+
+.scale-x3-control:checked ~ main .box3
+{
+    transform: scale(3);
+}
+
+.hidden-state
+{
+    display: none;
+}
+
+.rotate-control,
+.scale-control
+{
+    position: relative;
+}
+
+.rotate-label,
+.scale-label
+{
+    position: absolute;
+}
+
+.rotate-0-control:checked ~ main .controls .rotate-90-control,
+.rotate-90-control:checked ~ main .controls .rotate-180-control,
+.rotate-180-control:checked ~ main .controls .rotate-270-control,
+.rotate-270-control:checked ~ main .controls .rotate-0-control,
+.scale-x1-control:checked ~ main .controls .scale-x2-control,
+.scale-x2-control:checked ~ main .controls .scale-x3-control,
+.scale-x3-control:checked ~ main .controls .scale-x1-control
+{
+    z-index: 2;
+}
+
+.filters
+{
+    display: grid;
+    grid-template-rows: 69px 207px 37px;
+}
+
+.carousel
+{
+    grid-row: 2/3;
+    display: flex;
+    justify-content: space-around;
+}
+
+.preview-picture
+{
+    object-fit: cover;
+}
+
+.greyscale-filter
+{
+    filter: grayscale(100%);
+}
+
+.sepia-filter
+{
+    filter: sepia(100%);
+}
+
+.hue-filter
+{
+    filter: hue-rotate(190deg);
+}
+
+.filter
+{
+    display: grid;
+    grid-template-rows: 22px 170px;
+    width: 170px;
+    row-gap: 15px;
+}
+
+.filter-title
+{
+    grid-row: 1/2;
+    margin: auto;
+    font-size: 22px;
+}
+
+.preview-label
+{
+    grid-row: 2/3;
+    width: 170px;
+    height: 170px;
+}
+
+body
+{
+    font-family: Arial, sans-serif;
+}
+
+.filter-1:checked ~ main .filters .filter-1 .filter-title,
+.filter-2:checked ~ main .filters .filter-2 .filter-title,
+.filter-3:checked ~ main .filters .filter-3 .filter-title,
+.filter-4:checked ~ main .filters .filter-4 .filter-title
+{
+    font-weight: bolder;
+}
+
+.filter-2:checked ~ main .picture img
+{
+    filter: grayscale(100%);
+}
+
+.filter-3:checked ~ main .picture img
+{
+    filter: sepia(100%);
+}
+
+.filter-4:checked ~ main .picture img
+{
+    filter: hue-rotate(190deg);
+}

@@ -3,10 +3,91 @@
 <head>
     <meta charset="utf-8">
     <title>Задача «Котограм»</title>
+    <link rel="stylesheet" href="index.css" type="text/css">
 </head>
 <body>
 <!--Ваш спрайт-->
 
 <!--Ваша разметка-->
+<form>
+    <input type="checkbox" id="fit-control" class="fit-control hidden-state">
+    <input type="checkbox" id="flip-control" class="flip-control hidden-state">
+    <input type="reset" id="reset-control" class="hidden-state">
+
+    <input type="radio" id="scale-x1-control" class="scale-x1-control hidden-state" name="scale" checked>
+    <input type="radio" id="scale-x2-control" class="scale-x2-control hidden-state" name="scale">
+    <input type="radio" id="scale-x3-control" class="scale-x3-control hidden-state" name="scale">
+
+    <input type="radio" id="rotate-0-control" name="rotate" class="rotate-0-control hidden-state" checked>
+    <input type="radio" id="rotate-90-control" name="rotate" class="rotate-90-control hidden-state">
+    <input type="radio" id="rotate-180-control" name="rotate" class="rotate-180-control hidden-state">
+    <input type="radio" id="rotate-270-control" name="rotate" class="rotate-270-control hidden-state">
+
+    <input type="radio" id="filter-1" name="filter" class="hidden-state filter-1" checked>
+    <input type="radio" id="filter-2" name="filter" class="hidden-state filter-2">
+    <input type="radio" id="filter-3" name="filter" class="hidden-state filter-3">
+    <input type="radio" id="filter-4" name="filter" class="hidden-state filter-4">
+    <main>
+        <section class="controls">
+            <div class="control fit-control">
+                <label for="fit-control"></label>
+            </div>
+            <div class="control scale-control">
+                <label for="scale-x1-control" class="scale-x1-control scale-label"></label>
+                <label for="scale-x2-control" class="scale-x2-control scale-label"></label>
+                <label for="scale-x3-control" class="scale-x3-control scale-label"></label>
+            </div>
+            <div class="control reset-control">
+                <label for="reset-control"></label>
+            </div>
+            <div class="control rotate-control">
+                <label for="rotate-0-control" class="rotate-0-control rotate-label"></label>
+                <label for="rotate-90-control" class="rotate-90-control rotate-label"></label>
+                <label for="rotate-180-control" class="rotate-180-control rotate-label"></label>
+                <label for="rotate-270-control" class="rotate-270-control rotate-label"></label>
+            </div>
+            <div class="control flip-control">
+                <label for="flip-control"></label>
+            </div>
+        </section>
+        <section class="picture">
+            <section class="box1">
+                <section class="box2">
+                    <section class="box3">
+                        <img src="cat.jpg" class="photo" alt="Cat">
+                    </section>
+                </section>
+            </section>
+        </section>
+        <section class="filters">
+            <section class="carousel">
+                <article class="filter filter-1">
+                    <p class="filter-title">без фильтра</p>
+                    <label for="filter-1" class="preview-label">
+                        <img class="preview-picture" src="cat.jpg" alt="">
+                    </label>
+                </article>
+                <article class="filter filter-2">
+                    <p class="filter-title">оттенки серого</p>
+                    <label for="filter-2" class="preview-label">
+                        <img class="preview-picture greyscale-filter" src="cat.jpg" alt="">
+                    </label>
+                </article>
+                <article class="filter filter-3">
+                    <p class="filter-title">сепиа</p>
+                    <label for="filter-3" class="preview-label">
+                        <img class="preview-picture sepia-filter" src="cat.jpg" alt="">
+                    </label>
+                </article>
+                <article class="filter filter-4">
+                    <p class="filter-title">сдвиг оттенка</p>
+                    <label for="filter-4" class="preview-label">
+                        <img class="preview-picture hue-filter" src="cat.jpg" alt="">
+                    </label>
+                </article>
+            </section>
+        </section>
+    </main>
+</form>
 </body>
 </html>
