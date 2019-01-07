@@ -6,7 +6,7 @@ body
 
 .icons,
 .radio,
-.image-editor__circle-control
+.circle-control
 {
     display: none;
 }
@@ -92,9 +92,28 @@ body
 .filters__filters
 {
     display: grid;
-    grid-template: 22px 169px / repeat(4, 170px);
+    grid-template: 22px 169px / repeat(6, 170px);
     grid-gap: 15px 5px;
+
+    transition: transform linear .2s;
+}
+
+.carousel-shift-x2-rb:checked ~ .main .filters__filters
+{
+    transform: translateX(-174px);
+}
+
+.carousel-shift-x3-rb:checked ~ .main .filters__filters
+{
+    transform: translateX(calc(2 * -174px));
+}
+
+.filters__carousel-wrapper
+{
     margin-top: 69px;
+    width: calc(4 * 170px + 15px);
+    height: calc(22px + 169px + 15px);
+    overflow: hidden;
 }
 
 .filters__label
@@ -140,6 +159,18 @@ body
     filter: sepia(100%) hue-rotate(190deg) saturate(500%);
 }
 
+.filters__image-f5,
+.filter-5:checked ~ .catogram .image-editor__image
+{
+    filter: blur(3px);
+}
+
+.filters__image-f6,
+.filter-6:checked ~ .catogram .image-editor__image
+{
+    filter: hue-rotate(90deg);
+}
+
 .fill-rb:checked ~ .catogram .image-editor__image
 {
     object-fit: cover;
@@ -180,32 +211,30 @@ body
     transform: rotate(-270deg);
 }
 
-.icon-rb:not(:checked) ~ .catogram .image-editor__logo
+.image-editor__logo
 {
     opacity: 1;
     fill: url(#cg-gradient);
     fill-rule: nonzero;
 }
 
-.icon-rb:checked ~ .catogram .image-editor__image
-{
-    object-fit: contain;
-    filter: none;
-}
-
-.icon-rb:checked ~ .catogram .image-editor__transform-wrapper
-{
-    transform: none;
-}
-
 .scale-x1-rb:checked ~ .catogram .image-editor__scale-x2,
 .scale-x2-rb:checked ~ .catogram .image-editor__scale-x3,
 .scale-x3-rb:checked ~ .catogram .image-editor__scale-x4,
 .scale-x4-rb:checked ~ .catogram .image-editor__scale-x1,
+
 .rotate-0:checked ~ .catogram .image-editor__rotate-90,
 .rotate-90:checked ~ .catogram .image-editor__rotate-180,
 .rotate-180:checked ~ .catogram .image-editor__rotate-270,
-.rotate-270:checked ~ .catogram .image-editor__rotate-0
+.rotate-270:checked ~ .catogram .image-editor__rotate-0,
+
+.carousel-shift-x1-rb:checked ~ .main .filters__r-shift-x2,
+.carousel-shift-x2-rb:checked ~ .main .filters__r-shift-x3,
+.carousel-shift-x3-rb:checked ~ .main .filters__r-shift-x3,
+
+.carousel-shift-x1-rb:checked ~ .main .filters__l-shift-x1,
+.carousel-shift-x2-rb:checked ~ .main .filters__l-shift-x1,
+.carousel-shift-x3-rb:checked ~ .main .filters__l-shift-x2
 {
     display: block;
 }
@@ -213,8 +242,17 @@ body
 .filter-1:checked ~ .catogram .filters__label-1,
 .filter-2:checked ~ .catogram .filters__label-2,
 .filter-3:checked ~ .catogram .filters__label-3,
-.filter-4:checked ~ .catogram .filters__label-4
+.filter-4:checked ~ .catogram .filters__label-4,
+.filter-5:checked ~ .catogram .filters__label-5,
+.filter-6:checked ~ .catogram .filters__label-6
 {
     font-weight: bold;
     color: #000;
+}
+
+.carousel-shift-x1-rb:checked ~ .main .filters__l-arrow-img,
+.carousel-shift-x3-rb:checked ~ .main .filters__r-arrow-img
+{
+    opacity: .2;
+    cursor: default;
 }

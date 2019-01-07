@@ -30,10 +30,13 @@
         <path d="M.5 7.401L24.428 31.33 48.357 7.4 41.569.613l-17.14 17.14L7.288.614z" fill-rule="evenodd"/>
     </symbol>
 </svg>
-<main class="main">
+<input type="radio" id="carousel-shift-x1" name="carousel-shift" class="radio carousel-shift-x1-rb" checked>
+<input type="radio" id="carousel-shift-x2" name="carousel-shift" class="radio carousel-shift-x2-rb">
+<input type="radio" id="carousel-shift-x3" name="carousel-shift" class="radio carousel-shift-x3-rb">
+<form class="main">
     <input type="checkbox" id="fill-rb" class="radio fill-rb" checked>
-    <input type="checkbox" id="icon-rb" class="radio icon-rb">
     <input type="checkbox" id="flip-rb" class="radio flip-rb">
+    <input type="reset" id="icon-rb" class="radio icon-rb">
 
     <input type="radio" id="scale-x1" name="scale" class="radio scale-x1-rb" checked>
     <input type="radio" id="scale-x2" name="scale" class="radio scale-x2-rb">
@@ -49,6 +52,8 @@
     <input type="radio" id="filter-2" name="filter" class="radio filter-2">
     <input type="radio" id="filter-3" name="filter" class="radio filter-3">
     <input type="radio" id="filter-4" name="filter" class="radio filter-4">
+    <input type="radio" id="filter-5" name="filter" class="radio filter-5">
+    <input type="radio" id="filter-6" name="filter" class="radio filter-6">
 
     <article class="catogram">
         <article class="image-editor catogram__image-editor">
@@ -57,16 +62,16 @@
                     <svg class="image-editor__control-img"><use href="#fill"></use></svg>
                 </label>
 
-                <label for="scale-x1" class="pointer image-editor__circle-control image-editor__scale-x1">
+                <label for="scale-x1" class="pointer circle-control image-editor__scale-x1">
                     <svg class="image-editor__control-img"><use href="#scale"></use></svg>
                 </label>
-                <label for="scale-x2" class="pointer image-editor__circle-control image-editor__scale-x2">
+                <label for="scale-x2" class="pointer circle-control image-editor__scale-x2">
                     <svg class="image-editor__control-img"><use href="#scale"></use></svg>
                 </label>
-                <label for="scale-x3" class="pointer image-editor__circle-control image-editor__scale-x3">
+                <label for="scale-x3" class="pointer circle-control image-editor__scale-x3">
                     <svg class="image-editor__control-img"><use href="#scale"></use></svg>
                 </label>
-                <label for="scale-x4" class="pointer image-editor__circle-control image-editor__scale-x4">
+                <label for="scale-x4" class="pointer circle-control image-editor__scale-x4">
                     <svg class="image-editor__control-img"><use href="#scale"></use></svg>
                 </label>
 
@@ -83,16 +88,16 @@
                     </svg>
                 </label>
 
-                <label for="rotate-0" class="pointer image-editor__circle-control image-editor__rotate-0">
+                <label for="rotate-0" class="pointer circle-control image-editor__rotate-0">
                     <svg class="image-editor__control-img"><use href="#rotate"></use></svg>
                 </label>
-                <label for="rotate-90" class="pointer image-editor__circle-control image-editor__rotate-90">
+                <label for="rotate-90" class="pointer circle-control image-editor__rotate-90">
                     <svg class="image-editor__control-img"><use href="#rotate"></use></svg>
                 </label>
-                <label for="rotate-180" class="pointer image-editor__circle-control image-editor__rotate-180">
+                <label for="rotate-180" class="pointer circle-control image-editor__rotate-180">
                     <svg class="image-editor__control-img"><use href="#rotate"></use></svg>
                 </label>
-                <label for="rotate-270" class="pointer image-editor__circle-control image-editor__rotate-270">
+                <label for="rotate-270" class="pointer circle-control image-editor__rotate-270">
                     <svg class="image-editor__control-img"><use href="#rotate"></use></svg>
                 </label>
 
@@ -113,41 +118,70 @@
             </article>
         </article>
         <article class="filters">
-            <section class="filters__l-arrow">
+            <label for="carousel-shift-x1" class="filters__l-arrow filters__l-shift-x1 circle-control">
                 <svg class="pointer arrow-img filters__l-arrow-img"><use href="#arrow"></use></svg>
-            </section>
-            <section class="filters__filters">
-                <span class="filters__label filters__label-1">Без Фильтра</span>
-                <span class="filters__label filters__label-2">Питер</span>
-                <span class="filters__label filters__label-3">Ялта</span>
-                <span class="filters__label filters__label-4">Уральское лето</span>
+            </label>
+            <label for="carousel-shift-x2" class="filters__l-arrow filters__l-shift-x2 circle-control">
+                <svg class="pointer arrow-img filters__l-arrow-img"><use href="#arrow"></use></svg>
+            </label>
+            <section class="filters__carousel-wrapper">
+                <section class="filters__filters">
+                    <span class="filters__label filters__label-1">Без Фильтра</span>
+                    <span class="filters__label filters__label-2">Питер</span>
+                    <span class="filters__label filters__label-3">Ялта</span>
+                    <span class="filters__label filters__label-4">Уральское лето</span>
+                    <span class="filters__label filters__label-5">Размытие</span>
+                    <span class="filters__label filters__label-6">Лето</span>
 
-                <label for="filter-1" class="pointer filters__filter1">
-                    <img class="filters__image filters__image-f1"
-                         src="assets/cat.jpg" title="cat" alt="cat"
-                    >
-                </label>
-                <label for="filter-2" class="pointer filters__filter2">
-                    <img class="filters__image filters__image-f2"
-                         src="assets/cat.jpg" title="cat" alt="cat"
-                    >
-                </label>
-                <label for="filter-3" class="pointer filters__filter3">
-                    <img class="filters__image filters__image-f3"
-                         src="assets/cat.jpg" title="cat" alt="cat"
-                    >
-                </label>
-                <label for="filter-4" class="pointer filters__filter4">
-                    <img class="filters__image filters__image-f4"
-                         src="assets/cat.jpg" title="cat" alt="cat"
-                    >
-                </label>
+                    <label for="filter-1" class="pointer filters__filter1">
+                        <img class="filters__image filters__image-f1"
+                             src="assets/cat.jpg"
+                             title="source image without filter" alt="source image without filter"
+                        >
+                    </label>
+                    <label for="filter-2" class="pointer filters__filter2">
+                        <img class="filters__image filters__image-f2"
+                             src="assets/cat.jpg"
+                             title="image with grayscale filter" alt="image with grayscale filter"
+                        >
+                    </label>
+                    <label for="filter-3" class="pointer filters__filter3">
+                        <img class="filters__image filters__image-f3"
+                             src="assets/cat.jpg"
+                             title="image with sepia filter" alt="image with sepia filter"
+                        >
+                    </label>
+                    <label for="filter-4" class="pointer filters__filter4">
+                        <img class="filters__image filters__image-f4"
+                             src="assets/cat.jpg"
+                             title="image with blue filter" alt="image with blue filter"
+                        >
+                    </label>
+                    <label for="filter-5" class="pointer filters__filter5">
+                        <img class="filters__image filters__image-f5"
+                             src="assets/cat.jpg"
+                             title="image with blur filter" alt="image with blur filter"
+                        >
+                    </label>
+                    <label for="filter-6" class="pointer filters__filter6">
+                        <img class="filters__image filters__image-f6"
+                             src="assets/cat.jpg"
+                             title="image with green filter" alt="image with green filter"
+                        >
+                    </label>
+                </section>
             </section>
-            <section class="filters__r-arrow">
+            <label for="carousel-shift-x1" class="filters__r-arrow filters__r-shift-x1 circle-control">
                 <svg class="pointer arrow-img filters__r-arrow-img"><use href="#arrow"></use></svg>
-            </section>
+            </label>
+            <label for="carousel-shift-x2" class="filters__r-arrow filters__r-shift-x2 circle-control">
+                <svg class="pointer arrow-img filters__r-arrow-img"><use href="#arrow"></use></svg>
+            </label>
+            <label for="carousel-shift-x3" class="filters__r-arrow filters__r-shift-x3 circle-control">
+                <svg class="pointer arrow-img filters__r-arrow-img"><use href="#arrow"></use></svg>
+            </label>
         </article>
     </article>
-</main>
+</form>
 </body>
 </html>
