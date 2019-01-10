@@ -6,12 +6,16 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-<svg class="svg">
-    <linearGradient id="svg__icon-hover" x1="0" x2="100" y1="0" y2="100">
-        <stop offset="0%" stop-color="#8A2387">
-        <stop offset="60" stop-color="#E94057">
-        <stop offset="100%" stop-color="#F27121">
-    </linearGradient>
+<svg class="svg" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+    <defs>
+        <linearGradient id="grad" x1=".25" y1="1" x2=".75" y2="0">
+            <stop offset="0%" stop-color="#feda75"></stop>
+            <stop offset="25%" stop-color="#fa7e1e"></stop>
+            <stop offset="50%" stop-color="#d62976"></stop>
+            <stop offset="75%" stop-color="#962fbf"></stop>
+            <stop offset="100%" stop-color="#4f5bd5"></stop>
+        </linearGradient>
+    </defs>
     <symbol id="svg__icon-logo" viewBox="0 0 48 48">
         <path d="M0 0v48h48V0H0zm24.107 16.782a7.12 7.12 0 0 1 7.11 7.111 7.12 7.12 0 0 1-7.11 7.111 7.12 7.12 0 0 1-7.111-7.11 7.12 7.12 0 0 1 7.11-7.112zM6.4 5.547h7.253v4.693H6.4V5.547zM41.6 41.6H6.4V24.747h4.225c.443 7.053 6.318 12.657 13.482 12.657 7.163 0 13.039-5.604 13.481-12.657H41.6V41.6z" fill-rule="evenodd"/>
     </symbol>
@@ -53,42 +57,42 @@
     <input type="reset" id="reset" class="reset">
     <section class="controlls">
         <label for="controll1" class="controlls__label">
-            <svg class="controlls__icon">
+            <svg class="controlls__icon controlls__icon_fill">
                 <use xlink:href="#svg__icon-fill"></use>
             </svg>
         </label>
         <label for="controll2" class="controlls__label">
-            <svg class="controlls__icon">
+            <svg class="controlls__icon controlls__icon_fill">
                 <use xlink:href="#svg__icon-scale"></use>
             </svg>
         </label>
         <label for="reset" class="controlls__label">
-            <svg class="controlls__icon controlls__logo">
-                <use xlink:href="#svg__icon-logo"></use>
+            <svg class="controlls__icon controlls__logo" fill="url(#grad)">
+                <use href="#svg__icon-logo"></use>
             </svg>
         </label>
         <label for="controll3" class="controlls__label controlls__rotate controlls__rotate1">
-            <svg class="controlls__icon">
+            <svg class="controlls__icon controlls__icon_fill">
                 <use xlink:href="#svg__icon-rotate"></use>
             </svg>
         </label>
         <label for="controll4" class="controlls__label controlls__rotate controlls__rotate2">
-            <svg class="controlls__icon">
+            <svg class="controlls__icon controlls__icon_fill">
                 <use xlink:href="#svg__icon-rotate"></use>
             </svg>
         </label>
         <label for="controll5" class="controlls__label controlls__rotate controlls__rotate3">
-            <svg class="controlls__icon">
+            <svg class="controlls__icon controlls__icon_fill">
                 <use xlink:href="#svg__icon-rotate"></use>
             </svg>
         </label>
         <label for="controll6" class="controlls__label controlls__rotate controlls__rotate4">
-            <svg class="controlls__icon">
+            <svg class="controlls__icon controlls__icon_fill">
                 <use xlink:href="#svg__icon-rotate"></use>
             </svg>
         </label>
         <label for="controll7" class="controlls__label">
-            <svg class="controlls__icon">
+            <svg class="controlls__icon controlls__icon_fill">
                 <use xlink:href="#svg__icon-flip"></use>
             </svg>
         </label>
