@@ -2,12 +2,12 @@ body
 {
     margin: 0;
     padding: 0;
+    font-size: 0;
 }
 
 .catgram
 {
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -19,27 +19,29 @@ body
     height: 80px;
     display: flex;
     justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
     align-items: center;
 }
 
-.header__fill-icon
+.header__fill-icon,
+.header__flip-icon,
+.header__logo-icon,
+.header__rotate-icon,
+.header__scale-icon
 {
     width: 48px;
     height: 48px;
     object-fit: contain;
 }
 
-.header__fill-icon + .header__fill-icon
+.header-icon + .header-icon
 {
     margin-left: 98px;
 }
 
 .main-photo
 {
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
 }
 
 .main-photo__image
@@ -58,24 +60,32 @@ body
 
 .filters-panel__left-arrow
 {
+    height: 31px;
+    width: 47px;
     transform: rotate(90deg);
-    padding-top: 34px;
+    margin-right: 34px;
 }
 
 .filters-panel__right-arrow
 {
+    height: 31px;
+    width: 47px;
     transform: rotate(-90deg);
-    padding-top: 34px;
+    margin-left: 34px;
 }
 
 .filters-panel-left-arrow__icon
 {
     opacity: .2;
+    height: 31px;
+    width: 47px;
 }
 
 .filters-panel-right-arrow__icon
 {
     opacity: .6;
+    height: 31px;
+    width: 47px;
 }
 
 .filters-galery
@@ -91,13 +101,9 @@ body
 .filter__name
 {
     margin: 0;
-    font-family: Helvetica;
+    font-family: Helvetica, sans-serif;
     font-size: 18px;
     font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: normal;
     text-align: center;
 }
 
