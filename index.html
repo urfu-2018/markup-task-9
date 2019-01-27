@@ -40,6 +40,13 @@
                 fill-rule="evenodd"
             ></path>
         </symbol>
+        <defs>
+            <linearGradient id="instargam-gradient">
+                <stop offset="10%" stop-color="#fec564"/>
+                <stop offset="20%" stop-color="#d9317a"/>
+                <stop offset="99%" stop-color="#893dc2"/>
+            </linearGradient>
+        </defs>
         <symbol id="rotate">
             <path
                 d="M24 48c13.234 0 24-9.765 24-21.753 0-11.99-10.766-21.749-24-21.749-.88
@@ -97,6 +104,14 @@
             id="ural-summer"
             hidden
         />
+        <input
+            type="button"
+            name="photo-edit"
+            class="header__logo-input"
+            value="#0000ff"
+            id="header-logo"
+            hidden
+        />
         <div class="header">
             <svg class="header__fill-icon header-icon">
                 <use xlink:href="#fill"></use>
@@ -104,9 +119,11 @@
             <svg class="header__flip-icon header-icon">
                 <use xlink:href="#flip"></use>
             </svg>
-            <svg class="header__logo-icon header-icon">
-                <use xlink:href="#logo"></use>
-            </svg>
+            <label for="header-logo" class="header__logo">
+                <svg class="header__logo-icon header-icon">
+                    <use xlink:href="#logo"></use>
+                </svg>
+            </label>
             <svg class="header__rotate-icon header-icon">
                 <use xlink:href="#rotate"></use>
             </svg>

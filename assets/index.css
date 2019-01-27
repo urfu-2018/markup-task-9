@@ -39,6 +39,16 @@ body
     margin-left: 98px;
 }
 
+.header__logo-input:active ~ .main-photo .main-photo__image
+{
+    animation: delete-filter 1s ease forwards !important;
+}
+
+.header__logo-icon use
+{
+    fill: url(#instargam-gradient);
+}
+
 .main-photo
 {
     margin: 0 auto;
@@ -154,6 +164,14 @@ body
 .ural-summer:checked ~ .main-photo .main-photo__image
 {
     animation: ural-summer-filter 2s linear forwards;
+}
+
+@keyframes delete-filter
+{
+    to
+    {
+        filter: none;
+    }
 }
 
 @keyframes piter-filter
