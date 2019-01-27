@@ -112,3 +112,62 @@ body
     width: 170px;
     padding-top: 10px;
 }
+
+.piter .filter__demo-image
+{
+    filter: grayscale(1);
+}
+
+.yalta .filter__demo-image
+{
+    filter: sepia(1);
+}
+
+.ural-summer .filter__demo-image
+{
+    filter: hue-rotate(160deg);
+}
+
+.none:hover,
+.piter:hover,
+.yalta:hover,
+.ural-summer:hover
+{
+    cursor: pointer;
+}
+
+.none:checked ~ .main-photo .main-photo__image
+{
+    animation: delete-filter 5s linear;
+}
+
+.piter:checked ~ .main-photo .main-photo__image
+{
+    animation: piter-filter 5s linear;
+}
+
+.yalta:checked ~ .main-photo .main-photo__image
+{
+    filter: sepia(1);
+}
+
+.ural-summer:checked ~ .main-photo .main-photo__image
+{
+    filter: hue-rotate(160deg);
+}
+
+@keyframes delete-filter
+{
+    to
+    {
+        filter: none;
+    }
+}
+
+@keyframes piter-filter
+{
+    to
+    {
+        filter: grayscale(1);
+    }
+}

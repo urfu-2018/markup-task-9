@@ -65,6 +65,38 @@
         <h1 hidden>Котограм</h1>
     </header>
     <main class="catgram">
+        <input
+            type="radio"
+            name="filter-change"
+            class="filter__demo none"
+            value="#0000ff"
+            id="none"
+            hidden
+        />
+        <input
+            type="radio"
+            name="filter-change"
+            class="filter__demo piter"
+            value="#0000ff"
+            id="piter"
+            hidden
+        />
+        <input
+            type="radio"
+            name="filter-change"
+            class="filter__demo yalta"
+            value="#0000ff"
+            id="yalta"
+            hidden
+        />
+        <input
+            type="radio"
+            name="filter-change"
+            class="filter__demo ural-summer"
+            value="#0000ff"
+            id="ural-summer"
+            hidden
+        />
         <div class="header">
             <svg class="header__fill-icon header-icon">
                 <use xlink:href="#fill"></use>
@@ -96,37 +128,46 @@
                 </svg>
             </div>
             <div class="filters-panel__filters-galery filters-galery">
-                <div class="filters-galery__filter filter">
+                <div class="filters-galery__filter filter none">
                     <p class="filter__name">Без фильтра</p>
-                    <img
-                        class="filter__demo-image"
-                        src="./assets/images/cat-image.jpg"
-                        alt="Фотография кота после применения фильтра &laquo;Без фильтра&raquo;"
-                    >
+                    <label for="none" class="filter__demo none">
+                        <img
+                            class="filter__demo-image"
+                            src="./assets/images/cat-image.jpg"
+                            alt="Фотография кота после применения фильтра &laquo;Без фильтра&raquo;"
+                        >
+                    </label>
+
                 </div>
-                <div class="filters-galery__filter filter">
-                    <p class="filter__name">Без фильтра</p>
-                    <img
-                        class="filter__demo-image"
-                        src="./assets/images/cat-image.jpg"
-                        alt="Фотография кота после применения фильтра &laquo;Без фильтра&raquo;"
-                    >
+                <div class="filters-galery__filter filter piter">
+                    <p class="filter__name">Питер</p>
+                    <label for="piter" class="filter__demo piter">
+                        <img
+                            class="filter__demo-image"
+                            src="./assets/images/cat-image.jpg"
+                            alt="Фотография кота после применения фильтра &laquo;Питер&raquo;"
+                        >
+                    </label>
                 </div>
-                <div class="filters-galery__filter filter">
-                    <p class="filter__name">Без фильтра</p>
-                    <img
-                        class="filter__demo-image"
-                        src="./assets/images/cat-image.jpg"
-                        alt="Фотография кота после применения фильтра &laquo;Без фильтра&raquo;"
-                    >
+                <div class="filters-galery__filter filter yalta">
+                    <p class="filter__name">Ялта</p>
+                    <label for="yalta" class="filter__demo yalta">
+                        <img
+                            class="filter__demo-image"
+                            src="./assets/images/cat-image.jpg"
+                            alt="Фотография кота после применения фильтра &laquo;Ялта&raquo;"
+                        >
+                    </label>
                 </div>
-                <div class="filters-galery__filter filter">
-                    <p class="filter__name">Без фильтра</p>
-                    <img
-                        class="filter__demo-image"
-                        src="./assets/images/cat-image.jpg"
-                        alt="Фотография кота после применения фильтра &laquo;Без фильтра&raquo;"
-                    >
+                <div class="filters-galery__filter filter ural-summer">
+                    <p class="filter__name">Уральское лето</p>
+                    <label for="ural-summer" class="filter__demo ural-summer">
+                        <img
+                            class="filter__demo-image"
+                            src="./assets/images/cat-image.jpg"
+                            alt="Фотография кота после применения фильтра &laquo;Без фильтра&raquo;"
+                        >
+                    </label>
                 </div>
             </div>
             <div class="filters-panel__right-arrow filters-panel-right-arrow">
