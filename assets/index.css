@@ -138,30 +138,22 @@ body
 
 .none:checked ~ .main-photo .main-photo__image
 {
-    animation: delete-filter 5s linear;
+    filter: none;
 }
 
 .piter:checked ~ .main-photo .main-photo__image
 {
-    animation: piter-filter 5s linear;
+    animation: piter-filter 2s linear forwards;
 }
 
 .yalta:checked ~ .main-photo .main-photo__image
 {
-    filter: sepia(1);
+    animation: yalta-filter 2s linear forwards;
 }
 
 .ural-summer:checked ~ .main-photo .main-photo__image
 {
-    filter: hue-rotate(160deg);
-}
-
-@keyframes delete-filter
-{
-    to
-    {
-        filter: none;
-    }
+    animation: ural-summer-filter 2s linear forwards;
 }
 
 @keyframes piter-filter
@@ -169,5 +161,21 @@ body
     to
     {
         filter: grayscale(1);
+    }
+}
+
+@keyframes yalta-filter
+{
+    to
+    {
+        filter: sepia(1);
+    }
+}
+
+@keyframes ural-summer-filter
+{
+    to
+    {
+        filter: hue-rotate(160deg);
     }
 }
