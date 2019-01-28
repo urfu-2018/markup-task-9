@@ -23,7 +23,7 @@
                     37.668h-6.888V48H48V35.946h-5.166zM5.166 35.946H0V48h11.839v-5.166H5.166z"
             ></path>
         </symbol>
-        <symbol id="flip">
+        <symbol id="scale">
             <path
                 d="M0 0v48h48V0H0zm6.4 6.4h33.682L6.4 40.227V6.4zm34.56 32.427H25.6v-6.4h15.36v6.4z"
             ></path>
@@ -59,7 +59,7 @@
                 fill-rule="evenodd"
             ></path>
         </symbol>
-        <symbol id="scale">
+        <symbol id="flip">
             <path
                 d="M0 29.9l19.084-11.788L0 6.325zm28.916-11.788L48 29.9V6.325L28.916 18.112zm15.058
                     4.425l-7.163-4.425 7.163-4.424v8.849zM21.398
@@ -76,26 +76,23 @@
             type="radio"
             name="filter-change"
             class="filter__demo none"
-            value="#0000ff"
             id="none"
             hidden
-        />
+        >
         <input
             type="radio"
             name="filter-change"
             class="filter__demo piter"
-            value="#0000ff"
             id="piter"
             hidden
-        />
+        >
         <input
             type="radio"
             name="filter-change"
             class="filter__demo yalta"
-            value="#0000ff"
             id="yalta"
             hidden
-        />
+        >
         <input
             type="radio"
             name="filter-change"
@@ -103,33 +100,123 @@
             value="#0000ff"
             id="ural-summer"
             hidden
-        />
+        >
         <input
             type="button"
             name="photo-edit"
             class="header__logo-input"
-            value="#0000ff"
             id="header-logo"
+            value="Логотип Инстаграмма"
             hidden
-        />
+        >
+
+        <input type="checkbox" id="fill-option" hidden>
+        <input type="checkbox" id="flip-option" hidden>
+
+        <input type="radio" name="scale" id="scale-option-x1" hidden checked>
+        <input type="radio" name="scale" id="scale-option-x2" hidden>
+        <input type="radio" name="scale" id="scale-option-x3" hidden>
+        <input type="radio" name="scale" id="scale-option-x4" hidden>
+
+        <input type="radio" name="rotate" id="rotate-option-0" hidden checked>
+        <input type="radio" name="rotate" id="rotate-option-90" hidden>
+        <input type="radio" name="rotate" id="rotate-option-180" hidden>
+        <input type="radio" name="rotate" id="rotate-option-270" hidden>
+
         <div class="header">
-            <svg class="header__fill-icon header-icon">
-                <use xlink:href="#fill"></use>
-            </svg>
-            <svg class="header__flip-icon header-icon">
-                <use xlink:href="#flip"></use>
-            </svg>
-            <label for="header-logo" class="header__logo">
-                <svg class="header__logo-icon header-icon">
-                    <use xlink:href="#logo"></use>
-                </svg>
-            </label>
-            <svg class="header__rotate-icon header-icon">
-                <use xlink:href="#rotate"></use>
-            </svg>
-            <svg class="header__scale-icon header-icon">
-                <use xlink:href="#scale"></use>
-            </svg>
+            <div class="header__button header-button">
+                <label for="fill-option" class="header-button__label">
+                    <svg class="header-icon">
+                        <use xlink:href="#fill"></use>
+                    </svg>
+                </label>
+            </div>
+
+            <div class="header__button header-button header-button__type_radio">
+                <label
+                    for="scale-option-x1"
+                    class="header-button__label header-button__label_scale_x1"
+                >
+                    <svg class="header-icon">
+                        <use xlink:href="#scale"></use>
+                    </svg>
+                </label>
+                <label
+                    for="scale-option-x2"
+                    class="header-button__label header-button__label_scale_x2"
+                >
+                    <svg class="header-icon">
+                        <use xlink:href="#scale"></use>
+                    </svg>
+                </label>
+                <label
+                    for="scale-option-x3"
+                    class="header-button__label header-button__label_scale_x3"
+                >
+                    <svg class="header-icon">
+                        <use xlink:href="#scale"></use>
+                    </svg>
+                </label>
+                <label
+                    for="scale-option-x4"
+                    class="header-button__label header-button__label_scale_x4"
+                >
+                    <svg class="header-icon">
+                        <use xlink:href="#scale"></use>
+                    </svg>
+                </label>
+            </div>
+
+            <div class="header__button header-button">
+                <label for="header-logo" class="header-button__label">
+                    <svg class="header-icon">
+                        <use class="instagram-icon" xlink:href="#logo"></use>
+                    </svg>
+                </label>
+            </div>
+
+            <div class="header__button header-button header-button__type_radio">
+                <label
+                    for="rotate-option-0"
+                    class="header-button__label header-button__label_rotate_0"
+                >
+                    <svg class="header-icon">
+                        <use xlink:href="#rotate"></use>
+                    </svg>
+                </label>
+                <label
+                    for="rotate-option-90"
+                    class="header-button__label header-button__label_rotate_90"
+                >
+                    <svg class="header-icon">
+                        <use xlink:href="#rotate"></use>
+                    </svg>
+                </label>
+                <label
+                    for="rotate-option-180"
+                    class="header-button__label header-button__label_rotate_180"
+                >
+                    <svg class="header-icon">
+                        <use xlink:href="#rotate"></use>
+                    </svg>
+                </label>
+                <label
+                    for="rotate-option-270"
+                    class="header-button__label header-button__label_rotate_270"
+                >
+                    <svg class="header-icon">
+                        <use xlink:href="#rotate"></use>
+                    </svg>
+                </label>
+            </div>
+
+            <div class="header__button header-button">
+                <label for="flip-option" class="header-button__label">
+                    <svg class="header-icon header-icon_type_flip">
+                        <use xlink:href="#flip"></use>
+                    </svg>
+                </label>
+            </div>
         </div>
         <div class="main-photo">
             <img

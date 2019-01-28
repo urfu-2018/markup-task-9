@@ -19,32 +19,111 @@ body
     height: 80px;
     display: flex;
     justify-content: center;
-    margin: 0 auto;
+    margin: 12px auto 24px;
     align-items: center;
 }
 
-.header__fill-icon,
-.header__flip-icon,
-.header__logo-icon,
-.header__rotate-icon,
-.header__scale-icon
+.header__button + .header__button
+{
+    margin-left: 98px;
+}
+
+.header-button
+{
+    position: relative;
+    width: 48px;
+    height: 48px;
+}
+
+.header-button__label
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+.header-button__label:hover
+{
+    opacity: .8;
+}
+
+.header-button__type_radio .header-button__label
+{
+    display: none;
+}
+
+input[id='rotate-option-0']:checked ~ .header .header-button__label_rotate_90,
+input[id='rotate-option-90']:checked ~ .header .header-button__label_rotate_180,
+input[id='rotate-option-180']:checked ~ .header .header-button__label_rotate_270,
+input[id='rotate-option-270']:checked ~ .header .header-button__label_rotate_0,
+input[id='scale-option-x1']:checked ~ .header .header-button__label_scale_x2,
+input[id='scale-option-x2']:checked ~ .header .header-button__label_scale_x3,
+input[id='scale-option-x3']:checked ~ .header .header-button__label_scale_x4,
+input[id='scale-option-x4']:checked ~ .header .header-button__label_scale_x1
+{
+    display: block;
+}
+
+input[id='rotate-option-90']:checked ~ .main-photo .main-photo__image
+{
+    transform: rotate(90deg);
+}
+
+input[id='rotate-option-180']:checked ~ .main-photo .main-photo__image
+{
+    transform: rotate(180deg);
+}
+
+input[id='rotate-option-270']:checked ~ .main-photo .main-photo__image
+{
+    transform: rotate(270deg);
+}
+
+input[id='scale-option-x2']:checked ~ .main-photo .main-photo__image
+{
+    transform: scale(2);
+}
+
+input[id='scale-option-x3']:checked ~ .main-photo .main-photo__image
+{
+    transform: scale(3);
+}
+
+input[id='scale-option-x4']:checked ~ .main-photo .main-photo__image
+{
+    transform: scale(4);
+}
+
+input[id='fill-option']:checked ~ .main-photo .main-photo__image
+{
+    object-fit: cover;
+}
+
+input[id='flip-option']:checked ~ .main-photo .main-photo__image
+{
+    transform: scale(-1, 1);
+}
+
+.header__logo-input:active ~ .main-photo .main-photo__image
+{
+    transform: none !important;
+    animation: delete-filter 1s ease forwards !important;
+}
+
+.header-icon
 {
     width: 48px;
     height: 48px;
     object-fit: contain;
 }
 
-.header-icon + .header-icon
+.header-icon_type_flip
 {
-    margin-left: 98px;
+    margin-top: 5px;
 }
 
-.header__logo-input:active ~ .main-photo .main-photo__image
-{
-    animation: delete-filter 1s ease forwards !important;
-}
-
-.header__logo-icon use
+.instagram-icon
 {
     fill: url(#instargam-gradient);
 }
@@ -52,11 +131,14 @@ body
 .main-photo
 {
     margin: 0 auto;
+    overflow: hidden;
 }
 
 .main-photo__image
 {
     width: 632px;
+    object-fit: none;
+    user-select: none;
 }
 
 .filters-panel
